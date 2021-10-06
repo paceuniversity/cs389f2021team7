@@ -7,7 +7,7 @@
 **App description**
 
 **Idea Proposal**
-* [Idea Proposal](https://github.com/alotaibi123/cs389f2021team7/blob/main/team7ideaproposal2021.docx)
+* [Idea Proposal](https://github.com/paceuniversity/cs389f2021team7/blob/main/team7ideaproposal2021.docx)
 
 **Calendar**
 
