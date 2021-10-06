@@ -8,6 +8,8 @@
 
 **Idea Proposal**
 
+idea proposal link
+
 **Calendar**
 
 **Product Backlog**
