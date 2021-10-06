@@ -4,6 +4,7 @@
 
 **Team** 
 Patrick Dwyer, John Beltran, Abdulmalik Alotaibi, Emma Hilts
+
 **App description**
 
 **Idea Proposal**
