@@ -12,7 +12,7 @@
 | Emma Hilts           |                 |                                |
 
 
-* [Team Photo](<img src="https://i.imgur.com/VDdkog4.pngE">)
+<img src="https://i.imgur.com/VDdkog4.pngE">
 
 
 **App description**
