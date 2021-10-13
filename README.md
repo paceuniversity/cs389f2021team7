@@ -12,7 +12,7 @@
 | Emma Hilts           |                 |                                |
 
 
-<img src="https://i.imgur.com/VDdkog4.pngE">
+<img src="https://i.imgur.com/VDdkog4.pngE" width="50%" height="50%">
 
 
 **App description**
