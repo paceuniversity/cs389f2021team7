@@ -11,7 +11,7 @@
 | John Beltran         |                 |                                |
 | Emma Hilts           |                 |                                |
 
-* [Team Photo](https://i.imgur.com/VDdkog4.pngE)
+https://i.imgur.com/VDdkog4.pngE
 
 **App description**
 
