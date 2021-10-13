@@ -14,6 +14,7 @@ Patrick Dwyer, John Beltran, Abdulmalik Alotaibi, Emma Hilts
 **Calendar**
 
 **Product Backlog**
+* [Product Backlog](https://github.com/paceuniversity/cs389f2021team7/blob/main/Team%207%20Product%20Backlog.xlsx)
 
 **Architecture & Design**
 
