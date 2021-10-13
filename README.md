@@ -11,9 +11,7 @@
 | John Beltran         |                 |
 | Emma Hilts           |                 |
 
-
-<img src="https://i.imgur.com/VDdkog4.pngE" width="50%" height="50%">
-
+* [Team Photo](https://github.com/paceuniversity/cs389f2021team7/blob/main/photo.md)
 
 **App description**
 
