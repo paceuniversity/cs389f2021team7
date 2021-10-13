@@ -4,12 +4,12 @@
 
 **Team** 
 
-| Name                 | Role            |
-| -------------------- | :-------------: |
-| Patrick Dwyer        | Scrum Master    |
-| Abdulmalik Alotaibi  | Product Owner   |
-| John Beltran         |                 |
-| Emma Hilts           |                 |
+| Name                 | Role                     |
+| -------------------- | :----------------------: |
+| Patrick Dwyer        | Scrum Master, Developer  |
+| Abdulmalik Alotaibi  | Product Owner, Developer |
+| John Beltran         | Developer                |
+| Emma Hilts           | Developer                |
 
 * [Team Photo](https://github.com/paceuniversity/cs389f2021team7/blob/main/photo.md)
 
