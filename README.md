@@ -4,12 +4,12 @@
 
 **Team** 
 
-| Name                 | Role            | Contact                        |
-| -------------------- | :-------------: | :----------------------------: |
-| Patrick Dwyer        | Scrum Master    |                                |
-| Abdulmalik Alotaibi  | Product Owner   | alotaibiabdulmalik@hotmail.com |
-| John Beltran         |                 |                                |
-| Emma Hilts           |                 |                                |
+| Name                 | Role            |
+| -------------------- | :-------------: |
+| Patrick Dwyer        | Scrum Master    |
+| Abdulmalik Alotaibi  | Product Owner   |
+| John Beltran         |                 |
+| Emma Hilts           |                 |
 
 
 <img src="https://i.imgur.com/VDdkog4.pngE" width="50%" height="50%">
