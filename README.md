@@ -4,7 +4,14 @@
 
 **Team** 
 
-Patrick Dwyer, John Beltran, Abdulmalik Alotaibi, Emma Hilts
+| Name                 | Role            | Contact                        |
+| -------------------- | :-------------: | :----------------------------: |
+| Patrick Dwyer        | Scrum Master    |                                |
+| Abdulmalik Alotaibi  | Product Owner   | alotaibiabdulmalik@hotmail.com |
+| John Beltran         |                 |                                |
+| Emma Hilts           |                 |                                |
+
+* [Team Photo](https://imgur.com/a/kIXNQeE)
 
 **App description**
 
