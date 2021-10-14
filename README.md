@@ -15,12 +15,12 @@
 
 **App description**
 
-**[Idea Proposal](https://github.com/paceuniversity/cs389f2021team7/blob/main/team7ideaproposal2021.docx)**
+**[Idea Proposal](https://docs.google.com/document/d/1Fk-VKhIbE_qc_xFK_vEKdeaBNxjz769r/edit?usp=sharing&ouid=111998902265795988399&rtpof=true&sd=true)**
 
 
 **Calendar**
 
-**[Product Backlog](https://github.com/paceuniversity/cs389f2021team7/blob/main/Team%207%20Product%20Backlog.xlsx)**
+**[Product Backlog](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit?usp=sharing)**
 
 
 
