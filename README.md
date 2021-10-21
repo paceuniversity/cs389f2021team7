@@ -56,4 +56,11 @@
 
 **Communications**
 
+[<img src="https://discord.com/assets/3437c10597c1526c3dbd98c737c2bcae.svg" height="50">](https://discord.com)
+
 **Tools**
+
+[<img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="75">](https://github.com)
+[<img src="https://developer.android.com/studio/images/studio-icon-preview.svg" height="75">](https://developer.android.com/studio)
+[<img src="https://kstatic.googleusercontent.com/files/f4b4fbcc6119576da7ab3f68270196009fc1b16f1927910842d793c385115593b6dd5fbe9a1e21fe64f3cbbc509c3a02c95ebc9635f76c355282482986f1fe7d" height="75">](https://www.google.com/drive/)
+[<img src="https://data.worldbank.org/assets/images/logo-wb-header-en.svg" height="75" width="250">](https://www.worldbank.org/)
