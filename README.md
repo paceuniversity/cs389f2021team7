@@ -25,6 +25,9 @@
 
 **Architecture & Design**
 
+* [Architecture](https://docs.google.com/document/d/1ON5mc3wFk5jes7PFPl15z0mpJXCWnfUzLndsQEaivrE/edit?usp=sharing)
+* [Design](https://docs.google.com/document/d/1_EABZw7gZOf0zY_cn1Of8Eh-SHSsynKDV32ta0a2N98/edit?usp=sharing)
+
 **Content**
 
 **Sprint 1**
@@ -32,21 +35,21 @@
 * Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* Sprint retrospective
 
 **Sprint 2**
 
 * Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* Sprint retrospective
 
 **Sprint 3** 
 
 * Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
-* Spring retrospective
+* Sprint retrospective
 
 **Final presentation**
 
