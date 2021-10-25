@@ -2,7 +2,7 @@
 
 **App name**
 
-Carbon fOOtprint
+**C**arbon f**OO**tprint
 
 **Team** 
 
