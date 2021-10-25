@@ -69,4 +69,4 @@
 [<img src="https://developer.android.com/studio/images/studio-icon-preview.svg" height="75">](https://developer.android.com/studio "Android Studio")
 [<img src="https://kstatic.googleusercontent.com/files/f4b4fbcc6119576da7ab3f68270196009fc1b16f1927910842d793c385115593b6dd5fbe9a1e21fe64f3cbbc509c3a02c95ebc9635f76c355282482986f1fe7d" height="75">](https://www.google.com/drive/ "Google Drive")
 [<img src="https://data.worldbank.org/assets/images/logo-wb-header-en.svg" height="75" width="250">](https://data.worldbank.org "The World Bank API")
-[<img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-built_white.png" height="75" width="250">](https://firebase.google.com/ "FireBase API")
+[<img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-built_white.png" height="75" width="200">](https://firebase.google.com/ "FireBase API")
