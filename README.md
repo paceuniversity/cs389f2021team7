@@ -2,7 +2,7 @@
 
 **App name**
 
-**C**lean y**O**ur **2** Feet
+**C**lean y**O**ur **2** Feet (Carbon Footprint Calculator)
 
 **Team** 
 
