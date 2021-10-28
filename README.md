@@ -39,11 +39,9 @@
   *	US2- Home Energy
   *	US3- Transportation
   *	US4- Waste
-  *	US15- Calculator Performance
-  *	US16- Score Details
-  *	US20- Calculator Usability 
-  *	US22- Welcome Screen 
+  *	US16- Score Details  
   *	US28- World Bank API
+  *	US32- Location
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
