@@ -35,6 +35,15 @@
 **Sprint 1**
 
 * [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=1604237509)
+  * US1- CO2 Emissions Calculator 
+  *	US2- Home Energy
+  *	US3- Transportation
+  *	US4- Waste
+  *	US15- Calculator Performance
+  *	US16- Score Details
+  *	US20- Calculator Usability 
+  *	US22- Welcome Screen 
+  *	US28- World Bank API
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
