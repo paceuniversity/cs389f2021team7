@@ -42,7 +42,7 @@
   *	US16- Score Details  
   *	US28- World Bank API
   *	US32- Location
-* Scrums
+* [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrum.md)
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
 
