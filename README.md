@@ -2,7 +2,7 @@
 
 **App name**
 
-**C**arbon f**OO**tprint
+Carbon Footprint
 
 **Team** 
 
