@@ -26,3 +26,18 @@
 5. Continue to work on the World Bank API and sync the values with the footprint image. Also, try to make some progress with the layout.
 
 6. Nothing in particular.
+
+
+**Emma Hilts** 11/1/2021
+
+1.	I started to collect photos for the layout/design the layout so actual coding will take less time. 
+
+2.	Start the design. I want to complete the CO2 emissions calculator and home energy design. 
+
+3.	Taking time away from other work/classes to begin. 
+
+4.	This is our first Scrum.
+
+5.	I want to complete most of the designs for the app.
+
+6.	Outside work is impeding my progress, slightly.
