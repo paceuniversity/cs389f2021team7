@@ -41,3 +41,18 @@
 5.	I want to complete most of the designs for the app.
 
 6.	Outside work is impeding my progress, slightly.
+
+
+**John Beltran** 11/1/2021
+
+1. I figured out what I need to focus on, and I studied certain aspects to help out with coding
+
+2. Today I will work on the tasks that were given to me
+
+3. Obstacles for me is the actual coding and how to figure out what to put
+
+4. This is our first scrum
+
+5. I’ll continue to focus on my tasks
+
+6. What is currently impeding my progress is outside sources
