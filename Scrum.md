@@ -11,3 +11,18 @@
 5. I will continue to work on my tasks.
 
 6. So far there isn't anything impeding my progress.
+
+
+**Abdulmalik Alotaibi** 11/1/2021
+
+1. I managed to retrieve data from the World Bank API, added location permissions request, and got the country code from the location to retrieve the appropriate data from the World Bank API.
+
+2. I will try to make some progress with the layout.
+
+3. Nothing in particular.
+
+4. This is our First Scrum.
+
+5. Continue to work on the World Bank API and sync the values with the footprint image. Also, try to make some progress with the layout.
+
+6. Nothing in particular.
