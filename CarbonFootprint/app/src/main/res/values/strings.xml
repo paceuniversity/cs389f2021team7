@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">HomeEnergy</string>
+    <string name="app_name">Carbon FootPrint</string>
+    <string name="Heating">Heating</string>
+    <string name="primeHeat">What is your primary Heat source?</string>
+    <string name="naturalGas">Natural Gas</string>
+    <string name="utility">Utility</string>
+    <string name="description">Enter your average monthly bill or other data for each source of energy your household uses.</string>
+    <string name="averageBill">Enter your average monthly bill.</string>
+    <string name="electricity">Electricity</string>
+    <string name="fuelOil">Fuel Oil</string>
+    <string name="propane">Propane</string>
+
+    <string-array name="Utility">
+        <item>Natural Gas</item>
+        <item>Electricity</item>
+        <item>Fuel Oil</item>
+        <item>Propane</item>
+    </string-array>
+
 </resources>
