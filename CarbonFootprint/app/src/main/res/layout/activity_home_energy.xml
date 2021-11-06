@@ -48,17 +48,19 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="409dp"
-        android:layout_height="607dp"
+        android:layout_height="304dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" >
+        app:layout_constraintTop_toBottomOf="@+id/spinner">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="304dp">
+            android:layout_height="304dp"
+            tools:ignore="UselessParent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,7 +100,10 @@
                     android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:hint="@string/averageBill"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    tools:ignore="DuplicateSpeakableTextCheck"
+                    android:autofillHints="Enter your natural gas" />
 
                 <TextView
                     android:id="@+id/electricity"
@@ -112,9 +117,9 @@
                     android:id="@+id/electricityInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number" />
 
@@ -130,9 +135,9 @@
                     android:id="@+id/fuelOilInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number" />
 
@@ -143,13 +148,14 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/propane" />
+
                 <EditText
                     android:id="@+id/propaneInput"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:ems="10"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number" />
 
@@ -157,9 +163,200 @@
                     android:id="@+id/estimatedC02"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Submit" />
+                    android:text="@string/submit" />
 
 
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="413dp"
+        android:layout_height="320dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="305dp"
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reduceEmissions"
+                    android:layout_width="339dp"
+                    android:layout_height="83dp"
+                    android:layout_marginStart="110dp"
+                    android:text="@string/reduceEmissions" />
+
+                <TextView
+                    android:id="@+id/heatingAndCooling"
+                    android:layout_width="382dp"
+                    android:layout_height="49dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/heatingAndCooling" />
+
+                <TextView
+                    android:id="@+id/acThermostat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="87dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/acThermostat" />
+
+                <EditText
+                    android:id="@+id/acThermostatInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/acThermostatInput"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/winterThermostat"
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/winterThermostat" />
+
+                <EditText
+                    android:id="@+id/winterThermostatInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/winterThermostatInput"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/lighting"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/lighting" />
+
+                <TextView
+                    android:id="@+id/reduceLighting"
+                    android:layout_width="match_parent"
+                    android:layout_height="67dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/reduceLighting" />
+
+                <EditText
+                    android:id="@+id/reduceLightingInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="99dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/reduceLightingInput"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/washingAndDrying"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/washingAndDrying" />
+
+                <TextView
+                    android:id="@+id/coldWater"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/coldWater" />
+
+                <EditText
+                    android:id="@+id/coldWaterInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/coldWaterInput"
+                    android:inputType="number"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/energyStar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/energyStar" />
+
+                <TextView
+                    android:id="@+id/refrigerator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/refrigerator" />
+
+                <Spinner
+                    android:id="@+id/starEnergyRefrigerator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:entries="@array/starProducts"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/furnaceBoiler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/furnaceBoiler" />
+
+                <Spinner
+                    android:id="@+id/starEnergyFurnaceBoiler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:entries="@array/starProducts"
+                    android:minHeight="48dp" />
+
+                <TextView
+                    android:id="@+id/window"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/windows"
+                    android:visibility="visible" />
+
+                <Spinner
+                    android:id="@+id/starEnergyWindow"
+                    android:layout_width="367dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="100dp"
+                    android:entries="@array/starProducts"
+                    android:minHeight="100dp"
+                    android:autofillHints="Select an option"
+                    android:visibility="visible" />
             </LinearLayout>
         </ScrollView>
 
