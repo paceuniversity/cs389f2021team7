@@ -9,8 +9,33 @@
     <string name="electricity">Electricity</string>
     <string name="fuelOil">Fuel Oil</string>
     <string name="propane">Propane</string>
+    <string name="submit">Submit</string>
+    <string name="reduceEmissions">Reduce your Emissions</string>
+    <string name="heatingAndCooling">Heating and Cooling</string>
+    <string name="acThermostat">How many degree\'s will you turn your thermostat up in the summer?</string>
+    <string name="acThermostatInput">Enter the amount of degrees.</string>
+    <string name="winterThermostat">How many degree\'s will you turn down your thermostat in the winter?</string>
+    <string name="winterThermostatInput">Enter the amount of degrees.</string>
+    <string name="lighting">Reduce Lighting</string>
+    <string name="reduceLighting">How many light bulbs will you replace with ENERGY STAR light bulbs</string>
+    <string name="reduceLightingInput">Enter the amount of light bulbs you will change.</string>
+    <string name="washingAndDrying">Washing and Drying</string>
+    <string name="coldWater">How many loads of Laundry will you use cold water?</string>
+    <string name="coldWaterInput">Enter the amount of loads.</string>
+    <string name="energyStar">ENERGY STAR Products</string>
+    <string name="energyStarModels">Will you replace any of the following with ENERGY STAR models?</string>
+    <string name="refrigerator">Refrigerator</string>
+    <string name="furnaceBoiler">Furnace or Boiler</string>
+    <string name="windows">Windows</string>
+
+    <string-array name="starProducts">
+        <item>Select an Option</item>
+        <item>Will Do</item>
+        <item>Will not do</item>
+    </string-array>
 
     <string-array name="Utility">
+        <item>Select an Option</item>
         <item>Natural Gas</item>
         <item>Electricity</item>
         <item>Fuel Oil</item>
