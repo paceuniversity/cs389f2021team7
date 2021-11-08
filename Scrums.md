@@ -121,3 +121,17 @@ For the project we will have the 3 following questions:
 2\.	I would like to have my code working properly for the Waste page (4.1, 4.2, and 4.4) and have the design completed. 
 
 3\.	Outside work and my emulator. Also, not understanding the coding aspect in android studio as well as I’d like.
+
+**John Beltran**
+
+1. Yesterday I worked on trying to figure out the formulas (3.4)
+
+2. Today I will work on implementing the equations for each category that is needed (3.4)
+
+3. Obstacles for me is the the layout of the code as things seem to go everywhere
+
+4. What I have accomplished is implementing the layout and the values for my page (3.1, 3.2)
+
+5. Finish implementing 3.4 and continue to work on 16.3
+
+6. What is currently impeding my progress is the difficulty of the coding
