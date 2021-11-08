@@ -75,20 +75,19 @@ For the project we will have the 3 following questions:
 
 3\. What is currently impeding my progress is outside sources
 
-## Scrum 11/9/2021
 
-### Abdulmalik Alotaibi
+## Scrum 11/8/2021
 
-1\. I synchronized the results of the user and the values from the World Bank with the footprint image and tested it on different phone emulators.
+### Patrick Dwyer
 
-2\. I will fix the rest of the layout and test the code in different situations.
+1\. I completed parts of tasks 2.3 and 2.5.
 
-3\. Other work.
+2\. What I will complete is the rest of 2.3 and 2.5.
 
-1\. I added a country list, adjusted the World Bank API, added loading for network data, and fixed the imageView for the footprint.
+3\. There are no obstacles at this time.
 
-2\. I will try to complete my assignments for sprint 1.
+1\. I completed tasks 2.1, 2.2, part of 2.3 and 2.5.
 
-3\. Other work.
+2\. What I will complete is the rest of 2.3 and 2.5 and get 1.1 and 1.2 done as well.
 
-<br>
+3\. There are no obstacles at this time.
