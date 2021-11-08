@@ -91,3 +91,19 @@ For the project we will have the 3 following questions:
 2\. What I will complete is the rest of 2.3 and 2.5 and get 1.1 and 1.2 done as well.
 
 3\. There are no obstacles at this time.
+
+<br>
+
+### Abdulmalik Alotaibi
+
+1\. I synchronized the results of the user and the values from the World Bank with the footprint images and tested the code on different phone emulators.
+
+2\. I will fix the rest of the layout and test the code in different situations.
+
+3\. Outside work.
+
+1\. I added a country list, adjusted the World Bank API, added loading for network data, and fixed the imageView for the footprint.
+
+2\. I will try to complete my assignments for sprint 1.
+
+3\. Outside work.
