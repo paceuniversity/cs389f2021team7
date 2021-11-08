@@ -127,7 +127,7 @@ For the project we will have the 3 following questions:
 
 <br>
 
-**John Beltran**
+### John Beltran
 
 1\. Yesterday I worked on trying to figure out the formulas (3.4)
 
