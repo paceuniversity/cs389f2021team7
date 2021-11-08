@@ -107,3 +107,17 @@ For the project we will have the 3 following questions:
 2\. I will try to complete my assignments for sprint 1.
 
 3\. Outside work.
+
+### Emma Hilts
+
+1\.	I wrote most of my code for the Waste page I was assigned.
+ 
+2\.	Today I want to get my code and emulator working properly.
+
+3\.	My emulator is stopping because there may be some problems with my code.
+
+1\.	I made a place-holder icon until we decide on the final design. I was able to make the backgrounds for the pages discussed in sprint planning. I wrote most of my code for the Waste page (4.1 and 4.2) I was assigned. 
+
+2\.	I would like to have my code working properly for the Waste page (4.1, 4.2, and 4.4) and have the design completed. 
+
+3\.	Outside work and my emulator. Also, not understanding the coding aspect in android studio as well as I’d like.
