@@ -75,6 +75,7 @@ For the project we will have the 3 following questions:
 
 3\. What is currently impeding my progress is outside sources
 
+<br>
 
 ## Scrum 11/8/2021
 
@@ -108,6 +109,8 @@ For the project we will have the 3 following questions:
 
 3\. Outside work.
 
+<br>
+
 ### Emma Hilts
 
 1\.	I wrote most of my code for the Waste page I was assigned.
@@ -122,6 +125,8 @@ For the project we will have the 3 following questions:
 
 3\.	Outside work and my emulator. Also, not understanding the coding aspect in android studio as well as I’d like.
 
+<br>
+
 **John Beltran**
 
 1\. Yesterday I worked on trying to figure out the formulas (3.4)
@@ -130,8 +135,8 @@ For the project we will have the 3 following questions:
 
 3\. Obstacles for me is the the layout of the code as things seem to go everywhere
 
-4\. What I have accomplished is implementing the layout and the values for my page (3.1, 3.2)
+1\. What I have accomplished is implementing the layout and the values for my page (3.1, 3.2)
 
-5\. Finish implementing 3.4 and continue to work on 16.3
+2\. Finish implementing 3.4 and continue to work on 16.3
 
-6\. What is currently impeding my progress is the difficulty of the coding
+3\. What is currently impeding my progress is the difficulty of the coding
