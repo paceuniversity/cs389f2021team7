@@ -1,0 +1,56 @@
+package com.example.carbonfootprint;
+
+import java.io.Serializable;
+
+public class userInfo implements Serializable {
+    String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom;
+    Boolean locationCheck = false;
+
+    public Boolean getLocationCheck() {
+        return locationCheck;
+    }
+
+    public void setLocationCheck(Boolean locationCheck) {
+        this.locationCheck = locationCheck;
+    }
+
+    public String getAvgValueWB() {
+        return avgValueWB;
+    }
+
+    public void setAvgValueWB(String avgValueWB) {
+        this.avgValueWB = avgValueWB;
+    }
+
+    public String getLocationAvgTop() {
+        return locationAvgTop;
+    }
+
+    public void setLocationAvgTop(String locationAvgTop) {
+        this.locationAvgTop = locationAvgTop;
+    }
+
+    public String getLocationAvgBottom() {
+        return locationAvgBottom;
+    }
+
+    public void setLocationAvgBottom(String locationAvgBottom) {
+        this.locationAvgBottom = locationAvgBottom;
+    }
+
+    public String getDemoTotal() {
+        return demoTotal;
+    }
+
+    public void setDemoTotal(String demoTotal) {
+        this.demoTotal = demoTotal;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+}
