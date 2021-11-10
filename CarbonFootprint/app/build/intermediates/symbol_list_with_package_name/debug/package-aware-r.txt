@@ -1887,7 +1887,6 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
-id Title
 id acThermostat
 id acThermostatInput
 id accelerate
@@ -1966,7 +1965,6 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
-id back
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1978,14 +1976,12 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
-id button
 id button2
 id button3
 id button5
 id button6
 id buttonPanel
 id cache_measures
-id calculatorHome
 id cancel_button
 id carryVelocity
 id center
@@ -2098,9 +2094,10 @@ id frost
 id fuelOil
 id fuelOilInput
 id furnaceBoiler
+id getResults
+id getresultspage
 id ghost_view
 id ghost_view_holder
-id glassInput
 id glassText
 id gone
 id graph
@@ -2115,6 +2112,8 @@ id hideable
 id home
 id homeAsUp
 id homeEnergyBttn
+id homeenergybtn
+id homenergypreviousbutton
 id honorRequest
 id horizontal_only
 id houseHoldNumberInput
@@ -2147,7 +2146,6 @@ id linear
 id linearLayout
 id listMode
 id list_item
-id magazinesInput
 id magazinesText
 id maintenance
 id maintenanceAnswer
@@ -2175,7 +2173,6 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id message
-id metalInput
 id metalText
 id middle
 id mileage
@@ -2242,7 +2239,6 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
-id newspaperInput
 id newspaperText
 id next
 id noScroll
@@ -2253,7 +2249,6 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
-id numPeopleHousehold
 id numVehicles
 id off
 id on
@@ -2270,13 +2265,12 @@ id password_toggle
 id path
 id pathRelative
 id peekHeight
-id peopleText
 id percent
 id pin
-id plasticInput
 id plasticText
 id position
 id postLayout
+id previous
 id primaryHeat
 id primaryHeatSpinner
 id progress_circular
@@ -2287,7 +2281,6 @@ id radio
 id ratio
 id rectangles
 id reduce
-id reduceEmissionBttn
 id reduceEmissions
 id reduceLighting
 id reduceLightingInput
@@ -2427,6 +2420,8 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id transportationBttn
+id transportationbtn
+id transportationbutton
 id triangle
 id unchecked
 id uniform
@@ -2445,7 +2440,12 @@ id visible
 id visible_removing_fragment_view_tag
 id washingAndDrying
 id wasteBttn
-id wasteHeader
+id wasteSpinner1
+id wasteSpinner2
+id wasteSpinner3
+id wasteSpinner4
+id wasteSpinner5
+id wastebutton
 id west
 id wide
 id window
@@ -2619,10 +2619,14 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout toolbar_activity_home_energy
+layout toolbar_activity_initiate_calculator
+layout toolbar_activity_transportation
 layout toolbar_demo_calculator
 layout toolbar_demo_home
 layout toolbar_location
 layout toolbar_results
+layout toolbar_waste_activity
 layout waste_activity
 mipmap ic_launcher
 mipmap ic_launcher_round
@@ -2712,6 +2716,7 @@ string fab_transformation_sheet_behavior
 string fuelOil
 string furnaceBoiler
 string gcm_defaultSenderId
+string getResults
 string glassHint
 string glass_hint
 string glass_question

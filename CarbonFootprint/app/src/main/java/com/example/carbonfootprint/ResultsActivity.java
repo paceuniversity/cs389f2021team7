@@ -65,6 +65,7 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
     double doubleResult;
     double appAvgValue;
     boolean avgSpinnerCheck = false;
+    double emissionsTotalAfterReduce, estimatedWaste;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,10 +80,17 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
         textView2 = findViewById(R.id.textView2);
         textView5 = findViewById(R.id.textView5);
 
-        button = findViewById(R.id.button);
+        button = findViewById(R.id.homeenergybtn);
         textView = findViewById(R.id.textView);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(DemoCalculatorActivity.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(Waste.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(Transportation.CURRENT_USER_KEY);
+        emissionsTotalAfterReduce = getIntent().getDoubleExtra(Waste.CURRENT_USER_KEY, 0);
+        estimatedWaste = getIntent().getDoubleExtra(Waste.CURRENT_USER_KEY, 0);
+
+        demoTotalNumber = (float) (emissionsTotalAfterReduce + estimatedWaste);
+
+        Toast.makeText(ResultsActivity.this, currentUser.getDemoTotal(), Toast.LENGTH_LONG).show();
 
         footprintScaleDivisor = 21;
 
@@ -182,14 +190,12 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
 
                         avgArray2 = documentSnapshot.get("App Average Array");
                         avgArray1 = (ArrayList<Double>) avgArray2;
-//                        textView2.setText(testArray5.toString());
-//                        textView2.setText(String.valueOf(appAverage(testArray5)));
 
                         footprint.setVisibility(View.VISIBLE);
                         textView5.setText("App Average");
                         appAvgValue = (appAverage(avgArray1));
                         textView2.setText("The app average emissions (metric tons per capita) is " + String.format("%.2f", appAvgValue));
-                        footprintScale3 = (float) (appAvgValue/footprintScaleDivisor);
+                        footprintScale3 = (float) (14.123/footprintScaleDivisor);
                         footprint.setScaleX(footprintScale3);
                         footprint.setScaleY(footprintScale3);
                     }

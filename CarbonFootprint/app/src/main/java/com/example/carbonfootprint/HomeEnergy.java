@@ -18,11 +18,13 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
     double electricity;
     double fuelOil;
     double propane;
+    public static final String CURRENT_USER_KEY = "CurrentUserKey";
     Spinner primaryHeatSpinner;
     public static final String NATURAL = "com.example.carbonfootprint.NATURAL";
     public static final String ELECTRICITY = "com.example.carbonfootprint.ELECTRICITY";
     public static final String FUELOIL = "com.example.carbonfootprint.FUELOIL";
     public static final String PROPANE = "com.example.carbonfootprint.PROPANE";
+    userInfo currentUser;
 
     EditText naturalGasInput, electricityInput, fuelOilInput, propaneInput;
 
@@ -40,6 +42,15 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         primaryHeatSpinner = findViewById(R.id.primaryHeatSpinner);
         //Intent intent = getIntent();
         //int numberOfPeople = intent.getIntExtra(InitiateCalculator.HOUSEHOLDNUMBER, 0);
+
+        currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(Transportation.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
+        Intent intent = getIntent();
+        naturalGas = intent.getDoubleExtra(HomeEnergy.NATURAL, 0);
+        electricity = intent.getDoubleExtra(HomeEnergy.ELECTRICITY, 0);
+        fuelOil = intent.getDoubleExtra(HomeEnergy.FUELOIL, 0);
+        propane = intent.getDoubleExtra(HomeEnergy.PROPANE, 0);
 
 
         submit = (Button) findViewById(R.id.estimatedC02);
@@ -65,6 +76,7 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
                     intent.putExtra(ELECTRICITY, electricity);
                     intent.putExtra(FUELOIL, fuelOil);
                     intent.putExtra(PROPANE, propane);
+                    intent.putExtra(CURRENT_USER_KEY, currentUser);
                     startActivity(intent);
                 }
                 else if(primaryHeat.equals("Select an Option")){
@@ -74,6 +86,7 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
 
             }
         });
+
 
     }
     private void primaryHeatSource(){

@@ -24,7 +24,7 @@
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:layout_marginLeft="2dp"
-        android:backgroundTint="#418FDE"
+        android:backgroundTint="#48773E"
         android:onClick="LocationToHome"
         android:text="Ok"
         app:layout_constraintBottom_toBottomOf="parent"

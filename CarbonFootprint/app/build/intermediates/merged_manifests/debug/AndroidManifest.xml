@@ -31,10 +31,16 @@
             android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.Transportation"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name="com.example.carbonfootprint.HomeEnergy"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name="com.example.carbonfootprint.HomeEnergyReduceEmissions"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name="com.example.carbonfootprint.InitiateCalculator"
             android:exported="true" />

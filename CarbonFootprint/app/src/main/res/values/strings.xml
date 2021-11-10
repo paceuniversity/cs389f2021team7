@@ -45,36 +45,38 @@
     <string name="Heating">Heating</string>
     <string name="primeHeat">What is your primary Heat source?</string>
     <string name="naturalGas">Natural Gas</string>
-    <string name="utility">Utility</string>
+    <string name="utility"><u>Utility</u></string>
     <string name="description">Enter your average monthly bill or other data for each source of energy your household uses.</string>
-    <string name="averageBill">Enter your average monthly bill.</string>
+    <string name="averageBill">Enter your average monthly bill</string>
     <string name="electricity">Electricity</string>
     <string name="fuelOil">Fuel Oil</string>
     <string name="propane">Propane</string>
-    <string name="submit">Submit</string>
+    <string name="submit">Next</string>
     <string name="reduceEmissions">Reduce your Emissions</string>
-    <string name="heatingAndCooling">Heating and Cooling</string>
+    <string name="heatingAndCooling"><u>Heating and Cooling</u></string>
     <string name="acThermostat">How many degree\'s will you turn your thermostat up in the summer?</string>
     <string name="acThermostatInput">Enter the amount of degrees.</string>
     <string name="winterThermostat">How many degree\'s will you turn down your thermostat in the winter?</string>
     <string name="winterThermostatInput">Enter the amount of degrees.</string>
-    <string name="lighting">Reduce Lighting</string>
+    <string name="lighting"><u>Reduce Lighting</u></string>
     <string name="reduceLighting">How many light bulbs will you replace with ENERGY STAR light bulbs</string>
     <string name="reduceLightingInput">Enter the amount of light bulbs you will change.</string>
-    <string name="washingAndDrying">Washing and Drying</string>
+    <string name="washingAndDrying"><u>Washing and Drying</u></string>
     <string name="coldWater">How many loads of Laundry will you use cold water?</string>
     <string name="coldWaterInput">Enter the amount of loads.</string>
-    <string name="energyStar">ENERGY STAR Products</string>
+    <string name="energyStar"><u>ENERGY STAR Products</u></string>
     <string name="energyStarModels">Will you replace any of the following with ENERGY STAR models?</string>
     <string name="refrigerator">Refrigerator</string>
     <string name="furnaceBoiler">Furnace or Boiler</string>
     <string name="windows">Windows</string>
     <string name="reduceSubmit">Submit</string>
     <string name="calculatorHome">Calculator</string>
-    <string name="houseHoldNumber">Enter the amount of people in your house hold</string>
-    <string name="householdnumberInput">Enter the amount</string>
+    <string name="houseHoldNumber">How many people are in your household?</string>
+    <string name="householdnumberInput">Household Size</string>
     <string name="homeEnergy">Home Energy</string>
     <string name="waste">Waste</string>
+    <string name="getResults">Results</string>
+
 
     <string-array name="starProducts">
         <item>Select an Option</item>

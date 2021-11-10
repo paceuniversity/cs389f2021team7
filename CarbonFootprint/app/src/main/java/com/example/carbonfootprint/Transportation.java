@@ -8,9 +8,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,11 +26,18 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
     int emissionYes1, emissionYes2, emissionYes3;
     TextView emission1;
     userInfo currentUser;
+    Button next;
+    double emissionsTotalAfterReduce;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transportation);
+
+        currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
+//        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
+
+        emissionsTotalAfterReduce = getIntent().getDoubleExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY, 0);
 
         numVehicles = findViewById(R.id.numVehicles);
         maintenanceAnswer = findViewById(R.id.maintenanceAnswer);
@@ -37,7 +46,6 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
         timePeriod2 = findViewById(R.id.time2);
         timePeriod3 = findViewById(R.id.time3);
         reduceTimePeriod = findViewById(R.id.reduceTime);
-        emission1 = findViewById(R.id.emission1);
         numberOfVehicles();
         maintenanceAnswer();
         maintenanceRedo();
@@ -58,7 +66,27 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
         //emission1.setText(Integer.toString(emissionYes1));
         //emissionNo1 = (Double.parseDouble(milesNum1.getText().toString()) * 52) / ((Double.parseDouble(mileage1.getText().toString()) * 19.6 * 1.01) *.96);
 
-    
+        next = findViewById(R.id.next);
+//        next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String temp1 = milesNum1.getText().toString();
+//                String temp2 = mileage1.getText().toString();
+//                int value1 = 0;
+//                int value2 = 0;
+//                if ((temp1.length() > 0) && (temp2.length() > 0))
+//                {
+//                    value1 = Integer.parseInt(temp1);
+//                    value2 = Integer.parseInt(temp2);
+//                    emissionYes1 = (value1 * 52) / (value2 * 19);
+//                    Toast.makeText(Transportation.this, emissionYes1 + " ", Toast.LENGTH_LONG);
+////                    emission1.setText(Integer.toString(emissionYes1));
+//                }
+//            }
+//        });
+
+
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -81,17 +109,17 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
             public void afterTextChanged(Editable s) {
 
                 // Place the logic here for your output edittext
-                String temp1 = milesNum1.getText().toString();
-                String temp2 = mileage1.getText().toString();
-                int value1 = 0;
-                int value2 = 0;
-                if ((temp1.length() > 0) && (temp2.length() > 0))
-                {
-                    value1 = Integer.parseInt(temp1);
-                    value2 = Integer.parseInt(temp2);
-                    emissionYes1 = (value1 * 52) / (value2 * 19);
-                    emission1.setText(Integer.toString(emissionYes1));
-                }
+//                String temp1 = milesNum1.getText().toString();
+//                String temp2 = mileage1.getText().toString();
+//                int value1 = 0;
+//                int value2 = 0;
+//                if ((temp1.length() > 0) && (temp2.length() > 0))
+//                {
+//                    value1 = Integer.parseInt(temp1);
+//                    value2 = Integer.parseInt(temp2);
+//                    emissionYes1 = (value1 * 52) / (value2 * 19);
+//                    emission1.setText(Integer.toString(emissionYes1));
+//                }
             }
         });
 
@@ -193,12 +221,13 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
 
     }
 
-//    public void resultsPage(View view) {
-//        currentUser.setDemoTotal("15");
-//        Intent intent = new Intent(this, ResultsActivity.class);
-//        intent.putExtra(CURRENT_USER_KEY, currentUser);
-//        startActivity(intent);
-//    }
+    public void resultsPage(View view) {
+        currentUser.setDemoTotal("15.0");
+        Intent intent = new Intent(this, ResultsActivity.class);
+        currentUser.setDemoTotal("15.0");
+        intent.putExtra(CURRENT_USER_KEY, currentUser);
+        startActivity(intent);
+    }
 
 
 }

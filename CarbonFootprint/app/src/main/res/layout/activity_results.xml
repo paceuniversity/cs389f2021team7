@@ -35,12 +35,12 @@
         layout="@layout/toolbar_results" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/homeenergybtn"
         android:layout_width="0dp"
         android:layout_height="83dp"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
-        android:backgroundTint="#418FDE"
+        android:backgroundTint="#48773E"
         android:hint="@string/button"
         android:onClick="ResultstoDemoCalculator"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -65,11 +65,11 @@
         android:layout_height="83dp"
         android:layout_marginLeft="2dp"
         android:layout_marginRight="2dp"
-        android:backgroundTint="#418FDE"
+        android:backgroundTint="#48773E"
         android:hint="@string/button2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintStart_toEndOf="@+id/homeenergybtn" />
 
     <TextView
         android:id="@+id/textView2"
@@ -112,7 +112,7 @@
         android:backgroundTint="#FFCA28"
         android:hint="@string/button3"
         android:onClick="FirebaseAppAverage"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/homeenergybtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

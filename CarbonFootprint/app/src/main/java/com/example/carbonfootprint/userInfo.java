@@ -5,6 +5,23 @@ import java.io.Serializable;
 public class userInfo implements Serializable {
     String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom;
     Boolean locationCheck = false;
+    double homeEnergyTotal, wasteTotal;
+
+    public double getHomeEnergyTotal() {
+        return homeEnergyTotal;
+    }
+
+    public void setHomeEnergyTotal(double homeEnergyTotal) {
+        this.homeEnergyTotal = homeEnergyTotal;
+    }
+
+    public double getWasteTotal() {
+        return wasteTotal;
+    }
+
+    public void setWasteTotal(double wasteTotal) {
+        this.wasteTotal = wasteTotal;
+    }
 
     public Boolean getLocationCheck() {
         return locationCheck;

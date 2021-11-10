@@ -18,10 +18,16 @@
             android:exported="true" />
         <activity
             android:name=".Transportation"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".HomeEnergy"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
+        <activity
+            android:name=".HomeEnergyReduceEmissions"
+            android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan" />
         <activity
             android:name=".InitiateCalculator"
             android:exported="true" />

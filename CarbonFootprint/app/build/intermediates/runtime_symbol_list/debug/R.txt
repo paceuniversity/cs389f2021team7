@@ -1886,7 +1886,6 @@ int id SHOW_PROGRESS 0x7f09000a
 int id SYM 0x7f09000b
 int id TOP_END 0x7f09000c
 int id TOP_START 0x7f09000d
-int id Title 0x7f09000e
 int id acThermostat 0x7f09000f
 int id acThermostatInput 0x7f090010
 int id accelerate 0x7f090011
@@ -1965,7 +1964,6 @@ int id auto 0x7f090059
 int id autoComplete 0x7f09005a
 int id autoCompleteToEnd 0x7f09005b
 int id autoCompleteToStart 0x7f09005c
-int id back 0x7f09005d
 int id barrier 0x7f09005e
 int id baseline 0x7f09005f
 int id beginOnFirstDraw 0x7f090060
@@ -1977,14 +1975,12 @@ int id bounce 0x7f090065
 int id bounceBoth 0x7f090066
 int id bounceEnd 0x7f090067
 int id bounceStart 0x7f090068
-int id button 0x7f090069
 int id button2 0x7f09006a
 int id button3 0x7f09006b
 int id button5 0x7f09006c
 int id button6 0x7f09006d
 int id buttonPanel 0x7f09006e
 int id cache_measures 0x7f09006f
-int id calculatorHome 0x7f090070
 int id cancel_button 0x7f090071
 int id carryVelocity 0x7f090072
 int id center 0x7f090073
@@ -2097,9 +2093,10 @@ int id frost 0x7f0900dd
 int id fuelOil 0x7f0900de
 int id fuelOilInput 0x7f0900df
 int id furnaceBoiler 0x7f0900e0
+int id getResults 0x7f09024b
+int id getresultspage 0x7f090258
 int id ghost_view 0x7f0900e1
 int id ghost_view_holder 0x7f0900e2
-int id glassInput 0x7f0900e3
 int id glassText 0x7f0900e4
 int id gone 0x7f0900e5
 int id graph 0x7f0900e6
@@ -2114,6 +2111,8 @@ int id hideable 0x7f0900ee
 int id home 0x7f0900ef
 int id homeAsUp 0x7f0900f0
 int id homeEnergyBttn 0x7f0900f1
+int id homeenergybtn 0x7f090254
+int id homenergypreviousbutton 0x7f09024c
 int id honorRequest 0x7f0900f2
 int id horizontal_only 0x7f0900f3
 int id houseHoldNumberInput 0x7f0900f4
@@ -2146,7 +2145,6 @@ int id linear 0x7f09010e
 int id linearLayout 0x7f09010f
 int id listMode 0x7f090110
 int id list_item 0x7f090111
-int id magazinesInput 0x7f090112
 int id magazinesText 0x7f090113
 int id maintenance 0x7f090114
 int id maintenanceAnswer 0x7f090115
@@ -2174,7 +2172,6 @@ int id material_timepicker_ok_button 0x7f09012a
 int id material_timepicker_view 0x7f09012b
 int id material_value_index 0x7f09012c
 int id message 0x7f09012d
-int id metalInput 0x7f09012e
 int id metalText 0x7f09012f
 int id middle 0x7f090130
 int id mileage 0x7f090131
@@ -2241,7 +2238,6 @@ int id navigation_header_container 0x7f09016d
 int id never 0x7f09016e
 int id neverCompleteToEnd 0x7f09016f
 int id neverCompleteToStart 0x7f090170
-int id newspaperInput 0x7f090171
 int id newspaperText 0x7f090172
 int id next 0x7f090173
 int id noScroll 0x7f090174
@@ -2252,7 +2248,6 @@ int id north 0x7f090178
 int id notification_background 0x7f090179
 int id notification_main_column 0x7f09017a
 int id notification_main_column_container 0x7f09017b
-int id numPeopleHousehold 0x7f09017c
 int id numVehicles 0x7f09017d
 int id off 0x7f09017e
 int id on 0x7f09017f
@@ -2269,13 +2264,12 @@ int id password_toggle 0x7f090189
 int id path 0x7f09018a
 int id pathRelative 0x7f09018b
 int id peekHeight 0x7f09018c
-int id peopleText 0x7f09018d
 int id percent 0x7f09018e
 int id pin 0x7f09018f
-int id plasticInput 0x7f090190
 int id plasticText 0x7f090191
 int id position 0x7f090192
 int id postLayout 0x7f090193
+int id previous 0x7f090257
 int id primaryHeat 0x7f090194
 int id primaryHeatSpinner 0x7f090195
 int id progress_circular 0x7f090196
@@ -2286,7 +2280,6 @@ int id radio 0x7f09019a
 int id ratio 0x7f09019b
 int id rectangles 0x7f09019c
 int id reduce 0x7f09019d
-int id reduceEmissionBttn 0x7f09019e
 int id reduceEmissions 0x7f09019f
 int id reduceLighting 0x7f0901a0
 int id reduceLightingInput 0x7f0901a1
@@ -2426,6 +2419,8 @@ int id transition_position 0x7f090226
 int id transition_scene_layoutid_cache 0x7f090227
 int id transition_transform 0x7f090228
 int id transportationBttn 0x7f090229
+int id transportationbtn 0x7f090255
+int id transportationbutton 0x7f09024d
 int id triangle 0x7f09022a
 int id unchecked 0x7f09022b
 int id uniform 0x7f09022c
@@ -2444,7 +2439,12 @@ int id visible 0x7f090238
 int id visible_removing_fragment_view_tag 0x7f090239
 int id washingAndDrying 0x7f09023a
 int id wasteBttn 0x7f09023b
-int id wasteHeader 0x7f09023c
+int id wasteSpinner1 0x7f09024f
+int id wasteSpinner2 0x7f090250
+int id wasteSpinner3 0x7f090251
+int id wasteSpinner4 0x7f090252
+int id wasteSpinner5 0x7f090253
+int id wastebutton 0x7f09024e
 int id west 0x7f09023d
 int id wide 0x7f09023e
 int id window 0x7f09023f
@@ -2618,10 +2618,14 @@ int layout text_view_with_line_height_from_layout 0x7f0c0074
 int layout text_view_with_line_height_from_style 0x7f0c0075
 int layout text_view_with_theme_line_height 0x7f0c0076
 int layout text_view_without_line_height 0x7f0c0077
+int layout toolbar_activity_home_energy 0x7f0c007e
+int layout toolbar_activity_initiate_calculator 0x7f0c007d
+int layout toolbar_activity_transportation 0x7f0c007f
 int layout toolbar_demo_calculator 0x7f0c0078
 int layout toolbar_demo_home 0x7f0c0079
 int layout toolbar_location 0x7f0c007a
 int layout toolbar_results 0x7f0c007b
+int layout toolbar_waste_activity 0x7f0c0080
 int layout waste_activity 0x7f0c007c
 int mipmap ic_launcher 0x7f0d0000
 int mipmap ic_launcher_round 0x7f0d0001
@@ -2711,6 +2715,7 @@ int string fab_transformation_sheet_behavior 0x7f0f0051
 int string fuelOil 0x7f0f0052
 int string furnaceBoiler 0x7f0f0053
 int string gcm_defaultSenderId 0x7f0f0054
+int string getResults 0x7f0f00d8
 int string glassHint 0x7f0f0055
 int string glass_hint 0x7f0f0056
 int string glass_question 0x7f0f0057

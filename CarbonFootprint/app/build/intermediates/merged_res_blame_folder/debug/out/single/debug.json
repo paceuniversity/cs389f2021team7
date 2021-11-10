@@ -4,12 +4,20 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_results.xml"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_transportationbg.jpg.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\transportationbg.jpg"
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_home_energy.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_home_energy.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_home_energybg.png.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\home_energybg.png"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_waste_activity.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_waste_activity.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -18,6 +26,10 @@
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_results.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_results.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_greenfootbg.png.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\greenfootbg.png"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
@@ -44,16 +56,8 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_initiate_calculator.xml"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_greenfootbg.jpg.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\greenfootbg.jpg"
-    },
-    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_carbon_footprint_icon.png.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\carbon_footprint_icon.png"
-    },
-    {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_wastebg.jpg.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\wastebg.jpg"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_transportation.xml.flat",
@@ -84,20 +88,32 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_demo_calculator.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_demo_calculator.xml"
+    },
+    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_demo_calculator.xml.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_demo_calculator.xml"
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_transportation.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_transportation.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_wastebg.png.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\wastebg.png"
+    },
+    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_demo_home.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_demo_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_transportationbg.png.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\transportationbg.png"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_location.xml.flat",
@@ -108,8 +124,8 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_home_energybg.jpg.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\home_energybg.jpg"
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_initiate_calculator.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_initiate_calculator.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
