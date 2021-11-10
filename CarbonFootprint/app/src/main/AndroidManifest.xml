@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeEnergy">
         <activity
+            android:name=".Transportation"
+            android:exported="true" />
+        <activity
+            android:name=".InitiateCalculator"
+            android:exported="true" />
+        <activity
+            android:name=".HomeEnergyReduceEmissions"
+            android:exported="true" />
+        <activity
             android:name=".HomeEnergy"
             android:exported="true" />
         <activity
