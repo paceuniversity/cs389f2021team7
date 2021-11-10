@@ -32,6 +32,10 @@
     <string name="houseHoldNumber">Enter the amount of people in your house hold</string>
     <string name="householdnumberInput">Enter the amount</string>
     <string name="homeEnergy">Home Energy</string>
+<<<<<<< HEAD
+    <string name="transportation1">Transportation</string>
+=======
+>>>>>>> Patrick-Dwyer
     <string name="waste">Waste</string>
 
     <string-array name="starProducts">
