@@ -1,38 +1,83 @@
 <resources>
-    <string name="app_name">Carbon FootPrint</string>
+    <string name="app_name">Carbon Footprint</string>
+    <string name="editText">Write here</string>
+    <string name="button2">Next Page</string>
+    <string name="button3">Add Your Results to App Average</string>
+
+
+
+
+    <string name="wasteHeader">WASTE</string>
+    <string name="calculatorHeader">C02 CALCULATOR</string>
+    <string name="num_people_household">Number of people in your household</string>
+    <string name="number_of_people_in_your_household">Number of people in your household</string>
+    <string name="metalHint">Do you recycle aluminum? (y/n)</string>
+    <string name="glassHint">Do you recycle glass? (y/n)</string>
+    <string name="plasticHint">Do you recycle plastic? (y/n)</string>
+    <string name="newspaperHint">Do you recycle newspaper? (y/n)</string>
+    <string name="magazinesHint">Do you recycle magazines? (y/n)</string>
+    <string name="buttonEstimateCO2">Estimated CO2</string>
+    <string name="button">Button</string>
+    <string name="num_people">Enter the number of people in your household</string>
+    <string name="estimated_waste">Estimated Waste</string>
+    <string name="num_people_text">Number of People</string>
+    <string name="metal_text">Metal</string>
+    <string name="glass_text">Glass</string>
+    <string name="plastic_text">Plastic</string>
+    <string name="newspaper_text">Newspaper</string>
+    <string name="magazines_text">Magazines</string>
+    <string name="metal_hint">(y/n)</string>
+    <string name="glass_hint">(y/n)</string>
+    <string name="plastic_hint">(y/n)</string>
+    <string name="newspaper_hint">(y/n)</string>
+    <string name="magazines_hint">(y/n)</string>
+    <string name="people_text">How many people are in your household?</string>
+    <string name="metal_question">Do you recycle metal?</string>
+    <string name="glass_question">Do you recycle glass?</string>
+    <string name="plastic_question">Do you recycle plastic?</string>
+    <string name="newspaper_question">Do you recycle newspaper?</string>
+    <string name="magazines_question">Do you recycle magazines?</string>
+    <string name="space_hint" />
+    <string name="people_hint">1-100</string>
+    <string name="waste_button">Estimated Annual Waste</string>
+
+
     <string name="Heating">Heating</string>
     <string name="primeHeat">What is your primary Heat source?</string>
     <string name="naturalGas">Natural Gas</string>
-    <string name="utility">Utility</string>
+    <string name="utility"><u>Utility</u></string>
     <string name="description">Enter your average monthly bill or other data for each source of energy your household uses.</string>
-    <string name="averageBill">Enter your average monthly bill.</string>
+    <string name="averageBill">Enter your average monthly bill</string>
     <string name="electricity">Electricity</string>
     <string name="fuelOil">Fuel Oil</string>
     <string name="propane">Propane</string>
-    <string name="submit">Submit</string>
+    <string name="submit">Next</string>
     <string name="reduceEmissions">Reduce your Emissions</string>
-    <string name="heatingAndCooling">Heating and Cooling</string>
+    <string name="heatingAndCooling"><u>Heating and Cooling</u></string>
     <string name="acThermostat">How many degree\'s will you turn your thermostat up in the summer?</string>
     <string name="acThermostatInput">Enter the amount of degrees.</string>
     <string name="winterThermostat">How many degree\'s will you turn down your thermostat in the winter?</string>
     <string name="winterThermostatInput">Enter the amount of degrees.</string>
-    <string name="lighting">Reduce Lighting</string>
+    <string name="lighting"><u>Reduce Lighting</u></string>
     <string name="reduceLighting">How many light bulbs will you replace with ENERGY STAR light bulbs</string>
     <string name="reduceLightingInput">Enter the amount of light bulbs you will change.</string>
-    <string name="washingAndDrying">Washing and Drying</string>
+    <string name="washingAndDrying"><u>Washing and Drying</u></string>
     <string name="coldWater">How many loads of Laundry will you use cold water?</string>
     <string name="coldWaterInput">Enter the amount of loads.</string>
-    <string name="energyStar">ENERGY STAR Products</string>
+    <string name="energyStar"><u>ENERGY STAR Products</u></string>
     <string name="energyStarModels">Will you replace any of the following with ENERGY STAR models?</string>
     <string name="refrigerator">Refrigerator</string>
     <string name="furnaceBoiler">Furnace or Boiler</string>
     <string name="windows">Windows</string>
     <string name="reduceSubmit">Submit</string>
     <string name="calculatorHome">Calculator</string>
-    <string name="houseHoldNumber">Enter the amount of people in your house hold</string>
-    <string name="householdnumberInput">Enter the amount</string>
+    <string name="houseHoldNumber">How many people are in your household?</string>
+    <string name="householdnumberInput">Household Size</string>
     <string name="homeEnergy">Home Energy</string>
     <string name="waste">Waste</string>
+    <string name="getResults">Results</string>
+    <string name="submit1">Submit</string>
+
 
     <string-array name="starProducts">
         <item>Select an Option</item>

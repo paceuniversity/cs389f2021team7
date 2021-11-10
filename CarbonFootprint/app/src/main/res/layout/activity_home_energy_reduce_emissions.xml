@@ -4,7 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/home_energybg"
     tools:context=".HomeEnergyReduceEmissions">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_activity_home_energy" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
@@ -33,9 +38,12 @@
                 <TextView
                     android:id="@+id/reduceEmissions"
                     android:layout_width="wrap_content"
-                    android:layout_height="83dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="70dp"
                     android:text="@string/reduceEmissions"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -46,19 +54,23 @@
                     android:layout_width="0dp"
                     android:layout_height="49dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/heatingAndCooling"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/reduceEmissions" />
+                    app:layout_constraintTop_toBottomOf="@+id/reduceEmissions" />
 
                 <TextView
                     android:id="@+id/acThermostat"
                     android:layout_width="0dp"
-                    android:layout_height="87dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/acThermostat"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/heatingAndCooling" />
@@ -75,17 +87,21 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/acThermostat" />
 
                 <TextView
                     android:id="@+id/winterThermostat"
                     android:layout_width="match_parent"
-                    android:layout_height="82dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/winterThermostat"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/acThermostatInput" />
 
                 <EditText
@@ -100,28 +116,35 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/winterThermostat" />
 
                 <TextView
                     android:id="@+id/lighting"
                     android:layout_width="match_parent"
-                    android:layout_height="52dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/lighting"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/winterThermostatInput" />
 
                 <TextView
                     android:id="@+id/reduceLighting"
                     android:layout_width="match_parent"
-                    android:layout_height="67dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/reduceLighting"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/lighting" />
 
                 <EditText
@@ -143,23 +166,29 @@
                 <TextView
                     android:id="@+id/washingAndDrying"
                     android:layout_width="match_parent"
-                    android:layout_height="72dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/washingAndDrying"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/reduceLightingInput" />
 
                 <TextView
                     android:id="@+id/coldWater"
                     android:layout_width="match_parent"
-                    android:layout_height="66dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/coldWater"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/washingAndDrying" />
 
                 <EditText
@@ -174,17 +203,22 @@
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/coldWater" />
 
                 <TextView
                     android:id="@+id/energyStar"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="32dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/energyStar"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/coldWaterInput" />
 
                 <TextView
@@ -194,20 +228,23 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/refrigerator"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/energyStar" />
 
                 <Spinner
                     android:id="@+id/starEnergyRefrigerator"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:entries="@array/starProducts"
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/refrigerator" />
 
                 <TextView
@@ -215,22 +252,26 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/furnaceBoiler"
+                    android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/starEnergyRefrigerator" />
 
                 <Spinner
                     android:id="@+id/starEnergyFurnaceBoiler"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:entries="@array/starProducts"
                     android:minHeight="48dp"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/furnaceBoiler" />
 
                 <TextView
@@ -238,37 +279,78 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/windows"
+                    android:textColor="@color/black"
                     android:visibility="visible"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/starEnergyFurnaceBoiler" />
 
                 <Spinner
                     android:id="@+id/starEnergyWindow"
-                    android:layout_width="367dp"
-                    android:layout_height="39dp"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:layout_marginBottom="100dp"
+                    android:layout_marginBottom="16dp"
                     android:autofillHints="Select an option"
                     android:entries="@array/starProducts"
                     android:minHeight="100dp"
                     android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/getresultspage2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/window" />
 
                 <Button
-                    android:id="@+id/reduceEmissionBttn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/reduceSubmit"
+                    android:id="@+id/transportationbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="83dp"
+                    android:backgroundTint="#48773E"
+                    android:onClick="HomeReducetoTransportation"
+                    android:text="Transportation"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/starEnergyWindow" />
+                    app:layout_constraintStart_toEndOf="@+id/wastebutton" />
+
+                <Button
+                    android:id="@+id/wastebutton"
+                    android:layout_width="0dp"
+                    android:layout_height="83dp"
+                    android:backgroundTint="#48773E"
+                    android:onClick="HomeReducetoWaste"
+                    android:text="Waste"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/transportationbutton"
+                    app:layout_constraintStart_toEndOf="@+id/homenergypreviousbutton" />
+
+                <Button
+                    android:id="@+id/homenergypreviousbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="83dp"
+                    android:backgroundTint="#48773E"
+                    android:onClick="HomeReducetoHomeEnergy"
+                    android:text="Back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/wastebutton"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <Button
+                    android:id="@+id/getresultspage2"
+                    android:layout_width="0dp"
+                    android:layout_height="83dp"
+                    android:backgroundTint="#48773E"
+                    android:onClick="HomeReducetoResults"
+                    android:text="Results"
+                    app:layout_constraintBottom_toTopOf="@+id/wastebutton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 

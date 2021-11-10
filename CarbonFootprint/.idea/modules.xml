@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HomeEnergy.iml" filepath="$PROJECT_DIR$/.idea/modules/HomeEnergy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/HomeEnergy.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/HomeEnergy.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Carbon_Footprint.iml" filepath="$PROJECT_DIR$/.idea/modules/Carbon_Footprint.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Carbon_Footprint.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Carbon_Footprint.app.iml" />
     </modules>
   </component>
 </project>
