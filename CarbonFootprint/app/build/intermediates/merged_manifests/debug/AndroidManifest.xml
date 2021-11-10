@@ -22,14 +22,14 @@
             android:name="com.example.homeenergy.Transportation"
             android:exported="true" />
         <activity
-            android:name="com.example.homeenergy.InitiateCalculator"
-            android:exported="true" />
-        <activity
-            android:name="com.example.homeenergy.HomeEnergyReduceEmissions"
-            android:exported="true" />
-        <activity
-            android:name="com.example.homeenergy.HomeEnergy"
-            android:exported="true" />
+            android:name="com.example.homeenergy.MainActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

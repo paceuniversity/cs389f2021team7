@@ -39,7 +39,6 @@ public class InitiateCalculator extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(InitiateCalculator.this, Transportation.class);
                 startActivity(intent);
-
             }
         });
         waste.setOnClickListener(new View.OnClickListener() {
