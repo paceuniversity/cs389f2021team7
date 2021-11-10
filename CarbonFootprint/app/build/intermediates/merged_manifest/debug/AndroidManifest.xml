@@ -27,6 +27,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity
+            android:name="com.example.carbonfootprint.Waste"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.Transportation"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.HomeEnergy"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.InitiateCalculator"
+            android:exported="true" />
+        <activity
             android:name="com.example.carbonfootprint.DemoCalculatorActivity"
             android:exported="true" />
         <activity

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Source: https://dev.maxmind.com/geoip/legacy/codes-->
-<!--The CSV file from the source was converted to XML and modified to match the countries in the World Bank-->
+<!-- Source: https://dev.maxmind.com/geoip/legacy/codes -->
+<!-- A CSV file from the source was converted to XML and modified to match the countries in the World Bank -->
 
 <resources>
     <string-array name="countries_array">

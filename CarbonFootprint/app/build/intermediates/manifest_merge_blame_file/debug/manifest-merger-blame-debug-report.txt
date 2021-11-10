@@ -27,7 +27,7 @@
 17-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:22-76
 18
 19    <application
-19-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:9:5-34:19
+19-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:9:5-46:19
 20        android:allowBackup="true"
 20-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:10:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -46,84 +46,108 @@
 28-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-65
 29        <activity
 29-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:16:9-18:39
-30            android:name="com.example.carbonfootprint.DemoCalculatorActivity"
-30-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:17:13-51
+30            android:name="com.example.carbonfootprint.Waste"
+30-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:17:13-34
 31            android:exported="true" />
 31-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:18:13-36
 32        <activity
-32-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:19:9-27:20
-33            android:name="com.example.carbonfootprint.DemoHomeActivity"
-33-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:20:13-45
-34            android:exported="true" >
+32-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:19:9-21:39
+33            android:name="com.example.carbonfootprint.Transportation"
+33-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:20:13-43
+34            android:exported="true" />
 34-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:21:13-36
-35            <intent-filter>
-35-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:22:13-26:29
-36                <action android:name="android.intent.action.MAIN" />
-36-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:23:17-69
-36-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:23:25-66
-37
-38                <category android:name="android.intent.category.LAUNCHER" />
-38-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:25:17-77
-38-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:25:27-74
-39            </intent-filter>
-40        </activity>
+35        <activity
+35-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:22:9-24:39
+36            android:name="com.example.carbonfootprint.HomeEnergy"
+36-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:23:13-39
+37            android:exported="true" />
+37-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:24:13-36
+38        <activity
+38-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:25:9-27:39
+39            android:name="com.example.carbonfootprint.InitiateCalculator"
+39-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:26:13-47
+40            android:exported="true" />
+40-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:27:13-36
 41        <activity
 41-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:28:9-30:39
-42            android:name="com.example.carbonfootprint.LocationActivity"
-42-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:29:13-45
+42            android:name="com.example.carbonfootprint.DemoCalculatorActivity"
+42-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:29:13-51
 43            android:exported="true" />
 43-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:30:13-36
 44        <activity
-44-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:31:9-33:39
-45            android:name="com.example.carbonfootprint.ResultsActivity"
-45-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:32:13-44
-46            android:exported="true" />
+44-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:31:9-39:20
+45            android:name="com.example.carbonfootprint.DemoHomeActivity"
+45-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:32:13-45
+46            android:exported="true" >
 46-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:33:13-36
-47
-48        <service
-48-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:17:9-23:19
-49            android:name="com.google.firebase.components.ComponentDiscoveryService"
-49-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:18:13-84
-50            android:directBootAware="true"
-50-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
-51            android:exported="false" >
-51-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:19:13-37
-52            <meta-data
-52-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:20:13-22:85
-53                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-53-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:21:17-111
-54                android:value="com.google.firebase.components.ComponentRegistrar" />
-54-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:22:17-82
-55        </service>
-56
-57        <provider
-57-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
-58            android:name="com.google.firebase.provider.FirebaseInitProvider"
-58-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
-59            android:authorities="com.example.carbonfootprint.firebaseinitprovider"
-59-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
-60            android:directBootAware="true"
-60-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
-61            android:exported="false"
-61-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
-62            android:initOrder="100" />
-62-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
-63
-64        <activity
-64-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
-65            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-65-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
-66            android:exported="false"
-66-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
-67            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-67-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+47            <intent-filter>
+47-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:34:13-38:29
+48                <action android:name="android.intent.action.MAIN" />
+48-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:35:17-69
+48-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:35:25-66
+49
+50                <category android:name="android.intent.category.LAUNCHER" />
+50-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:37:17-77
+50-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:37:27-74
+51            </intent-filter>
+52        </activity>
+53        <activity
+53-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:40:9-42:39
+54            android:name="com.example.carbonfootprint.LocationActivity"
+54-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:41:13-45
+55            android:exported="true" />
+55-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:42:13-36
+56        <activity
+56-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:43:9-45:39
+57            android:name="com.example.carbonfootprint.ResultsActivity"
+57-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:44:13-44
+58            android:exported="true" />
+58-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:45:13-36
+59
+60        <service
+60-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:17:9-23:19
+61            android:name="com.google.firebase.components.ComponentDiscoveryService"
+61-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:18:13-84
+62            android:directBootAware="true"
+62-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+63            android:exported="false" >
+63-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:19:13-37
+64            <meta-data
+64-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:20:13-22:85
+65                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+65-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:21:17-111
+66                android:value="com.google.firebase.components.ComponentRegistrar" />
+66-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:22:17-82
+67        </service>
 68
-69        <meta-data
-69-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
-70            android:name="com.google.android.gms.version"
-70-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
-71            android:value="@integer/google_play_services_version" />
-71-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
-72    </application>
-73
-74</manifest>
+69        <provider
+69-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+70            android:name="com.google.firebase.provider.FirebaseInitProvider"
+70-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+71            android:authorities="com.example.carbonfootprint.firebaseinitprovider"
+71-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+72            android:directBootAware="true"
+72-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+73            android:exported="false"
+73-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+74            android:initOrder="100" />
+74-->[com.google.firebase:firebase-common:20.0.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+75
+76        <activity
+76-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+77            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+77-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+78            android:exported="false"
+78-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+79            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+79-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+80
+81        <meta-data
+81-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+82            android:name="com.google.android.gms.version"
+82-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+83            android:value="@integer/google_play_services_version" />
+83-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Abdulmalik Alotaibi\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+84    </application>
+85
+86</manifest>

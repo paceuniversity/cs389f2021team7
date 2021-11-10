@@ -58,7 +58,7 @@ public class DemoHomeActivity extends AppCompatActivity implements Serializable 
 
 
     public void demoCalculatorPage(View view) {
-        Intent intent = new Intent(this, DemoCalculatorActivity.class);
+        Intent intent = new Intent(this, InitiateCalculator.class);
         intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);
     }
