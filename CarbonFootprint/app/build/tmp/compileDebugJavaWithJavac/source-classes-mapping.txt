@@ -4,5 +4,16 @@ com/example/homeenergy/Transportation.java
  com.example.homeenergy.Transportation$2
 com/example/homeenergy/BuildConfig.java
  com.example.homeenergy.BuildConfig
+com/example/homeenergy/HomeEnergyReduceEmissions.java
+ com.example.homeenergy.HomeEnergyReduceEmissions
+ com.example.homeenergy.HomeEnergyReduceEmissions$1
 com/example/homeenergy/MainActivity.java
  com.example.homeenergy.MainActivity
+com/example/homeenergy/HomeEnergy.java
+ com.example.homeenergy.HomeEnergy
+ com.example.homeenergy.HomeEnergy$1
+com/example/homeenergy/InitiateCalculator.java
+ com.example.homeenergy.InitiateCalculator
+ com.example.homeenergy.InitiateCalculator$1
+ com.example.homeenergy.InitiateCalculator$2
+ com.example.homeenergy.InitiateCalculator$3

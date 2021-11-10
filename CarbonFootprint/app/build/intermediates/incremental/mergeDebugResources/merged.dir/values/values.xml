@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools" xmlns:ns2="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="Utility">
+        <item>Select an Option</item>
+        <item>Natural Gas</item>
+        <item>Electricity</item>
+        <item>Fuel Oil</item>
+        <item>Propane</item>
+    </string-array>
     <string-array name="answer">
         <item>Yes</item>
         <item>No</item>
@@ -12,6 +19,11 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+    </string-array>
+    <string-array name="starProducts">
+        <item>Select an Option</item>
+        <item>Will Do</item>
+        <item>Will not do</item>
     </string-array>
     <string-array name="time">
         <item>Per Year</item>
@@ -1174,6 +1186,7 @@
     <item quantity="one"><ns2:g id="count">%d</ns2:g> new notification</item>
     <item quantity="other"><ns2:g id="count">%d</ns2:g> new notifications</item>
   </plurals>
+    <string name="Heating">Heating</string>
     <string name="Reduce_Weekly_Yearly">Whether miles is based on week or years</string>
     <string name="Weekly_or_Yearly">Whether time period is weekly or yearly</string>
     <string name="_0">0</string>
@@ -1204,24 +1217,41 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">HomeEnergy</string>
+    <string name="acThermostat">How many degree\'s will you turn your thermostat up in the summer?</string>
+    <string name="acThermostatInput">Enter the amount of degrees.</string>
+    <string name="app_name">Carbon FootPrint</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="averageBill">Enter your average monthly bill.</string>
     <string name="back_to_home_energy">Back to Home Energy</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an action that a user of an accessibility service can perform to expand a bottomsheet halfway to its full height. [CHAR LIMIT=25]" name="bottomsheet_action_expand_halfway">Expand halfway</string>
+    <string name="calculatorHome">Calculator</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="coldWater">How many loads of Laundry will you use cold water?</string>
+    <string name="coldWaterInput">Enter the amount of loads.</string>
     <string name="continue_to_waste">Continue to Waste</string>
+    <string name="description">Enter your average monthly bill or other data for each source of energy your household uses.</string>
+    <string name="electricity">Electricity</string>
+    <string name="energyStar">ENERGY STAR Products</string>
+    <string name="energyStarModels">Will you replace any of the following with ENERGY STAR models?</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="fuelOil">Fuel Oil</string>
+    <string name="furnaceBoiler">Furnace or Boiler</string>
+    <string name="heatingAndCooling">Heating and Cooling</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="homeEnergy">Home Energy</string>
+    <string name="houseHoldNumber">Enter the amount of people in your house hold</string>
+    <string name="householdnumberInput">Enter the amount</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="item_view_role_description">Tab</string>
+    <string name="lighting">Reduce Lighting</string>
     <string name="maintenance">Will you perform regular maintenance on your vehicle(s)?</string>
     <string name="maintenanceQuestion">Have you performed regular maintenance on your vehicle(s)?</string>
     <string name="material_clock_display_divider" translatable="false">:</string>
@@ -1283,19 +1313,35 @@
     <string description="a11y string to indicate this button switches the user to choosing a day [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_day_selection">Tap to switch to selecting a day</string>
     <string description="a11y string to indicate this button changes the input mode to a text field [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_text_input_mode">Switch to text input mode</string>
     <string description="a11y string to indicate this button switches the user to choosing a year [CHAR_LIMIT=NONE]" name="mtrl_picker_toggle_to_year_selection">Tap to switch to selecting a year</string>
+    <string name="naturalGas">Natural Gas</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="primeHeat">What is your primary Heat source?</string>
+    <string name="propane">Propane</string>
+    <string name="reduceEmissions">Reduce your Emissions</string>
+    <string name="reduceLighting">How many light bulbs will you replace with ENERGY STAR light bulbs</string>
+    <string name="reduceLightingInput">Enter the amount of light bulbs you will change.</string>
     <string name="reduceMile">Reduce the number of miles you drive by:</string>
+    <string name="reduceSubmit">Submit</string>
+    <string name="refrigerator">Refrigerator</string>
     <string name="replaceOne">Replace vehicle 1 with one that gets:</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="submit">Submit</string>
     <string name="transportation">Transportation</string>
+    <string name="transportation1">Transportation</string>
+    <string name="utility">Utility</string>
     <string name="vehicleText">How many vehicles does your household have?</string>
+    <string name="washingAndDrying">Washing and Drying</string>
+    <string name="waste">Waste</string>
     <string name="whether_miles_is_based_on_week_or_years">Whether miles is based on week or years</string>
     <string name="whether_you_will_perform_maintenance">Whether you will perform Maintenance</string>
+    <string name="windows">Windows</string>
+    <string name="winterThermostat">How many degree\'s will you turn down your thermostat in the winter?</string>
+    <string name="winterThermostatInput">Enter the amount of degrees.</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="AndroidThemeColorAccentYellow" ns1:ignore="NewApi">

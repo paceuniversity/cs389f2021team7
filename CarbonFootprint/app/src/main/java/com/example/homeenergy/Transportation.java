@@ -13,12 +13,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.homeenergy.R;
+
 public class Transportation extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     Spinner numVehicles, maintenanceAnswer, maintenanceRedo, timePeriod, reduceTimePeriod;
     EditText mileage1, milesNum1, mileage2, milesNum2, mileage3, milesNum3;
     int emissionYes1, emissionYes2, emissionYes3;
-    TextView emission1, emission2, emission3;
+    TextView emission1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,8 +33,6 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
         timePeriod = findViewById(R.id.time);
         reduceTimePeriod = findViewById(R.id.reduceTime);
         emission1 = findViewById(R.id.emission1);
-        emission2 = findViewById(R.id.emission2);
-        emission3 = findViewById(R.id.emission3);
         numberOfVehicles();
         maintenanceAnswer();
         maintenanceRedo();
@@ -53,7 +53,7 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
         //emission1.setText(Integer.toString(emissionYes1));
         //emissionNo1 = (Double.parseDouble(milesNum1.getText().toString()) * 52) / ((Double.parseDouble(mileage1.getText().toString()) * 19.6 * 1.01) *.96);
 
-    
+
     }
 
     @SuppressLint("SetTextI18n")
@@ -176,3 +176,4 @@ public class Transportation extends AppCompatActivity implements AdapterView.OnI
 
     }
 }
+

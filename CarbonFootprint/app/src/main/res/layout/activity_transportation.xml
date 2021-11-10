@@ -88,7 +88,7 @@
 
         <Spinner
             android:id="@+id/time3"
-            android:layout_width="130dp"
+            android:layout_width="135dp"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
@@ -154,7 +154,7 @@
 
         <Spinner
             android:id="@+id/time2"
-            android:layout_width="130dp"
+            android:layout_width="135dp"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
@@ -344,7 +344,7 @@
 
         <Spinner
             android:id="@+id/reduceTime"
-            android:layout_width="130dp"
+            android:layout_width="135dp"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
@@ -478,7 +478,7 @@
 
         <Spinner
             android:id="@+id/time"
-            android:layout_width="130dp"
+            android:layout_width="135dp"
             android:layout_height="48dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="8dp"
