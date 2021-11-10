@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/home_energybg"
+    tools:context=".HomeEnergyReduceEmissions">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="344dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            tools:ignore="NotSibling,UselessParent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/reduceEmissions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="83dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/reduceEmissions"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/heatingAndCooling"
+                    android:layout_width="0dp"
+                    android:layout_height="49dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/heatingAndCooling"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/reduceEmissions" />
+
+                <TextView
+                    android:id="@+id/acThermostat"
+                    android:layout_width="0dp"
+                    android:layout_height="87dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/acThermostat"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/heatingAndCooling" />
+
+                <EditText
+                    android:id="@+id/acThermostatInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/acThermostatInput"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/acThermostat" />
+
+                <TextView
+                    android:id="@+id/winterThermostat"
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/winterThermostat"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/acThermostatInput" />
+
+                <EditText
+                    android:id="@+id/winterThermostatInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="84dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/winterThermostatInput"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/winterThermostat" />
+
+                <TextView
+                    android:id="@+id/lighting"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/lighting"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/winterThermostatInput" />
+
+                <TextView
+                    android:id="@+id/reduceLighting"
+                    android:layout_width="match_parent"
+                    android:layout_height="67dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/reduceLighting"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/lighting" />
+
+                <EditText
+                    android:id="@+id/reduceLightingInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="99dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/reduceLightingInput"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    android:textSize="17dp"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/reduceLighting" />
+
+                <TextView
+                    android:id="@+id/washingAndDrying"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/washingAndDrying"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/reduceLightingInput" />
+
+                <TextView
+                    android:id="@+id/coldWater"
+                    android:layout_width="match_parent"
+                    android:layout_height="66dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/coldWater"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/washingAndDrying" />
+
+                <EditText
+                    android:id="@+id/coldWaterInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:ems="10"
+                    android:hint="@string/coldWaterInput"
+                    android:inputType="number"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/coldWater" />
+
+                <TextView
+                    android:id="@+id/energyStar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/energyStar"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/coldWaterInput" />
+
+                <TextView
+                    android:id="@+id/refrigerator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/refrigerator"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/energyStar" />
+
+                <Spinner
+                    android:id="@+id/starEnergyRefrigerator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:entries="@array/starProducts"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/refrigerator" />
+
+                <TextView
+                    android:id="@+id/furnaceBoiler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/furnaceBoiler"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/starEnergyRefrigerator" />
+
+                <Spinner
+                    android:id="@+id/starEnergyFurnaceBoiler"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:entries="@array/starProducts"
+                    android:minHeight="48dp"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/furnaceBoiler" />
+
+                <TextView
+                    android:id="@+id/window"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/windows"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintTop_toBottomOf="@id/starEnergyFurnaceBoiler" />
+
+                <Spinner
+                    android:id="@+id/starEnergyWindow"
+                    android:layout_width="367dp"
+                    android:layout_height="39dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="100dp"
+                    android:autofillHints="Select an option"
+                    android:entries="@array/starProducts"
+                    android:minHeight="100dp"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/window" />
+
+                <Button
+                    android:id="@+id/reduceEmissionBttn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/reduceSubmit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/starEnergyWindow" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
