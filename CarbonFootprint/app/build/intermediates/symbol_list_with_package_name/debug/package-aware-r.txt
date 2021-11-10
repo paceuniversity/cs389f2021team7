@@ -2452,7 +2452,6 @@ layout abc_tooltip
 layout activity_home_energy
 layout activity_home_energy_reduce_emissions
 layout activity_initiate_calculator
-layout activity_main
 layout activity_transportation
 layout custom_dialog
 layout design_bottom_navigation_item
@@ -2687,7 +2686,6 @@ string search_menu_title
 string status_bar_notification_info_overflow
 string submit
 string transportation
-string transportation1
 string utility
 string vehicleText
 string washingAndDrying

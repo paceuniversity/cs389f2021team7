@@ -11,7 +11,7 @@
 9-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:5:5-33:19
+11-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:5:5-24:19
 12        android:allowBackup="true"
 12-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -52,23 +52,6 @@
 31-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:22:13-39
 32            android:exported="true" />
 32-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:23:13-36
-33        <activity
-33-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:24:9-32:20
-34            android:name="com.example.homeenergy.MainActivity"
-34-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:25:13-41
-35            android:exported="true" >
-35-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:26:13-36
-36            <intent-filter>
-36-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:27:13-31:29
-37                <action android:name="android.intent.action.MAIN" />
-37-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:28:17-69
-37-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:28:25-66
-38
-39                <category android:name="android.intent.category.LAUNCHER" />
-39-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:30:17-77
-39-->C:\Users\patri\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:30:27-74
-40            </intent-filter>
-41        </activity>
-42    </application>
-43
-44</manifest>
+33    </application>
+34
+35</manifest>

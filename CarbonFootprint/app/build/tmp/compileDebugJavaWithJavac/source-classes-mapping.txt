@@ -7,8 +7,6 @@ com/example/homeenergy/BuildConfig.java
 com/example/homeenergy/HomeEnergyReduceEmissions.java
  com.example.homeenergy.HomeEnergyReduceEmissions
  com.example.homeenergy.HomeEnergyReduceEmissions$1
-com/example/homeenergy/MainActivity.java
- com.example.homeenergy.MainActivity
 com/example/homeenergy/HomeEnergy.java
  com.example.homeenergy.HomeEnergy
  com.example.homeenergy.HomeEnergy$1
