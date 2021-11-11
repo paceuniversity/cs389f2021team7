@@ -23,6 +23,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,6 +64,7 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
     double appTotal;
     double appAverageValue;
     double doubleResult;
+    String stringResult;
     double appAvgValue;
     boolean avgSpinnerCheck = false;
     double emissionsTotalAfterReduce, estimatedWaste;
@@ -85,14 +87,9 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
         button = findViewById(R.id.homeenergybtn);
         textView = findViewById(R.id.textView);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(Waste.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(Transportation.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
 
-        emissionsTotalAfterReduce = getIntent().getDoubleExtra(Waste.CURRENT_USER_KEY, 0);
-//        estimatedWaste = getIntent().getDoubleExtra(Waste.CURRENT_USER_KEY, 0);
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
 
 
         estimatedWaste = currentUser.getWasteTotal();
@@ -104,8 +101,6 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
 
 
         demoTotalNumber = (float) ((emissionsTotalAfterReduce + estimatedWaste + transportationTotal)/householdNumber);
-
-
 
         footprintScaleDivisor = 21;
 
@@ -167,7 +162,8 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
                 if (documentSnapshot.exists()) {
                     avgArray2 = documentSnapshot.get("App Average Array");
                     avgArray1 = (ArrayList<Double>) avgArray2;
-                    doubleResult = Double.valueOf(currentUser.getDemoTotal());
+                    stringResult = String.format("%.2f", demoTotalNumber);
+                    doubleResult = Double.valueOf(stringResult);
                     avgArray1.add(doubleResult);
                     dataToSave.put("App Average Array", avgArray1);
                     documentReference.set(dataToSave);
@@ -207,9 +203,14 @@ public class ResultsActivity extends AppCompatActivity implements AdapterView.On
 
                         footprint.setVisibility(View.VISIBLE);
                         textView5.setText("App Average");
+
+
+                        appAvgValue = appTotal/avgArray1.size();
+
                         appAvgValue = (appAverage(avgArray1));
+
                         textView2.setText("The app average emissions (metric tons per capita) is " + String.format("%.2f", appAvgValue));
-                        footprintScale3 = (float) (14.123/footprintScaleDivisor);
+                        footprintScale3 = (float) (appAvgValue/footprintScaleDivisor);
                         footprint.setScaleX(footprintScale3);
                         footprint.setScaleY(footprintScale3);
                     }

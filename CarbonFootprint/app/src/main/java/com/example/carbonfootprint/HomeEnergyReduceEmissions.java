@@ -28,19 +28,20 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_energy_reduce_emissions);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergy.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
+
 
         acThermostatInput = (EditText) findViewById(R.id.acThermostatInput);
         winterThermostatInput = (EditText) findViewById(R.id.winterThermostatInput);
         reduceLightingInput = (EditText) findViewById(R.id.reduceLightingInput);
         coldWaterInput = (EditText) findViewById(R.id.coldWaterInput);
 
-        Intent intent = getIntent();
 
-        naturalGas = intent.getDoubleExtra(HomeEnergy.NATURAL, 0);
-        electricity = intent.getDoubleExtra(HomeEnergy.ELECTRICITY, 0);
-        fuelOil = intent.getDoubleExtra(HomeEnergy.FUELOIL, 0);
-        propane = intent.getDoubleExtra(HomeEnergy.PROPANE, 0);
+        naturalGas = currentUser.getNaturalGas();
+        electricity = currentUser.getElectricity();
+        fuelOil = currentUser.getFuelOil();
+        propane = currentUser.getPropane();
 
 
         spinnerRefridge = findViewById(R.id.starEnergyRefrigerator);
@@ -68,8 +69,6 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     public void HomeReducetoTransportation(View view) {
         homeEnergyCalculation();
         Intent intent = new Intent(HomeEnergyReduceEmissions.this, Transportation.class);
-
-        intent.putExtra(CURRENT_USER_KEY, emissionsTotalAfterReduce);
         currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
         intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);

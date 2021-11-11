@@ -34,13 +34,8 @@ public class Transportation extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transportation);
 
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(Waste.CURRENT_USER_KEY);
-
-        //currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
-//        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
 
         //emissionsTotalAfterReduce = getIntent().getDoubleExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY, 0);
 

@@ -40,18 +40,16 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         fuelOilInput = (EditText)  findViewById(R.id.fuelOilInput);
         propaneInput = (EditText) findViewById(R.id.propaneInput);
         primaryHeatSpinner = findViewById(R.id.primaryHeatSpinner);
-        //Intent intent = getIntent();
-        //int numberOfPeople = intent.getIntExtra(InitiateCalculator.HOUSEHOLDNUMBER, 0);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(Transportation.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(Waste.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
+
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
+
         Intent intent = getIntent();
-        naturalGas = intent.getDoubleExtra(HomeEnergy.NATURAL, 0);
-        electricity = intent.getDoubleExtra(HomeEnergy.ELECTRICITY, 0);
-        fuelOil = intent.getDoubleExtra(HomeEnergy.FUELOIL, 0);
-        propane = intent.getDoubleExtra(HomeEnergy.PROPANE, 0);
+        naturalGas = currentUser.getNaturalGas();
+        electricity = currentUser.getElectricity();
+        fuelOil = currentUser.getFuelOil();
+        propane = currentUser.getPropane();
 
 
         submit = (Button) findViewById(R.id.estimatedC02);
@@ -73,10 +71,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
 
 
                     Intent intent = new Intent(HomeEnergy.this, HomeEnergyReduceEmissions.class);
-                    intent.putExtra(NATURAL, naturalGas);
-                    intent.putExtra(ELECTRICITY, electricity);
-                    intent.putExtra(FUELOIL, fuelOil);
-                    intent.putExtra(PROPANE, propane);
+                    currentUser.setNaturalGas(naturalGas);
+                    currentUser.setElectricity(electricity);
+                    currentUser.setFuelOil(fuelOil);
+                    currentUser.setPropane(propane);
                     intent.putExtra(CURRENT_USER_KEY, currentUser);
                     startActivity(intent);
                 }

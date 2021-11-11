@@ -64,7 +64,9 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginStart="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="UselessParent">
 
@@ -92,23 +94,27 @@
                     android:id="@+id/description"
                     android:layout_width="0dp"
                     android:layout_height="78dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/description"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/naturalGasInput"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="@+id/naturalGasInput"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/utility" />
 
                 <TextView
                     android:id="@+id/naturalGas"
                     android:layout_width="0dp"
                     android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/naturalGas"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/description"
-                    app:layout_constraintStart_toStartOf="@+id/description"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/description" />
 
                 <EditText
@@ -131,13 +137,14 @@
                     android:id="@+id/electricity"
                     android:layout_width="0dp"
                     android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="32dp"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/electricity"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/naturalGasInput"
-                    app:layout_constraintHorizontal_bias="0.41"
-                    app:layout_constraintStart_toStartOf="@+id/naturalGasInput"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/naturalGasInput" />
 
                 <EditText
@@ -158,24 +165,28 @@
                     android:id="@+id/fuelOil"
                     android:layout_width="0dp"
                     android:layout_height="20dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="32dp"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/fuelOil"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="@+id/electricityInput"
-                    app:layout_constraintStart_toStartOf="@+id/electricityInput"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/electricityInput" />
 
                 <EditText
                     android:id="@+id/fuelOilInput"
                     android:layout_width="0dp"
                     android:layout_height="78dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/fuelOil"
-                    app:layout_constraintStart_toStartOf="@+id/fuelOil"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/fuelOil" />
 
                 <TextView
@@ -196,12 +207,14 @@
                     android:id="@+id/propaneInput"
                     android:layout_width="0dp"
                     android:layout_height="78dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
                     android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number"
                     android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="@+id/propane"
-                    app:layout_constraintStart_toStartOf="@+id/propane"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/propane" />
 
                 <Button

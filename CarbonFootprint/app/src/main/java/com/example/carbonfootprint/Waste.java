@@ -43,10 +43,8 @@ public class Waste extends AppCompatActivity implements Serializable
         setContentView(R.layout.waste_activity);
 //        numPeopleInput = (EditText) findViewById(R.id.numPeopleHousehold);
 
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(Transportation.CURRENT_USER_KEY);
 
 
         emissionsTotalAfterReduce = getIntent().getDoubleExtra(HomeEnergyReduceEmissions.CURRENT_USER_KEY, 0);

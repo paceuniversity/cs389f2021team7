@@ -42,11 +42,13 @@ public class DemoHomeActivity extends AppCompatActivity implements Serializable 
 
 
         if (getIntent().getSerializableExtra(LocationActivity.CURRENT_USER_KEY) != null) {
-            currentUser = (userInfo) getIntent().getSerializableExtra(LocationActivity.CURRENT_USER_KEY);
+            currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
         }
 
         if (getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY) != null) {
-            currentUser = (userInfo) getIntent().getSerializableExtra(InitiateCalculator.CURRENT_USER_KEY);
+            currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
         }
 
 

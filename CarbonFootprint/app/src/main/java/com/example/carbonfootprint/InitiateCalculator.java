@@ -51,8 +51,8 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
 
         getResults = findViewById(R.id.getResults);
 
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
 
         WBdata();
 

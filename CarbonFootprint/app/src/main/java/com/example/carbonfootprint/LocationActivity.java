@@ -44,8 +44,9 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
 
         spinner2.setOnItemSelectedListener(this);
 
+//        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
 
-        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
         currentUser.setCountryCode("JP");
 

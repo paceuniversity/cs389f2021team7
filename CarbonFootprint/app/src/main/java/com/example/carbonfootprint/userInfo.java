@@ -5,8 +5,40 @@ import java.io.Serializable;
 public class userInfo implements Serializable {
     String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom;
     Boolean locationCheck = false;
-    double homeEnergyTotal, wasteTotal;
+    double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane;
     int householdNumber, transportationTotal;
+
+    public double getNaturalGas() {
+        return naturalGas;
+    }
+
+    public void setNaturalGas(double naturalGas) {
+        this.naturalGas = naturalGas;
+    }
+
+    public double getElectricity() {
+        return electricity;
+    }
+
+    public void setElectricity(double electricity) {
+        this.electricity = electricity;
+    }
+
+    public double getFuelOil() {
+        return fuelOil;
+    }
+
+    public void setFuelOil(double fuelOil) {
+        this.fuelOil = fuelOil;
+    }
+
+    public double getPropane() {
+        return propane;
+    }
+
+    public void setPropane(double propane) {
+        this.propane = propane;
+    }
 
     public int getTransportationTotal() {
         return transportationTotal;
