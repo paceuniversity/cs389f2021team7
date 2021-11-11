@@ -48,7 +48,7 @@ Carbon Footprint
 
 **Sprint 2**
 
-* Sprint planning
+* [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=1423412642)
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
