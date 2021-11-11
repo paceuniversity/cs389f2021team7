@@ -43,8 +43,9 @@ Carbon Footprint
   *	US28- World Bank API
   *	US32- Location
 * [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md)
-* Sprint demo - video and apk (or equivalent)
-* Sprint retrospective
+* [Sprint Video](https://www.youtube.com/watch?v=CpiFhYsV5oE)
+* Sprint APK
+* [Sprint retrospective](https://docs.google.com/document/d/1b3YcnP_HLUQtEyepAiROG4nNJR5wtBvart0WrHG0xto/edit?pli=1)
 
 **Sprint 2**
 
