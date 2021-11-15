@@ -195,3 +195,19 @@ For the project we will have the 3 following questions:
 
 <br>
 
+### John Beltran
+
+1\. Yesterday I implemented buttons and arranged some apects of my layout.
+
+2\. Today I will try to implement the code for the equations to work with the button.
+
+3\. Current obstacles are... my layout and my time.
+
+1\. I fixed the layout somewhat.
+
+2\. Try to finish my tasks.
+
+3\. My lack of knowledge.
+
+<br>
+
