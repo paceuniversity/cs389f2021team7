@@ -140,3 +140,24 @@ For the project we will have the 3 following questions:
 2\. Finish implementing 3.4 and continue to work on 16.3
 
 3\. What is currently impeding my progress is the difficulty of the coding
+
+<br>
+
+## Scrum 11/15/2021
+
+### Abdulmalik Alotaibi
+
+
+1\. I managed to store, retrieve, and delete data using SQLite.
+
+2\. I will work on implementing RecyclerView with the stored data.
+
+3\. Outside work.
+
+1\. Getting SQLite to work.
+
+2\. Try to finish the past results page.
+
+3\. Outside work.
+
+<br>
