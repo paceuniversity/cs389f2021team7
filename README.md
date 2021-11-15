@@ -49,7 +49,7 @@ Carbon Footprint
 **Sprint 2**
 
 * [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=1423412642)
-* [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md)
+* [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md#scrum-11152021)
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
 
