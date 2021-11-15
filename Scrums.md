@@ -161,3 +161,20 @@ For the project we will have the 3 following questions:
 3\. Outside work.
 
 <br>
+
+### Emma Hilts 
+
+
+1\.	Yesterday I started to think about the design for the welcome screen.
+
+2\.	Today I want to have a definite design in mind for the welcome screen.
+
+3\.	I am sick and I have work in other classes. 
+
+1\.	Since the last scrum, I have tried to figure out the design for our welcome screen.
+
+2\.	I want to have implemented the design in android studio.
+
+3\.	I am sick and outside work. 
+
+<br>
