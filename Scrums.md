@@ -140,3 +140,21 @@ For the project we will have the 3 following questions:
 2\. Finish implementing 3.4 and continue to work on 16.3
 
 3\. What is currently impeding my progress is the difficulty of the coding
+
+
+## Scrum 11/15/2021
+
+### Patrick Dwyer
+
+1\. Yesturday I figured out what I'm going to do for each task that I have to do.
+
+2\. Today I will try to implement my plans.
+
+3\. There are no current obstacles.
+
+1\. This is our first Scrum of Sprint 2.
+
+2\. I will complete as many tasks as I can before the next scrum. 
+
+3\. There are no obstacles that are impeding my progress so far. 
+
