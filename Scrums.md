@@ -230,18 +230,19 @@ For the project we will have the 3 following questions:
 
 <br>
 
-### Patrick Dwyer
+### Emma Hilts 
 
-1\. Yesturday I started the implementation of the spinner for the units.
 
-2\. Today I will finish the spinner with the units and start the suggestion page for each of the emissions.
+1\.	Yesterday, I was looking at images for the welcome screen. 
 
-3\. Other school work and practice. 
+2\.	Today, I will work to complete more tasks. 
 
-1\. I acomplished the implementation of the units spinner.
+3\.	Outside work.
 
-2\. I will complete the task that involve the implementation of getting a good score, avg. score, or a bad score for the emission of home energy. 
+1\.	Since the last scrum, I have been working on the design of the welcome screen.
 
-3\. Other school work and practice.
+2\.	By the next scrum I hope to have the welcome screen code written and have started my next task.
+
+3\.	Outside work and sickness. 
 
 <br>
