@@ -211,3 +211,21 @@ For the project we will have the 3 following questions:
 
 <br>
 
+## Scrum 11/17/2021
+
+### Abdulmalik Alotaibi
+
+
+1\. I pretty much finished implementing the RecyclerView with SQLite.
+
+2\. I will start the settings page.
+
+3\. Outside work.
+
+1\. I adjusted the SQLite helper functions and implemented SQLite with RecyclerView.
+
+2\. Finish the settings page and try to finalize the past results page.
+
+3\. Outside work.
+
+<br>
