@@ -63,6 +63,7 @@ array maintenanceAnswer
 array numVehicles
 array starProducts
 array time
+array units
 attr SharedValue
 attr SharedValueId
 attr actionBarDivider
@@ -1996,6 +1997,7 @@ id chip1
 id chip2
 id chip3
 id chip_group
+id chooseUnits
 id chronometer
 id circle_center
 id clear_text

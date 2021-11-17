@@ -78,6 +78,12 @@
     <string name="getResults">Results</string>
     <string name="submit1">Submit</string>
 
+    <string-array name="units">
+        <item>Select an Option</item>
+        <item>Miles</item>
+        <item>Kilometers</item>
+    </string-array>
+
 
     <string-array name="starProducts">
         <item>Select an Option</item>

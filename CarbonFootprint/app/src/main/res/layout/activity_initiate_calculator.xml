@@ -51,9 +51,10 @@
         android:id="@+id/homeEnergyBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="112dp"
         android:text="@string/homeEnergy"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/houseHoldNumberInput" />
 
@@ -61,9 +62,10 @@
         android:id="@+id/wasteBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="44dp"
         android:text="@string/waste"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/transportationBttn" />
 
@@ -71,9 +73,20 @@
         android:id="@+id/transportationBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="44dp"
         android:text="@string/transportation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/homeEnergyBttn" />
+
+    <Spinner
+        android:id="@+id/chooseUnits"
+        android:layout_width="193dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:entries="@array/units"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/houseHoldNumberInput" />
 </androidx.constraintlayout.widget.ConstraintLayout>
