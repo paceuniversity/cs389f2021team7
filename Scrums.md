@@ -280,18 +280,3 @@ For the project we will have the 3 following questions:
 
 <br>
 
-### Patrick Dwyer
-
-1\. Yesturday I started the implementation of the spinner for the units.
-
-2\. Today I will finish the spinner with the units and start the suggestion page for each of the emissions.
-
-3\. Other school work and practice. 
-
-1\. I acomplished the implementation of the units spinner.
-
-2\. I will complete the task that involve the implementation of getting a good score, avg. score, or a bad score for the emission of home energy. 
-
-3\. Other school work and practice. 
-
-<br>
