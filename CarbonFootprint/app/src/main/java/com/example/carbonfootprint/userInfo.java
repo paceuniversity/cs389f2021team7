@@ -3,7 +3,7 @@ package com.example.carbonfootprint;
 import java.io.Serializable;
 
 public class userInfo implements Serializable {
-    String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom;
+    String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom, units;
     Boolean locationCheck = false;
     double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane;
     int householdNumber, transportationTotal;
@@ -119,4 +119,8 @@ public class userInfo implements Serializable {
     public void setCountryCode(String countryCode) {
         this.countryCode = countryCode;
     }
+
+    public String getUnits(){ return units;}
+
+    public void setUnits(String units){this.units = units;}
 }
