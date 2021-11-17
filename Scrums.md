@@ -247,18 +247,19 @@ For the project we will have the 3 following questions:
 
 <br>
 
-### Patrick Dwyer
+### John Beltran
 
-1\. Yesturday I started the implementation of the spinner for the units.
 
-2\. Today I will finish the spinner with the units and start the suggestion page for each of the emissions.
+1\. Yesterday I finished fixing some codee errors.
 
-3\. Other school work and practice. 
+2\. Start fixing other errors relateed to the button
 
-1\. I acomplished the implementation of the units spinner.
+3\. Other classes
 
-2\. I will complete the task that involve the implementation of getting a good score, avg. score, or a bad score for the emission of home energy. 
+1\. I have been working on how to make my screen easier to read/use.
 
-3\. Other school work and practice. 
+2\. By the next scrum, i hope to have button and tthe funtions working properly
+
+3\. My lack of knowledge, again.
 
 <br>
