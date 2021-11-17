@@ -195,6 +195,41 @@ For the project we will have the 3 following questions:
 
 <br>
 
+### John Beltran
+
+1\. Yesterday I implemented buttons and arranged some apects of my layout.
+
+2\. Today I will try to implement the code for the equations to work with the button.
+
+3\. Current obstacles are... my layout and my time.
+
+1\. I fixed the layout somewhat.
+
+2\. Try to finish my tasks.
+
+3\. My lack of knowledge.
+
+<br>
+
+## Scrum 11/17/2021
+
+### Abdulmalik Alotaibi
+
+
+1\. I pretty much finished implementing the RecyclerView with SQLite.
+
+2\. I will start the settings page.
+
+3\. Outside work.
+
+1\. I adjusted the SQLite helper functions and implemented SQLite with RecyclerView.
+
+2\. Finish the settings page and try to finalize the past results page.
+
+3\. Outside work.
+
+<br>
+
 ### Patrick Dwyer
 
 1\. Yesturday I started the implementation of the spinner for the units.
@@ -207,5 +242,6 @@ For the project we will have the 3 following questions:
 
 2\. I will complete the task that involve the implementation of getting a good score, avg. score, or a bad score for the emission of home energy. 
 
-3\. Other school work and practice. 
+3\. Other school work and practice.
 
+<br>
