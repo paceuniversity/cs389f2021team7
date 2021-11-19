@@ -55,9 +55,21 @@ public class Waste extends AppCompatActivity implements Serializable
         wasteArrayList.add("N");
 
 
+
+
+
+
+
+
         getresultspage = findViewById(R.id.getresultspage);
+        homeenergybtn = findViewById(R.id.homeenergybtn);
+        transportationbtn = findViewById(R.id.transportationbtn);
 
         Spinner wasteSpinner1 = findViewById(R.id.wasteSpinner1);
+        Spinner wasteSpinner2 = findViewById(R.id.wasteSpinner2);
+        Spinner wasteSpinner3 = findViewById(R.id.wasteSpinner3);
+        Spinner wasteSpinner4 = findViewById(R.id.wasteSpinner4);
+        Spinner wasteSpinner5 = findViewById(R.id.wasteSpinner5);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wasteArrayList);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         wasteSpinner1.setAdapter(adapter1);
@@ -65,11 +77,16 @@ public class Waste extends AppCompatActivity implements Serializable
         wasteSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (adapterView.getItemAtPosition(i) == "Y") {
+                if(adapterView.getItemAtPosition(i) == "Y/N"){
+                    wasteSpinner2.setEnabled(false);
+                }
+                else if (adapterView.getItemAtPosition(i) == "Y") {
                     metal = -89.38;
+                    wasteSpinner2.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     metal = 0;
+                    wasteSpinner2.setEnabled(true);
                 }
 
             }
@@ -81,19 +98,27 @@ public class Waste extends AppCompatActivity implements Serializable
         });
 
 
-        Spinner wasteSpinner2 = findViewById(R.id.wasteSpinner2);
+
+        wasteSpinner2.setEnabled(false);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wasteArrayList);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         wasteSpinner2.setAdapter(adapter2);
 
+
+
         wasteSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (adapterView.getItemAtPosition(i) == "Y") {
+                if(adapterView.getItemAtPosition(i) == "Y/N"){
+                    wasteSpinner3.setEnabled(false);
+                }
+                else if (adapterView.getItemAtPosition(i) == "Y") {
                     glass = -25.39;
+                    wasteSpinner3.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     glass = 0;
+                    wasteSpinner3.setEnabled(true);
                 }
 
             }
@@ -104,7 +129,8 @@ public class Waste extends AppCompatActivity implements Serializable
             }
         });
 
-        Spinner wasteSpinner3 = findViewById(R.id.wasteSpinner3);
+
+        wasteSpinner3.setEnabled(false);
         ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wasteArrayList);
         adapter3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         wasteSpinner3.setAdapter(adapter3);
@@ -112,11 +138,16 @@ public class Waste extends AppCompatActivity implements Serializable
         wasteSpinner3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (adapterView.getItemAtPosition(i) == "Y") {
+                if(adapterView.getItemAtPosition(i) == "Y/N"){
+                    wasteSpinner4.setEnabled(false);
+                }
+                else if (adapterView.getItemAtPosition(i) == "Y") {
                     plastic = -35.56;
+                    wasteSpinner4.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     plastic = 0;
+                    wasteSpinner4.setEnabled(true);
                 }
             }
 
@@ -126,7 +157,8 @@ public class Waste extends AppCompatActivity implements Serializable
             }
         });
 
-        Spinner wasteSpinner4 = findViewById(R.id.wasteSpinner4);
+
+        wasteSpinner4.setEnabled(false);
         ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wasteArrayList);
         adapter4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         wasteSpinner4.setAdapter(adapter4);
@@ -134,11 +166,16 @@ public class Waste extends AppCompatActivity implements Serializable
         wasteSpinner4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (adapterView.getItemAtPosition(i) == "Y") {
+                if(adapterView.getItemAtPosition(i) == "Y/N"){
+                    wasteSpinner5.setEnabled(false);
+                }
+                else if (adapterView.getItemAtPosition(i) == "Y") {
                     newspaper = -113.14;
+                    wasteSpinner5.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     newspaper = 0;
+                    wasteSpinner5.setEnabled(true);
                 }
             }
 
@@ -148,7 +185,8 @@ public class Waste extends AppCompatActivity implements Serializable
             }
         });
 
-        Spinner wasteSpinner5 = findViewById(R.id.wasteSpinner5);
+
+        wasteSpinner5.setEnabled(false);
         ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wasteArrayList);
         adapter5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         wasteSpinner5.setAdapter(adapter5);
@@ -156,11 +194,22 @@ public class Waste extends AppCompatActivity implements Serializable
         wasteSpinner5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (adapterView.getItemAtPosition(i) == "Y") {
+                if(adapterView.getItemAtPosition(i) == "Y/N"){
+                    homeenergybtn.setEnabled(false);
+                    transportationbtn.setEnabled(false);
+                    getresultspage.setEnabled(false);
+                }
+                else if (adapterView.getItemAtPosition(i) == "Y") {
                     magazines = -27.46;
+                    homeenergybtn.setEnabled(true);
+                    transportationbtn.setEnabled(true);
+                    getresultspage.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     magazines = 0;
+                    homeenergybtn.setEnabled(true);
+                    transportationbtn.setEnabled(true);
+                    getresultspage.setEnabled(true);
                 }
             }
 
@@ -212,8 +261,10 @@ public class Waste extends AppCompatActivity implements Serializable
 //            showToast(String.valueOf(estimatedWaste) + "tons per year");
 //        });
 
-        homeenergybtn = findViewById(R.id.homeenergybtn);
-        transportationbtn = findViewById(R.id.transportationbtn);
+
+        homeenergybtn.setEnabled(false);
+        transportationbtn.setEnabled(false);
+        getresultspage.setEnabled(false);
 
 
 

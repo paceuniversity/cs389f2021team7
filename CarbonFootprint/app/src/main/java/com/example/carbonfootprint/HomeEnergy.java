@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,7 +43,11 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         fuelOilInput = (EditText)  findViewById(R.id.fuelOilInput);
         propaneInput = (EditText) findViewById(R.id.propaneInput);
         primaryHeatSpinner = findViewById(R.id.primaryHeatSpinner);
-
+        submit = (Button) findViewById(R.id.estimatedC02);
+        submit.setEnabled(false);
+        electricityInput.setEnabled(false);
+        fuelOilInput.setEnabled(false);
+        propaneInput.setEnabled(false);
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
@@ -52,13 +59,108 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         propane = currentUser.getPropane();
 
 
-        submit = (Button) findViewById(R.id.estimatedC02);
         primaryHeatSource();
+
+
+
+        primaryHeatSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String primaryHeat = primaryHeatSpinner.getSelectedItem().toString();
+                if(primaryHeat.equals("Select an Option")){
+                    naturalGasInput.setEnabled(false);
+                }
+                else{
+                    naturalGasInput.setEnabled(true);
+                }
+            }
+
+           @Override
+           public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+        naturalGasInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                electricityInput.setEnabled(false);
+                else
+                    electricityInput.setEnabled(true);
+            }
+        });
+
+        electricityInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                fuelOilInput.setEnabled(false);
+                else
+                    fuelOilInput.setEnabled(true);
+            }
+        });
+        fuelOilInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                propaneInput.setEnabled(false);
+                else
+                    propaneInput.setEnabled(true);
+            }
+        });
+        propaneInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                submit.setEnabled(false);
+                else
+                    submit.setEnabled(true);
+            }
+        });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String primaryHeat = primaryHeatSpinner.getSelectedItem().toString();
-                if(primaryHeat.equals("Natural Gas") || primaryHeat.equals("Electricity") || primaryHeat.equals("Fuel Oil") || primaryHeat.equals("Propane")) {
+
                     naturalGas = Integer.valueOf(naturalGasInput.getText().toString());
                     electricity = Integer.valueOf(electricityInput.getText().toString());
                     fuelOil = Integer.valueOf(fuelOilInput.getText().toString());
@@ -77,10 +179,8 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
                     currentUser.setPropane(propane);
                     intent.putExtra(CURRENT_USER_KEY, currentUser);
                     startActivity(intent);
-                }
-                else if(primaryHeat.equals("Select an Option")){
-                    Toast.makeText(HomeEnergy.this, "You need to select a primary heat source", Toast.LENGTH_LONG).show();
-                }
+
+
 
 
             }

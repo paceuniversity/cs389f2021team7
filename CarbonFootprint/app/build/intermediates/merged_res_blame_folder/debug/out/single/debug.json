@@ -4,12 +4,12 @@
         "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_waste_activity.xml.flat",
-        "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_waste_activity.xml"
-    },
-    {
         "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_results.xml.flat",
         "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_results.xml"
+    },
+    {
+        "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_waste_activity.xml.flat",
+        "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_waste_activity.xml"
     },
     {
         "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_greenfootbg.png.flat",
@@ -22,6 +22,10 @@
     {
         "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_transportationbg.png.flat",
         "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\drawable\\transportationbg.png"
+    },
+    {
+        "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_suggestions.xml.flat",
+        "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_suggestions.xml"
     },
     {
         "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
@@ -138,6 +142,10 @@
     {
         "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_home_energy.xml.flat",
         "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_home_energy.xml"
+    },
+    {
+        "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_suggestions.xml.flat",
+        "source": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_suggestions.xml"
     },
     {
         "merged": "C:\\Users\\patri\\Team7ProjectGitHub\\cs389f2021team7\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",

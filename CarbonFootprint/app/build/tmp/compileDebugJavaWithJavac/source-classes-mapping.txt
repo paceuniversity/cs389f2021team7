@@ -1,6 +1,11 @@
 com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy
  com.example.carbonfootprint.HomeEnergy$1
+ com.example.carbonfootprint.HomeEnergy$2
+ com.example.carbonfootprint.HomeEnergy$3
+ com.example.carbonfootprint.HomeEnergy$4
+ com.example.carbonfootprint.HomeEnergy$5
+ com.example.carbonfootprint.HomeEnergy$6
 com/example/carbonfootprint/InitiateCalculator.java
  com.example.carbonfootprint.InitiateCalculator
  com.example.carbonfootprint.InitiateCalculator$1
@@ -9,6 +14,8 @@ com/example/carbonfootprint/InitiateCalculator.java
  com.example.carbonfootprint.InitiateCalculator$4
  com.example.carbonfootprint.InitiateCalculator$5
  com.example.carbonfootprint.InitiateCalculator$6
+com/example/carbonfootprint/Suggestions.java
+ com.example.carbonfootprint.Suggestions
 com/example/carbonfootprint/userInfo.java
  com.example.carbonfootprint.userInfo
 com/example/carbonfootprint/LocationActivity.java

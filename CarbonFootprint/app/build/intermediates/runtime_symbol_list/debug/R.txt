@@ -2538,6 +2538,7 @@ int layout activity_home_energy_reduce_emissions 0x7f0c001f
 int layout activity_initiate_calculator 0x7f0c0020
 int layout activity_location 0x7f0c0021
 int layout activity_results 0x7f0c0022
+int layout activity_suggestions 0x7f0c0081
 int layout activity_transportation 0x7f0c0023
 int layout custom_dialog 0x7f0c0024
 int layout design_bottom_navigation_item 0x7f0c0025
@@ -2630,6 +2631,7 @@ int layout toolbar_demo_calculator 0x7f0c007b
 int layout toolbar_demo_home 0x7f0c007c
 int layout toolbar_location 0x7f0c007d
 int layout toolbar_results 0x7f0c007e
+int layout toolbar_suggestions 0x7f0c0082
 int layout toolbar_waste_activity 0x7f0c007f
 int layout waste_activity 0x7f0c0080
 int mipmap ic_launcher 0x7f0d0000
