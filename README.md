@@ -78,3 +78,5 @@ Carbon Footprint
 [<img src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-built_white.png" height="75" width="200">](https://firebase.google.com/ "FireBase API")
 [<img src="https://data.worldbank.org/assets/images/logo-wb-header-en.svg" height="75" width="250">](https://data.worldbank.org "The World Bank API")
 [<img src="https://www.sqlite.org/images/sqlite370_banner.gif" height="75">](https://sqlite.org/index.html "SQLite")
+[<img src="https://camo.githubusercontent.com/9ee52cd684d0ae62106ce74c7aae5fc9cec43a123c76ef307b5b8a0c24e89eed/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f64657369676e2f666561747572655f677261706869635f736d616c6c65722e706e67" height="75">](https://github.com/PhilJay/MPAndroidChart "MPAndroidChart")
+
