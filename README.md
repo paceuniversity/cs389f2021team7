@@ -17,7 +17,7 @@ Carbon Footprint
 
 **App description**
 
-Carbon Footprint is a CO2 emissions calculator and tracker. It takes the information you entered in the calculator and compares it to data from the World Bank in your location. It also shows your results by category in charts and gives you suggestions on how to improve your results. Carbon Footprint can display your past results in a list and a line chart to show how your results have changed over time.
+Carbon Footprint is a CO2 emissions calculator and tracker. It takes the information you entered in the calculator and compares it to data from the World Bank in your location and to the app average. It also shows your results by category in charts and gives you suggestions on how to improve your results. Carbon Footprint can display your past results in a list and a line chart to show how your results have changed over time.
 
 **[Idea Proposal](https://docs.google.com/document/d/1Fk-VKhIbE_qc_xFK_vEKdeaBNxjz769r/edit?usp=sharing&ouid=111998902265795988399&rtpof=true&sd=true)**
 
