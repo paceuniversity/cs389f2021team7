@@ -8,6 +8,6 @@
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-    app:title="Suggestions">
+    app:title="Home Energy Suggestions">
 
 </androidx.appcompat.widget.Toolbar>

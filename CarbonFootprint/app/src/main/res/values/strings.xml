@@ -82,6 +82,13 @@
         <item>Kilometers</item>
     </string-array>
 
+    <string-array name="HomeEnergySuggestions">
+        <item>Select an Option</item>
+        <item>Will do</item>
+        <item>Already do</item>
+        <item>Will not do</item>
+    </string-array>
+
 
     <string-array name="starProducts">
         <item>Select an Option</item>

@@ -6,166 +6,166 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="21"
-8-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml
+8-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="31" />
-9-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml
+9-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:5:5-67
-11-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-12-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:6:5-81
-12-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:6:22-78
+12-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:6:5-81
+12-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:6:22-78
 13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:7:5-79
-13-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:7:22-76
+13-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:7:22-76
 14
 15    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
 16    <!-- <uses-sdk android:minSdkVersion="14" /> -->
 17    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-17-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:5-79
-17-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:22-76
+17-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:5-79
+17-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:13:22-76
 18
 19    <application
-19-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:9:5-55:19
+19-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:9:5-55:19
 20        android:allowBackup="true"
-20-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:10:9-35
+20-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:10:9-35
 21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\1c82df0e58fbd0ba966b0ae0d34659c1\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+21-->[androidx.core:core:1.5.0] C:\Users\patri\.gradle\caches\transforms-3\1c82df0e58fbd0ba966b0ae0d34659c1\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
 22        android:debuggable="true"
 23        android:icon="@mipmap/ic_launcher"
-23-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:11:9-43
+23-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:11:9-43
 24        android:label="@string/app_name"
-24-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:12:9-41
+24-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:12:9-41
 25        android:roundIcon="@mipmap/ic_launcher_round"
-25-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:13:9-54
+25-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:13:9-54
 26        android:supportsRtl="true"
-26-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:14:9-35
+26-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:14:9-35
 27        android:testOnly="true"
 28        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-28-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-65
+28-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-65
 29        <activity
-29-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:16:9-18:39
+29-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:16:9-18:39
 30            android:name="com.example.carbonfootprint.Suggestions"
-30-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:17:13-40
+30-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:17:13-40
 31            android:exported="true" />
-31-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:18:13-36
+31-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:18:13-36
 32        <activity
-32-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:19:9-21:39
+32-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:19:9-21:39
 33            android:name="com.example.carbonfootprint.Waste"
-33-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:20:13-34
+33-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:20:13-34
 34            android:exported="true" />
-34-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:21:13-36
+34-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:21:13-36
 35        <activity
-35-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:22:9-25:68
+35-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:22:9-25:68
 36            android:name="com.example.carbonfootprint.Transportation"
-36-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:23:13-43
+36-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:23:13-43
 37            android:exported="true"
-37-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:24:13-36
+37-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:24:13-36
 38            android:windowSoftInputMode="stateVisible|adjustPan" />
-38-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:25:13-65
+38-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:25:13-65
 39        <activity
-39-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:26:9-29:68
+39-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:26:9-29:68
 40            android:name="com.example.carbonfootprint.HomeEnergy"
-40-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:27:13-39
+40-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:27:13-39
 41            android:exported="true"
-41-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:28:13-36
+41-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:28:13-36
 42            android:windowSoftInputMode="stateVisible|adjustPan" />
-42-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:29:13-65
+42-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:29:13-65
 43        <activity
-43-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:30:9-33:68
+43-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:30:9-33:68
 44            android:name="com.example.carbonfootprint.HomeEnergyReduceEmissions"
-44-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:31:13-54
+44-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:31:13-54
 45            android:exported="true"
-45-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:32:13-36
+45-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:32:13-36
 46            android:windowSoftInputMode="stateVisible|adjustPan" />
-46-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:33:13-65
+46-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:33:13-65
 47        <activity
-47-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:34:9-36:39
+47-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:34:9-36:39
 48            android:name="com.example.carbonfootprint.InitiateCalculator"
-48-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:35:13-47
+48-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:35:13-47
 49            android:exported="true" />
-49-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:36:13-36
+49-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:36:13-36
 50        <activity
-50-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:37:9-39:39
+50-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:37:9-39:39
 51            android:name="com.example.carbonfootprint.DemoCalculatorActivity"
-51-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:38:13-51
+51-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:38:13-51
 52            android:exported="true" />
-52-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:39:13-36
+52-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:39:13-36
 53        <activity
-53-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:40:9-48:20
+53-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:40:9-48:20
 54            android:name="com.example.carbonfootprint.DemoHomeActivity"
-54-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:41:13-45
+54-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:41:13-45
 55            android:exported="true" >
-55-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:42:13-36
+55-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:42:13-36
 56            <intent-filter>
-56-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:43:13-47:29
+56-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:43:13-47:29
 57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:44:17-69
-57-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:44:25-66
+57-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:44:17-69
+57-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:44:25-66
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:46:17-77
-59-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:46:27-74
+59-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:46:17-77
+59-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:46:27-74
 60            </intent-filter>
 61        </activity>
 62        <activity
-62-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:49:9-51:39
+62-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:49:9-51:39
 63            android:name="com.example.carbonfootprint.LocationActivity"
-63-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:50:13-45
+63-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:50:13-45
 64            android:exported="true" />
-64-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:51:13-36
+64-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:51:13-36
 65        <activity
-65-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:52:9-54:39
+65-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:52:9-54:39
 66            android:name="com.example.carbonfootprint.ResultsActivity"
-66-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:53:13-44
+66-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:53:13-44
 67            android:exported="true" />
-67-->C:\Users\patri\Team7ProjectGitHub\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:54:13-36
+67-->C:\Users\patri\Desktop\Team7Project\cs389f2021team7\CarbonFootprint\app\src\main\AndroidManifest.xml:54:13-36
 68
 69        <service
-69-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:17:9-23:19
+69-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:17:9-23:19
 70            android:name="com.google.firebase.components.ComponentDiscoveryService"
-70-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:18:13-84
+70-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:18:13-84
 71            android:directBootAware="true"
-71-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+71-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:35:13-43
 72            android:exported="false" >
-72-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:19:13-37
+72-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:19:13-37
 73            <meta-data
-73-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:20:13-22:85
+73-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:20:13-22:85
 74                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-74-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:21:17-111
+74-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:21:17-111
 75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[com.google.firebase:firebase-firestore:24.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:22:17-82
+75-->[com.google.firebase:firebase-firestore:24.0.0] C:\Users\patri\.gradle\caches\transforms-3\05fbe8963e44ea9f547f1683254005fb\transformed\jetified-firebase-firestore-24.0.0\AndroidManifest.xml:22:17-82
 76        </service>
 77
 78        <provider
-78-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+78-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
 79            android:name="com.google.firebase.provider.FirebaseInitProvider"
-79-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+79-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:27:13-77
 80            android:authorities="com.example.carbonfootprint.firebaseinitprovider"
-80-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+80-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:28:13-72
 81            android:directBootAware="true"
-81-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+81-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:29:13-43
 82            android:exported="false"
-82-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+82-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:30:13-37
 83            android:initOrder="100" />
-83-->[com.google.firebase:firebase-common:20.0.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+83-->[com.google.firebase:firebase-common:20.0.0] C:\Users\patri\.gradle\caches\transforms-3\86e13b6ca81a6c901885b317cb2ca953\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:31:13-36
 84
 85        <activity
-85-->[com.google.android.gms:play-services-base:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+85-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
 86            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-86-->[com.google.android.gms:play-services-base:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+86-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
 87            android:exported="false"
-87-->[com.google.android.gms:play-services-base:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+87-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
 88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-88-->[com.google.android.gms:play-services-base:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+88-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\a3c2e4bc22f797c21ec2b870a413637a\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
 89
 90        <meta-data
-90-->[com.google.android.gms:play-services-basement:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+90-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
 91            android:name="com.google.android.gms.version"
-91-->[com.google.android.gms:play-services-basement:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+91-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
 92            android:value="@integer/google_play_services_version" />
-92-->[com.google.android.gms:play-services-basement:17.5.0] C:\Program Files\Android\Android Studio\jre\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+92-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\patri\.gradle\caches\transforms-3\8e21242fa0be4b18eadcf4c3b9dc6cbb\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
 93    </application>
 94
 95</manifest>
