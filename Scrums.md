@@ -313,3 +313,19 @@ For the project we will have the 3 following questions:
 3\.	Outside work.
 
 <br>
+
+### John Beltran
+
+1\. Yesterday I finished fixing some code errors.
+
+2\. Fixed equations to better fit results;
+
+3\. Other classes
+
+1\. I have been working on how to make my screen easier to read/use.
+
+2\. By the next scrum, i hope to have the funtions working properly
+
+3\. My lack of knowledge...
+
+<br>
