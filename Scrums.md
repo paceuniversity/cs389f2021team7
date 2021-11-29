@@ -280,6 +280,8 @@ For the project we will have the 3 following questions:
 
 <br>
 
+## Scrum 11/29/2021
+
 ### Patrick Dwyer
 
 1\. Yesturday I finished the suggestions Xml page.
