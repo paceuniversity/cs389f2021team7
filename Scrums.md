@@ -280,3 +280,16 @@ For the project we will have the 3 following questions:
 
 <br>
 
+### Patrick Dwyer
+
+1\. Yesturday I finished the suggestions Xml page.
+
+2\. Today I started the code for suggestions page.
+
+3\. Other class work.
+
+1\. Since last scrum I contuied work on the implementation of the suggestions page.
+
+2\. By the next scrum I will be finished with the suggestions page.
+
+3\. Other class work.
