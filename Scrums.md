@@ -295,3 +295,21 @@ For the project we will have the 3 following questions:
 2\. By the next scrum I will be finished with the suggestions page.
 
 3\. Other class work.
+
+<br>
+
+### Emma Hilts
+
+1\.	I added the checkboxes to the Waste Results page and started to get some output.
+
+2\.	I want to be able to get my checkboxes working so they change the waste results.
+
+3\.	Outside work.
+
+1\.	I finished a version of the welcome screen. 
+
+2\.	I will attempt to get the checkboxes working with the waste results.
+
+3\.	Outside work.
+
+<br>
