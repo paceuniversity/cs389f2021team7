@@ -329,3 +329,20 @@ For the project we will have the 3 following questions:
 3\. My lack of knowledge...
 
 <br>
+
+
+### Abdulmalik Alotaibi
+
+1\. I finished the past results tabbed activity and results tabbed activity.
+
+2\. I will try to fix the designs.
+
+3\. Outside Work.
+
+1\. I finished the past results tabbed activity, results tabbed activity, charts, and settings.
+
+2\. Fix the designs.
+
+3\. Outside Work.
+
+<br>
