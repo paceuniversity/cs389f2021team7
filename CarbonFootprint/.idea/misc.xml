@@ -27,6 +27,15 @@
         <entry key="..\:/Users/patri/Team7ProjectGitHub/cs389f2021team7/CarbonFootprint/app/src/main/res/layout/activity_home_energy_reduce_emissions.xml" value="0.20520833333333333" />
         <entry key="..\:/Users/patri/Team7ProjectGitHub/cs389f2021team7/CarbonFootprint/app/src/main/res/layout/activity_initiate_calculator.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/patri/Team7ProjectGitHub/cs389f2021team7/CarbonFootprint/app/src/main/res/layout/activity_transportation.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.13489583333333333" />
+        <entry key="app/src/main/res/layout/activity_home_energy.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_home_energy_reduce_emissions.xml" value="0.19583333333333333" />
+        <entry key="app/src/main/res/layout/activity_results.xml" value="0.12092391304347826" />
+        <entry key="app/src/main/res/layout/activity_suggestions.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/activity_transportation.xml" value="0.2071366405570061" />
+        <entry key="app/src/main/res/layout/toolbar_activity_initiate_calculator.xml" value="0.10916919959473151" />
+        <entry key="app/src/main/res/layout/toolbar_activity_transportation.xml" value="0.10916919959473151" />
+        <entry key="app/src/main/res/layout/waste_activity.xml" value="0.10916919959473151" />
       </map>
     </option>
   </component>

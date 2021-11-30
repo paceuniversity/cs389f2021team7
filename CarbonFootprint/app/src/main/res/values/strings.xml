@@ -135,5 +135,8 @@
     <string name="Weekly_or_Yearly">Whether time period is weekly or yearly</string>
     <string name="whether_miles_is_based_on_week_or_years">Whether miles is based on week or years</string>
     <string name="Reduce_Weekly_Yearly">Whether miles is based on week or years</string>
+    <string name="replaceTwo">Replace vehicle 2 with one that gets:</string>
+    <string name="reduceTitle">Reduce Your Emissions</string>
+    <string name="replaceThree">Replace vehicle 3 with one that gets:</string>
 
 </resources>

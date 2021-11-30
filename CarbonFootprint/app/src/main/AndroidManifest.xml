@@ -35,6 +35,9 @@
             android:name=".DemoCalculatorActivity"
             android:exported="true" />
         <activity
+            android:name=".SuggestionPage"
+            android:exported="true" />
+        <activity
             android:name=".DemoHomeActivity"
             android:exported="true" >
             <intent-filter>

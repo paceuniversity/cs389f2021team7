@@ -48,6 +48,9 @@
             android:name="com.example.carbonfootprint.DemoCalculatorActivity"
             android:exported="true" />
         <activity
+            android:name="com.example.carbonfootprint.SuggestionPage"
+            android:exported="true" />
+        <activity
             android:name="com.example.carbonfootprint.DemoHomeActivity"
             android:exported="true" >
             <intent-filter>
