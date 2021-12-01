@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeEnergySuggestions">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_suggestions" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/NaturalGasLayout"
+        android:layout_width="411dp"
+        android:layout_height="447dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/NaturalGasLayout"
+            tools:ignore="SpeakableTextPresentCheck">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/NaturalGasLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/NaturalGasSuggestions"
+                    android:layout_width="216dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
+                    android:text="Natural Gas"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/natrualdescription"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="@string/checkBox"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/NaturalGasSuggestions" />
+
+                <TextView
+                    android:id="@+id/sealWindows"
+                    android:layout_width="379dp"
+                    android:layout_height="48dp"
+                    android:text="Seal all Windows in you house."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxSealWindows"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/natrualdescription" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSealWindows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/natrualdescription" />
+
+                <TextView
+                    android:id="@+id/Humidity"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Keep your humidity between 30 and 50%"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxHumidity"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sealWindows" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxHumidity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sealWindows" />
+
+                <TextView
+                    android:id="@+id/spaceHeaters"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Use space heaters"
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxSpaceHeaters"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Humidity" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSpaceHeaters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBoxHumidity"
+                    app:layout_constraintTop_toTopOf="@+id/spaceHeaters" />
+
+                <Button
+                    android:id="@+id/naturalbutton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spaceHeaters" />
+
+                <TextView
+                    android:id="@+id/electricitySuggestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/electricity"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/naturalbutton" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/checkBox"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/electricitySuggestions" />
+
+                <TextView
+                    android:id="@+id/solarPower"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Turn to solar power."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxSolar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSolar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+                <TextView
+                    android:id="@+id/showers"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Take shorter showers."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxShowers"
+                    app:layout_constraintStart_toStartOf="@+id/solarPower"
+                    app:layout_constraintTop_toBottomOf="@+id/solarPower" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxShowers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/solarPower" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Unplug unused electronics."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxUnplug"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/showers" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxUnplug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBoxShowers"
+                    app:layout_constraintTop_toBottomOf="@+id/showers" />
+
+                <Button
+                    android:id="@+id/electicityButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                <TextView
+                    android:id="@+id/fuelAndOilSuggestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/fuelOil"
+                    android:textAlignment="center"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/electicityButton" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/checkBox"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fuelAndOilSuggestions" />
+
+                <TextView
+                    android:id="@+id/replaceHeatSystem"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Replace heating system if its old."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxReplaceHeat"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxReplaceHeat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+                <TextView
+                    android:id="@+id/insulation"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Add proper insulation to your home."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxInsulation"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replaceHeatSystem" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxInsulation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/replaceHeatSystem" />
+
+                <TextView
+                    android:id="@+id/openDrapes"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Open your drapes when the sun is out."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxOpenDrapes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/insulation" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxOpenDrapes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/insulation" />
+
+                <Button
+                    android:id="@+id/fuelOilButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/openDrapes"
+                    app:layout_constraintTop_toBottomOf="@+id/openDrapes" />
+
+                <TextView
+                    android:id="@+id/propaneSuggestions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/propane"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fuelOilButton" />
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/checkBox"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/propaneSuggestions" />
+
+                <TextView
+                    android:id="@+id/doorSnakes"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Place door snakes under door to reduce heat loss."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxDoorSnake"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxDoorSnake"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+                <TextView
+                    android:id="@+id/sealChimney"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Seal your chimney."
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxSealChimney"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/doorSnakes" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxSealChimney"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="@+id/checkBoxDoorSnake"
+                    app:layout_constraintTop_toBottomOf="@+id/doorSnakes" />
+
+                <TextView
+                    android:id="@+id/weatherStripWindows"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:text="Weather strip your windows. "
+                    app:layout_constraintEnd_toStartOf="@+id/checkBoxWeatherStripWindows"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sealChimney" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxWeatherStripWindows"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sealChimney" />
+
+                <Button
+                    android:id="@+id/propaneButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weatherStripWindows" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/ResultsLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/Return"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NaturalGasLayout">
+
+        <TextView
+            android:id="@+id/homeEnergyTotal"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/scoreDetail"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/homeEnergyTotal" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/Return"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck"
+        tools:layout_editor_absoluteY="608dp"
+        app:layout_constraintTop_toBottomOf="@id/ResultsLayout"/>
+
+    <Button
+        android:id="@+id/otherSuggestion"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/otherCategory"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Return" />
+
+    <Button
+        android:id="@+id/otherCategory"
+        android:layout_width="0dp"
+        android:layout_height="75dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/otherSuggestion"
+        app:layout_constraintTop_toBottomOf="@+id/Return"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

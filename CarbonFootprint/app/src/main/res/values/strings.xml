@@ -153,5 +153,6 @@
     <string name="beginbtntext">press here to begin calculating your emissions</string>
     <string name="welcometext">WELCOME TO CARBON FOOTPRINT</string>
     <string name="waste_reduce_title">REDUCE YOUR SCORE</string>
-    
+    <string name="checkBox">Please check all that apply</string>
+
 </resources>

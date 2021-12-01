@@ -18,8 +18,11 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     Spinner spinnerRefridge, spinnerFurnaceBoiler, spinnerWindow;
     Button transportationbutton, wastebutton, homeenergypreviousbutton;
     EditText acThermostatInput, winterThermostatInput, reduceLightingInput, coldWaterInput;
-    double acThermostat, winterThermostat, reduceLighting, coldWater, emissionsTotal, emissionsTotalAfterReduce, naturalGas, electricity, fuelOil, propane;
+    double acThermostat, winterThermostat, reduceLighting, coldWater, emissionsTotal, emissionsTotalAfterReduce, naturalGas, electricity, fuelOil, propane, naturalGas2, electricity2, fuelOil2, propane2;
     userInfo currentUser;
+    int energyStarRefridgeCO2 = 0;
+    int energyStarWindow = 0;
+    int energyStarFurnaceBoiler = 0;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
 
@@ -42,6 +45,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         electricity = currentUser.getElectricity();
         fuelOil = currentUser.getFuelOil();
         propane = currentUser.getPropane();
+
 
 
         spinnerRefridge = findViewById(R.id.starEnergyRefrigerator);
@@ -83,11 +87,12 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         startActivity(intent);
     }
 
+
     public void HomeReducetoResults(View view) {
         homeEnergyCalculation();
         Intent intent = new Intent(HomeEnergyReduceEmissions.this, ResultsActivity.class);
         currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
+        intent.putExtra(CURRENT_USER_KEY,currentUser);
         startActivity(intent);
     }
 
@@ -184,19 +189,19 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         String refridge = spinnerRefridge.getSelectedItem().toString();
         String furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
         String window = spinnerWindow.getSelectedItem().toString();
-        int energyStarRefridgeCO2 = 0;
+
         if (refridge.equals("Will Do"))
             energyStarRefridgeCO2 += 177;
         else
             energyStarRefridgeCO2 = 0;
 
-        int energyStarFurnaceBoiler = 0;
+
         if (furnaceBoiler.equals("Will Do"))
             energyStarFurnaceBoiler += 728;
         else
             energyStarFurnaceBoiler = 0;
 
-        int energyStarWindow = 0;
+
         if (window.equals("Will Do"))
             energyStarWindow += 2947;
         else
@@ -208,6 +213,8 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         emissionsTotalAfterReduce = emissionsTotal - (acThermostat + coldWater + reduceLighting + winterThermostat + energyStarRefridgeCO2 + energyStarWindow + energyStarFurnaceBoiler);
         emissionsTotal = emissionsTotal / 2000;
         emissionsTotalAfterReduce = emissionsTotalAfterReduce / 2000;
+
+
 
     }
 }

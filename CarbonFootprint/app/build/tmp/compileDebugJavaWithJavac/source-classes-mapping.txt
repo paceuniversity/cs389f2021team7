@@ -24,6 +24,11 @@ com/example/carbonfootprint/HomeEnergyReduceEmissions.java
 com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy
  com.example.carbonfootprint.HomeEnergy$1
+ com.example.carbonfootprint.HomeEnergy$2
+ com.example.carbonfootprint.HomeEnergy$3
+ com.example.carbonfootprint.HomeEnergy$4
+ com.example.carbonfootprint.HomeEnergy$5
+ com.example.carbonfootprint.HomeEnergy$6
 com/example/carbonfootprint/SuggestionPage.java
  com.example.carbonfootprint.SuggestionPage
  com.example.carbonfootprint.SuggestionPage$1Check_class
@@ -59,3 +64,9 @@ com/example/carbonfootprint/DemoHomeActivity.java
  com.example.carbonfootprint.DemoHomeActivity$1
 com/example/carbonfootprint/BuildConfig.java
  com.example.carbonfootprint.BuildConfig
+com/example/carbonfootprint/HomeEnergySuggestions.java
+ com.example.carbonfootprint.HomeEnergySuggestions
+ com.example.carbonfootprint.HomeEnergySuggestions$1
+ com.example.carbonfootprint.HomeEnergySuggestions$2
+ com.example.carbonfootprint.HomeEnergySuggestions$3
+ com.example.carbonfootprint.HomeEnergySuggestions$4

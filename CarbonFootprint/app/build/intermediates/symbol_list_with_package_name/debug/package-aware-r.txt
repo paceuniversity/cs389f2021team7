@@ -1880,9 +1880,15 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id Humidity
 id META
 id NO_DEBUG
+id NaturalGasLayout
+id NaturalGasLayout2
+id NaturalGasSuggestions
 id ReduceTitle
+id ResultsLayout
+id Return
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
@@ -1997,6 +2003,18 @@ id checkBox
 id checkBox2
 id checkBox3
 id checkBox4
+id checkBoxDoorSnake
+id checkBoxHumidity
+id checkBoxInsulation
+id checkBoxOpenDrapes
+id checkBoxReplaceHeat
+id checkBoxSealChimney
+id checkBoxSealWindows
+id checkBoxShowers
+id checkBoxSolar
+id checkBoxSpaceHeaters
+id checkBoxUnplug
+id checkBoxWeatherStripWindows
 id checkbox
 id checked
 id chip
@@ -2058,6 +2076,7 @@ id divider2
 id divider3
 id divider4
 id divider5
+id doorSnakes
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -2074,8 +2093,10 @@ id east
 id editText
 id edit_query
 id elastic
+id electicityButton
 id electricity
 id electricityInput
+id electricitySuggestions
 id emission1
 id emission2
 id emission3
@@ -2102,7 +2123,9 @@ id footprint2
 id forever
 id fragment_container_view_tag
 id frost
+id fuelAndOilSuggestions
 id fuelOil
+id fuelOilButton
 id fuelOilInput
 id furnaceBoiler
 id getResults
@@ -2125,6 +2148,7 @@ id hideable
 id home
 id homeAsUp
 id homeEnergyBttn
+id homeEnergyTotal
 id home_energy_button
 id homeenergybtn
 id homenergypreviousbutton
@@ -2141,6 +2165,7 @@ id image
 id immediateStop
 id included
 id info
+id insulation
 id invisible
 id inward
 id italic
@@ -2251,8 +2276,10 @@ id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
 id my_toolbar
+id natrualdescription
 id naturalGas
 id naturalGasInput
+id naturalbutton
 id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
@@ -2276,6 +2303,9 @@ id notification_main_column_container
 id numVehicles
 id off
 id on
+id openDrapes
+id otherCategory
+id otherSuggestion
 id outline
 id outward
 id overshoot
@@ -2302,7 +2332,9 @@ id primaryHeatSpinner
 id progress_circular
 id progress_horizontal
 id propane
+id propaneButton
 id propaneInput
+id propaneSuggestions
 id radio
 id ratio
 id rectangles
@@ -2327,6 +2359,7 @@ id refrigerator
 id replace
 id replace2
 id replace3
+id replaceHeatSystem
 id reverseSawtooth
 id right
 id rightToLeft
@@ -2338,6 +2371,7 @@ id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
 id scale
+id scoreDetail
 id screen
 id scroll
 id scrollIndicatorDown
@@ -2345,6 +2379,8 @@ id scrollIndicatorUp
 id scrollView
 id scrollViewConstraint
 id scrollable
+id sealChimney
+id sealWindows
 id search_badge
 id search_bar
 id search_button
@@ -2364,6 +2400,7 @@ id shortcut
 id showCustom
 id showHome
 id showTitle
+id showers
 id sin
 id skipCollapsed
 id skipped
@@ -2372,7 +2409,9 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id solarPower
 id south
+id spaceHeaters
 id spacer
 id special_effects_controller_view_tag
 id spinner
@@ -2439,6 +2478,7 @@ id textView15
 id textView16
 id textView17
 id textView2
+id textView21
 id textView3
 id textView4
 id textView5
@@ -2501,6 +2541,7 @@ id wasteSpinner5
 id waste_reduce_title
 id waste_results
 id wastebutton
+id weatherStripWindows
 id welcome_text
 id west
 id wide
@@ -2587,6 +2628,7 @@ layout activity_demo_calculator
 layout activity_demo_home
 layout activity_home_energy
 layout activity_home_energy_reduce_emissions
+layout activity_homeenergysuggestions
 layout activity_initiate_calculator
 layout activity_location
 layout activity_results
@@ -2685,6 +2727,7 @@ layout toolbar_demo_calculator
 layout toolbar_demo_home
 layout toolbar_location
 layout toolbar_results
+layout toolbar_suggestions
 layout toolbar_waste_activity
 layout waste_activity
 mipmap ic_launcher
@@ -2741,6 +2784,7 @@ string calculatorHome
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string checkBox
 string chip_text
 string clear_text_end_icon_content_description
 string coldWater

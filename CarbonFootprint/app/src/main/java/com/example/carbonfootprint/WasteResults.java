@@ -75,7 +75,7 @@ public class WasteResults extends AppCompatActivity implements Serializable {
         glassBox.setOnCheckedChangeListener(new Chk_class());
         magazinesBox.setOnCheckedChangeListener(new Chk_class());*/
 
-        currentWaste = currentUser.getWasteTotal(); //gets Waste score from userInfo
+       // currentWaste = currentUser.getWasteTotal(); //gets Waste score from userInfo
         waste.setText("Waste = " + String.format("%.2f", currentWaste) + " tons"); //current Waste shows on screen before possible reduction
 
         //when the Home Energy button is clicked, user is brought to Home Energy page

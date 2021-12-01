@@ -5,8 +5,17 @@ import java.io.Serializable;
 public class userInfo implements Serializable {
     String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom, units;
     Boolean locationCheck = false;
-    double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane;
+    double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane, acThermostat, winterThermostat, reduceLighting, coldWater;
+    double naturalGas2;
+    double electricity2;
+    double fuelOil2;
+    double propane2;
+    int energyStarRefridgeCO2;
+    int energyStarWindow;
+    int energyStarFurnaceBoiler = 0;
     int householdNumber, transportationTotal;
+
+
 
     public double getNaturalGas() {
         return naturalGas;
@@ -39,6 +48,8 @@ public class userInfo implements Serializable {
     public void setPropane(double propane) {
         this.propane = propane;
     }
+
+
 
     public int getTransportationTotal() {
         return transportationTotal;
@@ -123,4 +134,32 @@ public class userInfo implements Serializable {
     public String getUnits(){ return units;}
 
     public void setUnits(String units){this.units = units;}
+
+    public double getAcThermostat(){return acThermostat;}
+
+    public void setAcThermostat(double acThermostat){ this.acThermostat = acThermostat;}
+
+    public double getWinterThermostat(){return winterThermostat;}
+
+    public void setWinterThermostat(double winterThermostat){ this.winterThermostat = winterThermostat;}
+
+    public double getReduceLighting(){return reduceLighting;}
+
+    public void setReduceLighting(double reduceLighting){ this.reduceLighting = reduceLighting;}
+
+    public double getColdWater(){return coldWater;}
+
+    public void setColdWater(double coldWater){ this.coldWater = coldWater;}
+
+    public int getEnergyStarRefridgeCO2(){return energyStarRefridgeCO2;}
+
+    public void setEnergyStarRefridgeCO2(int energyStarRefridgeCO2){ this.energyStarRefridgeCO2 = energyStarRefridgeCO2;}
+
+    public int getEnergyStarWindow(){return energyStarWindow;}
+
+    public void setEnergyStarWindow(int energyStarWindow){ this.energyStarWindow = energyStarWindow;}
+
+    public int getEnergyStarFurnaceBoiler(){return energyStarFurnaceBoiler;}
+
+    public void setEnergyStarFurnaceBoiler(int energyStarFurnaceBoiler){ this.energyStarFurnaceBoiler = energyStarFurnaceBoiler;}
 }
