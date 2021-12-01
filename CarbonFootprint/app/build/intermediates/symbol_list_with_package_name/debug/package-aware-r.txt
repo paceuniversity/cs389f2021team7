@@ -1874,6 +1874,7 @@ drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable transportationbg
 drawable wastebg
+drawable welcomefeet
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -1978,6 +1979,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id button
 id button2
 id button3
 id button5
@@ -2109,6 +2111,7 @@ id getresultspage2
 id ghost_view
 id ghost_view_holder
 id glassText
+id glass_box
 id gone
 id graph
 id graph_wrap
@@ -2122,6 +2125,7 @@ id hideable
 id home
 id homeAsUp
 id homeEnergyBttn
+id home_energy_button
 id homeenergybtn
 id homenergypreviousbutton
 id honorRequest
@@ -2157,6 +2161,7 @@ id linearLayout
 id listMode
 id list_item
 id magazinesText
+id magazines_box
 id maintenance
 id maintenanceAnswer
 id maintenanceQuestion
@@ -2184,6 +2189,7 @@ id material_timepicker_view
 id material_value_index
 id message
 id metalText
+id metal_box
 id middle
 id mileage
 id mileage2
@@ -2256,6 +2262,7 @@ id never
 id neverCompleteToEnd
 id neverCompleteToStart
 id newspaperText
+id newspaper_box
 id next
 id next2
 id noScroll
@@ -2285,6 +2292,7 @@ id peekHeight
 id percent
 id pin
 id plasticText
+id plastic_box
 id position
 id postLayout
 id previous
@@ -2310,6 +2318,11 @@ id reduceMileage3
 id reduceTime
 id reduceTime2
 id reduceTime3
+id reduce_glass
+id reduce_magazines
+id reduce_metal
+id reduce_newspaper
+id reduce_plastic
 id refrigerator
 id replace
 id replace2
@@ -2389,6 +2402,7 @@ id submenuarrow
 id submit
 id submit2
 id submit_area
+id suggestions_landing_button
 id supportScrollUp
 id tabMode
 id tag_accessibility_actions
@@ -2448,6 +2462,7 @@ id toggle
 id toolbar
 id top
 id topPanel
+id total_results
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -2457,6 +2472,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id transportationBttn
+id transportation_button
 id transportationbtn
 id transportationbutton
 id triangle
@@ -2482,7 +2498,10 @@ id wasteSpinner2
 id wasteSpinner3
 id wasteSpinner4
 id wasteSpinner5
+id waste_reduce_title
+id waste_results
 id wastebutton
+id welcome_text
 id west
 id wide
 id window
@@ -2573,6 +2592,8 @@ layout activity_location
 layout activity_results
 layout activity_suggestions
 layout activity_transportation
+layout activity_waste_results
+layout activity_welcome_screen
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2707,6 +2728,8 @@ string app_name
 string appbar_scrolling_view_behavior
 string averageBill
 string back_to_home_energy
+string begin_button
+string beginbtntext
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
 string button
@@ -2767,6 +2790,7 @@ string google_storage_bucket
 string heatingAndCooling
 string hide_bottom_view_on_scroll_behavior
 string homeEnergy
+string home_energy_button
 string houseHoldNumber
 string householdnumberInput
 string icon_content_description
@@ -2864,6 +2888,16 @@ string plastic_text
 string primeHeat
 string project_id
 string propane
+string recycle_glass
+string recycle_glass_to_reduce_score
+string recycle_magazines
+string recycle_magazines_to_reduce_score
+string recycle_metal
+string recycle_metal_to_reduce_score
+string recycle_newspaper
+string recycle_newspaper_to_reduce_score
+string recycle_plastic
+string recycle_plastic_to_reduce_score
 string reduceEmissions
 string reduceLighting
 string reduceLightingInput
@@ -2880,12 +2914,16 @@ string status_bar_notification_info_overflow
 string submit
 string submit1
 string transportation
+string transportation_button
 string utility
 string vehicleText
 string washingAndDrying
 string waste
 string wasteHeader
 string waste_button
+string waste_reduce_title
+string welcome_text
+string welcometext
 string whether_miles_is_based_on_week_or_years
 string whether_you_will_perform_maintenance
 string windows

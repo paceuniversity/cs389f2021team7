@@ -21,7 +21,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/John/.android/avd/Pixel_3_API_28.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\ehilt\.android\avd\Pixel_2_API_27.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -97,7 +97,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -112,7 +112,11 @@
       <recent name="com.example.carbonfootprint" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ehilt\Desktop\cs389f2021team7-main(2)\cs389f2021team7-main\CarbonFootprint\app\src\main\res\drawable-v24" />
       <recent name="C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\res\layout" />
+    </key>
+    <key name="android.template.-393133242">
+      <recent name="com.example.carbonfootprint" />
     </key>
     <key name="android.template.-2016623488">
       <recent name="com.example.carbonfootprint" />

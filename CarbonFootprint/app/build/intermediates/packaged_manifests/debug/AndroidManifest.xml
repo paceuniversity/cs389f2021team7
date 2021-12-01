@@ -27,6 +27,18 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity
+            android:name="com.example.carbonfootprint.WelcomeScreen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.carbonfootprint.WasteResults"
+            android:exported="true" />
+        <activity
             android:name="com.example.carbonfootprint.Waste"
             android:exported="true" />
         <activity
@@ -52,13 +64,7 @@
             android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.DemoHomeActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.LocationActivity"
             android:exported="true" />

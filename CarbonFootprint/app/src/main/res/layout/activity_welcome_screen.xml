@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcomefeet"
+    tools:context=".WelcomeScreen">
+
+    <Button
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="278dp"
+        android:layout_height="82dp"
+        android:layout_marginBottom="112dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/beginbtntext"
+        android:textColor="#008a4c"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="329dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="84dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/welcometext"
+        android:textAlignment="center"
+        android:textColor="#008a4c"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

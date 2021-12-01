@@ -5,8 +5,6 @@
     <string name="button3">Add Your Results to App Average</string>
 
 
-
-
     <string name="wasteHeader">WASTE</string>
     <string name="calculatorHeader">C02 CALCULATOR</string>
     <string name="num_people_household">Number of people in your household</string>
@@ -138,5 +136,22 @@
     <string name="replaceTwo">Replace vehicle 2 with one that gets:</string>
     <string name="reduceTitle">Reduce Your Emissions</string>
     <string name="replaceThree">Replace vehicle 3 with one that gets:</string>
-
+    <string name="recycle_newspaper">Are you willing to recycle newspaper?</string>
+    <string name="recycle_plastic">Are you willing to recycle plastic?</string>
+    <string name="recycle_metal">Are you willing to recycle metal?</string>
+    <string name="recycle_glass">Are you willing to recycle glass?</string>
+    <string name="recycle_magazines">Are you willing to recycle magazines?</string>
+    <string name="recycle_newspaper_to_reduce_score">Are you willing to recycle newspaper to reduce your score?</string>
+    <string name="recycle_plastic_to_reduce_score">Are you willing to recycle plastic to reduce your score?</string>
+    <string name="recycle_metal_to_reduce_score">Are you willing to recycle metal to reduce your score?</string>
+    <string name="recycle_glass_to_reduce_score">Are you willing to recycle glass to reduce your score?</string>
+    <string name="recycle_magazines_to_reduce_score">Are you willing to recycle magazines to reduce your score?</string>
+    <string name="home_energy_button">Home Energy</string>
+    <string name="transportation_button">Transportation</string>
+    <string name="begin_button">press here to begin</string>
+    <string name="welcome_text">Welcome!</string>
+    <string name="beginbtntext">press here to begin calculating your emissions</string>
+    <string name="welcometext">WELCOME TO CARBON FOOTPRINT</string>
+    <string name="waste_reduce_title">REDUCE YOUR SCORE</string>
+    
 </resources>

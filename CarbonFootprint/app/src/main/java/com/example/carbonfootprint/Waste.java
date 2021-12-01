@@ -21,7 +21,7 @@ public class Waste extends AppCompatActivity implements Serializable
 
     double estimatedWaste;
     double emissionsTotalAfterReduce;
-    double waste;
+    double waste = 692; // I added this just to get output but it is accurate
     double plastic;
     double magazines;
     double metal;
@@ -245,7 +245,7 @@ public class Waste extends AppCompatActivity implements Serializable
             @Override
             public void onClick(View view) {
                 estimatedWaste = (waste + plastic + magazines + metal + newspaper + glass) * (0.0005); //total waste in tons
-                Intent intent = new Intent(Waste.this, ResultsActivity.class);
+                Intent intent = new Intent(Waste.this, SuggestionPage.class);
                 currentUser.setWasteTotal(estimatedWaste);
                 intent.putExtra(CURRENT_USER_KEY, estimatedWaste);
                 intent.putExtra(CURRENT_USER_KEY, currentUser);
