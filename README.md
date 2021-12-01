@@ -51,13 +51,6 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 **Sprint 2**
 
 * [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=1423412642)
-* [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md#scrum-11152021)
-* [Sprint demo](https://docs.google.com/document/d/1VCjo0aWY1bKfPwAxe1_bShbnWE22rG-pwitEb54eptM/edit?usp=sharing) - [video](https://www.youtube.com/watch?v=Idoa_byxWj8) and [apk](https://drive.google.com/file/d/18aK7qwtdT2LaGc9R_vXVMIs-Ke4yD1xO/view?usp=sharing) (or equivalent)
-* [Sprint retrospective](https://docs.google.com/document/d/1TXbnpj54bao3i0W0lS5lRW6aVj8bHPM9CWESCElsDHM/edit?usp=sharing)
-
-**Sprint 3** 
-
-* Sprint planning
   * US 3- Transportation
   * US 6- Reduce emissions for Home Energy (good score)
   * US 7- Reduce emissions for Home Energy (average score)
@@ -75,7 +68,13 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
   *	US 34– Firebase API
   *	US 35– User Progress
   *	US 36- Settings
+* [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md#scrum-11152021)
+* [Sprint demo](https://docs.google.com/document/d/1VCjo0aWY1bKfPwAxe1_bShbnWE22rG-pwitEb54eptM/edit?usp=sharing) - [video](https://www.youtube.com/watch?v=Idoa_byxWj8) and [apk](https://drive.google.com/file/d/18aK7qwtdT2LaGc9R_vXVMIs-Ke4yD1xO/view?usp=sharing) (or equivalent)
+* [Sprint retrospective](https://docs.google.com/document/d/1TXbnpj54bao3i0W0lS5lRW6aVj8bHPM9CWESCElsDHM/edit?usp=sharing)
 
+**Sprint 3** 
+
+* Sprint planning
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
