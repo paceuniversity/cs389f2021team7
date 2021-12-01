@@ -13,8 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name=".SuggestionPage"
+            android:exported="true"/>
+        <activity android:name=".WelcomeScreen"
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity
-            android:name=".Suggestions"
+            android:name=".WasteResults"
+            android:exported="true" />
+        <activity
+            android:name=".HomeEnergySuggestions"
             android:exported="true" />
         <activity
             android:name=".Waste"
@@ -40,11 +53,7 @@
         <activity
             android:name=".DemoHomeActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".LocationActivity"

@@ -1,3 +1,26 @@
+com/example/carbonfootprint/WasteResults.java
+ com.example.carbonfootprint.WasteResults
+ com.example.carbonfootprint.WasteResults$1
+ com.example.carbonfootprint.WasteResults$2
+ com.example.carbonfootprint.WasteResults$Chk_class
+ com.example.carbonfootprint.WasteResults$Chk_class1
+ com.example.carbonfootprint.WasteResults$Chk_class2
+ com.example.carbonfootprint.WasteResults$Chk_class3
+ com.example.carbonfootprint.WasteResults$Chk_class4
+com/example/carbonfootprint/LocationActivity.java
+ com.example.carbonfootprint.LocationActivity
+com/example/carbonfootprint/Transportation.java
+ com.example.carbonfootprint.Transportation
+ com.example.carbonfootprint.Transportation$1
+ com.example.carbonfootprint.Transportation$2
+ com.example.carbonfootprint.Transportation$3
+com/example/carbonfootprint/DemoCalculatorActivity.java
+ com.example.carbonfootprint.DemoCalculatorActivity
+ com.example.carbonfootprint.DemoCalculatorActivity$1
+ com.example.carbonfootprint.DemoCalculatorActivity$2
+ com.example.carbonfootprint.DemoCalculatorActivity$3
+com/example/carbonfootprint/HomeEnergyReduceEmissions.java
+ com.example.carbonfootprint.HomeEnergyReduceEmissions
 com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy
  com.example.carbonfootprint.HomeEnergy$1
@@ -6,6 +29,9 @@ com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy$4
  com.example.carbonfootprint.HomeEnergy$5
  com.example.carbonfootprint.HomeEnergy$6
+com/example/carbonfootprint/SuggestionPage.java
+ com.example.carbonfootprint.SuggestionPage
+ com.example.carbonfootprint.SuggestionPage$1Check_class
 com/example/carbonfootprint/InitiateCalculator.java
  com.example.carbonfootprint.InitiateCalculator
  com.example.carbonfootprint.InitiateCalculator$1
@@ -14,19 +40,15 @@ com/example/carbonfootprint/InitiateCalculator.java
  com.example.carbonfootprint.InitiateCalculator$4
  com.example.carbonfootprint.InitiateCalculator$5
  com.example.carbonfootprint.InitiateCalculator$6
-com/example/carbonfootprint/Suggestions.java
- com.example.carbonfootprint.Suggestions
 com/example/carbonfootprint/userInfo.java
  com.example.carbonfootprint.userInfo
-com/example/carbonfootprint/LocationActivity.java
- com.example.carbonfootprint.LocationActivity
+com/example/carbonfootprint/WelcomeScreen.java
+ com.example.carbonfootprint.WelcomeScreen
+ com.example.carbonfootprint.WelcomeScreen$1
 com/example/carbonfootprint/ResultsActivity.java
  com.example.carbonfootprint.ResultsActivity
  com.example.carbonfootprint.ResultsActivity$1
  com.example.carbonfootprint.ResultsActivity$2
-com/example/carbonfootprint/Transportation.java
- com.example.carbonfootprint.Transportation
- com.example.carbonfootprint.Transportation$1
 com/example/carbonfootprint/Waste.java
  com.example.carbonfootprint.Waste
  com.example.carbonfootprint.Waste$1
@@ -37,15 +59,14 @@ com/example/carbonfootprint/Waste.java
  com.example.carbonfootprint.Waste$6
  com.example.carbonfootprint.Waste$7
  com.example.carbonfootprint.Waste$8
-com/example/carbonfootprint/DemoCalculatorActivity.java
- com.example.carbonfootprint.DemoCalculatorActivity
- com.example.carbonfootprint.DemoCalculatorActivity$1
- com.example.carbonfootprint.DemoCalculatorActivity$2
- com.example.carbonfootprint.DemoCalculatorActivity$3
-com/example/carbonfootprint/HomeEnergyReduceEmissions.java
- com.example.carbonfootprint.HomeEnergyReduceEmissions
 com/example/carbonfootprint/DemoHomeActivity.java
  com.example.carbonfootprint.DemoHomeActivity
  com.example.carbonfootprint.DemoHomeActivity$1
 com/example/carbonfootprint/BuildConfig.java
  com.example.carbonfootprint.BuildConfig
+com/example/carbonfootprint/HomeEnergySuggestions.java
+ com.example.carbonfootprint.HomeEnergySuggestions
+ com.example.carbonfootprint.HomeEnergySuggestions$1
+ com.example.carbonfootprint.HomeEnergySuggestions$2
+ com.example.carbonfootprint.HomeEnergySuggestions$3
+ com.example.carbonfootprint.HomeEnergySuggestions$4

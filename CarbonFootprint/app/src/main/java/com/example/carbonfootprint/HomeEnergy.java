@@ -21,6 +21,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
     double electricity;
     double fuelOil;
     double propane;
+    double naturalGas2;
+    double electricity2;
+    double fuelOil2;
+    double propane2;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
     Spinner primaryHeatSpinner;
     public static final String NATURAL = "com.example.carbonfootprint.NATURAL";
@@ -165,6 +169,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
                     electricity = Integer.valueOf(electricityInput.getText().toString());
                     fuelOil = Integer.valueOf(fuelOilInput.getText().toString());
                     propane = Integer.valueOf(propaneInput.getText().toString());
+
+
+
+
 
                     naturalGas = naturalGas * 11.2 * 12;
                     electricity = electricity * 4.6 * 12;
