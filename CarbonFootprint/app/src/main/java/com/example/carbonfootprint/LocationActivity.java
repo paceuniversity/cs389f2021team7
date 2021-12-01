@@ -29,13 +29,20 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
     ArrayList<String> xmlcountrycode;
     int indexCC;
     userInfo currentUser;
-
+    public static userInfo currentUserTemporary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_location);
 
-        parseXML();
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
+        xmlcountryname = currentUser.getXmlcountryname();
+        xmlcountrycode = currentUser.getXmlcountrycode();
+
+
+
+//        parseXML();
 
         Spinner spinner2 = findViewById(R.id.spinner2);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, xmlcountryname);
@@ -48,46 +55,9 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
-        currentUser.setCountryCode("JP");
-
     }
 
-    public void parseXML() {
-        XmlPullParserFactory xmlPullParserFactory;
 
-        try {
-            xmlPullParserFactory = XmlPullParserFactory.newInstance();
-            XmlPullParser parser = xmlPullParserFactory.newPullParser();
-            InputStream inputStream = getAssets().open("countries.xml");
-            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-            parser.setInput(inputStream, null);
-
-            xmlcountryname = new ArrayList<>();
-            xmlcountrycode = new ArrayList<>();
-
-            int eventType = parser.getEventType();
-            while (eventType != XmlPullParser.END_DOCUMENT) {
-                String xmlname = null;
-
-                switch (eventType) {
-                    case XmlPullParser.START_TAG:
-                        xmlname = parser.getName();
-
-                        if ("code".equals(xmlname)) {
-                            xmlcountrycode.add(parser.nextText());
-                        } else if ("name".equals(xmlname)) {
-                            xmlcountryname.add(parser.nextText());
-                        }
-                        break;
-                }
-
-                eventType = parser.next();
-            }
-
-        } catch (XmlPullParserException | IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     @Override
@@ -113,9 +83,16 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     public void LocationToHome (View view) {
-        Intent intent = new Intent(this, DemoHomeActivity.class);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
-        }
+//        Intent intent = new Intent(this, DemoHomeActivity.class);
+//        intent.putExtra(CURRENT_USER_KEY, currentUser);
+//        startActivity(intent);
+        currentUserTemporary = currentUser;
+        finish();
+
+    }
 }

@@ -1,21 +1,66 @@
 package com.example.carbonfootprint;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class userInfo implements Serializable {
-    String countryCode, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom, units;
+    String countryCode, name, timestamp, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom, pastResultsName, pastResultsTime, pastResultsLocation, pastResultsHousehold, pastResultsHomeEnergy, pastResultsTransportation, pastResultsWaste, pastResultsTotal, pastResultsLocationAvg, pastResultsLocationName;
     Boolean locationCheck = false;
-    double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane, acThermostat, winterThermostat, reduceLighting, coldWater;
-    double naturalGas2;
-    double electricity2;
-    double fuelOil2;
-    double propane2;
-    int energyStarRefridgeCO2;
-    int energyStarWindow;
-    int energyStarFurnaceBoiler = 0;
-    int householdNumber, transportationTotal;
+    Boolean pastResultsCheck = false;
+    Boolean savePastResultsCheck = true;
+    double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane, appAvgValue, transportationTotal;
+    int id, householdNumber;
+    ArrayList<String> xmlcountryname, xmlcountrycode;
+    Boolean NaturalGasCheck, ElectricityCheck, FuelOilCheck, PropaneCheck, MetalCheck, GlassCheck, PlasticCheck, NewspaperCheck, MagazinesCheck, CarMilesCheck;
+    Boolean CarMaintenanceCheck = true;
+    String NaturalGasValue, ElectricityValue, FuelOilValue, PropaneValue, CarMilesValue;
 
+    public int getId() {
+        return id;
+    }
 
+    @Override
+    public String toString() {
+        return "userInfo{" +
+                "countryCode='" + countryCode + '\'' +
+                ", name='" + name + '\'' +
+                ", timestamp='" + timestamp + '\'' +
+                ", demoTotal='" + demoTotal + '\'' +
+                ", avgValueWB='" + avgValueWB + '\'' +
+                ", locationAvgTop='" + locationAvgTop + '\'' +
+                ", locationAvgBottom='" + locationAvgBottom + '\'' +
+                ", locationCheck=" + locationCheck +
+                ", homeEnergyTotal=" + homeEnergyTotal +
+                ", wasteTotal=" + wasteTotal +
+                ", naturalGas=" + naturalGas +
+                ", electricity=" + electricity +
+                ", fuelOil=" + fuelOil +
+                ", propane=" + propane +
+                ", id=" + id +
+                ", householdNumber=" + householdNumber +
+                ", transportationTotal=" + transportationTotal +
+                '}';
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
 
     public double getNaturalGas() {
         return naturalGas;
@@ -49,13 +94,11 @@ public class userInfo implements Serializable {
         this.propane = propane;
     }
 
-
-
-    public int getTransportationTotal() {
+    public double getTransportationTotal() {
         return transportationTotal;
     }
 
-    public void setTransportationTotal(int transportationTotal) {
+    public void setTransportationTotal(double transportationTotal) {
         this.transportationTotal = transportationTotal;
     }
 
@@ -131,35 +174,251 @@ public class userInfo implements Serializable {
         this.countryCode = countryCode;
     }
 
-    public String getUnits(){ return units;}
+    public String getPastResultsName() {
+        return pastResultsName;
+    }
 
-    public void setUnits(String units){this.units = units;}
+    public void setPastResultsName(String pastResultsName) {
+        this.pastResultsName = pastResultsName;
+    }
 
-    public double getAcThermostat(){return acThermostat;}
+    public String getPastResultsTime() {
+        return pastResultsTime;
+    }
 
-    public void setAcThermostat(double acThermostat){ this.acThermostat = acThermostat;}
+    public void setPastResultsTime(String pastResultsTime) {
+        this.pastResultsTime = pastResultsTime;
+    }
 
-    public double getWinterThermostat(){return winterThermostat;}
+    public String getPastResultsLocation() {
+        return pastResultsLocation;
+    }
 
-    public void setWinterThermostat(double winterThermostat){ this.winterThermostat = winterThermostat;}
+    public void setPastResultsLocation(String pastResultsLocation) {
+        this.pastResultsLocation = pastResultsLocation;
+    }
 
-    public double getReduceLighting(){return reduceLighting;}
+    public String getPastResultsHousehold() {
+        return pastResultsHousehold;
+    }
 
-    public void setReduceLighting(double reduceLighting){ this.reduceLighting = reduceLighting;}
+    public void setPastResultsHousehold(String pastResultsHousehold) {
+        this.pastResultsHousehold = pastResultsHousehold;
+    }
 
-    public double getColdWater(){return coldWater;}
+    public String getPastResultsHomeEnergy() {
+        return pastResultsHomeEnergy;
+    }
 
-    public void setColdWater(double coldWater){ this.coldWater = coldWater;}
+    public void setPastResultsHomeEnergy(String pastResultsHomeEnergy) {
+        this.pastResultsHomeEnergy = pastResultsHomeEnergy;
+    }
 
-    public int getEnergyStarRefridgeCO2(){return energyStarRefridgeCO2;}
+    public String getPastResultsTransportation() {
+        return pastResultsTransportation;
+    }
 
-    public void setEnergyStarRefridgeCO2(int energyStarRefridgeCO2){ this.energyStarRefridgeCO2 = energyStarRefridgeCO2;}
+    public void setPastResultsTransportation(String pastResultsTransportation) {
+        this.pastResultsTransportation = pastResultsTransportation;
+    }
 
-    public int getEnergyStarWindow(){return energyStarWindow;}
+    public String getPastResultsWaste() {
+        return pastResultsWaste;
+    }
 
-    public void setEnergyStarWindow(int energyStarWindow){ this.energyStarWindow = energyStarWindow;}
+    public void setPastResultsWaste(String pastResultsWaste) {
+        this.pastResultsWaste = pastResultsWaste;
+    }
 
-    public int getEnergyStarFurnaceBoiler(){return energyStarFurnaceBoiler;}
+    public String getPastResultsTotal() {
+        return pastResultsTotal;
+    }
 
-    public void setEnergyStarFurnaceBoiler(int energyStarFurnaceBoiler){ this.energyStarFurnaceBoiler = energyStarFurnaceBoiler;}
+    public void setPastResultsTotal(String pastResultsTotal) {
+        this.pastResultsTotal = pastResultsTotal;
+    }
+
+    public double getAppAvgValue() {
+        return appAvgValue;
+    }
+
+    public void setAppAvgValue(double appAvgValue) {
+        this.appAvgValue = appAvgValue;
+    }
+
+    public Boolean getPastResultsCheck() {
+        return pastResultsCheck;
+    }
+
+    public void setPastResultsCheck(Boolean pastResultsCheck) {
+        this.pastResultsCheck = pastResultsCheck;
+    }
+
+    public Boolean getSavePastResultsCheck() {
+        return savePastResultsCheck;
+    }
+
+    public void setSavePastResultsCheck(Boolean savePastResultsCheck) {
+        this.savePastResultsCheck = savePastResultsCheck;
+    }
+
+    public ArrayList<String> getXmlcountryname() {
+        return xmlcountryname;
+    }
+
+    public void setXmlcountryname(ArrayList<String> xmlcountryname) {
+        this.xmlcountryname = xmlcountryname;
+    }
+
+    public ArrayList<String> getXmlcountrycode() {
+        return xmlcountrycode;
+    }
+
+    public void setXmlcountrycode(ArrayList<String> xmlcountrycode) {
+        this.xmlcountrycode = xmlcountrycode;
+    }
+
+    public String getPastResultsLocationAvg() {
+        return pastResultsLocationAvg;
+    }
+
+    public void setPastResultsLocationAvg(String pastResultsLocationAvg) {
+        this.pastResultsLocationAvg = pastResultsLocationAvg;
+    }
+
+    public String getPastResultsLocationName() {
+        return pastResultsLocationName;
+    }
+
+    public void setPastResultsLocationName(String pastResultsLocationName) {
+        this.pastResultsLocationName = pastResultsLocationName;
+    }
+
+    public Boolean getNaturalGasCheck() {
+        return NaturalGasCheck;
+    }
+
+    public void setNaturalGasCheck(Boolean naturalGasCheck) {
+        NaturalGasCheck = naturalGasCheck;
+    }
+
+    public Boolean getElectricityCheck() {
+        return ElectricityCheck;
+    }
+
+    public void setElectricityCheck(Boolean electricityCheck) {
+        ElectricityCheck = electricityCheck;
+    }
+
+    public Boolean getFuelOilCheck() {
+        return FuelOilCheck;
+    }
+
+    public void setFuelOilCheck(Boolean fuelOilCheck) {
+        FuelOilCheck = fuelOilCheck;
+    }
+
+    public Boolean getPropaneCheck() {
+        return PropaneCheck;
+    }
+
+    public void setPropaneCheck(Boolean propaneCheck) {
+        PropaneCheck = propaneCheck;
+    }
+
+    public Boolean getMetalCheck() {
+        return MetalCheck;
+    }
+
+    public void setMetalCheck(Boolean metalCheck) {
+        MetalCheck = metalCheck;
+    }
+
+    public Boolean getGlassCheck() {
+        return GlassCheck;
+    }
+
+    public void setGlassCheck(Boolean glassCheck) {
+        GlassCheck = glassCheck;
+    }
+
+    public Boolean getPlasticCheck() {
+        return PlasticCheck;
+    }
+
+    public void setPlasticCheck(Boolean plasticCheck) {
+        PlasticCheck = plasticCheck;
+    }
+
+    public Boolean getNewspaperCheck() {
+        return NewspaperCheck;
+    }
+
+    public void setNewspaperCheck(Boolean newspaperCheck) {
+        NewspaperCheck = newspaperCheck;
+    }
+
+    public Boolean getMagazinesCheck() {
+        return MagazinesCheck;
+    }
+
+    public void setMagazinesCheck(Boolean magazinesCheck) {
+        MagazinesCheck = magazinesCheck;
+    }
+
+    public Boolean getCarMilesCheck() {
+        return CarMilesCheck;
+    }
+
+    public void setCarMilesCheck(Boolean carMilesCheck) {
+        CarMilesCheck = carMilesCheck;
+    }
+
+    public Boolean getCarMaintenanceCheck() {
+        return CarMaintenanceCheck;
+    }
+
+    public void setCarMaintenanceCheck(Boolean carMaintenanceCheck) {
+        CarMaintenanceCheck = carMaintenanceCheck;
+    }
+
+    public String getNaturalGasValue() {
+        return NaturalGasValue;
+    }
+
+    public void setNaturalGasValue(String naturalGasValue) {
+        NaturalGasValue = naturalGasValue;
+    }
+
+    public String getElectricityValue() {
+        return ElectricityValue;
+    }
+
+    public void setElectricityValue(String electricityValue) {
+        ElectricityValue = electricityValue;
+    }
+
+    public String getFuelOilValue() {
+        return FuelOilValue;
+    }
+
+    public void setFuelOilValue(String fuelOilValue) {
+        FuelOilValue = fuelOilValue;
+    }
+
+    public String getPropaneValue() {
+        return PropaneValue;
+    }
+
+    public void setPropaneValue(String propaneValue) {
+        PropaneValue = propaneValue;
+    }
+
+    public String getCarMilesValue() {
+        return CarMilesValue;
+    }
+
+    public void setCarMilesValue(String carMilesValue) {
+        CarMilesValue = carMilesValue;
+    }
 }

@@ -7,11 +7,8 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,6 +24,7 @@ import java.io.Serializable;
 
 public class InitiateCalculator extends AppCompatActivity implements Serializable {
     EditText householdNumberInput;
+    EditText nameInput;
     int numberOfPeople;
     Button homeEnergy;
     Button transportation;
@@ -39,38 +37,62 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
     String locationAvgTop;
     String locationAvgBottom;
     Button getResults;
-    Spinner unitsSpinner;
     int householdNumber;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
     public static final String HOUSEHOLDNUMBER = "com.example.homeenergy.HOUSEHOLDNUMBER";
-
-    public static final String UNITS = "com.example.homeenergy.UNITS";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         setContentView(R.layout.activity_initiate_calculator);
         householdNumberInput = (EditText) findViewById(R.id.houseHoldNumberInput);
+        nameInput = (EditText) findViewById(R.id.nameInput);
 
-
-
-        getResults = findViewById(R.id.getResults);
+        getResults = findViewById(R.id.exitButton);
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
+//        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
 
         WBdata();
 
+        homeEnergy = (Button) findViewById(R.id.getSuggestionsbutton);
+        transportation = (Button) findViewById(R.id.transportationSuggestionsBttn);
+        waste = (Button) findViewById(R.id.wasteSuggestionsBttn);
 
-        homeEnergy = (Button) findViewById(R.id.homeEnergyBttn);
-        transportation = (Button) findViewById(R.id.transportationBttn);
-        waste = (Button) findViewById(R.id.wasteBttn);
-        unitsSpinner = (Spinner) findViewById(R.id.chooseUnits);
-        setUnits();
-        unitsSpinner.setEnabled(false);
         homeEnergy.setEnabled(false);
         transportation.setEnabled(false);
         waste.setEnabled(false);
+
+        nameInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0)
+                {
+                    homeEnergy.setEnabled(false);
+                    transportation.setEnabled(false);
+                    waste.setEnabled(false);
+                }
+                else
+                {
+                    homeEnergy.setEnabled(true);
+                    transportation.setEnabled(true);
+                    waste.setEnabled(true);
+                    currentUser.setName(nameInput.getText().toString());
+                }
+            }
+        });
 
         householdNumberInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -96,7 +118,6 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
                     homeEnergy.setEnabled(true);
                     transportation.setEnabled(true);
                     waste.setEnabled(true);
-                    unitsSpinner.setEnabled(true);
                     currentUser.setHouseholdNumber(Integer.parseInt(householdNumberInput.getText().toString()));
                 }
             }
@@ -107,8 +128,6 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
             @Override
             public void onClick(View view) {
                 numberOfPeople = Integer.valueOf(householdNumberInput.getText().toString());
-                String units = unitsSpinner.getSelectedItem().toString();
-                currentUser.setUnits(units);
                 Intent intent = new Intent(InitiateCalculator.this, HomeEnergy.class);
                 intent.putExtra(CURRENT_USER_KEY, currentUser);
                 intent.putExtra(HOUSEHOLDNUMBER, numberOfPeople);
@@ -142,7 +161,7 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
     }
 
     public void calculatortoResults(View view) {
-        Intent intent = new Intent(InitiateCalculator.this, ResultsActivity.class);
+        Intent intent = new Intent(InitiateCalculator.this, ResultsTabbedActivity.class);
         intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);
     }
@@ -184,12 +203,6 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         });
 
         queue.add(request);
-    }
-
-    private void setUnits(){
-        ArrayAdapter<String> unitsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.units));
-        unitsAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        unitsSpinner.setAdapter(unitsAdapter);
     }
 
 }

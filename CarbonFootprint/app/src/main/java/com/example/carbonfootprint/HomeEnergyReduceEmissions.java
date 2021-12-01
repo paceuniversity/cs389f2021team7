@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,17 +17,15 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     Spinner spinnerRefridge, spinnerFurnaceBoiler, spinnerWindow;
     Button transportationbutton, wastebutton, homeenergypreviousbutton;
     EditText acThermostatInput, winterThermostatInput, reduceLightingInput, coldWaterInput;
-    double acThermostat, winterThermostat, reduceLighting, coldWater, emissionsTotal, emissionsTotalAfterReduce, naturalGas, electricity, fuelOil, propane, naturalGas2, electricity2, fuelOil2, propane2;
+    double acThermostat, winterThermostat, reduceLighting, coldWater, emissionsTotal, emissionsTotalAfterReduce, naturalGas, electricity, fuelOil, propane;
     userInfo currentUser;
-    int energyStarRefridgeCO2 = 0;
-    int energyStarWindow = 0;
-    int energyStarFurnaceBoiler = 0;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         setContentView(R.layout.activity_home_energy_reduce_emissions);
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
@@ -47,13 +44,12 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         propane = currentUser.getPropane();
 
 
-
         spinnerRefridge = findViewById(R.id.starEnergyRefrigerator);
         spinnerFurnaceBoiler = findViewById(R.id.starEnergyFurnaceBoiler);
         spinnerWindow = findViewById(R.id.starEnergyWindow);
 
         transportationbutton = findViewById(R.id.transportationbutton);
-        wastebutton = findViewById(R.id.wasteBttn);
+        wastebutton = findViewById(R.id.wasteSuggestionsBttn);
         homeenergypreviousbutton = findViewById(R.id.homenergypreviousbutton);
 
         energyStarRefridge();
@@ -87,12 +83,11 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         startActivity(intent);
     }
 
-
     public void HomeReducetoResults(View view) {
         homeEnergyCalculation();
-        Intent intent = new Intent(HomeEnergyReduceEmissions.this, ResultsActivity.class);
+        Intent intent = new Intent(HomeEnergyReduceEmissions.this, ResultsTabbedActivity.class);
         currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
-        intent.putExtra(CURRENT_USER_KEY,currentUser);
+        intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);
     }
 
@@ -189,19 +184,19 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         String refridge = spinnerRefridge.getSelectedItem().toString();
         String furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
         String window = spinnerWindow.getSelectedItem().toString();
-
+        int energyStarRefridgeCO2 = 0;
         if (refridge.equals("Will Do"))
             energyStarRefridgeCO2 += 177;
         else
             energyStarRefridgeCO2 = 0;
 
-
+        int energyStarFurnaceBoiler = 0;
         if (furnaceBoiler.equals("Will Do"))
             energyStarFurnaceBoiler += 728;
         else
             energyStarFurnaceBoiler = 0;
 
-
+        int energyStarWindow = 0;
         if (window.equals("Will Do"))
             energyStarWindow += 2947;
         else
@@ -213,8 +208,6 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         emissionsTotalAfterReduce = emissionsTotal - (acThermostat + coldWater + reduceLighting + winterThermostat + energyStarRefridgeCO2 + energyStarWindow + energyStarFurnaceBoiler);
         emissionsTotal = emissionsTotal / 2000;
         emissionsTotalAfterReduce = emissionsTotalAfterReduce / 2000;
-
-
 
     }
 }

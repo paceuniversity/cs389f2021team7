@@ -8,9 +8,9 @@
     tools:context=".InitiateCalculator">
 
     <Button
-        android:id="@+id/getResults"
+        android:id="@+id/exitButton"
         android:layout_width="0dp"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#48773E"
         android:onClick="calculatortoResults"
         android:text="@string/getResults"
@@ -25,15 +25,16 @@
     <EditText
         android:id="@+id/houseHoldNumberInput"
         android:layout_width="147dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/test"
         android:ems="10"
         android:hint="@string/householdnumberInput"
         android:inputType="number"
         android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
     <TextView
         android:id="@+id/textView3"
@@ -48,45 +49,46 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <Button
-        android:id="@+id/homeEnergyBttn"
+        android:id="@+id/getSuggestionsbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="112dp"
+        android:layout_marginTop="10dp"
         android:text="@string/homeEnergy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/houseHoldNumberInput" />
 
     <Button
-        android:id="@+id/wasteBttn"
+        android:id="@+id/wasteSuggestionsBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="1dp"
         android:text="@string/waste"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/transportationBttn" />
+        app:layout_constraintTop_toBottomOf="@+id/transportationSuggestionsBttn" />
 
     <Button
-        android:id="@+id/transportationBttn"
+        android:id="@+id/transportationSuggestionsBttn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="1dp"
         android:text="@string/transportation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/homeEnergyBttn" />
+        app:layout_constraintTop_toBottomOf="@+id/getSuggestionsbutton" />
 
-    <Spinner
-        android:id="@+id/chooseUnits"
-        android:layout_width="193dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="28dp"
-        android:entries="@array/units"
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="147dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/test"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:textSize="14dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/houseHoldNumberInput" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

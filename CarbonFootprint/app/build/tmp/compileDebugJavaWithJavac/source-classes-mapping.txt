@@ -1,3 +1,5 @@
+com/example/carbonfootprint/ResultsBarChartFragment.java
+ com.example.carbonfootprint.ResultsBarChartFragment
 com/example/carbonfootprint/WasteResults.java
  com.example.carbonfootprint.WasteResults
  com.example.carbonfootprint.WasteResults$1
@@ -7,20 +9,39 @@ com/example/carbonfootprint/WasteResults.java
  com.example.carbonfootprint.WasteResults$Chk_class2
  com.example.carbonfootprint.WasteResults$Chk_class3
  com.example.carbonfootprint.WasteResults$Chk_class4
-com/example/carbonfootprint/LocationActivity.java
- com.example.carbonfootprint.LocationActivity
 com/example/carbonfootprint/Transportation.java
  com.example.carbonfootprint.Transportation
  com.example.carbonfootprint.Transportation$1
+ com.example.carbonfootprint.Transportation$10
+ com.example.carbonfootprint.Transportation$11
  com.example.carbonfootprint.Transportation$2
  com.example.carbonfootprint.Transportation$3
+ com.example.carbonfootprint.Transportation$4
+ com.example.carbonfootprint.Transportation$5
+ com.example.carbonfootprint.Transportation$6
+ com.example.carbonfootprint.Transportation$7
+ com.example.carbonfootprint.Transportation$8
+ com.example.carbonfootprint.Transportation$9
+com/example/carbonfootprint/ResultsTabbedActivity.java
+ com.example.carbonfootprint.ResultsTabbedActivity
+ com.example.carbonfootprint.ResultsTabbedActivity$1
+ com.example.carbonfootprint.ResultsTabbedActivity$2
+com/example/carbonfootprint/CardViewPastResults.java
+ com.example.carbonfootprint.CardViewPastResults
 com/example/carbonfootprint/DemoCalculatorActivity.java
  com.example.carbonfootprint.DemoCalculatorActivity
  com.example.carbonfootprint.DemoCalculatorActivity$1
  com.example.carbonfootprint.DemoCalculatorActivity$2
- com.example.carbonfootprint.DemoCalculatorActivity$3
+com/example/carbonfootprint/PastResultsData.java
+ com.example.carbonfootprint.PastResultsData
 com/example/carbonfootprint/HomeEnergyReduceEmissions.java
  com.example.carbonfootprint.HomeEnergyReduceEmissions
+com/example/carbonfootprint/ResultsFragmentAdapter.java
+ com.example.carbonfootprint.ResultsFragmentAdapter
+com/example/carbonfootprint/PastResultsFragmentAdapter.java
+ com.example.carbonfootprint.PastResultsFragmentAdapter
+com/example/carbonfootprint/PastResultsLineChartFragment.java
+ com.example.carbonfootprint.PastResultsLineChartFragment
 com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy
  com.example.carbonfootprint.HomeEnergy$1
@@ -29,6 +50,44 @@ com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy$4
  com.example.carbonfootprint.HomeEnergy$5
  com.example.carbonfootprint.HomeEnergy$6
+com/example/carbonfootprint/PastResultsListFragment.java
+ com.example.carbonfootprint.PastResultsListFragment
+ com.example.carbonfootprint.PastResultsListFragment$1
+com/example/carbonfootprint/CardViewSettings.java
+ com.example.carbonfootprint.CardViewSettings
+com/example/carbonfootprint/SettingsActivity.java
+ com.example.carbonfootprint.SettingsActivity
+ com.example.carbonfootprint.SettingsActivity$1
+ com.example.carbonfootprint.SettingsActivity$2
+ com.example.carbonfootprint.SettingsActivity$3
+ com.example.carbonfootprint.SettingsActivity$4
+ com.example.carbonfootprint.SettingsActivity$5
+ com.example.carbonfootprint.SettingsActivity$6
+ com.example.carbonfootprint.SettingsActivity$7
+com/example/carbonfootprint/CustomXAxisRenderer.java
+ com.example.carbonfootprint.CustomXAxisRenderer
+com/example/carbonfootprint/WelcomeScreen.java
+ com.example.carbonfootprint.WelcomeScreen
+ com.example.carbonfootprint.WelcomeScreen$1
+com/example/carbonfootprint/RecyclerViewAdapterSettings.java
+ com.example.carbonfootprint.RecyclerViewAdapterSettings
+ com.example.carbonfootprint.RecyclerViewAdapterSettings$OnItemClickListenerSettings
+ com.example.carbonfootprint.RecyclerViewAdapterSettings$ViewHolderRecyclerViewSettings
+ com.example.carbonfootprint.RecyclerViewAdapterSettings$ViewHolderRecyclerViewSettings$1
+com/example/carbonfootprint/ResultsPieChartFragment.java
+ com.example.carbonfootprint.ResultsPieChartFragment
+com/example/carbonfootprint/AboutActivity.java
+ com.example.carbonfootprint.AboutActivity
+com/example/carbonfootprint/LocationActivity.java
+ com.example.carbonfootprint.LocationActivity
+com/example/carbonfootprint/PastResultsTabbedActivity.java
+ com.example.carbonfootprint.PastResultsTabbedActivity
+ com.example.carbonfootprint.PastResultsTabbedActivity$1
+ com.example.carbonfootprint.PastResultsTabbedActivity$2
+com/example/carbonfootprint/PastResultsDetailsActivity.java
+ com.example.carbonfootprint.PastResultsDetailsActivity
+ com.example.carbonfootprint.PastResultsDetailsActivity$1
+ com.example.carbonfootprint.PastResultsDetailsActivity$2
 com/example/carbonfootprint/SuggestionPage.java
  com.example.carbonfootprint.SuggestionPage
  com.example.carbonfootprint.SuggestionPage$1Check_class
@@ -40,15 +99,22 @@ com/example/carbonfootprint/InitiateCalculator.java
  com.example.carbonfootprint.InitiateCalculator$4
  com.example.carbonfootprint.InitiateCalculator$5
  com.example.carbonfootprint.InitiateCalculator$6
+ com.example.carbonfootprint.InitiateCalculator$7
+com/example/carbonfootprint/RecyclerViewAdapterPastResults.java
+ com.example.carbonfootprint.RecyclerViewAdapterPastResults
+ com.example.carbonfootprint.RecyclerViewAdapterPastResults$OnItemClickListener
+ com.example.carbonfootprint.RecyclerViewAdapterPastResults$ViewHolderRecyclerView
+ com.example.carbonfootprint.RecyclerViewAdapterPastResults$ViewHolderRecyclerView$1
+ com.example.carbonfootprint.RecyclerViewAdapterPastResults$ViewHolderRecyclerView$2
 com/example/carbonfootprint/userInfo.java
  com.example.carbonfootprint.userInfo
-com/example/carbonfootprint/WelcomeScreen.java
- com.example.carbonfootprint.WelcomeScreen
- com.example.carbonfootprint.WelcomeScreen$1
-com/example/carbonfootprint/ResultsActivity.java
- com.example.carbonfootprint.ResultsActivity
- com.example.carbonfootprint.ResultsActivity$1
- com.example.carbonfootprint.ResultsActivity$2
+com/example/carbonfootprint/DatabaseHelper.java
+ com.example.carbonfootprint.DatabaseHelper
+com/example/carbonfootprint/ResultsFootprintFragment.java
+ com.example.carbonfootprint.ResultsFootprintFragment
+ com.example.carbonfootprint.ResultsFootprintFragment$1
+ com.example.carbonfootprint.ResultsFootprintFragment$1$1
+ com.example.carbonfootprint.ResultsFootprintFragment$2
 com/example/carbonfootprint/Waste.java
  com.example.carbonfootprint.Waste
  com.example.carbonfootprint.Waste$1
@@ -59,6 +125,21 @@ com/example/carbonfootprint/Waste.java
  com.example.carbonfootprint.Waste$6
  com.example.carbonfootprint.Waste$7
  com.example.carbonfootprint.Waste$8
+com/example/carbonfootprint/SuggestionsPage.java
+ com.example.carbonfootprint.SuggestionsPage
+ com.example.carbonfootprint.SuggestionsPage$1
+ com.example.carbonfootprint.SuggestionsPage$10
+ com.example.carbonfootprint.SuggestionsPage$11
+ com.example.carbonfootprint.SuggestionsPage$2
+ com.example.carbonfootprint.SuggestionsPage$3
+ com.example.carbonfootprint.SuggestionsPage$4
+ com.example.carbonfootprint.SuggestionsPage$5
+ com.example.carbonfootprint.SuggestionsPage$6
+ com.example.carbonfootprint.SuggestionsPage$7
+ com.example.carbonfootprint.SuggestionsPage$8
+ com.example.carbonfootprint.SuggestionsPage$9
+com/example/carbonfootprint/InitiateSuggestionsActivity.java
+ com.example.carbonfootprint.InitiateSuggestionsActivity
 com/example/carbonfootprint/DemoHomeActivity.java
  com.example.carbonfootprint.DemoHomeActivity
  com.example.carbonfootprint.DemoHomeActivity$1

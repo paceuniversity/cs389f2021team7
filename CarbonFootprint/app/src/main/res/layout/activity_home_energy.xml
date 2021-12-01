@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_energybg"
+    android:background="@color/white"
     tools:context=".HomeEnergy">
 
     <include
@@ -57,18 +57,18 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/primaryHeatSpinner">
 
         <ScrollView
+            android:id="@+id/homeEnergyScrollView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/estimatedC02"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UselessParent">
+            tools:ignore="UselessParent"
+            tools:layout_editor_absoluteX="16dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -120,14 +120,16 @@
                 <EditText
                     android:id="@+id/naturalGasInput"
                     android:layout_width="match_parent"
-                    android:layout_height="78dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:autofillHints="Enter your natural gas"
+                    android:background="@drawable/test"
                     android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:nextFocusDown="@+id/electricityInput"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/naturalGas"
@@ -150,9 +152,11 @@
                 <EditText
                     android:id="@+id/electricityInput"
                     android:layout_width="match_parent"
-                    android:layout_height="78dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/test"
+                    android:nextFocusDown="@+id/fuelOilInput"
                     android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number"
@@ -178,9 +182,11 @@
                 <EditText
                     android:id="@+id/fuelOilInput"
                     android:layout_width="0dp"
-                    android:layout_height="78dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/test"
+                    android:nextFocusDown="@+id/propaneInput"
                     android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number"
@@ -206,34 +212,46 @@
                 <EditText
                     android:id="@+id/propaneInput"
                     android:layout_width="0dp"
-                    android:layout_height="78dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/test"
                     android:ems="10"
                     android:hint="@string/averageBill"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    app:layout_constraintBottom_toTopOf="@id/homeEnergyImage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/propane" />
 
-                <Button
-                    android:id="@+id/estimatedC02"
+                <ImageView
 
+                    android:id="@+id/homeEnergyImage"
                     android:layout_width="match_parent"
-                    android:layout_height="83dp"
-                    android:layout_marginTop="8dp"
-                    android:backgroundTint="#48773E"
-                    android:text="@string/submit"
+                    android:layout_height="300dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/propaneInput" />
-
+                    app:layout_constraintTop_toBottomOf="@id/propaneInput"
+                    app:srcCompat="@drawable/home_energyimg" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+        <Button
+            android:id="@+id/estimatedC02"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#48773E"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeEnergyScrollView" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

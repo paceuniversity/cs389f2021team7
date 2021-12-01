@@ -4,7 +4,7 @@
     <string name="button2">Next Page</string>
     <string name="button3">Add Your Results to App Average</string>
 
-
+    <string name="aboutText">About Page</string>
     <string name="wasteHeader">WASTE</string>
     <string name="calculatorHeader">C02 CALCULATOR</string>
     <string name="num_people_household">Number of people in your household</string>
@@ -43,7 +43,7 @@
     <string name="Heating">Heating</string>
     <string name="primeHeat">What is your primary Heat source?</string>
     <string name="naturalGas">Natural Gas</string>
-    <string name="utility"><u>Utility</u></string>
+    <string name="utility">Utility</string>
     <string name="description">Enter your average monthly bill or other data for each source of energy your household uses.</string>
     <string name="averageBill">Enter your average monthly bill</string>
     <string name="electricity">Electricity</string>
@@ -51,18 +51,18 @@
     <string name="propane">Propane</string>
     <string name="submit">Next</string>
     <string name="reduceEmissions">Reduce your Emissions</string>
-    <string name="heatingAndCooling"><u>Heating and Cooling</u></string>
+    <string name="heatingAndCooling">Heating and Cooling</string>
     <string name="acThermostat">How many degree\'s will you turn your thermostat up in the summer?</string>
     <string name="acThermostatInput">Enter the amount of degrees.</string>
     <string name="winterThermostat">How many degree\'s will you turn down your thermostat in the winter?</string>
     <string name="winterThermostatInput">Enter the amount of degrees.</string>
-    <string name="lighting"><u>Reduce Lighting</u></string>
+    <string name="lighting">Reduce Lighting</string>
     <string name="reduceLighting">How many light bulbs will you replace with ENERGY STAR light bulbs</string>
     <string name="reduceLightingInput">Enter the amount of light bulbs you will change.</string>
-    <string name="washingAndDrying"><u>Washing and Drying</u></string>
+    <string name="washingAndDrying">Washing and Drying</string>
     <string name="coldWater">How many loads of Laundry will you use cold water?</string>
     <string name="coldWaterInput">Enter the amount of loads.</string>
-    <string name="energyStar"><u>ENERGY STAR Products</u></string>
+    <string name="energyStar">ENERGY STAR Products</string>
     <string name="energyStarModels">Will you replace any of the following with ENERGY STAR models?</string>
     <string name="refrigerator">Refrigerator</string>
     <string name="furnaceBoiler">Furnace or Boiler</string>
@@ -154,5 +154,6 @@
     <string name="welcometext">WELCOME TO CARBON FOOTPRINT</string>
     <string name="waste_reduce_title">REDUCE YOUR SCORE</string>
     <string name="checkBox">Please check all that apply</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

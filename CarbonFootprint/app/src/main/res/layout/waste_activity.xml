@@ -10,19 +10,17 @@
     <Button
         android:id="@+id/getresultspage"
         android:layout_width="0dp"
-        android:layout_height="83dp"
-        android:layout_marginBottom="83dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#48773E"
         android:text="Results"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/homeenergybtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/transportationbtn"
         android:layout_width="0dp"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#48773E"
         android:text="Transportation"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +70,7 @@
     <Button
         android:id="@+id/homeenergybtn"
         android:layout_width="0dp"
-        android:layout_height="83dp"
+        android:layout_height="wrap_content"
         android:backgroundTint="#48773E"
         android:text="Home Energy"
         app:layout_constraintBottom_toBottomOf="parent"

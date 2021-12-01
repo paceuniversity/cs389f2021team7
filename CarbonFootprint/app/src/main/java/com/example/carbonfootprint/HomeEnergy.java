@@ -41,6 +41,7 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         setContentView(R.layout.activity_home_energy);
         naturalGasInput = (EditText) findViewById(R.id.naturalGasInput);
         electricityInput = (EditText) findViewById(R.id.electricityInput);
@@ -99,8 +100,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 electricityInput.setEnabled(false);
-                else
+                else {
                     electricityInput.setEnabled(true);
+                    currentUser.setNaturalGasValue(naturalGasInput.getText().toString());
+                }
             }
         });
 
@@ -119,8 +122,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 fuelOilInput.setEnabled(false);
-                else
+                else {
                     fuelOilInput.setEnabled(true);
+                    currentUser.setElectricityValue(electricityInput.getText().toString());
+                }
             }
         });
         fuelOilInput.addTextChangedListener(new TextWatcher() {
@@ -138,8 +143,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 propaneInput.setEnabled(false);
-                else
+                else {
                     propaneInput.setEnabled(true);
+                    currentUser.setFuelOilValue(fuelOilInput.getText().toString());
+                }
             }
         });
         propaneInput.addTextChangedListener(new TextWatcher() {
@@ -157,9 +164,11 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 submit.setEnabled(false);
-                else
+                else {
                     submit.setEnabled(true);
-            }
+                    currentUser.setPropaneValue(propaneInput.getText().toString());
+                }
+                }
         });
         submit.setOnClickListener(new View.OnClickListener() {
             @Override

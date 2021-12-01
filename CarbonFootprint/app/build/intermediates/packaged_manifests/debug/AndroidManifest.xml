@@ -27,22 +27,25 @@
         android:testOnly="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
         <activity
-            android:name="com.example.carbonfootprint.SuggestionPage"
+            android:name="com.example.carbonfootprint.SuggestionsPage"
             android:exported="true" />
         <activity
-            android:name="com.example.carbonfootprint.WelcomeScreen"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.example.carbonfootprint.WasteResults"
+            android:name="com.example.carbonfootprint.InitiateSuggestionsActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.carbonfootprint.HomeEnergySuggestions"
+            android:name="com.example.carbonfootprint.AboutActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.PastResultsTabbedActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.ResultsTabbedActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.PastResultsDetailsActivity"
             android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.Waste"
@@ -68,12 +71,33 @@
         <activity
             android:name="com.example.carbonfootprint.DemoHomeActivity"
             android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name="com.example.carbonfootprint.LocationActivity"
             android:exported="true" />
         <activity
-            android:name="com.example.carbonfootprint.ResultsActivity"
+            android:name="com.example.carbonfootprint.HomeEnergySuggestions"
+            android:exported="true" />
+        <activity
+            android:name="com.example.carbonfootprint.WasteResults"
+            android:exported="true" />
+        <!-- <activity -->
+        <!-- android:name=".WelcomeScreen" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity
+            android:name="com.example.carbonfootprint.SuggestionPage"
             android:exported="true" />
 
         <service

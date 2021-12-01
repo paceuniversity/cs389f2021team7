@@ -4,10 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextWatcher;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,6 +22,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DemoCalculatorActivity extends AppCompatActivity implements Serializable {
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
@@ -35,54 +37,101 @@ public class DemoCalculatorActivity extends AppCompatActivity implements Seriali
     String locationAvgTop;
     String locationAvgBottom;
     Button button6;
+    Button button4;
+    String format;
+    EditText editTextName, editTextNumberDecimal, editTextNumberDecimal2, editTextNumberDecimal3, editTextNumber, editTextNumberDecimal4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         setContentView(R.layout.activity_demo_calculator);
-        currentUser = (userInfo) getIntent().getSerializableExtra(ResultsActivity.CURRENT_USER_KEY);
-        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
+        currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
+
+
+        button4 = findViewById(R.id.button4);
+
         button6 = findViewById(R.id.button6);
-        button6.setEnabled(false);
-        button6.setText("loading...");
-        editText = findViewById(R.id.editText);
-        editText.setInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_FLAG_DECIMAL);
+//        button6.setEnabled(false);
+//        button6.setText("loading...");
 
-        editText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        editTextName = findViewById(R.id.editTextName);
+        editTextNumberDecimal = findViewById(R.id.editTextNumberDecimal);
+        editTextNumberDecimal2 = findViewById(R.id.editTextNumberDecimal2);
+        editTextNumberDecimal3 = findViewById(R.id.editTextNumberDecimal3);
+        editTextNumber = findViewById(R.id.editTextNumber);
+        editTextNumberDecimal4 = findViewById(R.id.editTextNumberDecimal4);
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if (editable.length() == 0) {
-                    button6.setEnabled(false);
-                }
-                else {
-                    button6.setEnabled(true);
-                }
-
-            }
-        });
-
+//        editTextName.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+//                currentUser.setName(editTextName.getText().toString());
+//            }
+//        });
 
 
-        WBdata();
 
+        SimpleDateFormat s = new SimpleDateFormat("hh:mm aa\nMMM dd, yyyy");
+        format = s.format(new Date());
+
+
+//        button4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(DemoCalculatorActivity.this, format, Toast.LENGTH_LONG).show();
+//            }
+//        });
+
+    }
+
+    public void onPause() {
+        super.onPause();
+        overridePendingTransition(0, 0);
     }
 
     public void resultsPage(View view) {
-        currentUser.setDemoTotal(editText.getText().toString());
-        Intent intent = new Intent(this, ResultsActivity.class);
+        currentUser.setName(editTextName.getText().toString());
+        currentUser.setHouseholdNumber(Integer.parseInt(editTextNumber.getText().toString()));
+        currentUser.setHomeEnergyTotal(Double.parseDouble(editTextNumberDecimal.getText().toString()));
+        currentUser.setTransportationTotal(Integer.parseInt(editTextNumberDecimal2.getText().toString()));
+        currentUser.setWasteTotal(Double.parseDouble(editTextNumberDecimal3.getText().toString()));
+        currentUser.setDemoTotal(editTextNumberDecimal4.getText().toString());
+        currentUser.setTimestamp(format);
+        Intent intent = new Intent(this, PastResultsTabbedActivity.class);
+        intent.putExtra(CURRENT_USER_KEY, currentUser);
+//        intent.putExtra(CURRENT_USER_KEY, currentUserDB);
+        startActivity(intent);
+    }
+
+    public void barChartPage(View view) {
+
+    }
+
+    public void pieChartPage(View view) {
+
+    }
+
+    public void lineChartPage(View view) {
+
+    }
+
+    public void resultsTabbedPage(View view) {
+        Intent intent = new Intent(this, PastResultsTabbedActivity.class);
         intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);
     }
+
     public void WBdata() {
 
         RequestQueue queue = Volley.newRequestQueue(DemoCalculatorActivity.this);

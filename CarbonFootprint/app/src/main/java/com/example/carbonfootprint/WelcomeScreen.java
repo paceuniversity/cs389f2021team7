@@ -1,13 +1,12 @@
 package com.example.carbonfootprint;
 
 import androidx.appcompat.app.AppCompatActivity;
-import android.widget.TextView;
+
 import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
 import java.io.Serializable;
-import android.os.Bundle;
 
 public class WelcomeScreen extends AppCompatActivity implements Serializable{
 
@@ -20,7 +19,7 @@ public class WelcomeScreen extends AppCompatActivity implements Serializable{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
 
-        beginbtn = findViewById(R.id.button);
+        beginbtn = findViewById(R.id.beginCalculator);
 
         //when the button is clicked, the user is brought to DemoHomeActivity
         beginbtn.setOnClickListener(new View.OnClickListener() {

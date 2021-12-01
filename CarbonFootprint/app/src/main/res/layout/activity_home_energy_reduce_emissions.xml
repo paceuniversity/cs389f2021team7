@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/home_energybg"
+    android:background="@color/white"
     tools:context=".HomeEnergyReduceEmissions">
 
     <include
@@ -21,18 +21,19 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ScrollView
+            android:id="@+id/homeEnergyReduceScrollView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/getresultspage2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/constraintLayout"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="NotSibling,UselessParent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
@@ -78,13 +79,15 @@
                 <EditText
                     android:id="@+id/acThermostatInput"
                     android:layout_width="match_parent"
-                    android:layout_height="84dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/test"
                     android:ems="10"
                     android:hint="@string/acThermostatInput"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:nextFocusDown="@+id/winterThermostatInput"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
@@ -107,13 +110,15 @@
                 <EditText
                     android:id="@+id/winterThermostatInput"
                     android:layout_width="match_parent"
-                    android:layout_height="84dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/test"
                     android:ems="10"
                     android:hint="@string/winterThermostatInput"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:nextFocusDown="@+id/reduceLightingInput"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
@@ -150,15 +155,17 @@
                 <EditText
                     android:id="@+id/reduceLightingInput"
                     android:layout_width="match_parent"
-                    android:layout_height="99dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
+                    android:background="@drawable/test"
                     android:ems="10"
                     android:hint="@string/reduceLightingInput"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:minHeight="48dp"
                     android:textSize="17dp"
+                    android:nextFocusDown="@+id/coldWaterInput"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="@id/constraintLayout"
                     app:layout_constraintTop_toBottomOf="@id/reduceLighting" />
@@ -201,6 +208,7 @@
                     android:hint="@string/coldWaterInput"
                     android:inputType="number"
                     android:minHeight="48dp"
+                    android:background="@drawable/test"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
@@ -300,59 +308,72 @@
                     android:entries="@array/starProducts"
                     android:minHeight="100dp"
                     android:visibility="visible"
-                    app:layout_constraintBottom_toTopOf="@+id/getresultspage2"
+                    app:layout_constraintBottom_toTopOf="@+id/homeEnergyImage2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/window" />
 
-                <Button
-                    android:id="@+id/transportationbutton"
-                    android:layout_width="0dp"
-                    android:layout_height="83dp"
-                    android:backgroundTint="#48773E"
-                    android:onClick="HomeReducetoTransportation"
-                    android:text="Transportation"
-                    android:textSize="10sp"
+                <ImageView
+
+                    android:id="@+id/homeEnergyImage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/wastebutton" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/starEnergyWindow"
+                    app:srcCompat="@drawable/home_energyimg" />
 
-                <Button
-                    android:id="@+id/wastebutton"
-                    android:layout_width="0dp"
-                    android:layout_height="83dp"
-                    android:backgroundTint="#48773E"
-                    android:onClick="HomeReducetoWaste"
-                    android:text="Waste"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/transportationbutton"
-                    app:layout_constraintStart_toEndOf="@+id/homenergypreviousbutton" />
-
-                <Button
-                    android:id="@+id/homenergypreviousbutton"
-                    android:layout_width="0dp"
-                    android:layout_height="83dp"
-                    android:backgroundTint="#48773E"
-                    android:onClick="HomeReducetoHomeEnergy"
-                    android:text="Back"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/wastebutton"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-                <Button
-                    android:id="@+id/getresultspage2"
-                    android:layout_width="0dp"
-                    android:layout_height="83dp"
-                    android:backgroundTint="#48773E"
-                    android:onClick="HomeReducetoResults"
-                    android:text="Results"
-                    app:layout_constraintBottom_toTopOf="@+id/wastebutton"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
+
+        <Button
+            android:id="@+id/transportationbutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#48773E"
+            android:onClick="HomeReducetoTransportation"
+            android:text="Transportation"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/wastebutton" />
+
+        <Button
+            android:id="@+id/wastebutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#48773E"
+            android:onClick="HomeReducetoWaste"
+            android:text="Waste"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/transportationbutton"
+            app:layout_constraintStart_toEndOf="@+id/homenergypreviousbutton" />
+
+        <Button
+            android:id="@+id/homenergypreviousbutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#48773E"
+            android:onClick="HomeReducetoHomeEnergy"
+            android:text="Back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/wastebutton"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/getresultspage2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#48773E"
+            android:onClick="HomeReducetoResults"
+            android:text="Results"
+            app:layout_constraintBottom_toTopOf="@+id/wastebutton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/homeEnergyReduceScrollView" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

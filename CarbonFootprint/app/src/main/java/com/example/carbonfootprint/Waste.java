@@ -40,6 +40,7 @@ public class Waste extends AppCompatActivity implements Serializable
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(0, 0);
         setContentView(R.layout.waste_activity);
 //        numPeopleInput = (EditText) findViewById(R.id.numPeopleHousehold);
 
@@ -53,13 +54,7 @@ public class Waste extends AppCompatActivity implements Serializable
         wasteArrayList.add("Y/N");
         wasteArrayList.add("Y");
         wasteArrayList.add("N");
-
-
-
-
-
-
-
+        waste = 692;
 
         getresultspage = findViewById(R.id.getresultspage);
         homeenergybtn = findViewById(R.id.homeenergybtn);
@@ -82,10 +77,12 @@ public class Waste extends AppCompatActivity implements Serializable
                 }
                 else if (adapterView.getItemAtPosition(i) == "Y") {
                     metal = -89.38;
+                    currentUser.setMetalCheck(true);
                     wasteSpinner2.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     metal = 0;
+                    currentUser.setMetalCheck(false);
                     wasteSpinner2.setEnabled(true);
                 }
 
@@ -114,10 +111,12 @@ public class Waste extends AppCompatActivity implements Serializable
                 }
                 else if (adapterView.getItemAtPosition(i) == "Y") {
                     glass = -25.39;
+                    currentUser.setGlassCheck(true);
                     wasteSpinner3.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     glass = 0;
+                    currentUser.setGlassCheck(false);
                     wasteSpinner3.setEnabled(true);
                 }
 
@@ -143,10 +142,12 @@ public class Waste extends AppCompatActivity implements Serializable
                 }
                 else if (adapterView.getItemAtPosition(i) == "Y") {
                     plastic = -35.56;
+                    currentUser.setPlasticCheck(true);
                     wasteSpinner4.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     plastic = 0;
+                    currentUser.setPlasticCheck(false);
                     wasteSpinner4.setEnabled(true);
                 }
             }
@@ -171,10 +172,12 @@ public class Waste extends AppCompatActivity implements Serializable
                 }
                 else if (adapterView.getItemAtPosition(i) == "Y") {
                     newspaper = -113.14;
+                    currentUser.setNewspaperCheck(true);
                     wasteSpinner5.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     newspaper = 0;
+                    currentUser.setNewspaperCheck(false);
                     wasteSpinner5.setEnabled(true);
                 }
             }
@@ -201,12 +204,14 @@ public class Waste extends AppCompatActivity implements Serializable
                 }
                 else if (adapterView.getItemAtPosition(i) == "Y") {
                     magazines = -27.46;
+                    currentUser.setMagazinesCheck(true);
                     homeenergybtn.setEnabled(true);
                     transportationbtn.setEnabled(true);
                     getresultspage.setEnabled(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "N") {
                     magazines = 0;
+                    currentUser.setMagazinesCheck(false);
                     homeenergybtn.setEnabled(true);
                     transportationbtn.setEnabled(true);
                     getresultspage.setEnabled(true);
@@ -296,7 +301,7 @@ public class Waste extends AppCompatActivity implements Serializable
             @Override
             public void onClick(View view) {
                 estimatedWaste = (waste + plastic + magazines + metal + newspaper + glass) * (0.0005); //total waste in tons
-                Intent intent = new Intent(Waste.this, ResultsActivity.class);
+                Intent intent = new Intent(Waste.this, ResultsTabbedActivity.class);
                 currentUser.setWasteTotal(estimatedWaste);
                 intent.putExtra(CURRENT_USER_KEY, estimatedWaste);
                 intent.putExtra(CURRENT_USER_KEY, currentUser);

@@ -13,21 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".SuggestionPage"
-            android:exported="true"/>
-        <activity android:name=".WelcomeScreen"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
         <activity
-            android:name=".WasteResults"
+            android:name=".SuggestionsPage"
             android:exported="true" />
         <activity
-            android:name=".HomeEnergySuggestions"
+            android:name=".InitiateSuggestionsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AboutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PastResultsTabbedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ResultsTabbedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PastResultsDetailsActivity"
             android:exported="true" />
         <activity
             android:name=".Waste"
@@ -52,14 +57,33 @@
             android:exported="true" />
         <activity
             android:name=".DemoHomeActivity"
-            android:exported="true">
+            android:exported="true" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        </activity>
-        <activity
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity
             android:name=".LocationActivity"
             android:exported="true" />
         <activity
-            android:name=".ResultsActivity"
+            android:name=".HomeEnergySuggestions"
+            android:exported="true" />
+        <activity
+            android:name=".WasteResults"
+            android:exported="true" />
+<!--        <activity-->
+<!--            android:name=".WelcomeScreen"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+        <activity
+            android:name=".SuggestionPage"
             android:exported="true" />
     </application>
 
