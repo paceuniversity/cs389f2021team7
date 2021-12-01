@@ -58,17 +58,17 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 **Sprint 3** 
 
 * Sprint planning
-  *	US 18- Units
+  * US 3- Transportation
   * US 6- Reduce emissions for Home Energy (good score)
   * US 7- Reduce emissions for Home Energy (average score)
   * US 8- Reduce emissions for Home Energy (bad score)
-  * US 3- Transportation
   * US 9- Reduce emissions for Transportation (good score)
   * US 10- Reduce emissions for Transportation (average score)
   *	US 11- Reduce emissions for Transportation (bad score)
   *	US 12- Reduce emissions for Waste (good score)
   *	US 13- Reduce emissions for Waste (average score)
   *	US 14- Reduce emissions for Waste (bad score)
+  *	US 18- Units
   *	US 22– Welcome Screen
   *	US 29– Calculator Memory
   *	US 33– Design of App
