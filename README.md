@@ -74,7 +74,7 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 
 **Sprint 3** 
 
-* Sprint planning
+* [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=922820594)
 * Scrums
 * Sprint demo - video and apk (or equivalent)
 * Sprint retrospective
