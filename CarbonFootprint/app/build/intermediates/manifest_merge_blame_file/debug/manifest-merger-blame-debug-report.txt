@@ -42,8 +42,8 @@
 26        android:supportsRtl="true"
 26-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:14:9-35
 27        android:testOnly="true"
-28        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-28-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-65
+28        android:theme="@style/Theme.CarbonFootprint" >
+28-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-53
 29        <activity
 29-->C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:16:9-18:39
 30            android:name="com.example.carbonfootprint.SuggestionsPage"

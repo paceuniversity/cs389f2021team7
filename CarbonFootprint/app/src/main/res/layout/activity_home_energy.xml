@@ -7,21 +7,46 @@
     android:background="@color/white"
     tools:context=".HomeEnergy">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_activity_home_energy" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/homeEnergyToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:title="Home Energy">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/homeEnergyToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_info_24_toolbar" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="90dp"
         android:layout_height="38dp"
+        android:layout_marginTop="8dp"
         android:text="@string/Heating"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/homeEnergyToolbar"
         tools:text="Heating" />
 
     <TextView
@@ -52,7 +77,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,137 +118,193 @@
                 <TextView
                     android:id="@+id/description"
                     android:layout_width="0dp"
-                    android:layout_height="78dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/description"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/utility" />
 
-                <TextView
-                    android:id="@+id/naturalGas"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/naturalGasInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/naturalGas"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/description" />
-
-                <EditText
-                    android:id="@+id/naturalGasInput"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:autofillHints="Enter your natural gas"
-                    android:background="@drawable/test"
-                    android:ems="10"
-                    android:hint="@string/averageBill"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:nextFocusDown="@+id/electricityInput"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/naturalGas"
-                    tools:ignore="DuplicateSpeakableTextCheck" />
-
-                <TextView
-                    android:id="@+id/electricity"
-                    android:layout_width="0dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="16dp"
                     android:layout_marginTop="32dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/electricity"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Natural Gas (USD)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/naturalGasInput" />
+                    app:layout_constraintTop_toBottomOf="@+id/description"
+                    app:startIconDrawable="@drawable/ic_natural_gas">
 
-                <EditText
-                    android:id="@+id/electricityInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/test"
-                    android:nextFocusDown="@+id/fuelOilInput"
-                    android:ems="10"
-                    android:hint="@string/averageBill"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/electricity" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/naturalGasEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/fuelOil"
-                    android:layout_width="0dp"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/fuelOil"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/electricityInput" />
+<!--                <EditText-->
+<!--                    android:id="@+id/naturalGasInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:autofillHints="Enter your natural gas"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/averageBill"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    android:nextFocusDown="@+id/electricityInput"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/naturalGas"-->
+<!--                    tools:ignore="DuplicateSpeakableTextCheck" />-->
 
-                <EditText
-                    android:id="@+id/fuelOilInput"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/test"
-                    android:nextFocusDown="@+id/propaneInput"
-                    android:ems="10"
-                    android:hint="@string/averageBill"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/fuelOil" />
-
-                <TextView
-                    android:id="@+id/propane"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/propane"
-                    android:textColor="@color/black"
-                    android:textColorHint="@color/black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/fuelOilInput" />
-
-                <EditText
-                    android:id="@+id/propaneInput"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/electricityInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/test"
-                    android:ems="10"
-                    android:hint="@string/averageBill"
-                    android:inputType="number"
-                    android:minHeight="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Electricity (USD)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/naturalGasInputLayout"
+                    app:startIconDrawable="@drawable/ic_baseline_electrical_services_24">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/electricityEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/electricityInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/averageBill"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    android:nextFocusDown="@+id/fuelOilInput"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/electricity" />-->
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fuelOilInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Fuel Oil (USD)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/electricityInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fuelOilEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/fuelOilInput"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/averageBill"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    android:nextFocusDown="@+id/propaneInput"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/fuelOil" />-->
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/propaneInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Propane (USD)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
                     app:layout_constraintBottom_toTopOf="@id/homeEnergyImage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/propane" />
+                    app:layout_constraintTop_toBottomOf="@+id/fuelOilInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/propaneEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/propaneInput"-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/averageBill"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    app:layout_constraintBottom_toTopOf="@id/homeEnergyImage"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/propane" />-->
 
                 <ImageView
 
@@ -233,7 +314,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/propaneInput"
+                    app:layout_constraintTop_toBottomOf="@id/propaneInputLayout"
                     app:srcCompat="@drawable/home_energyimg" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -244,8 +325,11 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:backgroundTint="#48773E"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_design"
             android:text="@string/submit"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

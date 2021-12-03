@@ -11,16 +11,17 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.io.Serializable;
 
 public class HomeEnergyReduceEmissions extends AppCompatActivity implements Serializable {
     Spinner spinnerRefridge, spinnerFurnaceBoiler, spinnerWindow;
     Button transportationbutton, wastebutton, homeenergypreviousbutton;
-    EditText acThermostatInput, winterThermostatInput, reduceLightingInput, coldWaterInput;
     double acThermostat, winterThermostat, reduceLighting, coldWater, emissionsTotal, emissionsTotalAfterReduce, naturalGas, electricity, fuelOil, propane;
     userInfo currentUser;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
-
+    TextInputEditText acThermostatInput, winterThermostatInput, reduceLightingInput, coldWaterInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +33,10 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
 
 
 
-        acThermostatInput = (EditText) findViewById(R.id.acThermostatInput);
-        winterThermostatInput = (EditText) findViewById(R.id.winterThermostatInput);
-        reduceLightingInput = (EditText) findViewById(R.id.reduceLightingInput);
-        coldWaterInput = (EditText) findViewById(R.id.coldWaterInput);
+        acThermostatInput = findViewById(R.id.acThermostatEditText);
+        winterThermostatInput = findViewById(R.id.winterThermostatEditText);
+        reduceLightingInput = findViewById(R.id.reduceLightingEditText);
+        coldWaterInput = findViewById(R.id.coldWaterEditText);
 
 
         naturalGas = currentUser.getNaturalGas();
@@ -50,7 +51,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
 
         transportationbutton = findViewById(R.id.transportationbutton);
         wastebutton = findViewById(R.id.wasteSuggestionsBttn);
-        homeenergypreviousbutton = findViewById(R.id.homenergypreviousbutton);
+//        homeenergypreviousbutton = findViewById(R.id.homenergypreviousbutton);
 
         energyStarRefridge();
         energyStarFurnaceBoiler();

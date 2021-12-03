@@ -137,7 +137,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Ab
 	android:allowBackup
 		ADDED from C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:10:9-35
 	android:theme
-		ADDED from C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-65
+		ADDED from C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:15:9-53
 activity#com.example.carbonfootprint.SuggestionsPage
 ADDED from C:\Users\Abdulmalik Alotaibi\AndroidStudioProjects\CarbonFootprint\app\src\main\AndroidManifest.xml:16:9-18:39
 	android:exported

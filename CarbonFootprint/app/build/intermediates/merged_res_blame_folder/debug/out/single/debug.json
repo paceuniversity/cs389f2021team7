@@ -76,6 +76,10 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
     },
     {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_design3.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\button_design3.xml"
+    },
+    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_welcome_screen.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_welcome_screen.xml"
     },
@@ -176,6 +180,10 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\ic_baseline_electrical_services_24.xml"
     },
     {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_info_24_toolbar.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\ic_baseline_info_24_toolbar.xml"
+    },
+    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_home_energy.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_home_energy.xml"
     },
@@ -196,12 +204,24 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_waste_activity.xml"
     },
     {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_design2.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\button_design2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_house_24.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\ic_baseline_house_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_past_results_list.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\fragment_past_results_list.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_results.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_results.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\ic_baseline_person_24.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.png.flat",
@@ -330,6 +350,10 @@
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_design.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\button_design.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_home_energy.xml.flat",

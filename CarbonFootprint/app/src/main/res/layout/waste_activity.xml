@@ -11,9 +11,12 @@
         android:id="@+id/getresultspage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#48773E"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_design"
         android:text="Results"
-        app:layout_constraintBottom_toTopOf="@+id/homeenergybtn"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -21,11 +24,26 @@
         android:id="@+id/transportationbtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#48773E"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_design"
         android:text="Transportation"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/getresultspage"
         app:layout_constraintEnd_toStartOf="@+id/homeenergybtn"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/homeenergybtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_design"
+        android:text="Home Energy"
+        app:layout_constraintBottom_toTopOf="@+id/getresultspage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/transportationbtn" />
 
     <Spinner
         android:id="@+id/wasteSpinner5"
@@ -67,15 +85,6 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar_waste_activity" />
 
-    <Button
-        android:id="@+id/homeenergybtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#48773E"
-        android:text="Home Energy"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/transportationbtn" />
 
     <TextView
         android:id="@+id/metalText"

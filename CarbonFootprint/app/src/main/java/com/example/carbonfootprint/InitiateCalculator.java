@@ -1,5 +1,6 @@
 package com.example.carbonfootprint;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -16,6 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -23,8 +26,8 @@ import org.json.JSONException;
 import java.io.Serializable;
 
 public class InitiateCalculator extends AppCompatActivity implements Serializable {
-    EditText householdNumberInput;
-    EditText nameInput;
+    TextInputEditText householdNumberInput;
+    TextInputEditText nameInput;
     int numberOfPeople;
     Button homeEnergy;
     Button transportation;
@@ -46,8 +49,8 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         super.onCreate(savedInstanceState);
         overridePendingTransition(0, 0);
         setContentView(R.layout.activity_initiate_calculator);
-        householdNumberInput = (EditText) findViewById(R.id.houseHoldNumberInput);
-        nameInput = (EditText) findViewById(R.id.nameInput);
+        householdNumberInput = findViewById(R.id.householdEditText);
+        nameInput = findViewById(R.id.nameInputEditText);
 
         getResults = findViewById(R.id.exitButton);
 

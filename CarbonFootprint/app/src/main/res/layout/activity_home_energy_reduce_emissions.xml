@@ -18,13 +18,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <ScrollView
             android:id="@+id/homeEnergyReduceScrollView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintBottom_toTopOf="@id/getresultspage2"
+            app:layout_constraintBottom_toTopOf="@id/wastebutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -76,53 +77,110 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/heatingAndCooling" />
 
-                <EditText
-                    android:id="@+id/acThermostatInput"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/acThermostatInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/test"
-                    android:ems="10"
-                    android:hint="@string/acThermostatInput"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:nextFocusDown="@+id/winterThermostatInput"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Degrees (°F)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
-                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/acThermostat" />
+                    app:layout_constraintTop_toBottomOf="@id/acThermostat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/acThermostatEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/winterThermostatEditText"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/acThermostatInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/acThermostatInput"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    android:nextFocusDown="@+id/winterThermostatInput"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/acThermostat" />-->
 
                 <TextView
                     android:id="@+id/winterThermostat"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginStart="20dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="20dp"
                     android:text="@string/winterThermostat"
                     android:textColor="@color/black"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/acThermostatInput" />
+                    app:layout_constraintTop_toBottomOf="@id/acThermostatInputLayout" />
 
-                <EditText
-                    android:id="@+id/winterThermostatInput"
-                    android:layout_width="match_parent"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/winterThermostatInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/test"
-                    android:ems="10"
-                    android:hint="@string/winterThermostatInput"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:nextFocusDown="@+id/reduceLightingInput"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Degrees (°F)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
-                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/winterThermostat" />
+                    app:layout_constraintTop_toBottomOf="@id/winterThermostat">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/winterThermostatEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/reduceLightingEditText"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/winterThermostatInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/winterThermostatInput"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    android:nextFocusDown="@+id/reduceLightingInput"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/winterThermostat" />-->
 
                 <TextView
                     android:id="@+id/lighting"
@@ -137,7 +195,7 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/winterThermostatInput" />
+                    app:layout_constraintTop_toBottomOf="@id/winterThermostatInputLayout" />
 
                 <TextView
                     android:id="@+id/reduceLighting"
@@ -152,23 +210,53 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/lighting" />
 
-                <EditText
-                    android:id="@+id/reduceLightingInput"
-                    android:layout_width="match_parent"
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reduceLightingInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:background="@drawable/test"
-                    android:ems="10"
-                    android:hint="@string/reduceLightingInput"
-                    android:importantForAutofill="no"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:textSize="17dp"
-                    android:nextFocusDown="@+id/coldWaterInput"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Light Bulb(s)"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="@id/constraintLayout"
-                    app:layout_constraintTop_toBottomOf="@id/reduceLighting" />
+                    app:layout_constraintTop_toBottomOf="@id/reduceLighting">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/reduceLightingEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/coldWaterEditText"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/reduceLightingInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/reduceLightingInput"-->
+<!--                    android:importantForAutofill="no"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    android:nextFocusDown="@+id/coldWaterInput"-->
+<!--                    android:textSize="17dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintStart_toStartOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/reduceLighting" />-->
 
                 <TextView
                     android:id="@+id/washingAndDrying"
@@ -183,7 +271,7 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/reduceLightingInput" />
+                    app:layout_constraintTop_toBottomOf="@id/reduceLightingInputLayout" />
 
                 <TextView
                     android:id="@+id/coldWater"
@@ -198,21 +286,52 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/washingAndDrying" />
 
-                <EditText
-                    android:id="@+id/coldWaterInput"
-                    android:layout_width="match_parent"
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/coldWaterInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:ems="10"
-                    android:hint="@string/coldWaterInput"
-                    android:inputType="number"
-                    android:minHeight="48dp"
-                    android:background="@drawable/test"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:hint="Load(s) of Laundry"
+                    app:boxStrokeColor="#48773E"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="4"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
-                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/coldWater" />
+                    app:layout_constraintTop_toBottomOf="@id/coldWater">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/coldWaterEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:nextFocusDown="@+id/starEnergyRefrigerator"
+                        android:maxLength="8" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+<!--                <EditText-->
+<!--                    android:id="@+id/coldWaterInput"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="20dp"-->
+<!--                    android:layout_marginEnd="20dp"-->
+<!--                    android:background="@drawable/test"-->
+<!--                    android:ems="10"-->
+<!--                    android:hint="@string/coldWaterInput"-->
+<!--                    android:inputType="number"-->
+<!--                    android:minHeight="48dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/coldWater" />-->
 
                 <TextView
                     android:id="@+id/energyStar"
@@ -227,7 +346,7 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/coldWaterInput" />
+                    app:layout_constraintTop_toBottomOf="@id/coldWaterInputLayout" />
 
                 <TextView
                     android:id="@+id/refrigerator"
@@ -332,11 +451,15 @@
             android:id="@+id/transportationbutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#48773E"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_design"
             android:onClick="HomeReducetoTransportation"
             android:text="Transportation"
             android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/getresultspage2"
+            app:layout_constraintTop_toBottomOf="@id/homeEnergyReduceScrollView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/wastebutton" />
 
@@ -344,35 +467,41 @@
             android:id="@+id/wastebutton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#48773E"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_design"
             android:onClick="HomeReducetoWaste"
             android:text="Waste"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/getresultspage2"
+            app:layout_constraintTop_toBottomOf="@id/homeEnergyReduceScrollView"
             app:layout_constraintEnd_toStartOf="@+id/transportationbutton"
-            app:layout_constraintStart_toEndOf="@+id/homenergypreviousbutton" />
-
-        <Button
-            android:id="@+id/homenergypreviousbutton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#48773E"
-            android:onClick="HomeReducetoHomeEnergy"
-            android:text="Back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/wastebutton"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <!--        <Button-->
+        <!--            android:id="@+id/homenergypreviousbutton"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="8dp"-->
+        <!--            android:background="@drawable/button_design"-->
+        <!--            android:onClick="HomeReducetoHomeEnergy"-->
+        <!--            android:text="Back"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toStartOf="@+id/wastebutton"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
         <Button
             android:id="@+id/getresultspage2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#48773E"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_design"
             android:onClick="HomeReducetoResults"
             android:text="Results"
-            app:layout_constraintBottom_toTopOf="@+id/wastebutton"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/homeEnergyReduceScrollView" />
+            app:layout_constraintStart_toStartOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

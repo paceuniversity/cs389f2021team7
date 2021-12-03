@@ -140,7 +140,7 @@ public class PastResultsListFragment extends Fragment implements Serializable {
             public void onDeleteClick(int position) {
                 databaseHelper.delete(databaseHelper.getEveryone().get(position).getId());
                 ShowOnListView(databaseHelper);
-                Toast.makeText(getActivity(), "deleted", Toast.LENGTH_LONG).show();
+//                Toast.makeText(getActivity(), "deleted", Toast.LENGTH_LONG).show();
 
 
             }

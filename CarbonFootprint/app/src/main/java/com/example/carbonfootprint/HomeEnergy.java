@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 import java.io.Serializable;
 
 public class HomeEnergy extends AppCompatActivity implements Serializable {
@@ -32,8 +34,7 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
     public static final String FUELOIL = "com.example.carbonfootprint.FUELOIL";
     public static final String PROPANE = "com.example.carbonfootprint.PROPANE";
     userInfo currentUser;
-
-    EditText naturalGasInput, electricityInput, fuelOilInput, propaneInput;
+    TextInputEditText naturalGasInput, electricityInput, fuelOilInput, propaneInput;
 
     Button submit;
 
@@ -43,10 +44,10 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         super.onCreate(savedInstanceState);
         overridePendingTransition(0, 0);
         setContentView(R.layout.activity_home_energy);
-        naturalGasInput = (EditText) findViewById(R.id.naturalGasInput);
-        electricityInput = (EditText) findViewById(R.id.electricityInput);
-        fuelOilInput = (EditText)  findViewById(R.id.fuelOilInput);
-        propaneInput = (EditText) findViewById(R.id.propaneInput);
+        naturalGasInput = findViewById(R.id.naturalGasEditText);
+        electricityInput = findViewById(R.id.electricityEditText);
+        fuelOilInput = findViewById(R.id.fuelOilEditText);
+        propaneInput = findViewById(R.id.propaneEditText);
         primaryHeatSpinner = findViewById(R.id.primaryHeatSpinner);
         submit = (Button) findViewById(R.id.estimatedC02);
         submit.setEnabled(false);
