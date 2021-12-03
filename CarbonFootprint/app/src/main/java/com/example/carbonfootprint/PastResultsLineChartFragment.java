@@ -1,6 +1,6 @@
 package com.example.carbonfootprint;
 
-import static com.example.carbonfootprint.DemoHomeActivity.databaseHelper;
+import static com.example.carbonfootprint.HomeActivity.databaseHelper;
 
 import android.content.Intent;
 import android.graphics.Canvas;

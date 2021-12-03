@@ -1,6 +1,6 @@
 package com.example.carbonfootprint;
 
-import static com.example.carbonfootprint.DemoHomeActivity.databaseHelper;
+import static com.example.carbonfootprint.HomeActivity.databaseHelper;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -84,7 +84,12 @@ public class PastResultsListFragment extends Fragment implements Serializable {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_past_results_list, container, false);
 
-        currentUser = (userInfo) getActivity().getIntent().getSerializableExtra(CURRENT_USER_KEY);
+        if (currentUser == null) {
+            currentUser = ((HomeActivity) getActivity()).currentUser;
+        }
+        else {
+            currentUser = (userInfo) getActivity().getIntent().getSerializableExtra(CURRENT_USER_KEY);
+        }
 
         recyclerView = view.findViewById(R.id.recyclerView);
 
@@ -98,9 +103,13 @@ public class PastResultsListFragment extends Fragment implements Serializable {
 //            databaseHelper.add(pastResults);
 //        }
 
+        if (databaseHelper == null) {
+            databaseHelper = new DatabaseHelper(getActivity());
+        }
+
         ShowOnListView (databaseHelper);
 
-        currentUser.setPastResultsCheck(false);
+//        currentUser.setPastResultsCheck(false);
 
         return view;
     }

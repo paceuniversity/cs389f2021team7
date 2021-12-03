@@ -54,6 +54,8 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
 
         getResults = findViewById(R.id.exitButton);
 
+
+
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
 //        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
@@ -208,4 +210,10 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         queue.add(request);
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.putExtra(CURRENT_USER_KEY, currentUser);
+        startActivity(intent);
+    }
 }

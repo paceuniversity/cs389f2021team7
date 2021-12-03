@@ -1,47 +1,23 @@
-com/example/carbonfootprint/ResultsBarChartFragment.java
- com.example.carbonfootprint.ResultsBarChartFragment
-com/example/carbonfootprint/WasteResults.java
- com.example.carbonfootprint.WasteResults
- com.example.carbonfootprint.WasteResults$1
- com.example.carbonfootprint.WasteResults$2
- com.example.carbonfootprint.WasteResults$Chk_class
- com.example.carbonfootprint.WasteResults$Chk_class1
- com.example.carbonfootprint.WasteResults$Chk_class2
- com.example.carbonfootprint.WasteResults$Chk_class3
- com.example.carbonfootprint.WasteResults$Chk_class4
-com/example/carbonfootprint/Transportation.java
- com.example.carbonfootprint.Transportation
- com.example.carbonfootprint.Transportation$1
- com.example.carbonfootprint.Transportation$10
- com.example.carbonfootprint.Transportation$11
- com.example.carbonfootprint.Transportation$2
- com.example.carbonfootprint.Transportation$3
- com.example.carbonfootprint.Transportation$4
- com.example.carbonfootprint.Transportation$5
- com.example.carbonfootprint.Transportation$6
- com.example.carbonfootprint.Transportation$7
- com.example.carbonfootprint.Transportation$8
- com.example.carbonfootprint.Transportation$9
+com/example/carbonfootprint/databinding/ToolbarSettingsActivityBinding.java
+ com.example.carbonfootprint.databinding.ToolbarSettingsActivityBinding
+com/example/carbonfootprint/databinding/ActivityInitiateSuggestionsBinding.java
+ com.example.carbonfootprint.databinding.ActivityInitiateSuggestionsBinding
 com/example/carbonfootprint/ResultsTabbedActivity.java
  com.example.carbonfootprint.ResultsTabbedActivity
  com.example.carbonfootprint.ResultsTabbedActivity$1
  com.example.carbonfootprint.ResultsTabbedActivity$2
-com/example/carbonfootprint/CardViewPastResults.java
- com.example.carbonfootprint.CardViewPastResults
 com/example/carbonfootprint/DemoCalculatorActivity.java
  com.example.carbonfootprint.DemoCalculatorActivity
  com.example.carbonfootprint.DemoCalculatorActivity$1
  com.example.carbonfootprint.DemoCalculatorActivity$2
 com/example/carbonfootprint/PastResultsData.java
  com.example.carbonfootprint.PastResultsData
-com/example/carbonfootprint/HomeEnergyReduceEmissions.java
- com.example.carbonfootprint.HomeEnergyReduceEmissions
+com/example/carbonfootprint/databinding/ActivityHomeEnergyReduceEmissionsBinding.java
+ com.example.carbonfootprint.databinding.ActivityHomeEnergyReduceEmissionsBinding
+com/example/carbonfootprint/databinding/ActivityDemoCalculatorBinding.java
+ com.example.carbonfootprint.databinding.ActivityDemoCalculatorBinding
 com/example/carbonfootprint/ResultsFragmentAdapter.java
  com.example.carbonfootprint.ResultsFragmentAdapter
-com/example/carbonfootprint/PastResultsFragmentAdapter.java
- com.example.carbonfootprint.PastResultsFragmentAdapter
-com/example/carbonfootprint/PastResultsLineChartFragment.java
- com.example.carbonfootprint.PastResultsLineChartFragment
 com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy
  com.example.carbonfootprint.HomeEnergy$1
@@ -50,6 +26,10 @@ com/example/carbonfootprint/HomeEnergy.java
  com.example.carbonfootprint.HomeEnergy$4
  com.example.carbonfootprint.HomeEnergy$5
  com.example.carbonfootprint.HomeEnergy$6
+com/example/carbonfootprint/databinding/ToolbarDemoHomeBinding.java
+ com.example.carbonfootprint.databinding.ToolbarDemoHomeBinding
+com/example/carbonfootprint/databinding/ActivityTransportationBinding.java
+ com.example.carbonfootprint.databinding.ActivityTransportationBinding
 com/example/carbonfootprint/PastResultsListFragment.java
  com.example.carbonfootprint.PastResultsListFragment
  com.example.carbonfootprint.PastResultsListFragment$1
@@ -64,33 +44,176 @@ com/example/carbonfootprint/SettingsActivity.java
  com.example.carbonfootprint.SettingsActivity$5
  com.example.carbonfootprint.SettingsActivity$6
  com.example.carbonfootprint.SettingsActivity$7
+com/example/carbonfootprint/databinding/ActivityPastResultsDetailsBinding.java
+ com.example.carbonfootprint.databinding.ActivityPastResultsDetailsBinding
+com/example/carbonfootprint/databinding/ActivityAboutBinding.java
+ com.example.carbonfootprint.databinding.ActivityAboutBinding
+com/example/carbonfootprint/databinding/ActivitySuggestionsPageBinding.java
+ com.example.carbonfootprint.databinding.ActivitySuggestionsPageBinding
+com/example/carbonfootprint/databinding/ActivitySettingsBinding.java
+ com.example.carbonfootprint.databinding.ActivitySettingsBinding
+com/example/carbonfootprint/databinding/FragmentResultsPieChartBinding.java
+ com.example.carbonfootprint.databinding.FragmentResultsPieChartBinding
+com/example/carbonfootprint/databinding/ToolbarActivitySuggestionsBinding.java
+ com.example.carbonfootprint.databinding.ToolbarActivitySuggestionsBinding
+com/example/carbonfootprint/LocationActivity.java
+ com.example.carbonfootprint.LocationActivity
+com/example/carbonfootprint/databinding/ActivityDemoHomeBinding.java
+ com.example.carbonfootprint.databinding.ActivityDemoHomeBinding
+com/example/carbonfootprint/PastResultsTabbedActivity.java
+ com.example.carbonfootprint.PastResultsTabbedActivity
+ com.example.carbonfootprint.PastResultsTabbedActivity$1
+ com.example.carbonfootprint.PastResultsTabbedActivity$2
+com/example/carbonfootprint/databinding/FragmentPastResultsBinding.java
+ com.example.carbonfootprint.databinding.FragmentPastResultsBinding
+com/example/carbonfootprint/HomeFragment.java
+ com.example.carbonfootprint.HomeFragment
+ com.example.carbonfootprint.HomeFragment$1
+com/example/carbonfootprint/databinding/CardviewActivitySettingsBinding.java
+ com.example.carbonfootprint.databinding.CardviewActivitySettingsBinding
+com/example/carbonfootprint/databinding/ToolbarPastResultsDetailsBinding.java
+ com.example.carbonfootprint.databinding.ToolbarPastResultsDetailsBinding
+com/example/carbonfootprint/databinding/ToolbarDemoCalculatorBinding.java
+ com.example.carbonfootprint.databinding.ToolbarDemoCalculatorBinding
+com/example/carbonfootprint/SuggestionPage.java
+ com.example.carbonfootprint.SuggestionPage
+ com.example.carbonfootprint.SuggestionPage$1Check_class
+com/example/carbonfootprint/userInfo.java
+ com.example.carbonfootprint.userInfo
+com/example/carbonfootprint/DatabaseHelper.java
+ com.example.carbonfootprint.DatabaseHelper
+com/example/carbonfootprint/Waste.java
+ com.example.carbonfootprint.Waste
+ com.example.carbonfootprint.Waste$1
+ com.example.carbonfootprint.Waste$2
+ com.example.carbonfootprint.Waste$3
+ com.example.carbonfootprint.Waste$4
+ com.example.carbonfootprint.Waste$5
+ com.example.carbonfootprint.Waste$6
+ com.example.carbonfootprint.Waste$7
+ com.example.carbonfootprint.Waste$8
+com/example/carbonfootprint/databinding/FragmentResultsFootprintBinding.java
+ com.example.carbonfootprint.databinding.FragmentResultsFootprintBinding
+com/example/carbonfootprint/InitiateSuggestionsActivity.java
+ com.example.carbonfootprint.InitiateSuggestionsActivity
+com/example/carbonfootprint/databinding/FragmentSettingsBinding.java
+ com.example.carbonfootprint.databinding.FragmentSettingsBinding
+com/example/carbonfootprint/ResultsBarChartFragment.java
+ com.example.carbonfootprint.ResultsBarChartFragment
+com/example/carbonfootprint/databinding/ToolbarAboutBinding.java
+ com.example.carbonfootprint.databinding.ToolbarAboutBinding
+com/example/carbonfootprint/SettingsFragment.java
+ com.example.carbonfootprint.SettingsFragment
+ com.example.carbonfootprint.SettingsFragment$1
+ com.example.carbonfootprint.SettingsFragment$2
+ com.example.carbonfootprint.SettingsFragment$3
+ com.example.carbonfootprint.SettingsFragment$4
+ com.example.carbonfootprint.SettingsFragment$5
+ com.example.carbonfootprint.SettingsFragment$6
+ com.example.carbonfootprint.SettingsFragment$7
+com/example/carbonfootprint/databinding/ToolbarLocationBinding.java
+ com.example.carbonfootprint.databinding.ToolbarLocationBinding
+com/example/carbonfootprint/databinding/FragmentResultsBarChartBinding.java
+ com.example.carbonfootprint.databinding.FragmentResultsBarChartBinding
+com/example/carbonfootprint/databinding/ActivityHomeBinding.java
+ com.example.carbonfootprint.databinding.ActivityHomeBinding
+com/example/carbonfootprint/WasteResults.java
+ com.example.carbonfootprint.WasteResults
+ com.example.carbonfootprint.WasteResults$1
+ com.example.carbonfootprint.WasteResults$2
+ com.example.carbonfootprint.WasteResults$Chk_class
+ com.example.carbonfootprint.WasteResults$Chk_class1
+ com.example.carbonfootprint.WasteResults$Chk_class2
+ com.example.carbonfootprint.WasteResults$Chk_class3
+ com.example.carbonfootprint.WasteResults$Chk_class4
+com/example/carbonfootprint/databinding/ToolbarActivityInitiateCalculatorBinding.java
+ com.example.carbonfootprint.databinding.ToolbarActivityInitiateCalculatorBinding
+com/example/carbonfootprint/databinding/ToolbarPastResultsBinding.java
+ com.example.carbonfootprint.databinding.ToolbarPastResultsBinding
+com/example/carbonfootprint/databinding/FragmentHomeBinding.java
+ com.example.carbonfootprint.databinding.FragmentHomeBinding
+com/example/carbonfootprint/Transportation.java
+ com.example.carbonfootprint.Transportation
+ com.example.carbonfootprint.Transportation$1
+ com.example.carbonfootprint.Transportation$10
+ com.example.carbonfootprint.Transportation$11
+ com.example.carbonfootprint.Transportation$2
+ com.example.carbonfootprint.Transportation$3
+ com.example.carbonfootprint.Transportation$4
+ com.example.carbonfootprint.Transportation$5
+ com.example.carbonfootprint.Transportation$6
+ com.example.carbonfootprint.Transportation$7
+ com.example.carbonfootprint.Transportation$8
+ com.example.carbonfootprint.Transportation$9
+com/example/carbonfootprint/CardViewPastResults.java
+ com.example.carbonfootprint.CardViewPastResults
+com/example/carbonfootprint/databinding/ToolbarSuggestionsBinding.java
+ com.example.carbonfootprint.databinding.ToolbarSuggestionsBinding
+com/example/carbonfootprint/databinding/ToolbarResultsBinding.java
+ com.example.carbonfootprint.databinding.ToolbarResultsBinding
+com/example/carbonfootprint/PastResultsFragment.java
+ com.example.carbonfootprint.PastResultsFragment
+ com.example.carbonfootprint.PastResultsFragment$1
+ com.example.carbonfootprint.PastResultsFragment$2
+com/example/carbonfootprint/HomeEnergyReduceEmissions.java
+ com.example.carbonfootprint.HomeEnergyReduceEmissions
+com/example/carbonfootprint/databinding/ToolbarActivityTransportationBinding.java
+ com.example.carbonfootprint.databinding.ToolbarActivityTransportationBinding
+com/example/carbonfootprint/PastResultsFragmentAdapter.java
+ com.example.carbonfootprint.PastResultsFragmentAdapter
+com/example/carbonfootprint/PastResultsLineChartFragment.java
+ com.example.carbonfootprint.PastResultsLineChartFragment
+com/example/carbonfootprint/databinding/ToolbarWasteActivityBinding.java
+ com.example.carbonfootprint.databinding.ToolbarWasteActivityBinding
+com/example/carbonfootprint/SplashScreen.java
+ com.example.carbonfootprint.SplashScreen
+ com.example.carbonfootprint.SplashScreen$1
 com/example/carbonfootprint/CustomXAxisRenderer.java
  com.example.carbonfootprint.CustomXAxisRenderer
 com/example/carbonfootprint/WelcomeScreen.java
  com.example.carbonfootprint.WelcomeScreen
  com.example.carbonfootprint.WelcomeScreen$1
+com/example/carbonfootprint/HomeActivity.java
+ com.example.carbonfootprint.HomeActivity
+ com.example.carbonfootprint.HomeActivity$1
+ com.example.carbonfootprint.HomeActivity$2
 com/example/carbonfootprint/RecyclerViewAdapterSettings.java
  com.example.carbonfootprint.RecyclerViewAdapterSettings
  com.example.carbonfootprint.RecyclerViewAdapterSettings$OnItemClickListenerSettings
  com.example.carbonfootprint.RecyclerViewAdapterSettings$ViewHolderRecyclerViewSettings
  com.example.carbonfootprint.RecyclerViewAdapterSettings$ViewHolderRecyclerViewSettings$1
+com/example/carbonfootprint/databinding/ActivityHomeenergysuggestionsBinding.java
+ com.example.carbonfootprint.databinding.ActivityHomeenergysuggestionsBinding
+com/example/carbonfootprint/databinding/ActivitySuggestionsBinding.java
+ com.example.carbonfootprint.databinding.ActivitySuggestionsBinding
 com/example/carbonfootprint/ResultsPieChartFragment.java
  com.example.carbonfootprint.ResultsPieChartFragment
+com/example/carbonfootprint/databinding/ToolbarActivityHomeEnergyBinding.java
+ com.example.carbonfootprint.databinding.ToolbarActivityHomeEnergyBinding
+com/example/carbonfootprint/databinding/ActivityInitiateCalculatorBinding.java
+ com.example.carbonfootprint.databinding.ActivityInitiateCalculatorBinding
+com/example/carbonfootprint/databinding/CardviewActivityPastResultsBinding.java
+ com.example.carbonfootprint.databinding.CardviewActivityPastResultsBinding
 com/example/carbonfootprint/AboutActivity.java
  com.example.carbonfootprint.AboutActivity
-com/example/carbonfootprint/LocationActivity.java
- com.example.carbonfootprint.LocationActivity
-com/example/carbonfootprint/PastResultsTabbedActivity.java
- com.example.carbonfootprint.PastResultsTabbedActivity
- com.example.carbonfootprint.PastResultsTabbedActivity$1
- com.example.carbonfootprint.PastResultsTabbedActivity$2
+com/example/carbonfootprint/databinding/ActivityResultsTabbedBinding.java
+ com.example.carbonfootprint.databinding.ActivityResultsTabbedBinding
+com/example/carbonfootprint/databinding/ActivityHomeEnergyBinding.java
+ com.example.carbonfootprint.databinding.ActivityHomeEnergyBinding
+com/example/carbonfootprint/databinding/ActivityWelcomeScreenBinding.java
+ com.example.carbonfootprint.databinding.ActivityWelcomeScreenBinding
+com/example/carbonfootprint/databinding/ActivityWasteResultsBinding.java
+ com.example.carbonfootprint.databinding.ActivityWasteResultsBinding
+com/example/carbonfootprint/databinding/FragmentPastResultsLineChartBinding.java
+ com.example.carbonfootprint.databinding.FragmentPastResultsLineChartBinding
 com/example/carbonfootprint/PastResultsDetailsActivity.java
  com.example.carbonfootprint.PastResultsDetailsActivity
  com.example.carbonfootprint.PastResultsDetailsActivity$1
  com.example.carbonfootprint.PastResultsDetailsActivity$2
-com/example/carbonfootprint/SuggestionPage.java
- com.example.carbonfootprint.SuggestionPage
- com.example.carbonfootprint.SuggestionPage$1Check_class
+com/example/carbonfootprint/databinding/ToolbarSuggestionsPageBinding.java
+ com.example.carbonfootprint.databinding.ToolbarSuggestionsPageBinding
+com/example/carbonfootprint/databinding/ActivityLocationBinding.java
+ com.example.carbonfootprint.databinding.ActivityLocationBinding
 com/example/carbonfootprint/InitiateCalculator.java
  com.example.carbonfootprint.InitiateCalculator
  com.example.carbonfootprint.InitiateCalculator$1
@@ -106,25 +229,13 @@ com/example/carbonfootprint/RecyclerViewAdapterPastResults.java
  com.example.carbonfootprint.RecyclerViewAdapterPastResults$ViewHolderRecyclerView
  com.example.carbonfootprint.RecyclerViewAdapterPastResults$ViewHolderRecyclerView$1
  com.example.carbonfootprint.RecyclerViewAdapterPastResults$ViewHolderRecyclerView$2
-com/example/carbonfootprint/userInfo.java
- com.example.carbonfootprint.userInfo
-com/example/carbonfootprint/DatabaseHelper.java
- com.example.carbonfootprint.DatabaseHelper
 com/example/carbonfootprint/ResultsFootprintFragment.java
  com.example.carbonfootprint.ResultsFootprintFragment
  com.example.carbonfootprint.ResultsFootprintFragment$1
  com.example.carbonfootprint.ResultsFootprintFragment$1$1
  com.example.carbonfootprint.ResultsFootprintFragment$2
-com/example/carbonfootprint/Waste.java
- com.example.carbonfootprint.Waste
- com.example.carbonfootprint.Waste$1
- com.example.carbonfootprint.Waste$2
- com.example.carbonfootprint.Waste$3
- com.example.carbonfootprint.Waste$4
- com.example.carbonfootprint.Waste$5
- com.example.carbonfootprint.Waste$6
- com.example.carbonfootprint.Waste$7
- com.example.carbonfootprint.Waste$8
+com/example/carbonfootprint/databinding/ActivityPastResultsTabbedBinding.java
+ com.example.carbonfootprint.databinding.ActivityPastResultsTabbedBinding
 com/example/carbonfootprint/SuggestionsPage.java
  com.example.carbonfootprint.SuggestionsPage
  com.example.carbonfootprint.SuggestionsPage$1
@@ -138,11 +249,15 @@ com/example/carbonfootprint/SuggestionsPage.java
  com.example.carbonfootprint.SuggestionsPage$7
  com.example.carbonfootprint.SuggestionsPage$8
  com.example.carbonfootprint.SuggestionsPage$9
-com/example/carbonfootprint/InitiateSuggestionsActivity.java
- com.example.carbonfootprint.InitiateSuggestionsActivity
 com/example/carbonfootprint/DemoHomeActivity.java
  com.example.carbonfootprint.DemoHomeActivity
  com.example.carbonfootprint.DemoHomeActivity$1
+com/example/carbonfootprint/databinding/ActivitySplashScreenBinding.java
+ com.example.carbonfootprint.databinding.ActivitySplashScreenBinding
+com/example/carbonfootprint/databinding/WasteActivityBinding.java
+ com.example.carbonfootprint.databinding.WasteActivityBinding
+com/example/carbonfootprint/databinding/FragmentPastResultsListBinding.java
+ com.example.carbonfootprint.databinding.FragmentPastResultsListBinding
 com/example/carbonfootprint/BuildConfig.java
  com.example.carbonfootprint.BuildConfig
 com/example/carbonfootprint/HomeEnergySuggestions.java

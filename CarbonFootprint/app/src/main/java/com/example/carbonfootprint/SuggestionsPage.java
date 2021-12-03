@@ -1,15 +1,20 @@
 package com.example.carbonfootprint;
 
+import static com.example.carbonfootprint.HomeActivity.databaseHelper;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class SuggestionsPage extends AppCompatActivity implements Serializable {
     TextView changePrimaryHeating, ReduceNaturalGas, ReduceElectricity, ReduceFuelOil, ReducePropane, RecycleMetal, RecycleGlass, RecyclePlastic, RecycleNewspaper, RecycleMagazines, CarMiles, CarMaintenance;
@@ -18,6 +23,9 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
     TextView OriginalResult, SubtractedAmount, newResult;
     Double changePrimaryHeatingValue, ReduceNaturalGasValue, ReduceElectricityValue, ReduceFuelOilValue, ReducePropaneValue, RecycleMetalValue, RecycleGlassValue, RecyclePlasticValue, RecycleNewspaperValue, RecycleMagazinesValue, CarMilesValue, CarMaintenanceValue;
     Double DemoTotal;
+    String format;
+    Button exitButton;
+    String householdNumber, homeEnergy, transportation, waste;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
     @Override
@@ -71,6 +79,22 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
         RecycleMagazinesCheck = findViewById(R.id.RecycleMagazinesCheck);
         CarMilesCheck = findViewById(R.id.CarMilesCheck);
         CarMaintenanceCheck = findViewById(R.id.CarMaintenanceCheck);
+
+        exitButton = findViewById(R.id.suggestionsExitButton);
+
+        householdNumber = Integer.toString(currentUser.getHouseholdNumber());
+        homeEnergy = String.format("%.2f", currentUser.getHomeEnergyTotal());
+        transportation = String.format("%.2f", (currentUser.getTransportationTotal()/Integer.parseInt(householdNumber)));
+        waste = String.format("%.2f", currentUser.getWasteTotal());
+
+
+
+        if (currentUser.getSavePastResultsCheck()) {
+            exitButton.setText("Save and Exit");
+        }
+        else {
+            exitButton.setText("Exit");
+        }
 
 
         changePrimaryHeating.setVisibility(View.GONE);
@@ -317,5 +341,23 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
 
 //        Toast.makeText(this, Double.parseDouble(currentUser.getElectricityValue()) + " " + currentUser.getHouseholdNumber(), Toast.LENGTH_LONG).show();
 
+    }
+    public void exitCalculatorButton(View view) {
+        if (currentUser.getSavePastResultsCheck()) {
+            currentUser.setPastResultsCheck(true);
+            SimpleDateFormat s = new SimpleDateFormat("hh:mm aa\nMMM dd, yyyy");
+            format = s.format(new Date());
+            currentUser.setTimestamp(format);
+            PastResultsData pastResults = new PastResultsData(-1, currentUser.getName(), currentUser.getTimestamp(), currentUser.getCountryCode(), householdNumber, homeEnergy, transportation, waste, currentUser.getDemoTotal(), currentUser.getAvgValueWB());
+            databaseHelper.add(pastResults);
+            Intent intent = new Intent(this, HomeActivity.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            Intent intent = new Intent(this, DemoHomeActivity.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
     }
 }

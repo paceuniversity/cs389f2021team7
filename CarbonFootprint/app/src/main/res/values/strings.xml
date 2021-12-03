@@ -155,5 +155,9 @@
     <string name="waste_reduce_title">REDUCE YOUR SCORE</string>
     <string name="checkBox">Please check all that apply</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_pastresults">Past Results</string>
+    <string name="title_settings">Settings</string>
 
 </resources>

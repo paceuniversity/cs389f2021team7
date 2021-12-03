@@ -4,11 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_settings_activity" />
+    android:paddingTop="?attr/actionBarSize"
+    tools:context=".SettingsFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/aboutCardView"
@@ -17,7 +14,7 @@
         app:cardCornerRadius="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"

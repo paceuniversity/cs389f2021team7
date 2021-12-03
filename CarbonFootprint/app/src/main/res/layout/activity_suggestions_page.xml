@@ -15,22 +15,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="0.00"
+        android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Equals" />
+        app:layout_constraintBottom_toTopOf="@+id/resultsDivider2"
+        app:layout_constraintStart_toEndOf="@+id/Equals"
+        app:layout_constraintTop_toBottomOf="@+id/resultsDivider" />
 
     <TextView
         android:id="@+id/Equals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="="
+        android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/SubtractedAmount" />
+        app:layout_constraintBottom_toTopOf="@+id/resultsDivider2"
+        app:layout_constraintStart_toEndOf="@+id/SubtractedAmount"
+        app:layout_constraintTop_toBottomOf="@+id/resultsDivider" />
 
     <ScrollView
         android:id="@+id/suggestionsScrollView"
@@ -66,6 +72,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Recycle magazines"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RecycleNewspaper" />
 
@@ -86,6 +93,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Recycle newspaper"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RecyclePlastic" />
 
@@ -106,6 +114,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Recycle plastic"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RecycleGlass" />
 
@@ -126,6 +135,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Recycle glass"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RecycleMetal" />
 
@@ -146,6 +156,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Recycle metal"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ReducePropane" />
 
@@ -193,6 +204,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Reduce Natural Gas by 30%"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/changePrimaryHeating" />
 
@@ -204,6 +216,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Reduce Electricity by 30%"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ReduceNaturalGas" />
 
@@ -215,6 +228,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Reduce Fuel Oil by 30%"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ReduceElectricity" />
 
@@ -226,6 +240,7 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Reduce Propane by 30%"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ReduceFuelOil" />
 
@@ -237,17 +252,18 @@
                 android:layout_marginTop="32dp"
                 android:gravity="center"
                 android:text="Change Primary Heating Source to"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <CheckBox
                 android:id="@+id/changePrimaryHeatingCheck"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="0dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <TextView
                 android:id="@+id/CarMiles"
@@ -256,6 +272,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:gravity="center"
+                android:textColor="@color/black"
                 android:text="Reduce the amount of miles you drive by half"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RecycleMagazines" />
@@ -278,6 +295,7 @@
                 android:layout_marginBottom="32dp"
                 android:gravity="center"
                 android:text="Do regular maintenance on your vehicle(s)"
+                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CarMiles" />
@@ -293,6 +311,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/CarMilesCheck" />
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:text="Check the suggestion boxes to see how your results would change. This will not affect your saved results."
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -301,54 +334,90 @@
         android:id="@+id/resultsDivider"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="100dp"
         android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suggestionsScrollView" />
 
     <TextView
         android:id="@+id/OriginalResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="0.00"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/originalResultText" />
+        app:layout_constraintBottom_toTopOf="@+id/resultsDivider2"
+        app:layout_constraintStart_toEndOf="@+id/originalResultText"
+        app:layout_constraintTop_toBottomOf="@+id/resultsDivider" />
 
     <TextView
         android:id="@+id/Subtract"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="-"
+        android:textColor="@color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/OriginalResult" />
+        app:layout_constraintBottom_toTopOf="@+id/resultsDivider2"
+        app:layout_constraintStart_toEndOf="@+id/OriginalResult"
+        app:layout_constraintTop_toBottomOf="@+id/resultsDivider" />
 
     <TextView
         android:id="@+id/SubtractedAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="0.00"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/Subtract" />
+        app:layout_constraintBottom_toTopOf="@+id/resultsDivider2"
+        app:layout_constraintStart_toEndOf="@+id/Subtract"
+        app:layout_constraintTop_toBottomOf="@+id/resultsDivider" />
 
     <TextView
         android:id="@+id/originalResultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Result ="
+        android:textColor="@color/black"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/resultsDivider2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsDivider" />
+
+    <View
+        android:id="@+id/resultsDivider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/suggestionsExitButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newResult" />
+
+
+    <Button
+        android:id="@+id/suggestionsExitButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_design"
+        android:onClick="exitCalculatorButton"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

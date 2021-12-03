@@ -76,7 +76,7 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
     public void suggestionsPage(View view) {
         currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
         currentUser.setDemoTotal(Float.toString(demoTotalNumber));
-        Intent intent = new Intent(this, InitiateSuggestionsActivity.class);
+        Intent intent = new Intent(this, SuggestionsPage.class);
         intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);
     }

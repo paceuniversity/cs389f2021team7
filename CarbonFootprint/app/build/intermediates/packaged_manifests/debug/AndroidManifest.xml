@@ -27,6 +27,19 @@
         android:testOnly="true"
         android:theme="@style/Theme.CarbonFootprint" >
         <activity
+            android:name="com.example.carbonfootprint.SplashScreen"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.carbonfootprint.HomeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home" />
+        <activity
             android:name="com.example.carbonfootprint.SuggestionsPage"
             android:exported="true" />
         <activity
@@ -70,13 +83,7 @@
             android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.DemoHomeActivity"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.LocationActivity"
             android:exported="true" />
@@ -85,14 +92,11 @@
             android:exported="true" />
         <activity
             android:name="com.example.carbonfootprint.WasteResults"
-            android:exported="true" />
-        <!-- <activity -->
+            android:exported="true" /> <!-- <activity -->
         <!-- android:name=".WelcomeScreen" -->
         <!-- android:exported="true"> -->
         <!-- <intent-filter> -->
         <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
         <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
         <!-- </intent-filter> -->
         <!-- </activity> -->
