@@ -10,6 +10,8 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -58,6 +60,7 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
     Boolean loadedSaveResultsExit;
     private ActivityHomeBinding binding;
     Toolbar homeScreenToolbar;
+    ImageView homeInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +73,7 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_pastresults, R.id.navigation_settings)
+                R.id.navigation_home, R.id.navigation_pastresults, R.id.navigation_settings, R.id.navigation_dataVisualization)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
 //        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
@@ -89,6 +92,9 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
                 }
                 else if (destination.getLabel().equals("Settings")) {
                     homeScreenToolbar.setTitle("Settings");
+                }
+                else if (destination.getLabel().equals("Data Visualization")) {
+                    homeScreenToolbar.setTitle("Data Visualization");
                 }
 
             }
@@ -126,6 +132,15 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
 
         currentUser.setXmlcountrycode(xmlcountrycode);
         currentUser.setXmlcountryname(xmlcountryname);
+
+        homeInfo = findViewById(R.id.homeInfo);
+
+        homeInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHomeDialog();
+            }
+        });
 
     }
 
@@ -228,4 +243,8 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
         loadedSaveResultsExit = sharedPreferences.getBoolean(SAVE_RESULTS_EXIT, true);
     }
 
+    public void openHomeDialog() {
+        HomeDialogue homeDialogue = new HomeDialogue();
+        homeDialogue.show(getSupportFragmentManager(), "Home Dialogue");
+    }
 }

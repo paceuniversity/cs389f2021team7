@@ -12,6 +12,11 @@
         android:title="Past Results" />
 
     <item
+        android:id="@+id/navigation_dataVisualization"
+        android:icon="@drawable/ic_baseline_map_24"
+        android:title="Data Visualization" />
+
+    <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/ic_baseline_settings_24"
         android:title="Settings" />

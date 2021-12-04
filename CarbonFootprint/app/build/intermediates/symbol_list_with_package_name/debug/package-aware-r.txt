@@ -1884,6 +1884,7 @@ drawable ic_baseline_balance_24
 drawable ic_baseline_clear_24
 drawable ic_baseline_delete_forever_24
 drawable ic_baseline_electrical_services_24
+drawable ic_baseline_help_24
 drawable ic_baseline_house_24
 drawable ic_baseline_info_24
 drawable ic_baseline_info_24_toolbar
@@ -1949,6 +1950,7 @@ drawable transportationbg
 drawable transportationimg
 drawable wastebg
 drawable welcomefeet
+drawable worldmap
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2294,6 +2296,7 @@ id homeEnergyScrollView
 id homeEnergyText
 id homeEnergyTextView
 id homeEnergyTotal
+id homeInfo
 id homeToolbar
 id home_energy_button
 id homeenergybtn
@@ -2443,6 +2446,7 @@ id navigation_bar_item_icon_view
 id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
+id navigation_dataVisualization
 id navigation_header_container
 id navigation_home
 id navigation_pastresults
@@ -2725,6 +2729,7 @@ id waste_reduce_title
 id waste_results
 id wastebutton
 id weatherStripWindows
+id webView
 id welcomeText
 id welcome_text
 id west
@@ -2848,6 +2853,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_data_visualization
 layout fragment_home
 layout fragment_past_results
 layout fragment_past_results_line_chart
@@ -3183,6 +3189,7 @@ string status_bar_notification_info_overflow
 string submit
 string submit1
 string title_activity_home
+string title_dataVisualization
 string title_home
 string title_pastresults
 string title_settings

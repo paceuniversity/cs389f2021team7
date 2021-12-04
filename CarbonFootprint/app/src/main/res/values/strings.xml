@@ -159,5 +159,6 @@
     <string name="title_home">Home</string>
     <string name="title_pastresults">Past Results</string>
     <string name="title_settings">Settings</string>
+    <string name="title_dataVisualization">Data Visualization</string>
 
 </resources>

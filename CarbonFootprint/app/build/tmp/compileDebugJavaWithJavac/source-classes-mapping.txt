@@ -54,6 +54,8 @@ com/example/carbonfootprint/databinding/ActivitySettingsBinding.java
  com.example.carbonfootprint.databinding.ActivitySettingsBinding
 com/example/carbonfootprint/databinding/FragmentResultsPieChartBinding.java
  com.example.carbonfootprint.databinding.FragmentResultsPieChartBinding
+com/example/carbonfootprint/databinding/FragmentDataVisualizationBinding.java
+ com.example.carbonfootprint.databinding.FragmentDataVisualizationBinding
 com/example/carbonfootprint/databinding/ToolbarActivitySuggestionsBinding.java
  com.example.carbonfootprint.databinding.ToolbarActivitySuggestionsBinding
 com/example/carbonfootprint/LocationActivity.java
@@ -111,6 +113,12 @@ com/example/carbonfootprint/SettingsFragment.java
  com.example.carbonfootprint.SettingsFragment$5
  com.example.carbonfootprint.SettingsFragment$6
  com.example.carbonfootprint.SettingsFragment$7
+com/example/carbonfootprint/HomeEnergySuggestions.java
+ com.example.carbonfootprint.HomeEnergySuggestions
+ com.example.carbonfootprint.HomeEnergySuggestions$1
+ com.example.carbonfootprint.HomeEnergySuggestions$2
+ com.example.carbonfootprint.HomeEnergySuggestions$3
+ com.example.carbonfootprint.HomeEnergySuggestions$4
 com/example/carbonfootprint/databinding/ToolbarLocationBinding.java
  com.example.carbonfootprint.databinding.ToolbarLocationBinding
 com/example/carbonfootprint/databinding/FragmentResultsBarChartBinding.java
@@ -177,6 +185,7 @@ com/example/carbonfootprint/HomeActivity.java
  com.example.carbonfootprint.HomeActivity
  com.example.carbonfootprint.HomeActivity$1
  com.example.carbonfootprint.HomeActivity$2
+ com.example.carbonfootprint.HomeActivity$3
 com/example/carbonfootprint/RecyclerViewAdapterSettings.java
  com.example.carbonfootprint.RecyclerViewAdapterSettings
  com.example.carbonfootprint.RecyclerViewAdapterSettings$OnItemClickListenerSettings
@@ -200,6 +209,9 @@ com/example/carbonfootprint/databinding/ActivityResultsTabbedBinding.java
  com.example.carbonfootprint.databinding.ActivityResultsTabbedBinding
 com/example/carbonfootprint/databinding/ActivityHomeEnergyBinding.java
  com.example.carbonfootprint.databinding.ActivityHomeEnergyBinding
+com/example/carbonfootprint/HomeDialogue.java
+ com.example.carbonfootprint.HomeDialogue
+ com.example.carbonfootprint.HomeDialogue$1
 com/example/carbonfootprint/databinding/ActivityWelcomeScreenBinding.java
  com.example.carbonfootprint.databinding.ActivityWelcomeScreenBinding
 com/example/carbonfootprint/databinding/ActivityWasteResultsBinding.java
@@ -260,9 +272,5 @@ com/example/carbonfootprint/databinding/FragmentPastResultsListBinding.java
  com.example.carbonfootprint.databinding.FragmentPastResultsListBinding
 com/example/carbonfootprint/BuildConfig.java
  com.example.carbonfootprint.BuildConfig
-com/example/carbonfootprint/HomeEnergySuggestions.java
- com.example.carbonfootprint.HomeEnergySuggestions
- com.example.carbonfootprint.HomeEnergySuggestions$1
- com.example.carbonfootprint.HomeEnergySuggestions$2
- com.example.carbonfootprint.HomeEnergySuggestions$3
- com.example.carbonfootprint.HomeEnergySuggestions$4
+com/example/carbonfootprint/DataVisualizationFragment.java
+ com.example.carbonfootprint.DataVisualizationFragment

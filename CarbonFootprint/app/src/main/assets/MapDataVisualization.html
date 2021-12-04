@@ -1,0 +1,77 @@
+<html>
+<head>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+<div id="regions_div" style="width: 100%; height: 500px;"></div>
+<select id = "CO2Emissions" onchange="drawRegionsMap()" style="width: 100%; height: 5%">
+  <option value="Select an Option">Select an Option</option>
+  <option value="CO2EmissionsperCapita">CO2 Emissions (metric tons per capita)</option>
+  <option value="CO2EmissionsperCountry">CO2 Emissions (kt)</option>
+
+</select>
+<script type="text/javascript">
+  var WB_url1 = 'https://api.worldbank.org/v2/country/US/indicator/EN.ATM.CO2E.PC?mrv=1&format=json'
+  var WB_url2 = 'https://api.worldbank.org/v2/country/US/indicator/EN.ATM.CO2E.KT?mrv=1&format=json'
+  var countryCodeArray = ['AF','AL','DZ','AD','AO','AG','AR','AM','AU','AT','AZ','BS','BH','BD','BB','BY','BE','BZ','BJ','BT','BO','BA','BW','BR','BN','BG','BF','BI','KH','CM','CA','CV','CF','TD','CL','CN','CO','KM','CG','CD','CR','CI','HR','CU','CY','CZ','DK','DJ','DM','DO','EC','EG','SV','GQ','ER','EE','ET','FJ','FI','FR','GA','GM','GE','DE','GH','GR','GD','GT','GN','GW','GY','HT','HN','HU','IS','IN','ID','IR','IQ','IE','IL','IT','JM','JP','JO','KZ','KE','KI','KW','KG','LA','LV','LB','LS','LR','LY','LI','LT','LU','MG','MW','MY','MV','ML','MT','MH','MR','MU','MX','FM','MD','MN','ME','MA','MZ','MM','NA','NR','NP','NL','NZ','NI','NE','NG','KP','NO','OM','PK','PW','PA','PG','PY','PE','PH','PL','PT','RO','RU','RW','WS','ST','SA','SN','RS','SC','SL','SG','SK','SI','SB','SO','ZA','KR','SS','ES','LK','SD','SR','SE','CH','SY','TJ','TZ','TH','TL','TG','TO','TT','TN','TR','TM','TV','UG','UA','AE','GB','US','UY','UZ','VU','VE','VN','YE','ZM','ZW']
+  var countryNameArray = ['Afghanistan','Albania','Algeria','Andorra','Angola','Antigua and Barbuda','Argentina','Armenia','Australia','Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium','Belize','Benin','Bhutan','Bolivia','Bosnia and Herzegovina','Botswana','Brazil','Brunei Darussalam','Bulgaria','Burkina Faso','Burundi','Cambodia','Cameroon','Canada','Cape Verde','Central African Republic','Chad','Chile','China','Colombia','Comoros','Republic of the Congo','The Democratic Republic of the Congo','Costa Rica','Cote d\'Ivoire','Croatia','Cuba','Cyprus','Czech Republic','Denmark','Djibouti','Dominica','Dominican Republic','Ecuador','Egypt','El Salvador','Equatorial Guinea','Eritrea','Estonia','Ethiopia','Fiji','Finland','France','Gabon','Gambia','Georgia','Germany','Ghana','Greece','Grenada','Guatemala','Guinea','Guinea-Bissau','Guyana','Haiti','Honduras','Hungary','Iceland','India','Indonesia','Islamic Republic of Iran','Iraq','Ireland','Israel','Italy','Jamaica','Japan','Jordan','Kazakhstan','Kenya','Kiribati','Kuwait','Kyrgyzstan','Lao People\'s Democratic Republic','Latvia','Lebanon','Lesotho','Liberia','Libya','Liechtenstein','Lithuania','Luxembourg','Madagascar','Malawi','Malaysia','Maldives','Mali','Malta','Marshall Islands','Mauritania','Mauritius','Mexico','Federated States of Micronesia','Republic of Moldova','Mongolia','Montenegro','Morocco','Mozambique','Myanmar','Namibia','Nauru','Nepal','Netherlands','New Zealand','Nicaragua','Niger','Nigeria','North Korea','Norway','Oman','Pakistan','Palau','Panama','Papua New Guinea','Paraguay','Peru','Philippines','Poland','Portugal','Romania','Russia','Rwanda','Samoa','Sao Tome and Principe','Saudi Arabia','Senegal','Serbia','Seychelles','Sierra Leone','Singapore','Slovakia','Slovenia','Solomon Islands','Somalia','South Africa','South Korea','South Sudan','Spain','Sri Lanka','Sudan','Suriname','Sweden','Switzerland','Syrian Arab Republic','Tajikistan','United Republic of Tanzania','Thailand','Timor-Leste','Togo','Tonga','Trinidad and Tobago','Tunisia','Turkey','Turkmenistan','Tuvalu','Uganda','Ukraine','United Arab Emirates','United Kingdom','United States','Uruguay','Uzbekistan','Vanuatu','Venezuela','Vietnam','Yemen','Zambia','Zimbabwe']
+  var mapArray1 = [['Country', 'CO2 Emissions (metric tons per capita)']];
+  var mapArray2 = [['Country', 'CO2 Emissions (kt)']];
+  var WBdata1decimalFloat;
+  var WBdata1decimalString;
+  var WBdata2decimalFloat;
+  var WBdata2decimalString;
+  var select = document.getElementById("CO2Emissions").value;
+  var selectCheck;
+
+
+  for (let i = 0; i < countryCodeArray.length; i++) {
+    fetch('https://api.worldbank.org/v2/country/' + countryCodeArray[i] + '/indicator/EN.ATM.CO2E.PC?mrv=1&format=json').then((WBresponse1) => WBresponse1.json()).then((WBdata1) => { 
+      WBdata1decimalString = WBdata1[1][0].value.toFixed(2);
+      WBdata1decimalFloat = parseFloat(WBdata1decimalString);
+      mapArray1.push([countryNameArray[i], WBdata1decimalFloat])
+    }) 
+    }
+
+  for (let i = 0; i < countryCodeArray.length; i++) {
+    fetch('https://api.worldbank.org/v2/country/' + countryCodeArray[i] + '/indicator/EN.ATM.CO2E.KT?mrv=1&format=json').then((WBresponse2) => WBresponse2.json()).then((WBdata2) => { 
+      WBdata2decimalString = WBdata2[1][0].value.toFixed(2);
+      WBdata2decimalFloat = parseFloat(WBdata2decimalString);
+      mapArray2.push([countryNameArray[i], WBdata2decimalFloat])
+    }) 
+    }
+
+    google.charts.load('current', {
+      'packages':['geochart'],
+    });
+    google.charts.setOnLoadCallback(drawRegionsMap);
+
+      
+    function drawRegionsMap() {
+      var select = document.getElementById("CO2Emissions").value;
+
+      var data = google.visualization.arrayToDataTable([
+          ['Country', 'CO2 Emissions'],
+        ]);
+
+      if (select == "CO2EmissionsperCapita") {
+        var data = google.visualization.arrayToDataTable(mapArray1);
+      }
+      else if (select == "CO2EmissionsperCountry") {
+        var data = google.visualization.arrayToDataTable(mapArray2);
+      }
+
+
+
+      var options = {
+      colors: ['#00FF00', '#FF0000']
+
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+      chart.draw(data, options);
+    }
+  </script>
+</body>
+</html>
