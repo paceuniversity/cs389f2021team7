@@ -371,7 +371,7 @@ For the project we will have the 3 following questions:
 
 3\. Other classes
 
-1\. Nothing o far
+1\. Nothing so far
 
 2\. By the next scrum, i hope to have updated some of the layout
 
