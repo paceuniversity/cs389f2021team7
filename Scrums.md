@@ -346,3 +346,19 @@ For the project we will have the 3 following questions:
 3\. Outside Work.
 
 <br>
+
+## Scrum 12/6/2021
+
+### Patrick Dwyer
+
+1\. Yesterday I figured out my plan for this sprint. 
+
+2\. Today I will edit the icon in the app as much as I can.
+
+3\. Outside Work for other classes.
+
+1\. This is the first scrum of sprint three, since last scrum I planned out my Sprint 3.
+
+2\. I will continue to work on the icons within the app.
+
+3\. Oustside work from other classes.
