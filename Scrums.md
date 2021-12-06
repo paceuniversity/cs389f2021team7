@@ -362,3 +362,19 @@ For the project we will have the 3 following questions:
 2\. I will continue to work on the icons within the app.
 
 3\. Oustside work from other classes.
+
+### John Beltran
+
+1\. Yesterday I have done nothing
+
+2\. Today I cannot work on this project because of other work
+
+3\. Other classes
+
+1\. Nothing o far
+
+2\. By the next scrum, i hope to have updated some of the layout
+
+3\. Time, and otheer classes
+
+<br>
