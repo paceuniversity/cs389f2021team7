@@ -330,7 +330,6 @@ For the project we will have the 3 following questions:
 
 <br>
 
-
 ### Abdulmalik Alotaibi
 
 1\. I finished the past results tabbed activity and results tabbed activity.
@@ -363,6 +362,8 @@ For the project we will have the 3 following questions:
 
 3\. Oustside work from other classes.
 
+<br>
+
 ### John Beltran
 
 1\. Yesterday I have done nothing
@@ -376,5 +377,21 @@ For the project we will have the 3 following questions:
 2\. By the next scrum, i hope to have updated some of the layout
 
 3\. Time, and other classes
+
+<br>
+
+### Emma Hilts
+
+1\.	I looked at my tasks again and started to plan my next steps towards completing them.
+
+2\.	I will start to make progress on my tasks.
+
+3\.	Outside work.
+
+1\.	I made a plan to complete my tasks.
+
+2\.	I will work towards completing my tasks.
+
+3\.	Outside work.
 
 <br>
