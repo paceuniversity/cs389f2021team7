@@ -375,6 +375,6 @@ For the project we will have the 3 following questions:
 
 2\. By the next scrum, i hope to have updated some of the layout
 
-3\. Time, and otheer classes
+3\. Time, and other classes
 
 <br>
