@@ -395,3 +395,20 @@ For the project we will have the 3 following questions:
 3\.	Outside work.
 
 <br>
+
+
+### Abdulmalik Alotaibi
+
+1\.	Plan the design.
+
+2\.	Plan different parts of the layout.
+
+3\.	Outside work.
+
+1\.	I made improvements to the design and added a new feature, data visualization/a webview, to the app.
+
+2\.	Improve the design.
+
+3\.	Outside work.
+
+<br>
