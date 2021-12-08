@@ -412,3 +412,19 @@ For the project we will have the 3 following questions:
 3\.	Outside work.
 
 <br>
+
+## Scrum 12/8/2021
+
+### Patrick Dwyer
+
+1\. I started to implement some of the User Storys
+
+2\. I started to edit the icons in the app. 
+
+3\. Other outside classes. 
+
+1\. I began to implement the User stories
+
+2\. I will continue and try to finish the stories that were assigned to me
+
+3\. Outside work from other classes. 
