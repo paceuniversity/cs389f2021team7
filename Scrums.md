@@ -428,3 +428,21 @@ For the project we will have the 3 following questions:
 2\. I will continue and try to finish the stories that were assigned to me
 
 3\. Outside work from other classes. 
+
+<br>
+
+### Abdulmalik Alotaibi
+
+1\.	I was planning the design and some functions.
+
+2\.	I will try to improve some design.
+
+3\.	Outside work.
+
+1\.	I planned some of the functions and design.
+
+2\.	Improve the design and implement some functions.
+
+3\.	Outside work.
+
+<br>
