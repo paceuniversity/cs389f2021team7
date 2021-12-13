@@ -10,6 +10,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -40,6 +42,7 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
     String locationAvgTop;
     String locationAvgBottom;
     Button getResults;
+    ImageView calculatorInfo, check1, check2, check3;
     int householdNumber;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
@@ -58,17 +61,77 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
+
+
+
+        if (currentUser.getUnitsLocationCheck()) {
+            if (currentUser.countryCode.equals("US")) {
+                currentUser.setImperialSystem(true);
+                currentUser.setMetricSystem(false);
+            }
+            else {
+                currentUser.setImperialSystem(false);
+                currentUser.setMetricSystem(true);
+            }
+        }
+
+
+        Toast.makeText(this, "metric: " + currentUser.isMetricSystem() + " imperial: " + currentUser.isImperialSystem() + " check: " + currentUser.getUnitsLocationCheck(), Toast.LENGTH_LONG).show();
+
 //        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
 
         WBdata();
+
+        if (currentUser.getName() != null) {
+            nameInput.setText(currentUser.getName());
+        }
+
+        if (currentUser.getHouseholdNumber() != 0) {
+            householdNumberInput.setText(currentUser.getHouseholdNumber() + "");
+        }
+
+
+        check1 = findViewById(R.id.check1);
+        check2 = findViewById(R.id.check2);
+        check3 = findViewById(R.id.check3);
+
+        if (currentUser.isHeqcomplete()) {
+            check1.setImageResource(R.drawable.ic_baseline_check_24);
+        }
+        else {
+            check1.setImageResource(R.drawable.ic_baseline_check_transparent_24);
+        }
+        if (currentUser.isTqcomplete()) {
+            check2.setImageResource(R.drawable.ic_baseline_check_24);
+        }
+        else {
+            check2.setImageResource(R.drawable.ic_baseline_check_transparent_24);
+        }
+        if (currentUser.isWqcomplete()) {
+            check3.setImageResource(R.drawable.ic_baseline_check_24);
+        }
+        else {
+            check3.setImageResource(R.drawable.ic_baseline_check_transparent_24);
+        }
+
 
         homeEnergy = (Button) findViewById(R.id.getSuggestionsbutton);
         transportation = (Button) findViewById(R.id.transportationSuggestionsBttn);
         waste = (Button) findViewById(R.id.wasteSuggestionsBttn);
 
+        calculatorInfo = findViewById(R.id.calculatorInfo);
+
+        calculatorInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openCalculatorDialog();
+            }
+        });
+
         homeEnergy.setEnabled(false);
         transportation.setEnabled(false);
         waste.setEnabled(false);
+
 
         nameInput.addTextChangedListener(new TextWatcher() {
             @Override
@@ -215,5 +278,10 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         Intent intent = new Intent(this, HomeActivity.class);
         intent.putExtra(CURRENT_USER_KEY, currentUser);
         startActivity(intent);
+    }
+
+    public void openCalculatorDialog() {
+        CalculatorDialogue calculatorDialogue = new CalculatorDialogue();
+        calculatorDialogue.show(getSupportFragmentManager(), "Calculator Dialogue");
     }
 }

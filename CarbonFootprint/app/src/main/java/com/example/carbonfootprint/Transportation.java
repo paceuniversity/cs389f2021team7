@@ -10,11 +10,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,9 +25,9 @@ import java.util.ArrayList;
 public class Transportation extends AppCompatActivity implements Serializable {
 
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
-    Spinner numVehicles, maintenanceAnswer, maintenanceRedo, timePeriod1, timePeriod2, timePeriod3, reduceTimePeriod1, reduceTimePeriod2, reduceTimePeriod3;
+    Spinner numVehicles, maintenanceAnswer, maintenanceRedo, timePeriod1, reduceTimePeriod1, reduceTimePeriod2, reduceTimePeriod3;
     EditText mileage1, milesNum1, mileage2, milesNum2, mileage3, milesNum3;
-    TextView maintenanceQuestion, milesQuestion, milesQuestion2, milesQuestion3, miles, miles2, miles3, mileageQuestion, mileageQuestion2, mileageQuestion3, milesText, milesText2, milesText3;
+    TextView maintenanceQuestion, milesQuestion, durationVehicle, transportationErrorText;
     View divider, divider2, divider3;
     Boolean maintenanceCheck, timeCheckYear1, timeCheckYear2, timeCheckYear3, checkGone1, checkGone2, checkGone3;
     double milesNum1Value, milesNum2Value, milesNum3Value, mileage1Value, mileage2Value, mileage3Value, vehicle1Total, vehicle2Total, vehicle3Total, transportationTotal;
@@ -37,6 +40,8 @@ public class Transportation extends AppCompatActivity implements Serializable {
     Button next, previous, submit;
     double emissionsTotalAfterReduce;
     ArrayList<String> numVehiclesArray, maintenanceArray, timePeriod1Array, timePeriod2Array, timePeriod3Array;
+    ImageView transportationInfo;
+    TextInputLayout milesNum1Layout, mileage1Layout, milesNum2Layout, mileage2Layout, milesNum3Layout, mileage3Layout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,28 +57,18 @@ public class Transportation extends AppCompatActivity implements Serializable {
         timeCheckYear2 = false;
         timeCheckYear3 = false;
 
+        currentUser.setTqcomplete(false);
+
         numVehicles = findViewById(R.id.numVehicles);
         maintenanceAnswer = findViewById(R.id.maintenanceAnswer);
 //        maintenanceRedo = findViewById(R.id.answer);
         timePeriod1 = findViewById(R.id.time);
-        timePeriod2 = findViewById(R.id.time2);
-        timePeriod3 = findViewById(R.id.time3);
         maintenanceQuestion = findViewById(R.id.maintenanceQuestion);
         milesQuestion = findViewById(R.id.milesQuestion);
-        milesQuestion2 = findViewById(R.id.milesQuestion2);
-        milesQuestion3 = findViewById(R.id.milesQuestion3);
-        miles = findViewById(R.id.miles);
-        miles2 = findViewById(R.id.miles2);
-        miles3 = findViewById(R.id.miles3);
-        mileageQuestion = findViewById(R.id.mileageQuestion);
-        mileageQuestion2 = findViewById(R.id.mileageQuestion2);
-        mileageQuestion3 = findViewById(R.id.mileageQuestion3);
-        milesText = findViewById(R.id.milesText);
-        milesText2 = findViewById(R.id.milesText2);
-        milesText3 = findViewById(R.id.milesText3);
         divider = findViewById(R.id.divider);
         divider2 = findViewById(R.id.divider2);
         divider3 = findViewById(R.id.divider3);
+        transportationErrorText = findViewById(R.id.transportationErrorText);
 //        reduceTimePeriod1 = findViewById(R.id.reduceTime);
 //        reduceTimePeriod2 = findViewById(R.id.reduceTime2);
 //        reduceTimePeriod3 = findViewById(R.id.reduceTime3);
@@ -89,13 +84,83 @@ public class Transportation extends AppCompatActivity implements Serializable {
         mileage2 = (EditText) findViewById(R.id.mileage2);
         milesNum3 = (EditText) findViewById(R.id.milesNum3);
         mileage3 = (EditText) findViewById(R.id.mileage3);
+        milesNum1Layout = findViewById(R.id.milesNumLayout);
+        mileage1Layout = findViewById(R.id.mileageLayout);
+        milesNum2Layout = findViewById(R.id.milesNum2Layout);
+        mileage2Layout = findViewById(R.id.mileage2Layout);
+        milesNum3Layout = findViewById(R.id.milesNum3Layout);
+        mileage3Layout = findViewById(R.id.mileage3Layout);
 
+        durationVehicle = findViewById(R.id.durationVehicle);
+        transportationInfo = findViewById(R.id.transportationInfo);
+
+        transportationInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTransportationDialog();
+            }
+        });
+
+        if (currentUser.isImperialSystem()) {
+            milesNum1Layout.setHint("Miles");
+            milesNum1Layout.setHelperText("US average per capita: 219 miles");
+            milesNum2Layout.setHint("Miles");
+            milesNum2Layout.setHelperText("US average per capita: 219 miles");
+            milesNum3Layout.setHint("Miles");
+            milesNum3Layout.setHelperText("US average per capita: 219 miles");
+            mileage1Layout.setHint("Miles per Gallon");
+            mileage1Layout.setHelperText("US average vehicle fuel economy: 21.6 mpg");
+            mileage2Layout.setHint("Miles per Gallon");
+            mileage2Layout.setHelperText("US average vehicle fuel economy: 21.6 mpg");
+            mileage3Layout.setHint("Miles per Gallon");
+            mileage3Layout.setHelperText("US average vehicle fuel economy: 21.6 mpg");
+        }
+
+        else if (currentUser.isMetricSystem()) {
+            milesNum1Layout.setHint("Kilometers");
+            milesNum1Layout.setHelperText("US average per capita: 352 kilometers");
+            milesNum2Layout.setHint("Kilometers");
+            milesNum2Layout.setHelperText("US average per capita: 352 kilometers");
+            milesNum3Layout.setHint("Kilometers");
+            milesNum3Layout.setHelperText("US average per capita: 352 kilometers");
+            mileage1Layout.setHint("Kilometers per Liter");
+            mileage1Layout.setHelperText("US average vehicle fuel economy: 9.2 km/L");
+            mileage2Layout.setHint("Kilometers per Liter");
+            mileage2Layout.setHelperText("US average vehicle fuel economy: 9.2 km/L");
+            mileage3Layout.setHint("Kilometers per Liter");
+            mileage3Layout.setHelperText("US average vehicle fuel economy: 9.2 km/L");
+        }
 
         numVehiclesArray = new ArrayList<>();
         numVehiclesArray.add("0");
         numVehiclesArray.add("1");
         numVehiclesArray.add("2");
         numVehiclesArray.add("3");
+
+        maintenanceQuestion.setVisibility(View.GONE);
+        maintenanceAnswer.setVisibility(View.GONE);
+        durationVehicle.setVisibility(View.GONE);
+        divider.setVisibility(View.GONE);
+        milesQuestion.setVisibility(View.GONE);
+        milesNum1.setVisibility(View.GONE);
+        timePeriod1.setVisibility(View.GONE);
+        mileage1.setVisibility(View.GONE);
+        milesNum1Layout.setVisibility(View.GONE);
+        mileage1Layout.setVisibility(View.GONE);
+
+        divider2.setVisibility(View.GONE);
+        milesNum2.setVisibility(View.GONE);
+        mileage2.setVisibility(View.GONE);
+        milesNum2Layout.setVisibility(View.GONE);
+        mileage2Layout.setVisibility(View.GONE);
+
+        divider3.setVisibility(View.GONE);
+        milesNum3.setVisibility(View.GONE);
+        mileage3.setVisibility(View.GONE);
+        milesNum3Layout.setVisibility(View.GONE);
+        mileage3Layout.setVisibility(View.GONE);
+
+        transportationErrorText.setVisibility(View.GONE);
 
         ArrayAdapter<String> numVehiclesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, numVehiclesArray);
         numVehiclesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -111,32 +176,26 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
                     maintenanceQuestion.setVisibility(View.GONE);
                     maintenanceAnswer.setVisibility(View.GONE);
+                    durationVehicle.setVisibility(View.GONE);
                     divider.setVisibility(View.GONE);
                     milesQuestion.setVisibility(View.GONE);
                     milesNum1.setVisibility(View.GONE);
-                    miles.setVisibility(View.GONE);
                     timePeriod1.setVisibility(View.GONE);
-                    mileageQuestion.setVisibility(View.GONE);
                     mileage1.setVisibility(View.GONE);
-                    milesText.setVisibility(View.GONE);
+                    milesNum1Layout.setVisibility(View.GONE);
+                    mileage1Layout.setVisibility(View.GONE);
 
                     divider2.setVisibility(View.GONE);
-                    milesQuestion2.setVisibility(View.GONE);
                     milesNum2.setVisibility(View.GONE);
-                    miles2.setVisibility(View.GONE);
-                    timePeriod2.setVisibility(View.GONE);
-                    mileageQuestion2.setVisibility(View.GONE);
                     mileage2.setVisibility(View.GONE);
-                    milesText2.setVisibility(View.GONE);
+                    milesNum2Layout.setVisibility(View.GONE);
+                    mileage2Layout.setVisibility(View.GONE);
 
                     divider3.setVisibility(View.GONE);
-                    milesQuestion3.setVisibility(View.GONE);
                     milesNum3.setVisibility(View.GONE);
-                    miles3.setVisibility(View.GONE);
-                    timePeriod3.setVisibility(View.GONE);
-                    mileageQuestion3.setVisibility(View.GONE);
                     mileage3.setVisibility(View.GONE);
-                    milesText3.setVisibility(View.GONE);
+                    milesNum3Layout.setVisibility(View.GONE);
+                    mileage3Layout.setVisibility(View.GONE);
                 }
                 else if (adapterView.getItemAtPosition(i) == "1") {
                     checkGone1 = false;
@@ -145,32 +204,26 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
                     maintenanceQuestion.setVisibility(View.VISIBLE);
                     maintenanceAnswer.setVisibility(View.VISIBLE);
+                    durationVehicle.setVisibility(View.VISIBLE);
                     divider.setVisibility(View.VISIBLE);
                     milesQuestion.setVisibility(View.VISIBLE);
                     milesNum1.setVisibility(View.VISIBLE);
-                    miles.setVisibility(View.VISIBLE);
                     timePeriod1.setVisibility(View.VISIBLE);
-                    mileageQuestion.setVisibility(View.VISIBLE);
                     mileage1.setVisibility(View.VISIBLE);
-                    milesText.setVisibility(View.VISIBLE);
+                    milesNum1Layout.setVisibility(View.VISIBLE);
+                    mileage1Layout.setVisibility(View.VISIBLE);
 
                     divider2.setVisibility(View.GONE);
-                    milesQuestion2.setVisibility(View.GONE);
                     milesNum2.setVisibility(View.GONE);
-                    miles2.setVisibility(View.GONE);
-                    timePeriod2.setVisibility(View.GONE);
-                    mileageQuestion2.setVisibility(View.GONE);
                     mileage2.setVisibility(View.GONE);
-                    milesText2.setVisibility(View.GONE);
+                    milesNum2Layout.setVisibility(View.GONE);
+                    mileage2Layout.setVisibility(View.GONE);
 
                     divider3.setVisibility(View.GONE);
-                    milesQuestion3.setVisibility(View.GONE);
                     milesNum3.setVisibility(View.GONE);
-                    miles3.setVisibility(View.GONE);
-                    timePeriod3.setVisibility(View.GONE);
-                    mileageQuestion3.setVisibility(View.GONE);
                     mileage3.setVisibility(View.GONE);
-                    milesText3.setVisibility(View.GONE);
+                    milesNum3Layout.setVisibility(View.GONE);
+                    mileage3Layout.setVisibility(View.GONE);
                 }
                 else if (adapterView.getItemAtPosition(i) == "2") {
                     checkGone1 = false;
@@ -180,32 +233,26 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
                     maintenanceQuestion.setVisibility(View.VISIBLE);
                     maintenanceAnswer.setVisibility(View.VISIBLE);
+                    durationVehicle.setVisibility(View.VISIBLE);
                     divider.setVisibility(View.VISIBLE);
                     milesQuestion.setVisibility(View.VISIBLE);
                     milesNum1.setVisibility(View.VISIBLE);
-                    miles.setVisibility(View.VISIBLE);
                     timePeriod1.setVisibility(View.VISIBLE);
-                    mileageQuestion.setVisibility(View.VISIBLE);
                     mileage1.setVisibility(View.VISIBLE);
-                    milesText.setVisibility(View.VISIBLE);
+                    milesNum1Layout.setVisibility(View.VISIBLE);
+                    mileage1Layout.setVisibility(View.VISIBLE);
+                    milesNum2Layout.setVisibility(View.VISIBLE);
+                    mileage2Layout.setVisibility(View.VISIBLE);
 
                     divider2.setVisibility(View.VISIBLE);
-                    milesQuestion2.setVisibility(View.VISIBLE);
                     milesNum2.setVisibility(View.VISIBLE);
-                    miles2.setVisibility(View.VISIBLE);
-                    timePeriod2.setVisibility(View.VISIBLE);
-                    mileageQuestion2.setVisibility(View.VISIBLE);
                     mileage2.setVisibility(View.VISIBLE);
-                    milesText2.setVisibility(View.VISIBLE);
 
                     divider3.setVisibility(View.GONE);
-                    milesQuestion3.setVisibility(View.GONE);
                     milesNum3.setVisibility(View.GONE);
-                    miles3.setVisibility(View.GONE);
-                    timePeriod3.setVisibility(View.GONE);
-                    mileageQuestion3.setVisibility(View.GONE);
                     mileage3.setVisibility(View.GONE);
-                    milesText3.setVisibility(View.GONE);
+                    milesNum3Layout.setVisibility(View.GONE);
+                    mileage3Layout.setVisibility(View.GONE);
                 }
                 else if (adapterView.getItemAtPosition(i) == "3") {
                     checkGone1 = false;
@@ -214,32 +261,26 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
                     maintenanceQuestion.setVisibility(View.VISIBLE);
                     maintenanceAnswer.setVisibility(View.VISIBLE);
+                    durationVehicle.setVisibility(View.VISIBLE);
                     divider.setVisibility(View.VISIBLE);
                     milesQuestion.setVisibility(View.VISIBLE);
                     milesNum1.setVisibility(View.VISIBLE);
-                    miles.setVisibility(View.VISIBLE);
                     timePeriod1.setVisibility(View.VISIBLE);
-                    mileageQuestion.setVisibility(View.VISIBLE);
                     mileage1.setVisibility(View.VISIBLE);
-                    milesText.setVisibility(View.VISIBLE);
+                    milesNum1Layout.setVisibility(View.VISIBLE);
+                    mileage1Layout.setVisibility(View.VISIBLE);
 
                     divider2.setVisibility(View.VISIBLE);
-                    milesQuestion2.setVisibility(View.VISIBLE);
                     milesNum2.setVisibility(View.VISIBLE);
-                    miles2.setVisibility(View.VISIBLE);
-                    timePeriod2.setVisibility(View.VISIBLE);
-                    mileageQuestion2.setVisibility(View.VISIBLE);
                     mileage2.setVisibility(View.VISIBLE);
-                    milesText2.setVisibility(View.VISIBLE);
+                    milesNum2Layout.setVisibility(View.VISIBLE);
+                    mileage2Layout.setVisibility(View.VISIBLE);
 
                     divider3.setVisibility(View.VISIBLE);
-                    milesQuestion3.setVisibility(View.VISIBLE);
                     milesNum3.setVisibility(View.VISIBLE);
-                    miles3.setVisibility(View.VISIBLE);
-                    timePeriod3.setVisibility(View.VISIBLE);
-                    mileageQuestion3.setVisibility(View.VISIBLE);
                     mileage3.setVisibility(View.VISIBLE);
-                    milesText3.setVisibility(View.VISIBLE);
+                    milesNum3Layout.setVisibility(View.VISIBLE);
+                    mileage3Layout.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -262,10 +303,27 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    milesNum1Value = Double.parseDouble(milesNum1.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+
+                if (editable.length() == 0) {
+                    currentUser.setTq2(false);
+                }
+                else if (editable.length() > 4) {
+                    milesNum1Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq2(false);
+                }
+                else {
+                    milesNum1Layout.setError(null);
+                    currentUser.setTq2(true);
+                    try {
+                        if (currentUser.isImperialSystem()) {
+                            milesNum1Value = Double.parseDouble(milesNum1.getText().toString());
+                        }
+                        else if (currentUser.isMetricSystem()) {
+                            milesNum1Value = Double.parseDouble(milesNum1.getText().toString())/1.609;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             }
@@ -284,10 +342,25 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    milesNum2Value = Double.parseDouble(milesNum2.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+                if (editable.length() == 0) {
+                    currentUser.setTq3(false);
+                }
+                else if (editable.length() > 4) {
+                    milesNum2Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq3(false);
+                }
+                else {
+                    milesNum2Layout.setError(null);
+                    currentUser.setTq3(true);
+                    try {
+                        if (currentUser.isImperialSystem()) {
+                            milesNum2Value = Double.parseDouble(milesNum2.getText().toString());
+                        } else if (currentUser.isMetricSystem()) {
+                            milesNum2Value = Double.parseDouble(milesNum2.getText().toString())/1.609;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -305,10 +378,25 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    milesNum3Value = Double.parseDouble(milesNum3.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+                if (editable.length() == 0) {
+                    currentUser.setTq4(false);
+                }
+                else if (editable.length() > 4) {
+                    milesNum3Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq4(false);
+                }
+                else {
+                    milesNum3Layout.setError(null);
+                    currentUser.setTq4(true);
+                    try {
+                        if (currentUser.isImperialSystem()) {
+                            milesNum3Value = Double.parseDouble(milesNum3.getText().toString());
+                        } else if (currentUser.isMetricSystem()) {
+                            milesNum3Value = Double.parseDouble(milesNum3.getText().toString())/1.609;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -326,10 +414,25 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    mileage1Value = Double.parseDouble(mileage1.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+                if (editable.length() == 0) {
+                    currentUser.setTq5(false);
+                }
+                else if (editable.length() > 4) {
+                    mileage1Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq5(false);
+                }
+                else {
+                    mileage1Layout.setError(null);
+                    currentUser.setTq5(true);
+                    try {
+                        if (currentUser.isImperialSystem()) {
+                            mileage1Value = Double.parseDouble(mileage1.getText().toString());
+                        } else if (currentUser.isMetricSystem()) {
+                            mileage1Value = Double.parseDouble(mileage1.getText().toString())*2.352;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -347,10 +450,27 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    mileage2Value = Double.parseDouble(mileage2.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+
+                if (editable.length() == 0) {
+                    currentUser.setTq6(false);
+                }
+                else if (editable.length() > 4) {
+                    mileage2Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq6(false);
+                }
+                else {
+                    mileage2Layout.setError(null);
+                    currentUser.setTq6(true);
+
+                    try {
+                        if (currentUser.isImperialSystem()) {
+                            mileage2Value = Double.parseDouble(mileage2.getText().toString());
+                        } else if (currentUser.isMetricSystem()) {
+                            mileage2Value = Double.parseDouble(mileage2.getText().toString())*2.352;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -368,10 +488,25 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                try {
-                    mileage3Value = Double.parseDouble(mileage3.getText().toString());
-                } catch (NumberFormatException e) {
-                    e.printStackTrace();
+                if (editable.length() == 0) {
+                    currentUser.setTq7(false);
+                }
+                else if (editable.length() > 4) {
+                    mileage3Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq7(false);
+                }
+                else {
+                    mileage3Layout.setError(null);
+                    currentUser.setTq7(true);
+                    try {
+                        if (currentUser.isImperialSystem()) {
+                            mileage3Value = Double.parseDouble(mileage3.getText().toString());
+                        } else if (currentUser.isMetricSystem()) {
+                            mileage3Value = Double.parseDouble(mileage3.getText().toString())*2.352;
+                        }
+                    } catch (NumberFormatException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -389,13 +524,15 @@ public class Transportation extends AppCompatActivity implements Serializable {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if(adapterView.getItemAtPosition(i) == "Select"){
-
+                    currentUser.setTq1(false);
                 }
                 else if (adapterView.getItemAtPosition(i) == "I have") {
+                    currentUser.setTq1(true);
                     maintenanceCheck = true;
                     currentUser.setCarMaintenanceCheck(true);
                 }
                 else if (adapterView.getItemAtPosition(i) == "I have not") {
+                    currentUser.setTq1(true);
                     maintenanceCheck = false;
                     currentUser.setCarMaintenanceCheck(false);
                 }
@@ -408,7 +545,6 @@ public class Transportation extends AppCompatActivity implements Serializable {
         });
 
         timePeriod1Array = new ArrayList<>();
-        timePeriod1Array.add("Select");
         timePeriod1Array.add("Per Week");
         timePeriod1Array.add("Per Year");
 
@@ -419,72 +555,41 @@ public class Transportation extends AppCompatActivity implements Serializable {
         timePeriod1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(adapterView.getItemAtPosition(i) == "Select"){
-
-                }
-                else if (adapterView.getItemAtPosition(i) == "Per Week") {
+                if (adapterView.getItemAtPosition(i) == "Per Week") {
                     timeCheckYear1 = false;
+                    timeCheckYear2 = false;
+                    timeCheckYear3 = false;
+                    if (currentUser.isImperialSystem()) {
+                        milesNum1Layout.setHelperText("US average per capita: 219 miles");
+                        milesNum2Layout.setHelperText("US average per capita: 219 miles");
+                        milesNum3Layout.setHelperText("US average per capita: 219 miles");
+                    }
+
+                    else if (currentUser.isMetricSystem()) {
+                        milesNum1Layout.setHelperText("US average per capita: 352 kilometers");
+                        milesNum2Layout.setHelperText("US average per capita: 352 kilometers");
+                        milesNum3Layout.setHelperText("US average per capita: 352 kilometers");
+                    }
+
+
                 }
                 else if (adapterView.getItemAtPosition(i) == "Per Year") {
                     timeCheckYear1 = true;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        timePeriod2Array = new ArrayList<>();
-        timePeriod2Array.add("Select");
-        timePeriod2Array.add("Per Week");
-        timePeriod2Array.add("Per Year");
-
-        ArrayAdapter<String> timePeriod2Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, timePeriod2Array);
-        timePeriod2Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        timePeriod2.setAdapter(timePeriod2Adapter);
-
-        timePeriod2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(adapterView.getItemAtPosition(i) == "Select"){
-
-                }
-                else if (adapterView.getItemAtPosition(i) == "Per Week") {
-                    timeCheckYear2 = false;
-                }
-                else if (adapterView.getItemAtPosition(i) == "Per Year") {
                     timeCheckYear2 = true;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
-        timePeriod3Array = new ArrayList<>();
-        timePeriod3Array.add("Select");
-        timePeriod3Array.add("Per Week");
-        timePeriod3Array.add("Per Year");
-
-        ArrayAdapter<String> timePeriod3Adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, timePeriod3Array);
-        timePeriod3Adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        timePeriod3.setAdapter(timePeriod3Adapter);
-
-        timePeriod3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(adapterView.getItemAtPosition(i) == "Select"){
-
-                }
-                else if (adapterView.getItemAtPosition(i) == "Per Week") {
-                    timeCheckYear3 = false;
-                }
-                else if (adapterView.getItemAtPosition(i) == "Per Year") {
                     timeCheckYear3 = true;
+                    if (currentUser.isImperialSystem()) {
+                        milesNum1Layout.setHelperText("US average per capita: 11,398 miles");
+                        milesNum2Layout.setHelperText("US average per capita: 11,398 miles");
+                        milesNum3Layout.setHelperText("US average per capita: 11,398 miles");
+                    }
+
+                    else if (currentUser.isMetricSystem()) {
+                        milesNum1Layout.setHelperText("US average per capita: 18,343 kilometers");
+                        milesNum2Layout.setHelperText("US average per capita: 18,343 kilometers");
+                        milesNum3Layout.setHelperText("US average per capita: 18,343 kilometers");
+                    }
+
+
                 }
             }
 
@@ -572,23 +677,46 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
         if (!checkGone1 && !checkGone2 && !checkGone3) {
             transportationTotal = (vehicle1Total + vehicle2Total + vehicle3Total) * 0.0005;
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq3() && currentUser.isTq4() && currentUser.isTq5() && currentUser.isTq6() && currentUser.isTq7()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else if (!checkGone1 && !checkGone2) {
             transportationTotal = (vehicle1Total + vehicle2Total) * 0.0005;
-
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq3() && currentUser.isTq5() && currentUser.isTq6()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else if (!checkGone1) {
             transportationTotal = (vehicle1Total) * 0.0005;
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq5()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else {
             transportationTotal = 0;
+            currentUser.setTqcomplete(true);
         }
 //        Toast.makeText(Transportation.this, transportationTotal + "", Toast.LENGTH_LONG).show();
-        currentUser.setTransportationTotal(transportationTotal);
-        currentUser.setCarMilesValue(String.format("%.2f", transportationTotal));
-        Intent intent = new Intent(this, Waste.class);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        if (currentUser.isTqcomplete()) {
+            currentUser.setTransportationTotal(transportationTotal);
+            currentUser.setCarMilesValue(String.format("%.2f", transportationTotal));
+            Intent intent = new Intent(this, Waste.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            transportationErrorText.setVisibility(View.VISIBLE);
+        }
     }
 
     public void TransportationToHomeEnergy(View view) {
@@ -596,23 +724,46 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
         if (!checkGone1 && !checkGone2 && !checkGone3) {
             transportationTotal = (vehicle1Total + vehicle2Total + vehicle3Total) * 0.0005;
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq3() && currentUser.isTq4() && currentUser.isTq5() && currentUser.isTq6() && currentUser.isTq7()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else if (!checkGone1 && !checkGone2) {
             transportationTotal = (vehicle1Total + vehicle2Total) * 0.0005;
-
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq3() && currentUser.isTq5() && currentUser.isTq6()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else if (!checkGone1) {
             transportationTotal = (vehicle1Total) * 0.0005;
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq5()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else {
             transportationTotal = 0;
+            currentUser.setTqcomplete(true);
         }
 //        Toast.makeText(Transportation.this, transportationTotal + "", Toast.LENGTH_LONG).show();
-        currentUser.setTransportationTotal(transportationTotal);
-        currentUser.setCarMilesValue(String.format("%.2f", transportationTotal));
-        Intent intent = new Intent(this, HomeEnergy.class);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        if (currentUser.isTqcomplete()) {
+            currentUser.setTransportationTotal(transportationTotal);
+            currentUser.setCarMilesValue(String.format("%.2f", transportationTotal));
+            Intent intent = new Intent(this, HomeEnergy.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            transportationErrorText.setVisibility(View.VISIBLE);
+        }
     }
 
     public void TransportationToResults(View view) {
@@ -620,23 +771,47 @@ public class Transportation extends AppCompatActivity implements Serializable {
 
         if (!checkGone1 && !checkGone2 && !checkGone3) {
             transportationTotal = (vehicle1Total + vehicle2Total + vehicle3Total) * 0.0005;
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq3() && currentUser.isTq4() && currentUser.isTq5() && currentUser.isTq6() && currentUser.isTq7()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else if (!checkGone1 && !checkGone2) {
             transportationTotal = (vehicle1Total + vehicle2Total) * 0.0005;
-
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq3() && currentUser.isTq5() && currentUser.isTq6()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else if (!checkGone1) {
             transportationTotal = (vehicle1Total) * 0.0005;
+            if (currentUser.isTq1() && currentUser.isTq2() && currentUser.isTq5()) {
+                currentUser.setTqcomplete(true);
+            }
+            else {
+                currentUser.setTqcomplete(false);
+            }
         }
         else {
             transportationTotal = 0;
+            currentUser.setTqcomplete(true);
         }
 //        Toast.makeText(Transportation.this, transportationTotal + "", Toast.LENGTH_LONG).show();
-        currentUser.setTransportationTotal(transportationTotal);
-        currentUser.setCarMilesValue(String.format("%.2f", transportationTotal));
-        Intent intent = new Intent(this, ResultsTabbedActivity.class);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+
+        if (currentUser.isTqcomplete()) {
+            currentUser.setTransportationTotal(transportationTotal);
+            currentUser.setCarMilesValue(String.format("%.2f", transportationTotal));
+            Intent intent = new Intent(this, InitiateCalculator.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            transportationErrorText.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -1026,6 +1201,10 @@ public class Transportation extends AppCompatActivity implements Serializable {
 */
     private void showToast(String text) {
         Toast.makeText(Transportation.this, text, Toast.LENGTH_LONG).show();
+    }
+    public void openTransportationDialog() {
+        TransportationDialogue transportationDialogue = new TransportationDialogue();
+        transportationDialogue.show(getSupportFragmentManager(), "Transportation Dialogue");
     }
 
 }

@@ -69,9 +69,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="valueResourceFile" />
-        <option value="Interface" />
         <option value="layoutResourceFile" />
         <option value="resourceFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -92,7 +92,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PaceEats" />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -154,6 +154,9 @@
       <recent name="com.example.carbonfootprint.Database" />
     </key>
     <key name="android.template.-621362980">
+      <recent name="com.example.carbonfootprint" />
+    </key>
+    <key name="android.template.-930133519">
       <recent name="com.example.carbonfootprint" />
     </key>
     <key name="android.template.613882458">

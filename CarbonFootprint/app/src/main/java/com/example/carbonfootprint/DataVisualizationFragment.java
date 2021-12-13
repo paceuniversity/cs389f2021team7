@@ -1,5 +1,6 @@
 package com.example.carbonfootprint;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 import java.io.Serializable;
@@ -26,6 +28,7 @@ public class DataVisualizationFragment extends Fragment implements Serializable 
 //        progressDialog.setCancelable(false);
 
         webView = view.findViewById(R.id.webView);
+
         webView.getSettings().setBuiltInZoomControls(true);
         webView.getSettings().setDisplayZoomControls(false);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -40,4 +43,5 @@ public class DataVisualizationFragment extends Fragment implements Serializable 
 
         return view;
     }
+
 }

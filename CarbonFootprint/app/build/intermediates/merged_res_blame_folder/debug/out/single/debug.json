@@ -52,10 +52,6 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_demo_calculator.xml.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_demo_calculator.xml"
-    },
-    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_test2.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\test2.xml"
     },
@@ -102,10 +98,6 @@
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_settings.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_settings.xml"
-    },
-    {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_home_energy.xml.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_home_energy.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_home_energybg.png.flat",
@@ -184,16 +176,8 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_transportation.xml.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_transportation.xml"
-    },
-    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_transportationbg.png.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\transportationbg.png"
-    },
-    {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_initiate_calculator.xml.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_initiate_calculator.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_calculator_icon.png.flat",
@@ -226,6 +210,14 @@
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_toolbar_activity_suggestions.xml.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\toolbar_activity_suggestions.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_units.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\layout\\activity_units.xml"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_check_24.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\ic_baseline_check_24.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_carbon_footprint_red_icon.png.flat",
@@ -398,6 +390,10 @@
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_check_transparent_24.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\ic_baseline_check_transparent_24.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_carbon_footprint_green_icon.png.flat",

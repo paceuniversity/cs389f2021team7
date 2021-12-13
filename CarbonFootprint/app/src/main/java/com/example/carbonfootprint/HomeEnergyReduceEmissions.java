@@ -4,14 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.io.Serializable;
 
@@ -22,7 +27,12 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     userInfo currentUser;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
     TextInputEditText acThermostatInput, winterThermostatInput, reduceLightingInput, coldWaterInput;
-
+    TextInputLayout acThermostatLayout, winterThermostatLayout, reduceLightingLayout, coldWaterLayout;
+    ImageView homeEnergyReduceInfo;
+    String refridge;
+    String furnaceBoiler;
+    String window;
+    TextView errorText2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +47,12 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         winterThermostatInput = findViewById(R.id.winterThermostatEditText);
         reduceLightingInput = findViewById(R.id.reduceLightingEditText);
         coldWaterInput = findViewById(R.id.coldWaterEditText);
-
+        acThermostatLayout = findViewById(R.id.acThermostatInputLayout);
+        winterThermostatLayout = findViewById(R.id.winterThermostatInputLayout);
+        reduceLightingLayout = findViewById(R.id.reduceLightingInputLayout);
+        coldWaterLayout = findViewById(R.id.coldWaterInputLayout);
+        errorText2 = findViewById(R.id.errorText2);
+        errorText2.setVisibility(View.GONE);
 
         naturalGas = currentUser.getNaturalGas();
         electricity = currentUser.getElectricity();
@@ -53,12 +68,140 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         wastebutton = findViewById(R.id.wasteSuggestionsBttn);
 //        homeenergypreviousbutton = findViewById(R.id.homenergypreviousbutton);
 
+        if (currentUser.isImperialSystem()) {
+            acThermostatLayout.setHint("Degrees (°F)");
+            winterThermostatLayout.setHint("Degrees (°F)");
+        }
+        else if (currentUser.isMetricSystem()) {
+            acThermostatLayout.setHint("Degrees (°C)");
+            winterThermostatLayout.setHint("Degrees (°C)");
+        }
+
+
+
+        homeEnergyReduceInfo = findViewById(R.id.homeEnergyReduceInfo);
+
+        homeEnergyReduceInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openHomeEnergyReduceDialog();
+            }
+        });
+
         energyStarRefridge();
         energyStarFurnaceBoiler();
         energyStarWindow();
 
+        acThermostatInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0) {
+                    currentUser.setRheq1(false);
+                }
+                else if (editable.length() > 2) {
+                    acThermostatLayout.setError("You have exceeded the character limit");
+                    currentUser.setRheq1(false);
+                }
+                else {
+                    acThermostatLayout.setError(null);
+                    currentUser.setRheq1(true);
+                }
+            }
+        });
+
+        winterThermostatInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0) {
+                    currentUser.setRheq2(false);
+                }
+                else if (editable.length() > 2) {
+                    winterThermostatLayout.setError("You have exceeded the character limit");
+                    currentUser.setRheq2(false);
+                }
+                else {
+                    winterThermostatLayout.setError(null);
+                    currentUser.setRheq2(true);
+                }
+            }
+        });
+
+        reduceLightingInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0) {
+                    currentUser.setRheq3(false);
+                }
+                else if (editable.length() > 2) {
+                    reduceLightingLayout.setError("You have exceeded the character limit");
+                    currentUser.setRheq3(false);
+                }
+                else {
+                    reduceLightingLayout.setError(null);
+                    currentUser.setRheq3(true);
+                }
+            }
+        });
+
+        coldWaterInput.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable.length() == 0) {
+                    currentUser.setRheq4(false);
+                }
+                else if (editable.length() > 2) {
+                    coldWaterLayout.setError("You have exceeded the character limit");
+                    currentUser.setRheq4(false);
+                }
+                else {
+                    coldWaterLayout.setError(null);
+                    currentUser.setRheq4(true);
+                }
+            }
+        });
 
     }
+
 
 
     public void HomeReducetoHomeEnergy(View view) {
@@ -68,28 +211,116 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     }
 
     public void HomeReducetoTransportation(View view) {
-        homeEnergyCalculation();
-        Intent intent = new Intent(HomeEnergyReduceEmissions.this, Transportation.class);
-        currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        refridge = spinnerRefridge.getSelectedItem().toString();
+        furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
+        window = spinnerWindow.getSelectedItem().toString();
+
+        if (refridge.equals("Select an Option")) {
+            currentUser.setRheq5(false);
+        }
+        else {
+            currentUser.setRheq5(true);
+        }
+        if (furnaceBoiler.equals("Select an Option")) {
+            currentUser.setRheq6(false);
+        }
+        else {
+            currentUser.setRheq6(true);
+        }
+        if (window.equals("Select an Option")) {
+            currentUser.setRheq7(false);
+        }
+        else {
+            currentUser.setRheq7(true);
+        }
+
+        if (currentUser.isRheq1() && currentUser.isRheq2() && currentUser.isRheq3() && currentUser.isRheq4() && currentUser.isRheq5() && currentUser.isRheq6() && currentUser.isRheq7()) {
+            currentUser.setHeqcomplete(true);
+            homeEnergyCalculation();
+            Intent intent = new Intent(HomeEnergyReduceEmissions.this, Transportation.class);
+            currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            currentUser.setHeqcomplete(false);
+            errorText2.setVisibility(View.VISIBLE);
+        }
     }
 
 
     public void HomeReducetoWaste(View view) {
-        homeEnergyCalculation();
-        Intent intent = new Intent(HomeEnergyReduceEmissions.this, Waste.class);
-        currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        refridge = spinnerRefridge.getSelectedItem().toString();
+        furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
+        window = spinnerWindow.getSelectedItem().toString();
+
+        if (refridge.equals("Select an Option")) {
+            currentUser.setRheq5(false);
+        }
+        else {
+            currentUser.setRheq5(true);
+        }
+        if (furnaceBoiler.equals("Select an Option")) {
+            currentUser.setRheq6(false);
+        }
+        else {
+            currentUser.setRheq6(true);
+        }
+        if (window.equals("Select an Option")) {
+            currentUser.setRheq7(false);
+        }
+        else {
+            currentUser.setRheq7(true);
+        }
+
+        if (currentUser.isRheq1() && currentUser.isRheq2() && currentUser.isRheq3() && currentUser.isRheq4() && currentUser.isRheq5() && currentUser.isRheq6() && currentUser.isRheq7()) {
+            currentUser.setHeqcomplete(true);
+            homeEnergyCalculation();
+            Intent intent = new Intent(HomeEnergyReduceEmissions.this, Waste.class);
+            currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            errorText2.setVisibility(View.VISIBLE);
+        }
     }
 
     public void HomeReducetoResults(View view) {
-        homeEnergyCalculation();
-        Intent intent = new Intent(HomeEnergyReduceEmissions.this, ResultsTabbedActivity.class);
-        currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        refridge = spinnerRefridge.getSelectedItem().toString();
+        furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
+        window = spinnerWindow.getSelectedItem().toString();
+
+        if (refridge.equals("Select an Option")) {
+            currentUser.setRheq5(false);
+        }
+        else {
+            currentUser.setRheq5(true);
+        }
+        if (furnaceBoiler.equals("Select an Option")) {
+            currentUser.setRheq6(false);
+        }
+        else {
+            currentUser.setRheq6(true);
+        }
+        if (window.equals("Select an Option")) {
+            currentUser.setRheq7(false);
+        }
+        else {
+            currentUser.setRheq7(true);
+        }
+
+        if (currentUser.isRheq1() && currentUser.isRheq2() && currentUser.isRheq3() && currentUser.isRheq4() && currentUser.isRheq5() && currentUser.isRheq6() && currentUser.isRheq7()) {
+            currentUser.setHeqcomplete(true);
+            homeEnergyCalculation();
+            Intent intent = new Intent(HomeEnergyReduceEmissions.this, InitiateCalculator.class);
+            currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            errorText2.setVisibility(View.VISIBLE);
+        }
     }
 
 
@@ -98,7 +329,6 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         ArrayAdapter<String> refridgeAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.starProducts));
         refridgeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerRefridge.setAdapter(refridgeAdapter);
-
     }
 
     private void energyStarFurnaceBoiler() {
@@ -118,9 +348,15 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     }
 
     private void homeEnergyCalculation() {
+        if (currentUser.isImperialSystem()) {
+            acThermostat = Integer.valueOf(acThermostatInput.getText().toString());
+            winterThermostat = Integer.valueOf(winterThermostatInput.getText().toString());
+        }
+        else if (currentUser.isMetricSystem()) {
+            acThermostat = Integer.valueOf(acThermostatInput.getText().toString())*5/9;
+            winterThermostat = Integer.valueOf(winterThermostatInput.getText().toString())*5/9;
+        }
 
-        acThermostat = Integer.valueOf(acThermostatInput.getText().toString());
-        winterThermostat = Integer.valueOf(winterThermostatInput.getText().toString());
         reduceLighting = Integer.valueOf(reduceLightingInput.getText().toString());
         coldWater = Integer.valueOf(coldWaterInput.getText().toString());
 
@@ -139,6 +375,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
                 acCO2Saved = acCO2Saved + 21;
             }
         }
+
         acThermostat = acCO2Saved;
 
         double acWinterMoneySaved = 0;
@@ -182,9 +419,9 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         }
         coldWater = coldWaterCO2Saved;
 
-        String refridge = spinnerRefridge.getSelectedItem().toString();
-        String furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
-        String window = spinnerWindow.getSelectedItem().toString();
+        refridge = spinnerRefridge.getSelectedItem().toString();
+        furnaceBoiler = spinnerFurnaceBoiler.getSelectedItem().toString();
+        window = spinnerWindow.getSelectedItem().toString();
         int energyStarRefridgeCO2 = 0;
         if (refridge.equals("Will Do"))
             energyStarRefridgeCO2 += 177;
@@ -210,6 +447,10 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         emissionsTotal = emissionsTotal / 2000;
         emissionsTotalAfterReduce = emissionsTotalAfterReduce / 2000;
 
+    }
+    public void openHomeEnergyReduceDialog() {
+        HomeEnergyReduceDialogue homeEnergyReduceDialogue = new HomeEnergyReduceDialogue();
+        homeEnergyReduceDialogue.show(getSupportFragmentManager(), "Home Energy Reduce Dialogue");
     }
 }
 

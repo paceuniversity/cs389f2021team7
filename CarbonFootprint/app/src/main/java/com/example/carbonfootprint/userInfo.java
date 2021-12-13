@@ -8,12 +8,18 @@ public class userInfo implements Serializable {
     Boolean locationCheck = false;
     Boolean pastResultsCheck = false;
     Boolean savePastResultsCheck = true;
+    Boolean unitsLocationCheck = true;
     double homeEnergyTotal, wasteTotal, naturalGas, electricity, fuelOil, propane, appAvgValue, transportationTotal;
-    int id, householdNumber;
+    int id;
+    int householdNumber = 0;
     ArrayList<String> xmlcountryname, xmlcountrycode;
     Boolean NaturalGasCheck, ElectricityCheck, FuelOilCheck, PropaneCheck, MetalCheck, GlassCheck, PlasticCheck, NewspaperCheck, MagazinesCheck, CarMilesCheck;
     Boolean CarMaintenanceCheck = true;
     String NaturalGasValue, ElectricityValue, FuelOilValue, PropaneValue, CarMilesValue;
+    boolean metricSystem, imperialSystem;
+    boolean heq1, heq2, heq3, heq4, rheq1, rheq2, rheq3, rheq4, rheq5, rheq6, rheq7, heqcomplete;
+    boolean tq1, tq2, tq3, tq4, tq5, tq6, tq7, tqcomplete;
+    boolean wqcomplete;
 
     public int getId() {
         return id;
@@ -420,5 +426,197 @@ public class userInfo implements Serializable {
 
     public void setCarMilesValue(String carMilesValue) {
         CarMilesValue = carMilesValue;
+    }
+
+    public boolean isMetricSystem() {
+        return metricSystem;
+    }
+
+    public void setMetricSystem(boolean metricSystem) {
+        this.metricSystem = metricSystem;
+    }
+
+    public boolean isImperialSystem() {
+        return imperialSystem;
+    }
+
+    public void setImperialSystem(boolean imperialSystem) {
+        this.imperialSystem = imperialSystem;
+    }
+
+    public boolean isHeq1() {
+        return heq1;
+    }
+
+    public void setHeq1(boolean heq1) {
+        this.heq1 = heq1;
+    }
+
+    public boolean isHeq2() {
+        return heq2;
+    }
+
+    public void setHeq2(boolean heq2) {
+        this.heq2 = heq2;
+    }
+
+    public boolean isHeq3() {
+        return heq3;
+    }
+
+    public void setHeq3(boolean heq3) {
+        this.heq3 = heq3;
+    }
+
+    public boolean isHeq4() {
+        return heq4;
+    }
+
+    public void setHeq4(boolean heq4) {
+        this.heq4 = heq4;
+    }
+
+    public boolean isRheq1() {
+        return rheq1;
+    }
+
+    public void setRheq1(boolean rheq1) {
+        this.rheq1 = rheq1;
+    }
+
+    public boolean isRheq2() {
+        return rheq2;
+    }
+
+    public void setRheq2(boolean rheq2) {
+        this.rheq2 = rheq2;
+    }
+
+    public boolean isRheq3() {
+        return rheq3;
+    }
+
+    public void setRheq3(boolean rheq3) {
+        this.rheq3 = rheq3;
+    }
+
+    public boolean isRheq4() {
+        return rheq4;
+    }
+
+    public void setRheq4(boolean rheq4) {
+        this.rheq4 = rheq4;
+    }
+
+    public boolean isRheq5() {
+        return rheq5;
+    }
+
+    public void setRheq5(boolean rheq5) {
+        this.rheq5 = rheq5;
+    }
+
+    public boolean isRheq6() {
+        return rheq6;
+    }
+
+    public void setRheq6(boolean rheq6) {
+        this.rheq6 = rheq6;
+    }
+
+    public boolean isRheq7() {
+        return rheq7;
+    }
+
+    public void setRheq7(boolean rheq7) {
+        this.rheq7 = rheq7;
+    }
+
+    public boolean isHeqcomplete() {
+        return heqcomplete;
+    }
+
+    public void setHeqcomplete(boolean heqcomplete) {
+        this.heqcomplete = heqcomplete;
+    }
+
+    public boolean isTq1() {
+        return tq1;
+    }
+
+    public void setTq1(boolean tq1) {
+        this.tq1 = tq1;
+    }
+
+    public boolean isTq2() {
+        return tq2;
+    }
+
+    public void setTq2(boolean tq2) {
+        this.tq2 = tq2;
+    }
+
+    public boolean isTq3() {
+        return tq3;
+    }
+
+    public void setTq3(boolean tq3) {
+        this.tq3 = tq3;
+    }
+
+    public boolean isTq4() {
+        return tq4;
+    }
+
+    public void setTq4(boolean tq4) {
+        this.tq4 = tq4;
+    }
+
+    public boolean isTq5() {
+        return tq5;
+    }
+
+    public void setTq5(boolean tq5) {
+        this.tq5 = tq5;
+    }
+
+    public boolean isTq6() {
+        return tq6;
+    }
+
+    public void setTq6(boolean tq6) {
+        this.tq6 = tq6;
+    }
+
+    public boolean isTq7() {
+        return tq7;
+    }
+
+    public void setTq7(boolean tq7) {
+        this.tq7 = tq7;
+    }
+
+    public boolean isTqcomplete() {
+        return tqcomplete;
+    }
+
+    public void setTqcomplete(boolean tqcomplete) {
+        this.tqcomplete = tqcomplete;
+    }
+
+    public boolean isWqcomplete() {
+        return wqcomplete;
+    }
+
+    public void setWqcomplete(boolean wqcomplete) {
+        this.wqcomplete = wqcomplete;
+    }
+
+    public Boolean getUnitsLocationCheck() {
+        return unitsLocationCheck;
+    }
+
+    public void setUnitsLocationCheck(Boolean unitsLocationCheck) {
+        this.unitsLocationCheck = unitsLocationCheck;
     }
 }

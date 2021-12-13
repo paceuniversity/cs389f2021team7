@@ -15,7 +15,7 @@ public class HomeDialogue extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder homeDialogueBuilder = new AlertDialog.Builder(getActivity());
         homeDialogueBuilder.setTitle("Information")
-                .setMessage("Text Here")
+                .setMessage("Welcome to Carbon Footprint.\n\nTap the calculator if you want to begin calculating your CO2 emissions and then compare your results to your location's average.\n\nTap the icons on the bottom navigation menu to go to Past Results, Data Visualization, or Settings.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

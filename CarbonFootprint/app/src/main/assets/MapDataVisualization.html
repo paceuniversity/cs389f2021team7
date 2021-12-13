@@ -26,19 +26,19 @@
 
 
   for (let i = 0; i < countryCodeArray.length; i++) {
-    fetch('https://api.worldbank.org/v2/country/' + countryCodeArray[i] + '/indicator/EN.ATM.CO2E.PC?mrv=1&format=json').then((WBresponse1) => WBresponse1.json()).then((WBdata1) => { 
+    fetch('https://api.worldbank.org/v2/country/' + countryCodeArray[i] + '/indicator/EN.ATM.CO2E.PC?mrv=1&format=json').then((WBresponse1) => WBresponse1.json()).then((WBdata1) => {
       WBdata1decimalString = WBdata1[1][0].value.toFixed(2);
       WBdata1decimalFloat = parseFloat(WBdata1decimalString);
       mapArray1.push([countryNameArray[i], WBdata1decimalFloat])
-    }) 
+    })
     }
 
   for (let i = 0; i < countryCodeArray.length; i++) {
-    fetch('https://api.worldbank.org/v2/country/' + countryCodeArray[i] + '/indicator/EN.ATM.CO2E.KT?mrv=1&format=json').then((WBresponse2) => WBresponse2.json()).then((WBdata2) => { 
+    fetch('https://api.worldbank.org/v2/country/' + countryCodeArray[i] + '/indicator/EN.ATM.CO2E.KT?mrv=1&format=json').then((WBresponse2) => WBresponse2.json()).then((WBdata2) => {
       WBdata2decimalString = WBdata2[1][0].value.toFixed(2);
       WBdata2decimalFloat = parseFloat(WBdata2decimalString);
       mapArray2.push([countryNameArray[i], WBdata2decimalFloat])
-    }) 
+    })
     }
 
     google.charts.load('current', {
@@ -46,7 +46,7 @@
     });
     google.charts.setOnLoadCallback(drawRegionsMap);
 
-      
+
     function drawRegionsMap() {
       var select = document.getElementById("CO2Emissions").value;
 

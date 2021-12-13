@@ -1,12 +1,15 @@
 package com.example.carbonfootprint;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -41,6 +44,7 @@ import org.xmlpull.v1.XmlPullParserFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,6 +53,9 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
     public static final String SHARED_PREFERENCE = "sharedPreference";
     public static final String COUNTRY_CODE = "countryCode";
     public static final String SAVE_RESULTS_EXIT = "saveResultsExit";
+    public static final String UNITS = "units";
+    public static final String UNITS_LOCATION = "unitsLocation";
+
     private static final int PERMISSIONS_FINE_LOCATION = 88;
     FusedLocationProviderClient fusedLocationProviderClient;
     List<Address> addresses;
@@ -57,8 +64,8 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
     ArrayList<String> xmlcountryname;
     ArrayList<String> xmlcountrycode;
     String loadedCountryCode;
-    Boolean loadedSaveResultsExit;
-    private ActivityHomeBinding binding;
+    Boolean loadedSaveResultsExit, loadedUnits, loadedUnitsLocation;
+    ActivityHomeBinding binding;
     Toolbar homeScreenToolbar;
     ImageView homeInfo;
 
@@ -71,36 +78,6 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
 
         homeScreenToolbar = findViewById(R.id.homeToolbar);
         BottomNavigationView navView = findViewById(R.id.nav_view);
-
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_pastresults, R.id.navigation_settings, R.id.navigation_dataVisualization)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(binding.navView, navController);
-
-
-
-        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
-            @Override
-            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
-                if (destination.getLabel().equals("Home")) {
-                    homeScreenToolbar.setTitle("Home");
-                }
-                else if (destination.getLabel().equals("Past Results")) {
-                    homeScreenToolbar.setTitle("Past Results");
-                }
-                else if (destination.getLabel().equals("Settings")) {
-                    homeScreenToolbar.setTitle("Settings");
-                }
-                else if (destination.getLabel().equals("Data Visualization")) {
-                    homeScreenToolbar.setTitle("Data Visualization");
-                }
-
-            }
-        });
-
-
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
@@ -123,33 +100,103 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
             currentUser.setSavePastResultsCheck(false);
         }
 
+
+        if (loadedUnitsLocation == true && currentUser != null) {
+            currentUser.setUnitsLocationCheck(true);
+        }
+
+        else if (loadedUnitsLocation == false && currentUser != null) {
+            currentUser.setUnitsLocationCheck(false);
+            if (loadedUnits == true && currentUser != null) {
+                currentUser.setImperialSystem(true);
+                currentUser.setMetricSystem(false);
+            }
+            else if (loadedUnits == false && currentUser != null) {
+                currentUser.setImperialSystem(false);
+                currentUser.setMetricSystem(true);
+            }
+        }
+
         if (databaseHelper == null) {
             databaseHelper = new DatabaseHelper(this);
 
         }
+
+
+        homeInfo = findViewById(R.id.homeInfo);
+
+
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.navigation_home, R.id.navigation_pastresults, R.id.navigation_settings, R.id.navigation_dataVisualization)
+                .build();
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_home);
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+        NavigationUI.setupWithNavController(binding.navView, navController);
+
+
+
+        navController.addOnDestinationChangedListener(new NavController.OnDestinationChangedListener() {
+            @Override
+            public void onDestinationChanged(@NonNull NavController controller, @NonNull NavDestination destination, @Nullable Bundle arguments) {
+                if (destination.getLabel().equals("Home")) {
+                    homeScreenToolbar.setTitle("Home");
+                    homeInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            openHomeDialog();
+                        }
+                    });
+                }
+                else if (destination.getLabel().equals("Past Results")) {
+                    homeScreenToolbar.setTitle("Past Results");
+                    homeInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            openPastResultsDialog();
+                        }
+                    });
+                }
+                else if (destination.getLabel().equals("Settings")) {
+                    homeScreenToolbar.setTitle("Settings");
+                    homeInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            openSettingsDialog();
+                        }
+                    });
+                }
+                else if (destination.getLabel().equals("Data Visualization")) {
+                    homeScreenToolbar.setTitle("Data Visualization");
+                    homeInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            openDataVisualizationDialog();
+                        }
+                    });
+                }
+
+            }
+        });
+
 
         parseXML();
 
         currentUser.setXmlcountrycode(xmlcountrycode);
         currentUser.setXmlcountryname(xmlcountryname);
 
-        homeInfo = findViewById(R.id.homeInfo);
-
-        homeInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openHomeDialog();
-            }
-        });
 
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        if (LocationActivity.currentUserTemporary != null && currentUser != null) {
+        if (LocationActivity.currentUserTemporary != null  && currentUser != null) {
             currentUser = LocationActivity.currentUserTemporary;
         }
+        if (UnitsActivity.currentUserTemporary2 != null && currentUser != null) {
+            currentUser = UnitsActivity.currentUserTemporary2;
+        }
+
         saveData();
     }
 
@@ -169,7 +216,7 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
                 }
         }
     }
-    private void updateGPS() {
+    public void updateGPS() {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(HomeActivity.this);
         if(ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -235,16 +282,31 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(COUNTRY_CODE, currentUser.getCountryCode());
+        editor.putBoolean(UNITS, currentUser.isImperialSystem());
         editor.apply();
     }
     public void loadData() {
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFERENCE, MODE_PRIVATE);
         loadedCountryCode = sharedPreferences.getString(COUNTRY_CODE, "");
         loadedSaveResultsExit = sharedPreferences.getBoolean(SAVE_RESULTS_EXIT, true);
+        loadedUnits = sharedPreferences.getBoolean(UNITS, true);
+        loadedUnitsLocation = sharedPreferences.getBoolean(UNITS_LOCATION, true);
     }
 
     public void openHomeDialog() {
         HomeDialogue homeDialogue = new HomeDialogue();
         homeDialogue.show(getSupportFragmentManager(), "Home Dialogue");
+    }
+    public void openPastResultsDialog() {
+        PastResultsDialogue pastResultsDialogue = new PastResultsDialogue();
+        pastResultsDialogue.show(getSupportFragmentManager(), "Past Results Dialogue");
+    }
+    public void openDataVisualizationDialog() {
+        DataVisualizationDialogue dataVisualizationDialogue = new DataVisualizationDialogue();
+        dataVisualizationDialogue.show(getSupportFragmentManager(), "Data Visualization Dialogue");
+    }
+    public void openSettingsDialog() {
+        SettingsDialogue settingsDialogue = new SettingsDialogue();
+        settingsDialogue.show(getSupportFragmentManager(), "Settings Dialogue");
     }
 }

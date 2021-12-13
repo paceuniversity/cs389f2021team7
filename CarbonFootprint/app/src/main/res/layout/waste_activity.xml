@@ -7,6 +7,34 @@
     android:background="@drawable/wastebg"
     tools:context=".Waste">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/wasteToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Waste"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/wasteInfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/wasteToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_info_24_toolbar" />
+
+
     <Button
         android:id="@+id/getresultspage"
         android:layout_width="0dp"
@@ -15,7 +43,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_design"
-        android:text="Results"
+        android:text="Save and Return"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -45,116 +73,67 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/transportationbtn" />
 
-    <Spinner
-        android:id="@+id/wasteSpinner5"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wasteSpinner4" />
 
-    <Spinner
-        android:id="@+id/wasteSpinner3"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wasteSpinner2" />
-
-    <Spinner
-        android:id="@+id/wasteSpinner4"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wasteSpinner3" />
-
-    <Spinner
-        android:id="@+id/wasteSpinner2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wasteSpinner1" />
-
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_waste_activity" />
-
-
-    <TextView
-        android:id="@+id/metalText"
+    <CheckBox
+        android:id="@+id/wasteCheckBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/metal_question"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:layout_marginTop="64dp"
+        android:text="Metal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        tools:text="Do you recycle metal?" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <TextView
-        android:id="@+id/glassText"
+    <CheckBox
+        android:id="@+id/wasteCheckBox2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:text="Glass"
+        app:layout_constraintStart_toEndOf="@+id/wasteCheckBox1"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <CheckBox
+        android:id="@+id/wasteCheckBox3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:text="Plastic"
+        app:layout_constraintStart_toEndOf="@+id/wasteCheckBox2"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <CheckBox
+        android:id="@+id/wasteCheckBox4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/glass_question"
-        android:textColor="@color/black"
-        android:textSize="18sp"
+        android:layout_marginTop="32dp"
+        android:text="Newspaper"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/metalText" />
+        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox3" />
+
+    <CheckBox
+        android:id="@+id/wasteCheckBox5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Magazines"
+        app:layout_constraintStart_toEndOf="@+id/wasteCheckBox4"
+        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox2" />
 
     <TextView
-        android:id="@+id/plasticText"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/plastic_question"
+        android:layout_marginTop="16dp"
+        android:text="Which of the following do you recycle?"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/glassText"
-        tools:text="Do you recycle plastic?" />
-
-    <TextView
-        android:id="@+id/newspaperText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/newspaper_question"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/plasticText" />
-
-    <TextView
-        android:id="@+id/magazinesText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:text="@string/magazines_question"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newspaperText" />
-
-    <Spinner
-        android:id="@+id/wasteSpinner1"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/wasteToolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,6 +8,8 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -23,6 +25,7 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
     float transportationTotal;
     int householdNumber;
     float demoTotalNumber;
+    ImageView resultsInfo;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
 
@@ -36,6 +39,15 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
         resultsTabLayout = findViewById(R.id.resultsTabLayout);
         resultsViewPager = findViewById(R.id.resultsViewPager);
 
+        resultsInfo = findViewById(R.id.resultsInfo);
+
+        resultsInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openResultsDialog();
+            }
+        });
+
         FragmentManager resultsFragmentManager = getSupportFragmentManager();
         resultsFragmentAdapter = new ResultsFragmentAdapter(resultsFragmentManager, getLifecycle());
         resultsViewPager.setAdapter(resultsFragmentAdapter);
@@ -48,10 +60,33 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
         emissionsTotalAfterReduce = (float) (currentUser.getHomeEnergyTotal()/householdNumber);
         demoTotalNumber = (float) (emissionsTotalAfterReduce + estimatedWaste + transportationTotal);
 
-
         resultsTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
+//                if (tab.getPosition() == 0) {
+                    resultsInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            openResultsDialog();
+                        }
+                    });
+//            }
+//                else if (tab.getPosition() == 1) {
+//                    resultsInfo.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            openBarChartDialog();
+//                        }
+//                    });
+//                }
+//                else if (tab.getPosition() == 2) {
+//                    resultsInfo.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            openPieChartDialog();
+//                        }
+//                    });
+//                }
                 resultsViewPager.setCurrentItem(tab.getPosition());
             }
 
@@ -81,4 +116,18 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
         startActivity(intent);
     }
 
+    public void openResultsDialog() {
+        ResultsDialogue resultsDialogue = new ResultsDialogue();
+        resultsDialogue.show(getSupportFragmentManager(), "Results Dialogue");
+    }
+
+    public void openBarChartDialog() {
+        BarChartDialogue barChartDialogue = new BarChartDialogue();
+        barChartDialogue.show(getSupportFragmentManager(), "Bar Chart Dialogue");
+    }
+
+    public void openPieChartDialog() {
+        PieChartDialogue pieChartDialogue = new PieChartDialogue();
+        pieChartDialogue.show(getSupportFragmentManager(), "Pie Chart Dialogue");
+    }
 }

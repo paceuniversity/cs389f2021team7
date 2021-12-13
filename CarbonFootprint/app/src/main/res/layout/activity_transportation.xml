@@ -6,18 +6,41 @@
     android:layout_height="match_parent"
     tools:context=".Transportation">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_activity_transportation" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/transportationToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Transportation"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/transportationInfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/transportationToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_info_24_toolbar" />
 
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/transportationToResults"
+        app:layout_constraintBottom_toTopOf="@+id/transportationErrorText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/transportationToolbar"
         tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -238,193 +261,125 @@
             <!--                    app:layout_constraintStart_toStartOf="parent"-->
             <!--                    app:layout_constraintTop_toBottomOf="@+id/reduce2" />-->
 
-            <EditText
-                android:id="@+id/milesNum3"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@null"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/milesQuestion3"
-                app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
-            <TextView
-                android:id="@+id/miles3"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/miles"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/milesNum3"
-                app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
-            <TextView
-                android:id="@+id/milesText3"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/miles_per_gallon"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/mileage3"
-                app:layout_constraintTop_toBottomOf="@+id/time3" />
 
-            <TextView
-                android:id="@+id/mileageQuestion3"
-                android:layout_width="165dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/mileageQuestion"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/milesNum3Layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Miles"
+                app:boxStrokeColor="#48773E"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:endIconMode="clear_text"
+                app:helperText="US average per capita: 219 miles"
+                app:hintTextColor="#48773E"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/milesQuestion3" />
+                app:layout_constraintTop_toBottomOf="@+id/divider3">
 
-            <TextView
-                android:id="@+id/milesQuestion3"
-                android:layout_width="165dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/milesQuestion"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/milesNum3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:nextFocusDown="@+id/mileage3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mileage3Layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Miles per Gallon"
+                app:boxStrokeColor="#48773E"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:endIconMode="clear_text"
+                app:helperText="US average vehicle fuel economy: 21.6 mpg"
+                app:hintTextColor="#48773E"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+                app:layout_constraintTop_toBottomOf="@+id/milesNum3Layout">
 
-            <Spinner
-                android:id="@+id/time3"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/Weekly_or_Yearly"
-                app:layout_constraintStart_toEndOf="@+id/miles3"
-                app:layout_constraintTop_toBottomOf="@+id/divider3" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mileage3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8" />
 
-            <EditText
-                android:id="@+id/mileage3"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@null"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/mileageQuestion3"
-                app:layout_constraintTop_toBottomOf="@+id/milesNum3" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText
-                android:id="@+id/milesNum2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@null"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/milesQuestion2"
-                app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-            <TextView
-                android:id="@+id/milesQuestion2"
-                android:layout_width="165dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/milesQuestion"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/milesNum2Layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Miles"
+                app:boxStrokeColor="#48773E"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:endIconMode="clear_text"
+                app:helperText="US average per capita: 219 miles"
+                app:hintTextColor="#48773E"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+                app:layout_constraintTop_toBottomOf="@+id/divider2">
 
-            <Spinner
-                android:id="@+id/time2"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@string/Weekly_or_Yearly"
-                app:layout_constraintStart_toEndOf="@+id/miles2"
-                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/milesNum2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:nextFocusDown="@+id/mileage2" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/miles2"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/miles"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/milesNum2"
-                app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-            <EditText
-                android:id="@+id/mileage2"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@null"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/mileageQuestion2"
-                app:layout_constraintTop_toBottomOf="@+id/milesNum2" />
-
-            <TextView
-                android:id="@+id/mileageQuestion2"
-                android:layout_width="165dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/mileageQuestion"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mileage2Layout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Miles per Gallon"
+                app:boxStrokeColor="#48773E"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:endIconMode="clear_text"
+                app:helperText="US average vehicle fuel economy: 21.6 mpg"
+                app:hintTextColor="#48773E"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/milesQuestion2" />
+                app:layout_constraintTop_toBottomOf="@+id/milesNum2Layout">
 
-            <TextView
-                android:id="@+id/milesText2"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/miles_per_gallon"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/mileage2"
-                app:layout_constraintTop_toBottomOf="@+id/time2" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mileage2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:nextFocusDown="@+id/milesNum3" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
 
             <!--                <TextView-->
             <!--                    android:id="@+id/replace"-->
@@ -527,11 +482,13 @@
 
             <Spinner
                 android:id="@+id/maintenanceAnswer"
-                android:layout_width="175dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/whether_you_will_perform_maintenance"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/maintenanceQuestion"
                 app:layout_constraintTop_toBottomOf="@+id/numVehicles" />
 
@@ -539,8 +496,8 @@
                 android:id="@+id/maintenanceQuestion"
                 android:layout_width="165dp"
                 android:layout_height="72dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:text="@string/maintenanceQuestion"
@@ -553,8 +510,8 @@
                 android:id="@+id/vehicleText"
                 android:layout_width="165dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:text="@string/vehicleText"
@@ -567,105 +524,99 @@
                 android:id="@+id/numVehicles"
                 android:layout_width="75dp"
                 android:layout_height="48dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginStart="123dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/vehicleText"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/milesQuestion"
-                android:layout_width="165dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
                 android:background="@null"
                 android:gravity="center_vertical"
                 android:text="@string/milesQuestion"
                 android:textColor="@color/black"
                 android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/divider" />
 
-            <TextView
-                android:id="@+id/miles"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/miles"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/milesNum"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-            <TextView
-                android:id="@+id/mileageQuestion"
-                android:layout_width="165dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/mileageQuestion"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/milesQuestion" />
-
             <Spinner
                 android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
                 android:contentDescription="@string/Weekly_or_Yearly"
-                app:layout_constraintStart_toEndOf="@+id/miles"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/durationVehicle"
+                app:layout_constraintTop_toBottomOf="@+id/maintenanceQuestion" />
 
-            <EditText
-                android:id="@+id/milesNum"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@null"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/milesQuestion"
-                app:layout_constraintTop_toBottomOf="@+id/divider" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/milesNumLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Miles"
+                app:boxStrokeColor="#48773E"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:endIconMode="clear_text"
+                app:helperText="US average per capita: 219 miles"
+                app:hintTextColor="#48773E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/milesQuestion">
 
-            <EditText
-                android:id="@+id/mileage"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:contentDescription="@null"
-                android:ems="10"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/mileageQuestion"
-                app:layout_constraintTop_toBottomOf="@+id/milesNum"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/milesNum"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:nextFocusDown="@+id/mileage" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/milesText"
-                android:layout_width="wrap_content"
-                android:layout_height="24dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="20dp"
-                android:background="@null"
-                android:gravity="center_vertical"
-                android:text="@string/miles_per_gallon"
-                android:textColor="@color/black"
-                android:textSize="15sp"
-                app:layout_constraintStart_toEndOf="@+id/mileage"
-                app:layout_constraintTop_toBottomOf="@+id/time" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/mileageLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Miles per Gallon"
+                app:boxStrokeColor="#48773E"
+                app:counterEnabled="true"
+                app:counterMaxLength="4"
+                app:endIconMode="clear_text"
+                app:helperText="US average vehicle fuel economy: 21.6 mpg"
+                app:hintTextColor="#48773E"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/milesNumLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mileage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8"
+                    android:nextFocusDown="@+id/milesNum2"
+                    app:layout_constraintTop_toBottomOf="@+id/milesNumLayout" />
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <View
                 android:id="@+id/divider"
@@ -677,28 +628,31 @@
                 app:layout_constraintBottom_toTopOf="@+id/milesQuestion"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/maintenanceQuestion" />
+                app:layout_constraintTop_toBottomOf="@+id/durationVehicle" />
 
             <View
                 android:id="@+id/divider2"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@id/milesNum2Layout"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mileage" />
+                app:layout_constraintTop_toBottomOf="@+id/mileageLayout" />
 
             <View
                 android:id="@+id/divider3"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
                 android:background="?android:attr/listDivider"
+                app:layout_constraintBottom_toTopOf="@+id/milesNum3Layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mileage2" />
+                app:layout_constraintTop_toBottomOf="@+id/mileage2Layout" />
 
             <ImageView
 
@@ -708,8 +662,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mileage3"
+                app:layout_constraintTop_toBottomOf="@id/mileage3Layout"
                 app:srcCompat="@drawable/transportationimg" />
+
+            <TextView
+                android:id="@+id/durationVehicle"
+                android:layout_width="165dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:text="Choose duration"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/maintenanceQuestion" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -750,8 +716,20 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/button_design"
         android:onClick="TransportationToResults"
-        android:text="Results"
+        android:text="Save and Return"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/transportationErrorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please fill out all the fields correctly"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@+id/transportationToHomeEnergy"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

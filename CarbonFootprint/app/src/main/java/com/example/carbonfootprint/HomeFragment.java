@@ -3,6 +3,7 @@ package com.example.carbonfootprint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -35,6 +36,7 @@ public class HomeFragment extends Fragment implements Serializable {
         calculatorIcon = view.findViewById(R.id.calculatorIcon);
 
         calculatorIcon.setImageResource(R.drawable.calculator_icon);
+
 
         calculatorIcon.setOnClickListener(new View.OnClickListener() {
             @Override

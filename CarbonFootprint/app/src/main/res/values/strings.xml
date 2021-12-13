@@ -109,7 +109,7 @@
         <item>Have Not Done</item>
         <item>Already Done</item>
     </string-array>
-    <string name="milesQuestion">On average, how many miles do you drive:</string>
+    <string name="milesQuestion">Enter the average amount your household vehicle(s) are used and their energy efficiency.</string>
     <string name="miles">Miles</string>
     <string-array name="time">
         <item>Per Year</item>

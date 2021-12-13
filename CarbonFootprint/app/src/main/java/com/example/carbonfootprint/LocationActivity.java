@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Spinner;
 
 import org.xmlpull.v1.XmlPullParser;
@@ -29,6 +30,7 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
     ArrayList<String> xmlcountrycode;
     int indexCC;
     userInfo currentUser;
+    ImageView locationInfo;
     public static userInfo currentUserTemporary;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +42,14 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
         xmlcountryname = currentUser.getXmlcountryname();
         xmlcountrycode = currentUser.getXmlcountrycode();
 
+        locationInfo = findViewById(R.id.locationInfo);
 
+        locationInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openLocationDialog();
+            }
+        });
 
 //        parseXML();
 
@@ -94,5 +103,10 @@ public class LocationActivity extends AppCompatActivity implements OnItemSelecte
         currentUserTemporary = currentUser;
         finish();
 
+    }
+
+    public void openLocationDialog() {
+        LocationDialogue locationDialogue = new LocationDialogue();
+        locationDialogue.show(getSupportFragmentManager(), "Location Dialogue");
     }
 }
