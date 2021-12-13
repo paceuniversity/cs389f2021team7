@@ -528,3 +528,19 @@ For the project we will have the 3 following questions:
 3\. Outside work from other classes. 
 
 <br>
+
+### John Beltran
+
+1\. Figured out where the about page is
+
+2\. Write the about pagee
+
+3\. Other Classes/tests
+
+1\. I have been working on calculations.
+
+2\. Come up with a way to write a good looking about page
+
+3\. You know, other classes
+
+<br>
