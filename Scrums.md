@@ -462,3 +462,39 @@ For the project we will have the 3 following questions:
 3\.	Outside work.
 
 <br>
+
+<br>
+
+### Emma Hilts
+
+1\.	I didn’t do much yesterday, I looked over the app.
+
+2\.	I will work to complete my tasks. 
+
+3\.	Outside work.
+
+1\.	I planned how to complete my tasks.
+
+2\.	I will complete most of my tasks.
+
+3\.	Outside work.
+
+<br>
+
+<br>
+
+### John Beltran
+
+1\.	I just looked at the app yesterday
+
+2\.	Hopefully complete my tasks
+
+3\.	You know, other classes, the usual
+
+1\.	I assessed the situation?
+
+2\.	I will some of my tasks.
+
+3\.	outside forces
+
+<br>
