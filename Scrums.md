@@ -478,3 +478,21 @@ For the project we will have the 3 following questions:
 3\.	outside forces
 
 <br>
+
+## Scrum 12/13/2021
+
+### Abdulmalik Alotaibi
+
+1\.	I added a function to change units and added the information dialogues on each page.
+
+2\.	I will finalize a lot of things in the app.
+
+3\.	Outside work.
+
+1\.	Units function, information dialogues, and design improvements.
+
+2\.	Finalize a lot of things in the app.
+
+3\.	Outside work.
+
+<br>
