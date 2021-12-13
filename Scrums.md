@@ -512,3 +512,19 @@ For the project we will have the 3 following questions:
 3\.	Outside work. 
 
 <br>
+
+### Patrick Dwyer
+
+1\. I finished making the icons.
+
+2\. I will finish all the user stories 
+
+3\. Other outside classes. 
+
+1\. I began to implement the User stories
+
+2\. I will continue and try to finish the stories that were assigned to me
+
+3\. Outside work from other classes. 
+
+<br>
