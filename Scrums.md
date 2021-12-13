@@ -496,3 +496,19 @@ For the project we will have the 3 following questions:
 3\.	Outside work.
 
 <br>
+
+### Emma Hilts
+
+1\.	I have been editing the icon for our app.
+
+2\.	I want to finish the app icon.
+
+3\.	Outside work.
+
+1\.	Creating the app icon.
+
+2\.	I will finish my tasks and the final app icon.
+
+3\.	Outside work. 
+
+<br>
