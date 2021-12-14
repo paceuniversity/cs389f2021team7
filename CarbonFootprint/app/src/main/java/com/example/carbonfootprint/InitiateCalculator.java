@@ -43,6 +43,8 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
     String locationAvgBottom;
     Button getResults;
     ImageView calculatorInfo, check1, check2, check3;
+    Boolean checkText1 = false;
+    Boolean checkText2 = false;
     int householdNumber;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
@@ -61,7 +63,10 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
-
+        homeEnergy = (Button) findViewById(R.id.getSuggestionsbutton);
+        transportation = (Button) findViewById(R.id.transportationSuggestionsBttn);
+        waste = (Button) findViewById(R.id.wasteSuggestionsBttn);
+        calculatorInfo = findViewById(R.id.calculatorInfo);
 
 
         if (currentUser.getUnitsLocationCheck()) {
@@ -84,10 +89,16 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
 
         if (currentUser.getName() != null) {
             nameInput.setText(currentUser.getName());
+            homeEnergy.setEnabled(true);
+            transportation.setEnabled(true);
+            waste.setEnabled(true);
         }
 
         if (currentUser.getHouseholdNumber() != 0) {
             householdNumberInput.setText(currentUser.getHouseholdNumber() + "");
+            homeEnergy.setEnabled(true);
+            transportation.setEnabled(true);
+            waste.setEnabled(true);
         }
 
 
@@ -115,11 +126,6 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         }
 
 
-        homeEnergy = (Button) findViewById(R.id.getSuggestionsbutton);
-        transportation = (Button) findViewById(R.id.transportationSuggestionsBttn);
-        waste = (Button) findViewById(R.id.wasteSuggestionsBttn);
-
-        calculatorInfo = findViewById(R.id.calculatorInfo);
 
         calculatorInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,9 +134,7 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
             }
         });
 
-        homeEnergy.setEnabled(false);
-        transportation.setEnabled(false);
-        waste.setEnabled(false);
+
 
 
         nameInput.addTextChangedListener(new TextWatcher() {
@@ -148,15 +152,19 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 {
+                    checkText1 = false;
                     homeEnergy.setEnabled(false);
                     transportation.setEnabled(false);
                     waste.setEnabled(false);
                 }
                 else
                 {
-                    homeEnergy.setEnabled(true);
-                    transportation.setEnabled(true);
-                    waste.setEnabled(true);
+                    checkText1 = true;
+                    if (checkText2) {
+                        homeEnergy.setEnabled(true);
+                        transportation.setEnabled(true);
+                        waste.setEnabled(true);
+                    }
                     currentUser.setName(nameInput.getText().toString());
                 }
             }
@@ -165,7 +173,6 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         householdNumberInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -177,15 +184,20 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 {
+                    checkText2 = false;
                     homeEnergy.setEnabled(false);
                     transportation.setEnabled(false);
                     waste.setEnabled(false);
                 }
                 else
                 {
+                    checkText2 = true;
+                    if (checkText1) {
                     homeEnergy.setEnabled(true);
                     transportation.setEnabled(true);
                     waste.setEnabled(true);
+                    }
+
                     currentUser.setHouseholdNumber(Integer.parseInt(householdNumberInput.getText().toString()));
                 }
             }
@@ -256,7 +268,7 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
                     e.printStackTrace();
                 }
                 locationAvgTop = "Average Carbon footprint (" + countryNameWB + ")";
-                locationAvgBottom = "Average CO2 emissions (metric tons per capita)" + " is " + avgValueWB + " (" + countryNameWB + ", " + dateWB + ", source: World Bank)";
+                locationAvgBottom = "Average CO2 emissions (metric tons per capita)" + "\n(" + countryNameWB + ", " + dateWB + ", source: World Bank)";
                 currentUser.setAvgValueWB(avgValueWB);
                 currentUser.setLocationAvgTop(locationAvgTop);
                 currentUser.setLocationAvgBottom(locationAvgBottom);

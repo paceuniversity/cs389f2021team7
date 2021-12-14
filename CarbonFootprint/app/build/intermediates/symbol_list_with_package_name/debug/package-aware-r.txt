@@ -2002,11 +2002,9 @@ id Subtract
 id SubtractedAmount
 id TOP_END
 id TOP_START
-id Transportation
 id aboutCardView
 id aboutImage
 id aboutImage2
-id aboutParagraph
 id aboutText
 id aboutTextView
 id acThermostat
@@ -2288,8 +2286,6 @@ id getresultspage2
 id ghost_view
 id ghost_view_holder
 id gif
-id gitLink
-id github
 id glass_box
 id gone
 id graph
@@ -2303,7 +2299,6 @@ id heatingAndCooling
 id hideable
 id home
 id homeAsUp
-id homeEnergy
 id homeEnergyImage
 id homeEnergyImage2
 id homeEnergyInfo
@@ -2316,7 +2311,6 @@ id homeEnergyTextView
 id homeEnergyToolbar
 id homeEnergyTotal
 id homeInfo
-id homeParagraph
 id homeToolbar
 id home_energy_button
 id homeenergybtn
@@ -2537,6 +2531,7 @@ id resultsDivider
 id resultsDivider2
 id resultsInfo
 id resultsTabLayout
+id resultsText
 id resultsViewPager
 id retrieveResultsButton
 id reverseSawtooth
@@ -2573,6 +2568,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id secondText
 id select_dialog_listview
 id selected
 id selection_type
@@ -2592,9 +2588,6 @@ id snackbar_text
 id snap
 id snapMargins
 id solarPower
-id source
-id sourceLink
-id sourcesGit
 id south
 id spaceHeaters
 id spacer
@@ -2627,7 +2620,9 @@ id submenuarrow
 id submit2
 id submit_area
 id suggestionsExitButton
+id suggestionsInfo
 id suggestionsScrollView
+id suggestionsToolbar
 id suggestions_landing_button
 id supportScrollUp
 id tabMode
@@ -2699,7 +2694,6 @@ id totalText
 id totalTextView
 id total_results
 id touch_outside
-id transParagraph
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -2741,14 +2735,12 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id washingAndDrying
-id waste
 id wasteCheckBox1
 id wasteCheckBox2
 id wasteCheckBox3
 id wasteCheckBox4
 id wasteCheckBox5
 id wasteInfo
-id wasteParagraph
 id wasteSuggestionsBttn
 id wasteText
 id wasteTextView
@@ -3017,11 +3009,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
-string aboutAppText
-string aboutHomeText
 string aboutText
-string aboutTransText
-string aboutWasteText
 string acThermostat
 string acThermostatInput
 string app_name
@@ -3080,8 +3068,6 @@ string fuelOil
 string furnaceBoiler
 string gcm_defaultSenderId
 string getResults
-string gitLink
-string github
 string glassHint
 string glass_hint
 string glass_question
@@ -3215,9 +3201,6 @@ string replaceOne
 string replaceThree
 string replaceTwo
 string search_menu_title
-string source
-string sourceSite
-string sources_github
 string space_hint
 string status_bar_notification_info_overflow
 string submit

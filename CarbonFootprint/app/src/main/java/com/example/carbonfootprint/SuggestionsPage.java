@@ -4,15 +4,18 @@ import static com.example.carbonfootprint.HomeActivity.databaseHelper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -26,6 +29,9 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
     String format;
     Button exitButton;
     String householdNumber, homeEnergy, transportation, waste;
+    float newResultPrevious, subtractedAmountPrevious;
+    String subtractedAmountText, newResultText;
+    ImageView suggestionsInfo;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
     @Override
@@ -49,6 +55,7 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
         CarMaintenanceValue = 0.0;
         DemoTotal = Double.parseDouble(currentUser.getDemoTotal());
 
+        suggestionsInfo = findViewById(R.id.suggestionsInfo);
         changePrimaryHeating = findViewById(R.id.changePrimaryHeating);
         ReduceNaturalGas = findViewById(R.id.ReduceNaturalGas);
         ReduceElectricity = findViewById(R.id.ReduceElectricity);
@@ -81,6 +88,15 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
         CarMaintenanceCheck = findViewById(R.id.CarMaintenanceCheck);
 
         exitButton = findViewById(R.id.suggestionsExitButton);
+
+
+        suggestionsInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openSuggestionsDialog();
+            }
+        });
+
 
         householdNumber = Integer.toString(currentUser.getHouseholdNumber());
         homeEnergy = String.format("%.2f", currentUser.getHomeEnergyTotal());
@@ -155,14 +171,29 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     RecycleMetalValue = 89.38*0.0005;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     RecycleMetalValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
+
                 }
             }
         });
@@ -171,13 +202,29 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     RecycleGlassValue = 25.39*0.0005;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
+
                 }
                 else {
                     RecycleGlassValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
+
                 }
             }
         });
@@ -186,14 +233,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     RecyclePlasticValue = 35.56*0.0005;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     RecyclePlasticValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -203,14 +264,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     RecycleNewspaperValue = 113.14*0.0005;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     RecycleNewspaperValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -220,14 +295,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     RecycleMagazinesValue = 27.46*0.0005;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     RecycleMagazinesValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -237,14 +326,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     ReduceNaturalGasValue = Double.parseDouble(currentUser.getNaturalGasValue())/currentUser.getHouseholdNumber() * 11.2 * 12 * 0.0005 * 0.3;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     ReduceNaturalGasValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -254,14 +357,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     ReduceElectricityValue = Double.parseDouble(currentUser.getElectricityValue())/currentUser.getHouseholdNumber() * 4.6 * 12 * 0.0005 * 0.3;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     ReduceElectricityValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -272,14 +389,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     ReduceFuelOilValue = Double.parseDouble(currentUser.getFuelOilValue())/currentUser.getHouseholdNumber() * 5.6 * 12 * 0.0005 * 0.3;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     ReduceFuelOilValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -290,14 +421,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     ReducePropaneValue = Double.parseDouble(currentUser.getPropaneValue())/currentUser.getHouseholdNumber() * 5 * 12 * 0.0005 * 0.3;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     ReducePropaneValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -308,14 +453,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     CarMilesValue = Double.parseDouble(currentUser.getCarMilesValue())/currentUser.getHouseholdNumber() * 0.5;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     CarMilesValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -326,14 +485,28 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     CarMaintenanceValue = Double.parseDouble(currentUser.getCarMilesValue())/currentUser.getHouseholdNumber() - Double.parseDouble(currentUser.getCarMilesValue())/currentUser.getHouseholdNumber() * 0.96;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
                 else {
                     CarMaintenanceValue = 0.0;
-                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
-                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    subtractedAmountPrevious = Float.parseFloat(SubtractedAmount.getText().toString());
+                    subtractedAmountText = String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue);
+
+//                    SubtractedAmount.setText(String.format("%.2f", changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    newResultPrevious = Float.parseFloat(newResult.getText().toString());
+//                    newResult.setText(String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue)));
+                    newResultText = String.format("%.2f", DemoTotal - (changePrimaryHeatingValue + ReduceNaturalGasValue + ReduceElectricityValue + ReduceFuelOilValue + ReducePropaneValue + RecycleMetalValue + RecycleGlassValue + RecyclePlasticValue + RecycleNewspaperValue + RecycleMagazinesValue + CarMilesValue + CarMaintenanceValue));
+                    startCountAnimation(SubtractedAmount, subtractedAmountPrevious, Float.parseFloat(subtractedAmountText));
+                    startCountAnimation(newResult, newResultPrevious, Float.parseFloat(newResultText));
 
                 }
             }
@@ -359,5 +532,21 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             intent.putExtra(CURRENT_USER_KEY, currentUser);
             startActivity(intent);
         }
+    }
+    public void startCountAnimation(TextView textView, float value1, float value2) {
+        DecimalFormat df = new DecimalFormat("0.00");
+        ValueAnimator animator = ValueAnimator.ofFloat(value1, value2);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                textView.setText(df.format(animation.getAnimatedValue()));
+            }
+        });
+        animator.setDuration(200);
+
+        animator.start();
+    }
+    public void openSuggestionsDialog() {
+        SuggestionsDialogue suggestionsDialogue = new SuggestionsDialogue();
+        suggestionsDialogue.show(getSupportFragmentManager(), "Suggestions Dialogue");
     }
 }

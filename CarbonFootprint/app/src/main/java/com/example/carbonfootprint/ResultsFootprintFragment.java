@@ -1,13 +1,14 @@
 package com.example.carbonfootprint;
 
+import static android.graphics.Color.rgb;
+
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.content.Intent;
+import android.animation.ValueAnimator;
 import android.location.Address;
 import android.location.LocationRequest;
 import android.os.Bundle;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -19,7 +20,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -28,6 +28,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -43,6 +44,8 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
     Button button;
     TextView textView;
     TextView textView2;
+    TextView resultsText;
+    TextView secondText;
     String countryCode;
     List<Address> addresses;
     String url;
@@ -77,6 +80,7 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
     int householdNumber;
     double transportationTotal;
     float scaleChangeInitial;
+    float numberChange = 0;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -121,6 +125,8 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         button = view.findViewById(R.id.homeenergybtn);
         textView = view.findViewById(R.id.textView);
 
+        resultsText = view.findViewById(R.id.resultsText);
+        secondText = view.findViewById(R.id.secondText);
 
         scaleChangeInitial = 0;
 
@@ -153,7 +159,8 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         if (demoTotalNumber > 21) {
             footprint2.setVisibility(View.VISIBLE);
             textView.setTextSize(10);
-            textView.setText("Your household average CO2 emissions (metric tons per capita) is " + String.format("%.2f", demoTotalNumber) + "\nNote: The footprint is at maximum size and cannot be enlarged any further.");
+            startCountAnimation(resultsText, 0.00f, demoTotalNumber);
+            textView.setText("Your household average CO2 emissions (metric tons per capita)\nNote: The footprint is at maximum size and cannot be enlarged any further.");
             footprint2.setScaleX(0);
             footprint2.setScaleY(0);
             ObjectAnimator scaleChangeX = ObjectAnimator.ofFloat(footprint2, "scaleX", 1);
@@ -166,7 +173,8 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         }
         else {
             footprint2.setVisibility(View.VISIBLE);
-            textView.setText("Your household average CO2 emissions (metric tons per capita) is " + String.format("%.2f", demoTotalNumber));
+            startCountAnimation(resultsText, 0.00f, demoTotalNumber);
+            textView.setText("Your household average CO2 emissions (metric tons per capita)");
             footprintScale2 = (demoTotalNumber/footprintScaleDivisor);
             footprint2.setScaleX(0);
             footprint2.setScaleY(0);
@@ -218,7 +226,9 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
 
                             if (avgSpinnerCheck ==  true) {
                                 appAvgValue = (appAverage(avgArray1));
-                                textView2.setText("The app average emissions (metric tons per capita) is " + String.format("%.2f", appAvgValue));
+                                startCountAnimation(secondText, numberChange, (float) appAvgValue);
+                                numberChange = (float) appAvgValue;
+                                textView2.setText("The app average emissions (metric tons per capita)");
                                 footprintScale3 = (float) (appAvgValue/footprintScaleDivisor);
                                 footprint.setScaleX(scaleChangeInitial);
                                 footprint.setScaleY(scaleChangeInitial);
@@ -300,85 +310,107 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String test2 = adapterView.getItemAtPosition(i).toString();
 
-
-        if (test2 == resultsSpinnerArray.get(1)) {
-
-            avgSpinnerCheck = true;
-            textView2.setText("Loading...");
-            textView5.setText("App Average");
-            footprint.setVisibility(View.INVISIBLE);
-            avgArray2 = new ArrayList<Double>();
-            avgArray2 = documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                @Override
-                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if (documentSnapshot.exists()) {
+        if (currentUser.getAvgValueWB() != null) {
 
 
-                        avgArray2 = documentSnapshot.get("App Average Array");
-                        avgArray1 = (ArrayList<Double>) avgArray2;
+            if (test2 == resultsSpinnerArray.get(1)) {
+
+                avgSpinnerCheck = true;
+                textView2.setText("Loading...");
+                textView5.setText("App Average");
+                footprint.setVisibility(View.INVISIBLE);
+                avgArray2 = new ArrayList<Double>();
+                avgArray2 = documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
 
 
+                            avgArray2 = documentSnapshot.get("App Average Array");
+                            avgArray1 = (ArrayList<Double>) avgArray2;
 
-                        appAvgValue = appTotal/avgArray1.size();
 
-                        appAvgValue = (appAverage(avgArray1));
+                            appAvgValue = appTotal / avgArray1.size();
 
+                            appAvgValue = (appAverage(avgArray1));
+
+                        }
+
+                        footprintScale3 = (float) (appAvgValue / footprintScaleDivisor);
+                        footprint.setVisibility(View.VISIBLE);
+                        if (demoTotalNumber < (float) appAvgValue) {
+                            resultsText.setTextColor(rgb(0, 128, 0));
+                            secondText.setTextColor(rgb(255, 0, 0));
+                        } else {
+                            resultsText.setTextColor(rgb(255, 0, 0));
+                            secondText.setTextColor(rgb(0, 128, 0));
+                        }
+                        startCountAnimation(secondText, numberChange, (float) appAvgValue);
+                        numberChange = (float) appAvgValue;
+                        textView2.setText("The app average emissions (metric tons per capita)");
+                        textView5.setText("App Average");
+                        footprint.setScaleX(scaleChangeInitial);
+                        footprint.setScaleY(scaleChangeInitial);
+                        ObjectAnimator scaleChangeX = ObjectAnimator.ofFloat(footprint, "scaleX", footprintScale3);
+                        ObjectAnimator scaleChangeY = ObjectAnimator.ofFloat(footprint, "scaleY", footprintScale3);
+                        scaleChangeX.setDuration(1000);
+                        scaleChangeY.setDuration(1000);
+                        AnimatorSet scaleChange = new AnimatorSet();
+                        scaleChange.play(scaleChangeX).with(scaleChangeY);
+                        scaleChange.start();
+                        scaleChangeInitial = footprintScale3;
                     }
-
-                    footprintScale3 = (float) (appAvgValue/footprintScaleDivisor);
-                    footprint.setVisibility(View.VISIBLE);
-                    textView2.setText("The app average emissions (metric tons per capita) is " + String.format("%.2f", appAvgValue));
-                    textView5.setText("App Average");
+                });
+            } else if (test2 == resultsSpinnerArray.get(0)) {
+                avgSpinnerCheck = false;
+                footprint.setVisibility(View.VISIBLE);
+                if (demoTotalNumber < Float.parseFloat(currentUser.getAvgValueWB())) {
+                    resultsText.setTextColor(rgb(0, 128, 0));
+                    secondText.setTextColor(rgb(255, 0, 0));
+                } else {
+                    resultsText.setTextColor(rgb(255, 0, 0));
+                    secondText.setTextColor(rgb(0, 128, 0));
+                }
+                if (Float.parseFloat(currentUser.getAvgValueWB()) > 21) {
+                    startCountAnimation(secondText, numberChange, Float.parseFloat(currentUser.getAvgValueWB()));
+                    numberChange = Float.parseFloat(currentUser.getAvgValueWB());
+                    textView5.setText(currentUser.getLocationAvgTop());
+                    textView2.setTextSize(10);
+                    textView2.setText(currentUser.getLocationAvgBottom() + "\nNote: The footprint is at maximum size and cannot be enlarged any further.");
                     footprint.setScaleX(scaleChangeInitial);
                     footprint.setScaleY(scaleChangeInitial);
-                    ObjectAnimator scaleChangeX = ObjectAnimator.ofFloat(footprint, "scaleX", footprintScale3);
-                    ObjectAnimator scaleChangeY = ObjectAnimator.ofFloat(footprint, "scaleY", footprintScale3);
-                    scaleChangeX.setDuration(1000);
-                    scaleChangeY.setDuration(1000);
-                    AnimatorSet scaleChange = new AnimatorSet();
-                    scaleChange.play(scaleChangeX).with(scaleChangeY);
-                    scaleChange.start();
-                    scaleChangeInitial = footprintScale3;
-                }
-            });
-        }
-        else if (test2 == resultsSpinnerArray.get(0)) {
-            avgSpinnerCheck = false;
-            footprint.setVisibility(View.VISIBLE);
-            if (Float.parseFloat(currentUser.getAvgValueWB()) > 21) {
-                textView5.setText(currentUser.getLocationAvgTop());
-                textView2.setTextSize(10);
-                textView2.setText(currentUser.getLocationAvgBottom() + "\nNote: The footprint is at maximum size and cannot be enlarged any further.");
-                footprint.setScaleX(scaleChangeInitial);
-                footprint.setScaleY(scaleChangeInitial);
-                ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(footprint, "scaleX", 1);
-                ObjectAnimator scaleUpY = ObjectAnimator.ofFloat(footprint, "scaleY", 1);
-                scaleUpX.setDuration(1000);
-                scaleUpY.setDuration(1000);
-                AnimatorSet scaleUp = new AnimatorSet();
-                scaleUp.play(scaleUpX).with(scaleUpY);
-                scaleUp.start();
-                scaleChangeInitial = 1;
-            }
-            else {
-                textView5.setText(currentUser.getLocationAvgTop());
-                textView2.setText(currentUser.getLocationAvgBottom());
-                footprintScale = (Float.parseFloat(currentUser.getAvgValueWB()) / footprintScaleDivisor);
-                footprint.setScaleX(scaleChangeInitial);
-                footprint.setScaleY(scaleChangeInitial);
-                ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(footprint, "scaleX", footprintScale);
-                ObjectAnimator scaleUpY = ObjectAnimator.ofFloat(footprint, "scaleY", footprintScale);
-                scaleUpX.setDuration(1000);
-                scaleUpY.setDuration(1000);
-                AnimatorSet scaleUp = new AnimatorSet();
-                scaleUp.play(scaleUpX).with(scaleUpY);
-                scaleUp.start();
-                scaleChangeInitial = footprintScale;
+                    ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(footprint, "scaleX", 1);
+                    ObjectAnimator scaleUpY = ObjectAnimator.ofFloat(footprint, "scaleY", 1);
+                    scaleUpX.setDuration(1000);
+                    scaleUpY.setDuration(1000);
+                    AnimatorSet scaleUp = new AnimatorSet();
+                    scaleUp.play(scaleUpX).with(scaleUpY);
+                    scaleUp.start();
+                    scaleChangeInitial = 1;
+                } else {
+                    startCountAnimation(secondText, numberChange, Float.parseFloat(currentUser.getAvgValueWB()));
+                    numberChange = Float.parseFloat(currentUser.getAvgValueWB());
+                    textView5.setText(currentUser.getLocationAvgTop());
+                    textView2.setText(currentUser.getLocationAvgBottom());
+                    footprintScale = (Float.parseFloat(currentUser.getAvgValueWB()) / footprintScaleDivisor);
+                    footprint.setScaleX(scaleChangeInitial);
+                    footprint.setScaleY(scaleChangeInitial);
+                    ObjectAnimator scaleUpX = ObjectAnimator.ofFloat(footprint, "scaleX", footprintScale);
+                    ObjectAnimator scaleUpY = ObjectAnimator.ofFloat(footprint, "scaleY", footprintScale);
+                    scaleUpX.setDuration(1000);
+                    scaleUpY.setDuration(1000);
+                    AnimatorSet scaleUp = new AnimatorSet();
+                    scaleUp.play(scaleUpX).with(scaleUpY);
+                    scaleUp.start();
+                    scaleChangeInitial = footprintScale;
 //                footprint.setScaleX(footprintScale);
 //                footprint.setScaleY(footprintScale);
+                }
             }
         }
-
+        else {
+            textView2.setText("Please check your internet connection. Restart the app and try again. If your device has no location, please select a location manually in the settings.");
+        }
     }
 
     @Override
@@ -394,6 +426,19 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         appAverageValue = appTotal/arrayList.size();
 
         return appAverageValue;
+    }
+
+    public void startCountAnimation(TextView textView, float value1, float value2) {
+        DecimalFormat df = new DecimalFormat("0.00");
+        ValueAnimator animator = ValueAnimator.ofFloat(value1, value2);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            public void onAnimationUpdate(ValueAnimator animation) {
+                textView.setText(df.format(animation.getAnimatedValue()));
+            }
+        });
+        animator.setDuration(1000);
+
+        animator.start();
     }
 
 

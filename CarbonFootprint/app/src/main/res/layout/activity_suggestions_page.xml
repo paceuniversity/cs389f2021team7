@@ -6,9 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".SuggestionsPage">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_suggestions_page" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/suggestionsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Suggestions"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/suggestionsInfo"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/suggestionsToolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_info_24_toolbar" />
 
     <TextView
         android:id="@+id/newResult"
@@ -46,7 +69,7 @@
         app:layout_constraintBottom_toTopOf="@id/resultsDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/suggestionsToolbar"
         tools:ignore="UselessParent">
 
         <androidx.constraintlayout.widget.ConstraintLayout

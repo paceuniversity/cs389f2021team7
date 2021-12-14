@@ -48,6 +48,9 @@ public class HomeFragment extends Fragment implements Serializable {
                 else {
                     currentUser = (userInfo) getActivity().getIntent().getSerializableExtra(CURRENT_USER_KEY);
                 }
+                currentUser.setName(null);
+                currentUser.setHouseholdNumber(0);
+
                 Intent intent = new Intent(getActivity(), InitiateCalculator.class);
                 intent.putExtra(CURRENT_USER_KEY, currentUser);
                 startActivity(intent);
