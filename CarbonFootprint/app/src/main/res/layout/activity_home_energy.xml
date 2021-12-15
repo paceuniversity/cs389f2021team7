@@ -75,6 +75,17 @@
         app:layout_constraintTop_toBottomOf="@+id/primaryHeat" />
 
 
+    <TextView
+        android:id="@+id/errorText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please fill out Primary Heat source"
+        android:textColor="@android:color/holo_red_dark"
+        app:layout_constraintBottom_toTopOf="@id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/primaryHeatSpinner" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
@@ -83,7 +94,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/primaryHeatSpinner">
+        app:layout_constraintTop_toBottomOf="@+id/errorText2">
 
         <ScrollView
             android:id="@+id/homeEnergyScrollView"
@@ -239,7 +250,8 @@
                     app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/electricityInputLayout">
+                    app:layout_constraintTop_toBottomOf="@+id/electricityInputLayout"
+                    app:startIconDrawable="@drawable/ic_oil_barrel">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fuelOilEditText"
@@ -285,7 +297,8 @@
                     app:layout_constraintBottom_toTopOf="@id/homeEnergyImage"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/fuelOilInputLayout">
+                    app:layout_constraintTop_toBottomOf="@+id/fuelOilInputLayout"
+                    app:startIconDrawable="@drawable/ic_propane_tank_icon_138262">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/propaneEditText"

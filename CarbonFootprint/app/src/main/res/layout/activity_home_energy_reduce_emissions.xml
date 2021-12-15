@@ -116,7 +116,8 @@
                     app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/acThermostat">
+                    app:layout_constraintTop_toBottomOf="@id/acThermostat"
+                    app:startIconDrawable="@drawable/ic_thermostat_svgrepo_com">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/acThermostatEditText"
@@ -176,7 +177,8 @@
                     app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/winterThermostat">
+                    app:layout_constraintTop_toBottomOf="@id/winterThermostat"
+                    app:startIconDrawable="@drawable/ic_thermostat_svgrepo_com">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/winterThermostatEditText"
@@ -250,7 +252,8 @@
                     app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="@id/constraintLayout"
-                    app:layout_constraintTop_toBottomOf="@id/reduceLighting">
+                    app:layout_constraintTop_toBottomOf="@id/reduceLighting"
+                    app:startIconDrawable="@drawable/ic_light_bulb_svgrepo_com">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/reduceLightingEditText"
@@ -326,7 +329,8 @@
                     app:hintTextColor="#48773E"
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/coldWater">
+                    app:layout_constraintTop_toBottomOf="@id/coldWater"
+                    app:startIconDrawable="@drawable/ic_washer_machine_svgrepo_com">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/coldWaterEditText"
@@ -381,7 +385,8 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/energyStar" />
+                    app:layout_constraintTop_toBottomOf="@id/energyStar"
+                    app:drawableEndCompat="@drawable/ic_refrigerator_svgrepo_com"/>
 
                 <Spinner
                     android:id="@+id/starEnergyRefrigerator"
@@ -408,7 +413,8 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/starEnergyRefrigerator" />
+                    app:layout_constraintTop_toBottomOf="@id/starEnergyRefrigerator"
+                    app:drawableEndCompat="@drawable/ic_furnace_svgrepo_com"/>
 
                 <Spinner
                     android:id="@+id/starEnergyFurnaceBoiler"
@@ -424,6 +430,20 @@
                     app:layout_constraintTop_toBottomOf="@id/furnaceBoiler" />
 
                 <TextView
+                    android:id="@+id/Note"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="Note: Only applicable if your Primary Heating Source is Natural Gas or Fuel Oil."
+                    android:textSize="10dp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="@id/constraintLayout"
+                    app:layout_constraintEnd_toStartOf="@id/constraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/starEnergyFurnaceBoiler" />
+
+                <TextView
                     android:id="@+id/window"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -436,7 +456,8 @@
                     app:layout_constraintEnd_toEndOf="@id/constraintLayout"
                     app:layout_constraintEnd_toStartOf="@id/constraintLayout"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/starEnergyFurnaceBoiler" />
+                    app:layout_constraintTop_toBottomOf="@id/starEnergyFurnaceBoiler"
+                    app:drawableEndCompat="@drawable/ic_window_svgrepo_com"/>
 
                 <Spinner
                     android:id="@+id/starEnergyWindow"

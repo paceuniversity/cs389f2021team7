@@ -40,7 +40,8 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
     userInfo currentUser;
     TextInputEditText naturalGasInput, electricityInput, fuelOilInput, propaneInput;
     TextInputLayout naturalGasLayout, electricityLayout, fuelOilLayout, propaneLayout;
-    TextView errorText1;
+    TextView errorText1, errorText2;
+    String primaryHeat;
 
     Button submit;
 
@@ -63,6 +64,8 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         submit = (Button) findViewById(R.id.estimatedC02);
         errorText1 = findViewById(R.id.errorText1);
         errorText1.setVisibility(View.GONE);
+        errorText2 = findViewById((R.id.errorText2));
+        errorText2.setVisibility(View.GONE);
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
@@ -88,10 +91,12 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         primaryHeatSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String primaryHeat = primaryHeatSpinner.getSelectedItem().toString();
+                primaryHeat = primaryHeatSpinner.getSelectedItem().toString();
                 if(primaryHeat.equals("Select an Option")){
+                    errorText2.setVisibility(View.VISIBLE);
                 }
                 else{
+                    errorText2.setVisibility(View.GONE);
                 }
             }
 
@@ -227,6 +232,7 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
                     currentUser.setElectricity(electricity);
                     currentUser.setFuelOil(fuelOil);
                     currentUser.setPropane(propane);
+                    currentUser.setPrimaryHeat(primaryHeat);
                     intent.putExtra(CURRENT_USER_KEY, currentUser);
                     startActivity(intent);
                 }

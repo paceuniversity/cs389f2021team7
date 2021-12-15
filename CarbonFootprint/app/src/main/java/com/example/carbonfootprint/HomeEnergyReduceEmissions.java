@@ -30,7 +30,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     TextInputLayout acThermostatLayout, winterThermostatLayout, reduceLightingLayout, coldWaterLayout;
     ImageView homeEnergyReduceInfo;
     String refridge;
-    String furnaceBoiler;
+    String furnaceBoiler, primaryHeat;
     String window;
     TextView errorText2;
     @Override
@@ -58,11 +58,16 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         electricity = currentUser.getElectricity();
         fuelOil = currentUser.getFuelOil();
         propane = currentUser.getPropane();
+        primaryHeat = currentUser.getPrimaryHeat();
 
 
         spinnerRefridge = findViewById(R.id.starEnergyRefrigerator);
         spinnerFurnaceBoiler = findViewById(R.id.starEnergyFurnaceBoiler);
         spinnerWindow = findViewById(R.id.starEnergyWindow);
+
+        if(primaryHeat.equals("Electricity") || primaryHeat.equals("Propane")){
+            spinnerFurnaceBoiler.setEnabled(false);
+        }
 
         transportationbutton = findViewById(R.id.transportationbutton);
         wastebutton = findViewById(R.id.wasteSuggestionsBttn);

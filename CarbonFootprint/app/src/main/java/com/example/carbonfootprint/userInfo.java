@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class userInfo implements Serializable {
-    String countryCode, name, timestamp, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom, pastResultsName, pastResultsTime, pastResultsLocation, pastResultsHousehold, pastResultsHomeEnergy, pastResultsTransportation, pastResultsWaste, pastResultsTotal, pastResultsLocationAvg, pastResultsLocationName;
+    String countryCode, name, timestamp, demoTotal, avgValueWB, locationAvgTop, locationAvgBottom, pastResultsName, pastResultsTime, pastResultsLocation, pastResultsHousehold, pastResultsHomeEnergy, pastResultsTransportation, pastResultsWaste, pastResultsTotal, pastResultsLocationAvg, pastResultsLocationName, PrimaryHeat;
     Boolean locationCheck = false;
     Boolean pastResultsCheck = false;
     Boolean savePastResultsCheck = true;
@@ -619,4 +619,7 @@ public class userInfo implements Serializable {
     public void setUnitsLocationCheck(Boolean unitsLocationCheck) {
         this.unitsLocationCheck = unitsLocationCheck;
     }
+    public String getPrimaryHeat(){return PrimaryHeat;}
+
+    public void setPrimaryHeat(String primaryHeat){PrimaryHeat = primaryHeat;}
 }

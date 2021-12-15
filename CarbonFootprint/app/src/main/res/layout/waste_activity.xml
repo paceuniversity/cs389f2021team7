@@ -82,7 +82,8 @@
         android:layout_marginTop="64dp"
         android:text="Metal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:drawableRight="@drawable/ic_metal_bar_svgrepo_com"/>
 
     <CheckBox
         android:id="@+id/wasteCheckBox2"
@@ -92,7 +93,8 @@
         android:layout_marginTop="64dp"
         android:text="Glass"
         app:layout_constraintStart_toEndOf="@+id/wasteCheckBox1"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:drawableRight="@drawable/ic_wine_glass_svgrepo_com"/>
 
     <CheckBox
         android:id="@+id/wasteCheckBox3"
@@ -102,7 +104,8 @@
         android:layout_marginTop="64dp"
         android:text="Plastic"
         app:layout_constraintStart_toEndOf="@+id/wasteCheckBox2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:drawableRight="@drawable/ic_plastic_water_bottle_svgrepo_com"/>
 
     <CheckBox
         android:id="@+id/wasteCheckBox4"
@@ -112,7 +115,9 @@
         android:layout_marginTop="32dp"
         android:text="Newspaper"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox3"
+        android:drawableRight="@drawable/ic_newspaper_svgrepo_com"
+        android:drawablePadding="3dp"/>
 
     <CheckBox
         android:id="@+id/wasteCheckBox5"
@@ -122,7 +127,9 @@
         android:layout_marginTop="32dp"
         android:text="Magazines"
         app:layout_constraintStart_toEndOf="@+id/wasteCheckBox4"
-        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox2" />
+        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox2"
+        android:drawableRight="@drawable/ic_open_text_book_svgrepo_com"
+        android:drawablePadding="3dp"/>
 
     <TextView
         android:id="@+id/textView6"
