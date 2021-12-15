@@ -56,12 +56,12 @@
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_oil_barrel.png"
     },
     {
-        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_design3.xml.flat",
-        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\button_design3.xml"
-    },
-    {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_design3.xml.flat",
+        "source": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\src\\main\\res\\drawable\\button_design3.xml"
     },
     {
         "merged": "C:\\Users\\Abdulmalik Alotaibi\\AndroidStudioProjects\\CarbonFootprint\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_propane_tank_icon_138262.xml.flat",
