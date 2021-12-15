@@ -309,4 +309,8 @@ public class HomeActivity extends AppCompatActivity implements Serializable {
         SettingsDialogue settingsDialogue = new SettingsDialogue();
         settingsDialogue.show(getSupportFragmentManager(), "Settings Dialogue");
     }
+    @Override
+    public void onBackPressed() {
+
+    }
 }

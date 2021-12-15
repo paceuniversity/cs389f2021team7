@@ -15,7 +15,7 @@ public class LocationDialogue extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder locationDialogueBuilder = new AlertDialog.Builder(getActivity());
         locationDialogueBuilder.setTitle("Information")
-                .setMessage("Text Here location")
+                .setMessage("Tap the drop-down menu to choose your location. This will change the country you compare your results to at the end of the calculator.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

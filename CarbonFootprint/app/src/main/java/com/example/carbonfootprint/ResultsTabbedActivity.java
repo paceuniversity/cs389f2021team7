@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -26,6 +27,8 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
     int householdNumber;
     float demoTotalNumber;
     ImageView resultsInfo;
+    Button button12;
+    public static userInfo currentUserTemporary3;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
 
@@ -38,7 +41,7 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
 
         resultsTabLayout = findViewById(R.id.resultsTabLayout);
         resultsViewPager = findViewById(R.id.resultsViewPager);
-
+        button12 = findViewById(R.id.button12);
         resultsInfo = findViewById(R.id.resultsInfo);
 
         resultsInfo.setOnClickListener(new View.OnClickListener() {
@@ -59,6 +62,10 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
         transportationTotal = (float) (currentUser.getTransportationTotal()/householdNumber);
         emissionsTotalAfterReduce = (float) (currentUser.getHomeEnergyTotal()/householdNumber);
         demoTotalNumber = (float) (emissionsTotalAfterReduce + estimatedWaste + transportationTotal);
+
+        if(currentUser.isRetrieveCheck() || currentUser.getAvgValueWB() == null) {
+            button12.setText("EXIT");
+        }
 
         resultsTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -109,11 +116,17 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
 
     }
     public void suggestionsPage(View view) {
-        currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
-        currentUser.setDemoTotal(Float.toString(demoTotalNumber));
-        Intent intent = new Intent(this, SuggestionsPage.class);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        if (currentUser.isRetrieveCheck() || currentUser.getAvgValueWB() == null) {
+            currentUserTemporary3 = currentUser;
+            finish();
+        }
+        else {
+            currentUser.setHomeEnergyTotal(emissionsTotalAfterReduce);
+            currentUser.setDemoTotal(Float.toString(demoTotalNumber));
+            Intent intent = new Intent(this, SuggestionsPage.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
     }
 
     public void openResultsDialog() {
@@ -129,5 +142,10 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
     public void openPieChartDialog() {
         PieChartDialogue pieChartDialogue = new PieChartDialogue();
         pieChartDialogue.show(getSupportFragmentManager(), "Pie Chart Dialogue");
+    }
+
+    @Override
+    public void onBackPressed() {
+
     }
 }

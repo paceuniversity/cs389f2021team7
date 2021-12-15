@@ -20,6 +20,8 @@ public class userInfo implements Serializable {
     boolean heq1, heq2, heq3, heq4, rheq1, rheq2, rheq3, rheq4, rheq5, rheq6, rheq7, heqcomplete;
     boolean tq1, tq2, tq3, tq4, tq5, tq6, tq7, tqcomplete;
     boolean wqcomplete;
+    boolean retrieveCheck = false;
+    boolean disableFirebase = false;
 
     public int getId() {
         return id;
@@ -622,4 +624,20 @@ public class userInfo implements Serializable {
     public String getPrimaryHeat(){return PrimaryHeat;}
 
     public void setPrimaryHeat(String primaryHeat){PrimaryHeat = primaryHeat;}
+
+    public boolean isRetrieveCheck() {
+        return retrieveCheck;
+    }
+
+    public void setRetrieveCheck(boolean retrieveCheck) {
+        this.retrieveCheck = retrieveCheck;
+    }
+
+    public boolean isDisableFirebase() {
+        return disableFirebase;
+    }
+
+    public void setDisableFirebase(boolean disableFirebase) {
+        this.disableFirebase = disableFirebase;
+    }
 }

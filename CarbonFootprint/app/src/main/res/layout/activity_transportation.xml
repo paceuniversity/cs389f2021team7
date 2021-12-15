@@ -487,57 +487,55 @@
             <Spinner
                 android:id="@+id/maintenanceAnswer"
                 android:layout_width="150dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:contentDescription="@string/whether_you_will_perform_maintenance"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/maintenanceQuestion"
-                app:layout_constraintTop_toBottomOf="@+id/numVehicles" />
+                app:layout_constraintTop_toTopOf="@+id/maintenanceQuestion" />
 
             <TextView
                 android:id="@+id/maintenanceQuestion"
-                android:layout_width="165dp"
-                android:layout_height="72dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:background="@null"
+                android:drawableRight="@drawable/ic_car_mechanic_svgrepo_com"
+                android:drawablePadding="2dp"
                 android:gravity="center_vertical"
                 android:text="@string/maintenanceQuestion"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vehicleText"
-                android:drawableRight="@drawable/ic_car_mechanic_svgrepo_com"
-                android:drawablePadding="2dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/vehicleText" />
 
             <TextView
                 android:id="@+id/vehicleText"
-                android:layout_width="165dp"
-                android:layout_height="48dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:background="@null"
+                android:drawablePadding="2dp"
                 android:gravity="center_vertical"
                 android:text="@string/vehicleText"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:drawableRight="@drawable/ic_car_svgrepo_com"
-                android:drawablePadding="2dp"/>
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <Spinner
                 android:id="@+id/numVehicles"
                 android:layout_width="75dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="123dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/vehicleText"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
             <TextView
                 android:id="@+id/milesQuestion"
@@ -558,14 +556,13 @@
             <Spinner
                 android:id="@+id/time"
                 android:layout_width="150dp"
-                android:layout_height="35dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
                 android:contentDescription="@string/Weekly_or_Yearly"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/durationVehicle"
-                app:layout_constraintTop_toBottomOf="@+id/maintenanceQuestion" />
+                app:layout_constraintTop_toTopOf="@+id/durationVehicle" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/milesNumLayout"
@@ -677,8 +674,8 @@
 
             <TextView
                 android:id="@+id/durationVehicle"
-                android:layout_width="165dp"
-                android:layout_height="35dp"
+                android:layout_width="150dp"
+                android:layout_height="0dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:gravity="center_vertical"
@@ -686,6 +683,20 @@
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/maintenanceQuestion" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Vehicle"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

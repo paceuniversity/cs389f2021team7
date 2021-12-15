@@ -102,10 +102,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="64dp"
+        android:layout_marginEnd="51dp"
+        android:drawableRight="@drawable/ic_plastic_water_bottle_svgrepo_com"
         android:text="Plastic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/wasteCheckBox2"
-        app:layout_constraintTop_toBottomOf="@+id/textView6"
-        android:drawableRight="@drawable/ic_plastic_water_bottle_svgrepo_com"/>
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <CheckBox
         android:id="@+id/wasteCheckBox4"
@@ -125,21 +127,36 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:text="Magazines"
-        app:layout_constraintStart_toEndOf="@+id/wasteCheckBox4"
-        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox2"
+        android:layout_marginEnd="99dp"
         android:drawableRight="@drawable/ic_open_text_book_svgrepo_com"
-        android:drawablePadding="3dp"/>
+        android:drawablePadding="3dp"
+        android:text="Magazines"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wasteCheckBox4"
+        app:layout_constraintTop_toBottomOf="@+id/wasteCheckBox2" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
         android:text="Which of the following do you recycle?"
         android:textColor="@color/black"
         android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Recycling"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wasteToolbar" />
 

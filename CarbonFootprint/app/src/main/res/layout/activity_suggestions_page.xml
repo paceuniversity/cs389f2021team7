@@ -89,11 +89,11 @@
 
             <TextView
                 android:id="@+id/RecycleMagazines"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Recycle magazines"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,11 +110,11 @@
 
             <TextView
                 android:id="@+id/RecycleNewspaper"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Recycle newspaper"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -131,11 +131,11 @@
 
             <TextView
                 android:id="@+id/RecyclePlastic"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Recycle plastic"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -152,11 +152,11 @@
 
             <TextView
                 android:id="@+id/RecycleGlass"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Recycle glass"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -173,11 +173,11 @@
 
             <TextView
                 android:id="@+id/RecycleMetal"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Recycle metal"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -221,11 +221,11 @@
 
             <TextView
                 android:id="@+id/ReduceNaturalGas"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Reduce Natural Gas by 30%"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -233,11 +233,11 @@
 
             <TextView
                 android:id="@+id/ReduceElectricity"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Reduce Electricity by 30%"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -245,11 +245,11 @@
 
             <TextView
                 android:id="@+id/ReduceFuelOil"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Reduce Fuel Oil by 30%"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -257,11 +257,11 @@
 
             <TextView
                 android:id="@+id/ReducePropane"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Reduce Propane by 30%"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -269,11 +269,11 @@
 
             <TextView
                 android:id="@+id/changePrimaryHeating"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Change Primary Heating Source to"
                 android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
@@ -290,13 +290,13 @@
 
             <TextView
                 android:id="@+id/CarMiles"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
-                android:gravity="center"
-                android:textColor="@color/black"
+                android:gravity="center_vertical"
                 android:text="Reduce the amount of miles you drive by half"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/RecycleMagazines" />
 
@@ -311,12 +311,12 @@
 
             <TextView
                 android:id="@+id/CarMaintenance"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginBottom="32dp"
-                android:gravity="center"
+                android:gravity="center_vertical"
                 android:text="Do regular maintenance on your vehicle(s)"
                 android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"

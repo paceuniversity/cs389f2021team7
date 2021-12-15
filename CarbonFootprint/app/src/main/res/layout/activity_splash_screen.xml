@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E3FEC7"
+    android:background="#B5CE6B"
     tools:context=".SplashScreen">
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gif"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/c02_gif"
+        android:src="@drawable/splashscreen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

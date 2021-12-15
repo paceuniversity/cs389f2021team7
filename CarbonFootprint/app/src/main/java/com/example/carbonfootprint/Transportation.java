@@ -307,10 +307,15 @@ public class Transportation extends AppCompatActivity implements Serializable {
                 if (editable.length() == 0) {
                     currentUser.setTq2(false);
                 }
-                else if (editable.length() > 4) {
+                else if (editable.length() > 4 && !timeCheckYear1) {
                     milesNum1Layout.setError("You have exceeded the character limit");
                     currentUser.setTq2(false);
                 }
+                else if (editable.length() > 6 && !timeCheckYear1) {
+                    milesNum1Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq2(false);
+                }
+
                 else {
                     milesNum1Layout.setError(null);
                     currentUser.setTq2(true);
@@ -345,10 +350,15 @@ public class Transportation extends AppCompatActivity implements Serializable {
                 if (editable.length() == 0) {
                     currentUser.setTq3(false);
                 }
-                else if (editable.length() > 4) {
+                else if (editable.length() > 4 && !timeCheckYear1) {
                     milesNum2Layout.setError("You have exceeded the character limit");
                     currentUser.setTq3(false);
                 }
+                else if (editable.length() > 6 && !timeCheckYear1) {
+                    milesNum2Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq3(false);
+                }
+
                 else {
                     milesNum2Layout.setError(null);
                     currentUser.setTq3(true);
@@ -381,7 +391,11 @@ public class Transportation extends AppCompatActivity implements Serializable {
                 if (editable.length() == 0) {
                     currentUser.setTq4(false);
                 }
-                else if (editable.length() > 4) {
+                else if (editable.length() > 4 && !timeCheckYear1) {
+                    milesNum3Layout.setError("You have exceeded the character limit");
+                    currentUser.setTq4(false);
+                }
+                else if (editable.length() > 6 && !timeCheckYear1) {
                     milesNum3Layout.setError("You have exceeded the character limit");
                     currentUser.setTq4(false);
                 }
@@ -559,6 +573,9 @@ public class Transportation extends AppCompatActivity implements Serializable {
                     timeCheckYear1 = false;
                     timeCheckYear2 = false;
                     timeCheckYear3 = false;
+                    milesNum1Layout.setCounterMaxLength(4);
+                    milesNum2Layout.setCounterMaxLength(4);
+                    milesNum3Layout.setCounterMaxLength(4);
                     if (currentUser.isImperialSystem()) {
                         milesNum1Layout.setHelperText("US average per capita: 219 miles");
                         milesNum2Layout.setHelperText("US average per capita: 219 miles");
@@ -571,12 +588,15 @@ public class Transportation extends AppCompatActivity implements Serializable {
                         milesNum3Layout.setHelperText("US average per capita: 352 kilometers");
                     }
 
-
                 }
                 else if (adapterView.getItemAtPosition(i) == "Per Year") {
                     timeCheckYear1 = true;
                     timeCheckYear2 = true;
                     timeCheckYear3 = true;
+                    milesNum1Layout.setCounterMaxLength(6);
+                    milesNum2Layout.setCounterMaxLength(6);
+                    milesNum3Layout.setCounterMaxLength(6);
+
                     if (currentUser.isImperialSystem()) {
                         milesNum1Layout.setHelperText("US average per capita: 11,398 miles");
                         milesNum2Layout.setHelperText("US average per capita: 11,398 miles");

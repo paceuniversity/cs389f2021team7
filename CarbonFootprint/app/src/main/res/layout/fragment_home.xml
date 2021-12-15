@@ -43,7 +43,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="34dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="Click on the Calculator to get started."
+        android:text="Tap the Calculator to get started."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeText" />

@@ -147,6 +147,10 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
 
         footprintScaleDivisor = 21;
 
+        if(!currentUser.isDisableFirebase()) {
+            button3.setEnabled(true);
+        }
+
 
         footprint2 = view.findViewById(R.id.footprint2);
         footprint2.setVisibility(View.INVISIBLE);
@@ -154,13 +158,29 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         footprint = view.findViewById(R.id.footprint);
         footprint.setVisibility(View.INVISIBLE);
 
+        if(currentUser.isRetrieveCheck()) {
+            button3.setEnabled(false);
+        }
 
 
-        if (demoTotalNumber > 21) {
+        if(householdNumber == 0) {
+            footprint2.setImageResource(R.drawable.bigfoot);
+            footprint2.setVisibility(View.VISIBLE);
+            textView.setTextSize(14);
+            DecimalFormat df2 = new DecimalFormat("0.00");
+
+            resultsText.setText(df2.format(demoTotalNumber) + "");
+            textView.setText("Bigfoot?");
+            footprint2.setScaleX(1);
+            footprint2.setScaleY(1);
+            button3.setEnabled(false);
+        }
+
+        else if (demoTotalNumber > 21) {
             footprint2.setVisibility(View.VISIBLE);
             textView.setTextSize(10);
             startCountAnimation(resultsText, 0.00f, demoTotalNumber);
-            textView.setText("Your household average CO2 emissions (metric tons per capita)\nNote: The footprint is at maximum size and cannot be enlarged any further.");
+            textView.setText("Your household's total CO2 emissions average (metric tons per capita)\nNote: The footprint is at maximum size and cannot be enlarged any further.");
             footprint2.setScaleX(0);
             footprint2.setScaleY(0);
             ObjectAnimator scaleChangeX = ObjectAnimator.ofFloat(footprint2, "scaleX", 1);
@@ -174,7 +194,7 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         else {
             footprint2.setVisibility(View.VISIBLE);
             startCountAnimation(resultsText, 0.00f, demoTotalNumber);
-            textView.setText("Your household average CO2 emissions (metric tons per capita)");
+            textView.setText("Your household's total CO2 emissions average (metric tons per capita)");
             footprintScale2 = (demoTotalNumber/footprintScaleDivisor);
             footprint2.setScaleX(0);
             footprint2.setScaleY(0);
@@ -209,6 +229,8 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                button3.setEnabled(false);
+                currentUser.setDisableFirebase(true);
                 dataToSave = new HashMap<String, Object>();
                 avgArray1 = new ArrayList<Double>();
                 avgArray2 = new ArrayList<Double>();
@@ -409,7 +431,9 @@ public class ResultsFootprintFragment extends Fragment implements AdapterView.On
             }
         }
         else {
-            textView2.setText("Please check your internet connection. Restart the app and try again. If your device has no location, please select a location manually in the settings.");
+            button3.setEnabled(false);
+            textView2.setTextSize(10);
+            textView2.setText("Please check your internet connection. Restart the app and try again. If your device has no location, please select a country manually in the settings.");
         }
     }
 

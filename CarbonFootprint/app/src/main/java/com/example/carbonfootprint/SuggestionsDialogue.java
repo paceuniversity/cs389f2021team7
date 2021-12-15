@@ -15,7 +15,7 @@ public class SuggestionsDialogue extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder suggestionsDialogueBuilder = new AlertDialog.Builder(getActivity());
         suggestionsDialogueBuilder.setTitle("Information")
-                .setMessage("text suggestions")
+                .setMessage("Suggestions will appear depending on the data your entered in the calculator. It is possible that there are no suggestions.\n\nCheck the checkboxes to see how your results would change with certain suggestions.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

@@ -62,6 +62,9 @@ com/example/carbonfootprint/ResultsBarChartFragment.java
  com.example.carbonfootprint.ResultsBarChartFragment
 com/example/carbonfootprint/databinding/ToolbarAboutBinding.java
  com.example.carbonfootprint.databinding.ToolbarAboutBinding
+com/example/carbonfootprint/AboutDialogue.java
+ com.example.carbonfootprint.AboutDialogue
+ com.example.carbonfootprint.AboutDialogue$1
 com/example/carbonfootprint/WasteResults.java
  com.example.carbonfootprint.WasteResults
  com.example.carbonfootprint.WasteResults$1
@@ -238,7 +241,11 @@ com/example/carbonfootprint/SettingsFragment.java
  com.example.carbonfootprint.SettingsFragment$4
  com.example.carbonfootprint.SettingsFragment$5
  com.example.carbonfootprint.SettingsFragment$6
+ com.example.carbonfootprint.SettingsFragment$6$1
+ com.example.carbonfootprint.SettingsFragment$6$2
  com.example.carbonfootprint.SettingsFragment$7
+ com.example.carbonfootprint.SettingsFragment$7$1
+ com.example.carbonfootprint.SettingsFragment$7$2
 com/example/carbonfootprint/DataVisualizationFragment.java
  com.example.carbonfootprint.DataVisualizationFragment
 com/example/carbonfootprint/databinding/ToolbarLocationBinding.java
@@ -280,6 +287,7 @@ com/example/carbonfootprint/databinding/ActivitySuggestionsBinding.java
  com.example.carbonfootprint.databinding.ActivitySuggestionsBinding
 com/example/carbonfootprint/AboutActivity.java
  com.example.carbonfootprint.AboutActivity
+ com.example.carbonfootprint.AboutActivity$1
 com/example/carbonfootprint/CalculatorDialogue.java
  com.example.carbonfootprint.CalculatorDialogue
  com.example.carbonfootprint.CalculatorDialogue$1

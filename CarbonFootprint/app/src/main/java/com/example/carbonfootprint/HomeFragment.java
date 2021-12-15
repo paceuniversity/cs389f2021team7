@@ -50,7 +50,10 @@ public class HomeFragment extends Fragment implements Serializable {
                 }
                 currentUser.setName(null);
                 currentUser.setHouseholdNumber(0);
-
+                currentUser.setHeqcomplete(false);
+                currentUser.setTqcomplete(false);
+                currentUser.setWqcomplete(false);
+                currentUser.setDisableFirebase(false);
                 Intent intent = new Intent(getActivity(), InitiateCalculator.class);
                 intent.putExtra(CURRENT_USER_KEY, currentUser);
                 startActivity(intent);

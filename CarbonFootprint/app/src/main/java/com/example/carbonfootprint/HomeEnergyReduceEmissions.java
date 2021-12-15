@@ -9,7 +9,6 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -33,6 +32,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
     String furnaceBoiler, primaryHeat;
     String window;
     TextView errorText2;
+    Boolean disabledCheck = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +66,8 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         spinnerWindow = findViewById(R.id.starEnergyWindow);
 
         if(primaryHeat.equals("Electricity") || primaryHeat.equals("Propane")){
+            disabledCheck = true;
+            currentUser.setRheq6(true);
             spinnerFurnaceBoiler.setEnabled(false);
         }
 
@@ -226,7 +228,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         else {
             currentUser.setRheq5(true);
         }
-        if (furnaceBoiler.equals("Select an Option")) {
+        if (furnaceBoiler.equals("Select an Option") && !disabledCheck) {
             currentUser.setRheq6(false);
         }
         else {
@@ -265,7 +267,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         else {
             currentUser.setRheq5(true);
         }
-        if (furnaceBoiler.equals("Select an Option")) {
+        if (furnaceBoiler.equals("Select an Option") && !disabledCheck) {
             currentUser.setRheq6(false);
         }
         else {
@@ -287,6 +289,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
             startActivity(intent);
         }
         else {
+            currentUser.setHeqcomplete(false);
             errorText2.setVisibility(View.VISIBLE);
         }
     }
@@ -302,7 +305,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
         else {
             currentUser.setRheq5(true);
         }
-        if (furnaceBoiler.equals("Select an Option")) {
+        if (furnaceBoiler.equals("Select an Option") && !disabledCheck) {
             currentUser.setRheq6(false);
         }
         else {
@@ -324,6 +327,7 @@ public class HomeEnergyReduceEmissions extends AppCompatActivity implements Seri
             startActivity(intent);
         }
         else {
+            currentUser.setHeqcomplete(false);
             errorText2.setVisibility(View.VISIBLE);
         }
     }

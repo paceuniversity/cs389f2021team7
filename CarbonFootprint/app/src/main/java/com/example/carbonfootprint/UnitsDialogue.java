@@ -15,7 +15,7 @@ public class UnitsDialogue extends AppCompatDialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder unitsDialogueBuilder = new AlertDialog.Builder(getActivity());
         unitsDialogueBuilder.setTitle("Information")
-                .setMessage("Text Here units")
+                .setMessage("Tap the drop-down menu to choose your location.")
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {

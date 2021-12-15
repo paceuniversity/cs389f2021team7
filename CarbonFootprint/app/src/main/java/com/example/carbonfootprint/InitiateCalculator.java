@@ -2,6 +2,7 @@ package com.example.carbonfootprint;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -19,6 +21,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.BaseTransientBottomBar;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -43,8 +47,7 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
     String locationAvgBottom;
     Button getResults;
     ImageView calculatorInfo, check1, check2, check3;
-    Boolean checkText1 = false;
-    Boolean checkText2 = false;
+    TextView calculatorError;
     int householdNumber;
     public static final String CURRENT_USER_KEY = "CurrentUserKey";
 
@@ -67,6 +70,9 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         transportation = (Button) findViewById(R.id.transportationSuggestionsBttn);
         waste = (Button) findViewById(R.id.wasteSuggestionsBttn);
         calculatorInfo = findViewById(R.id.calculatorInfo);
+        calculatorError = findViewById(R.id.calculatorError);
+        calculatorError.setVisibility(View.GONE);
+
 
 
         if (currentUser.getUnitsLocationCheck()) {
@@ -81,7 +87,7 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         }
 
 
-        Toast.makeText(this, "metric: " + currentUser.isMetricSystem() + " imperial: " + currentUser.isImperialSystem() + " check: " + currentUser.getUnitsLocationCheck(), Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, "metric: " + currentUser.isMetricSystem() + " imperial: " + currentUser.isImperialSystem() + " check: " + currentUser.getUnitsLocationCheck(), Toast.LENGTH_LONG).show();
 
 //        currentUser = (userInfo) getIntent().getSerializableExtra(DemoHomeActivity.CURRENT_USER_KEY);
 
@@ -89,16 +95,11 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
 
         if (currentUser.getName() != null) {
             nameInput.setText(currentUser.getName());
-            homeEnergy.setEnabled(true);
-            transportation.setEnabled(true);
-            waste.setEnabled(true);
+
         }
 
         if (currentUser.getHouseholdNumber() != 0) {
             householdNumberInput.setText(currentUser.getHouseholdNumber() + "");
-            homeEnergy.setEnabled(true);
-            transportation.setEnabled(true);
-            waste.setEnabled(true);
         }
 
 
@@ -126,7 +127,6 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         }
 
 
-
         calculatorInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -152,19 +152,10 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 {
-                    checkText1 = false;
-                    homeEnergy.setEnabled(false);
-                    transportation.setEnabled(false);
-                    waste.setEnabled(false);
+
                 }
                 else
                 {
-                    checkText1 = true;
-                    if (checkText2) {
-                        homeEnergy.setEnabled(true);
-                        transportation.setEnabled(true);
-                        waste.setEnabled(true);
-                    }
                     currentUser.setName(nameInput.getText().toString());
                 }
             }
@@ -184,20 +175,10 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
             public void afterTextChanged(Editable editable) {
                 if (editable.length() == 0)
                 {
-                    checkText2 = false;
-                    homeEnergy.setEnabled(false);
-                    transportation.setEnabled(false);
-                    waste.setEnabled(false);
+
                 }
                 else
                 {
-                    checkText2 = true;
-                    if (checkText1) {
-                    homeEnergy.setEnabled(true);
-                    transportation.setEnabled(true);
-                    waste.setEnabled(true);
-                    }
-
                     currentUser.setHouseholdNumber(Integer.parseInt(householdNumberInput.getText().toString()));
                 }
             }
@@ -207,10 +188,8 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
         homeEnergy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                numberOfPeople = Integer.valueOf(householdNumberInput.getText().toString());
                 Intent intent = new Intent(InitiateCalculator.this, HomeEnergy.class);
                 intent.putExtra(CURRENT_USER_KEY, currentUser);
-                intent.putExtra(HOUSEHOLDNUMBER, numberOfPeople);
                 startActivity(intent);
             }
         });
@@ -241,9 +220,14 @@ public class InitiateCalculator extends AppCompatActivity implements Serializabl
     }
 
     public void calculatortoResults(View view) {
-        Intent intent = new Intent(InitiateCalculator.this, ResultsTabbedActivity.class);
-        intent.putExtra(CURRENT_USER_KEY, currentUser);
-        startActivity(intent);
+        if(currentUser.getName() != null && currentUser.isHeqcomplete() && currentUser.isTqcomplete() && currentUser.isWqcomplete()) {
+            Intent intent = new Intent(InitiateCalculator.this, ResultsTabbedActivity.class);
+            intent.putExtra(CURRENT_USER_KEY, currentUser);
+            startActivity(intent);
+        }
+        else {
+            calculatorError.setVisibility(View.VISIBLE);
+        }
     }
 
     public void WBdata() {

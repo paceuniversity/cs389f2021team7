@@ -137,19 +137,19 @@ public class SuggestionsPage extends AppCompatActivity implements Serializable {
             RecycleMagazinesCheck.setVisibility(View.GONE);
         }
 
-        if (Double.parseDouble(currentUser.getNaturalGasValue())/currentUser.getHouseholdNumber() < 100) {
+        if (Double.parseDouble(currentUser.getNaturalGasValue())/currentUser.getHouseholdNumber() < 40) {
             ReduceNaturalGas.setVisibility(View.GONE);
             ReduceNaturalGasCheck.setVisibility(View.GONE);
         }
-        if (Double.parseDouble(currentUser.getElectricityValue())/currentUser.getHouseholdNumber() < 100) {
+        if (Double.parseDouble(currentUser.getElectricityValue())/currentUser.getHouseholdNumber() < 80) {
             ReduceElectricity.setVisibility(View.GONE);
             ReduceElectricityCheck.setVisibility(View.GONE);
         }
-        if (Double.parseDouble(currentUser.getFuelOilValue())/currentUser.getHouseholdNumber() < 100) {
+        if (Double.parseDouble(currentUser.getFuelOilValue())/currentUser.getHouseholdNumber() < 140) {
             ReduceFuelOil.setVisibility(View.GONE);
             ReduceFuelOilCheck.setVisibility(View.GONE);
         }
-        if (Double.parseDouble(currentUser.getPropaneValue())/currentUser.getHouseholdNumber() < 100) {
+        if (Double.parseDouble(currentUser.getPropaneValue())/currentUser.getHouseholdNumber() < 80) {
             ReducePropane.setVisibility(View.GONE);
             ReducePropaneCheck.setVisibility(View.GONE);
         }

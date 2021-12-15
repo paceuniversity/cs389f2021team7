@@ -1832,6 +1832,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable bigfoot
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -1961,6 +1962,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable splashscreen
 drawable test
 drawable test2
 drawable test_custom_background
@@ -1983,6 +1985,8 @@ id Equals
 id FUNCTION
 id Humidity
 id META
+id MPAndroidChartsourceLink
+id MaxMindsourceLink
 id NO_DEBUG
 id NaturalGasLayout
 id NaturalGasLayout2
@@ -2021,11 +2025,16 @@ id Subtract
 id SubtractedAmount
 id TOP_END
 id TOP_START
+id Transportation
+id WBsourceLink
 id aboutCardView
 id aboutImage
 id aboutImage2
+id aboutInfo
+id aboutParagraph
 id aboutText
 id aboutTextView
+id aboutToolbar
 id acThermostat
 id acThermostatEditText
 id acThermostatInputLayout
@@ -2132,6 +2141,7 @@ id button8
 id button9
 id buttonPanel
 id cache_measures
+id calculatorError
 id calculatorIcon
 id calculatorInfo
 id calculatorToolbar
@@ -2305,6 +2315,8 @@ id getresultspage2
 id ghost_view
 id ghost_view_holder
 id gif
+id gitLink
+id github
 id glass_box
 id gone
 id graph
@@ -2318,6 +2330,7 @@ id heatingAndCooling
 id hideable
 id home
 id homeAsUp
+id homeEnergy
 id homeEnergyImage
 id homeEnergyImage2
 id homeEnergyInfo
@@ -2330,6 +2343,7 @@ id homeEnergyTextView
 id homeEnergyToolbar
 id homeEnergyTotal
 id homeInfo
+id homeParagraph
 id homeToolbar
 id home_energy_button
 id homeenergybtn
@@ -2371,6 +2385,7 @@ id lineChart
 id lineChartTab
 id linear
 id linearLayout
+id listLayout
 id listMode
 id listTab
 id list_item
@@ -2523,7 +2538,6 @@ id plastic_box
 id position
 id postLayout
 id previous2
-id primaryHeat
 id primaryHeatSpinner
 id progress_circular
 id progress_horizontal
@@ -2535,7 +2549,6 @@ id radio
 id ratio
 id rectangles
 id recyclerView
-id reduceEmissions
 id reduceLighting
 id reduceLightingEditText
 id reduceLightingInputLayout
@@ -2591,6 +2604,7 @@ id secondText
 id select_dialog_listview
 id selected
 id selection_type
+id settingsLayout
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -2607,6 +2621,9 @@ id snackbar_text
 id snap
 id snapMargins
 id solarPower
+id source
+id sourceLink
+id sourcesGit
 id south
 id spaceHeaters
 id spacer
@@ -2678,7 +2695,10 @@ id textView14
 id textView15
 id textView16
 id textView17
+id textView18
+id textView19
 id textView2
+id textView20
 id textView21
 id textView3
 id textView4
@@ -2686,6 +2706,7 @@ id textView5
 id textView6
 id textView7
 id textView8
+id textView9
 id text_dashboard
 id text_input_end_icon
 id text_input_error_icon
@@ -2713,6 +2734,7 @@ id totalText
 id totalTextView
 id total_results
 id touch_outside
+id transParagraph
 id transitionToEnd
 id transitionToStart
 id transition_current_scene
@@ -2754,12 +2776,14 @@ id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
 id washingAndDrying
+id waste
 id wasteCheckBox1
 id wasteCheckBox2
 id wasteCheckBox3
 id wasteCheckBox4
 id wasteCheckBox5
 id wasteInfo
+id wasteParagraph
 id wasteSuggestionsBttn
 id wasteText
 id wasteTextView
@@ -2998,7 +3022,10 @@ mipmap ic_launcher_round
 navigation mobile_navigation
 plurals mtrl_badge_content_description
 string Heating
+string MPAndroidChartsource
+string MaxMindsource
 string Reduce_Weekly_Yearly
+string WBsourceSite
 string Weekly_or_Yearly
 string _0
 string abc_action_bar_home_description
@@ -3028,7 +3055,11 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string aboutAppText
+string aboutHomeText
 string aboutText
+string aboutTransText
+string aboutWasteText
 string acThermostat
 string acThermostatInput
 string app_name
@@ -3087,6 +3118,8 @@ string fuelOil
 string furnaceBoiler
 string gcm_defaultSenderId
 string getResults
+string gitLink
+string github
 string glassHint
 string glass_hint
 string glass_question
@@ -3220,6 +3253,9 @@ string replaceOne
 string replaceThree
 string replaceTwo
 string search_menu_title
+string source
+string sourceSite
+string sources_github
 string space_hint
 string status_bar_notification_info_overflow
 string submit

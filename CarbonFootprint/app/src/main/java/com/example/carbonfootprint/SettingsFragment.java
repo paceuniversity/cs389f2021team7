@@ -14,9 +14,11 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
@@ -24,6 +26,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
@@ -32,6 +35,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.carbonfootprint.R;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -51,6 +55,7 @@ public class SettingsFragment extends Fragment implements Serializable {
     Boolean loadedSaveResultsExit;
     Boolean loadedUnits;
     Boolean loadedUnitsLocation;
+    ConstraintLayout settingsLayout;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -64,6 +69,8 @@ public class SettingsFragment extends Fragment implements Serializable {
         else {
             currentUser = (userInfo) getActivity().getIntent().getSerializableExtra(CURRENT_USER_KEY);
         }
+
+        settingsLayout = view.findViewById(R.id.settingsLayout);
 
         loadData();
         currentUser.setCountryCode(loadedCountryCode);
@@ -184,14 +191,59 @@ public class SettingsFragment extends Fragment implements Serializable {
         deletePastResultsCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                databaseHelper.deleteAll();
+                deletePastResultsCardView.setBackgroundColor(Color.parseColor("#D3D3D3"));
+                AlertDialog dialog1 = new AlertDialog.Builder(getActivity())
+                        .setTitle("Warning")
+                        .setMessage("Are you sure you want to delete all of your past results?")
+                        .setPositiveButton("YES", null)
+                        .setNegativeButton("NO", null)
+                        .show();
+                Button positiveButton1 = dialog1.getButton(AlertDialog.BUTTON_POSITIVE);
+                positiveButton1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        databaseHelper.deleteAll();
+                        dialog1.dismiss();
+                        Snackbar.make(settingsLayout, "Deleted All Past Results", Snackbar.LENGTH_SHORT).show();
+                    }
+                });
+                Handler handler1 = new Handler();
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        deletePastResultsCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                    }
+                }, 300);
             }
         });
         clearAllDataCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((ActivityManager)getActivity().getSystemService(Context.ACTIVITY_SERVICE)).clearApplicationUserData();
-                Toast.makeText(getActivity(), "clicked clear all data", Toast.LENGTH_LONG).show();
+                clearAllDataCardView.setBackgroundColor(Color.parseColor("#D3D3D3"));
+                AlertDialog dialog2 = new AlertDialog.Builder(getActivity())
+                        .setTitle("Warning")
+                        .setMessage("Are you sure you want to clear all of your data and exit the app?")
+                        .setPositiveButton("YES", null)
+                        .setNegativeButton("NO", null)
+                        .show();
+                Button positiveButton2 = dialog2.getButton(AlertDialog.BUTTON_POSITIVE);
+                positiveButton2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        ((ActivityManager)getActivity().getSystemService(Context.ACTIVITY_SERVICE)).clearApplicationUserData();
+                        dialog2.dismiss();
+                    }
+                });
+
+                Handler handler2 = new Handler();
+                handler2.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        clearAllDataCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+                    }
+                }, 300);
+
+
             }
         });
 
@@ -227,6 +279,8 @@ public class SettingsFragment extends Fragment implements Serializable {
         aboutCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         changeCountryCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         changeUnitsCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        deletePastResultsCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        clearAllDataCardView.setBackgroundColor(Color.parseColor("#FFFFFF"));
 
     }
 

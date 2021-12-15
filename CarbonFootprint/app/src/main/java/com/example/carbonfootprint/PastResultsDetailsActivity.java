@@ -74,6 +74,7 @@ public class PastResultsDetailsActivity extends AppCompatActivity implements Ser
     }
 
     public void retrieveResults(View view) {
+        currentUser.setRetrieveCheck(true);
         currentUser.setHomeEnergyTotal(Double.parseDouble(currentUser.getPastResultsHomeEnergy()) * Integer.parseInt(currentUser.getPastResultsHousehold()));
         currentUser.setTransportationTotal(Double.parseDouble(currentUser.getPastResultsTransportation()) * Integer.parseInt(currentUser.getPastResultsHousehold()));
         currentUser.setWasteTotal(Double.parseDouble(currentUser.getPastResultsWaste()));
@@ -128,4 +129,14 @@ public class PastResultsDetailsActivity extends AppCompatActivity implements Ser
         retrieveResultsButton.setEnabled(true);
 //        retrieveResultsButton.setText("Retrieve Results");
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (ResultsTabbedActivity.currentUserTemporary3 != null) {
+            currentUser = ResultsTabbedActivity.currentUserTemporary3;
+        }
+
+    }
+
 }

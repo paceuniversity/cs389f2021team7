@@ -155,7 +155,7 @@ public class ResultsPieChartFragment extends Fragment implements OnChartValueSel
 
         pieChart = view.findViewById(R.id.pieChart);
         pieChartTextView = view.findViewById(R.id.pieChartTextView);
-        pieChartTextView.setText("Result = " + String.format("%.2f", demoTotalNumber));
+        pieChartTextView.setText("Your household's total emissions average is " + String.format("%.2f", demoTotalNumber) + " metric tons");
 
         pieChartCategoryResults = new ArrayList<>();
         pieChartCategoryResults.add(new PieEntry(emissionsTotalAfterReduce, "Home Energy"));
@@ -195,20 +195,20 @@ public class ResultsPieChartFragment extends Fragment implements OnChartValueSel
 //        Toast.makeText(ResultsPieChart.this, e + "", Toast.LENGTH_LONG).show();
 
         if (e == pieDataSet.getEntryForIndex(0)) {
-            pieChartTextView.setText("Home Energy = " + String.format("%.2f", emissionsTotalAfterReduce));
+            pieChartTextView.setText("Your household's home energy emissions average is " + String.format("%.2f", emissionsTotalAfterReduce) + " metric tons");
         }
         else if (e == pieDataSet.getEntryForIndex(1)) {
-            pieChartTextView.setText("Transportation = " + String.format("%.2f", transportationTotal));
+            pieChartTextView.setText("Your household's transportation emissions average is " + String.format("%.2f", transportationTotal) + " metric tons");
         }
         else if (e == pieDataSet.getEntryForIndex(2)) {
-            pieChartTextView.setText("Waste = " + String.format("%.2f", estimatedWaste));
+            pieChartTextView.setText("Your household's waste emissions average is " + String.format("%.2f", estimatedWaste) + " metric tons");
         }
 
     }
 
     @Override
     public void onNothingSelected() {
-        pieChartTextView.setText("Result = " + String.format("%.2f", demoTotalNumber));
+        pieChartTextView.setText("Your household's total emissions average is " + String.format("%.2f", demoTotalNumber) + " metric tons");
     }
 
 }

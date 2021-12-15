@@ -10,11 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -40,9 +38,8 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
     userInfo currentUser;
     TextInputEditText naturalGasInput, electricityInput, fuelOilInput, propaneInput;
     TextInputLayout naturalGasLayout, electricityLayout, fuelOilLayout, propaneLayout;
-    TextView errorText1, errorText2;
+    TextView errorText1;
     String primaryHeat;
-
     Button submit;
 
 
@@ -64,8 +61,6 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         submit = (Button) findViewById(R.id.estimatedC02);
         errorText1 = findViewById(R.id.errorText1);
         errorText1.setVisibility(View.GONE);
-        errorText2 = findViewById((R.id.errorText2));
-        errorText2.setVisibility(View.GONE);
 
         currentUser = (userInfo) getIntent().getSerializableExtra(CURRENT_USER_KEY);
 
@@ -92,12 +87,6 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 primaryHeat = primaryHeatSpinner.getSelectedItem().toString();
-                if(primaryHeat.equals("Select an Option")){
-                    errorText2.setVisibility(View.VISIBLE);
-                }
-                else{
-                    errorText2.setVisibility(View.GONE);
-                }
             }
 
            @Override
@@ -218,7 +207,7 @@ public class HomeEnergy extends AppCompatActivity implements Serializable {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (currentUser.isHeq1() && currentUser.isHeq2() && currentUser.isHeq3() && currentUser.isHeq4()) {
+                if (currentUser.isHeq1() && currentUser.isHeq2() && currentUser.isHeq3() && currentUser.isHeq4() && !(primaryHeat.equals("Select an Option"))) {
                     naturalGas = Integer.valueOf(naturalGasInput.getText().toString());
                     electricity = Integer.valueOf(electricityInput.getText().toString());
                     fuelOil = Integer.valueOf(fuelOilInput.getText().toString());
