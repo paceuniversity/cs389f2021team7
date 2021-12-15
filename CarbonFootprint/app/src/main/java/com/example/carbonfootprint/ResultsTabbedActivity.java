@@ -63,7 +63,7 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
         emissionsTotalAfterReduce = (float) (currentUser.getHomeEnergyTotal()/householdNumber);
         demoTotalNumber = (float) (emissionsTotalAfterReduce + estimatedWaste + transportationTotal);
 
-        if(currentUser.isRetrieveCheck() || currentUser.getAvgValueWB() == null) {
+        if(currentUser.isRetrieveCheck() || currentUser.getAvgValueWB() == null || currentUser.getHouseholdNumber() == 0) {
             button12.setText("EXIT");
         }
 
@@ -116,7 +116,7 @@ public class ResultsTabbedActivity extends AppCompatActivity implements Serializ
 
     }
     public void suggestionsPage(View view) {
-        if (currentUser.isRetrieveCheck() || currentUser.getAvgValueWB() == null) {
+        if (currentUser.isRetrieveCheck() || currentUser.getAvgValueWB() == null || currentUser.getHouseholdNumber() == 0) {
             currentUserTemporary3 = currentUser;
             finish();
         }
