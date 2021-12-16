@@ -79,7 +79,7 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 * [Sprint demo](https://docs.google.com/document/d/1ydivUV9P_fvdflnw8d_LfUwHYvOQ8MRJHZ74aD1wnpE/edit) - [video](https://youtu.be/ugtB-p_ebbw) and [apk](https://github.com/paceuniversity/cs389f2021team7/blob/main/CarbonFootprint/app/build/outputs/apk/debug/app-debug.apk) (or equivalent)
 * [Sprint retrospective](https://docs.google.com/document/d/11pAaJtUeZXNLNXPmknQrlJ-Umx7N-QWheAcHa8Hb_P8/edit?usp=sharing)
 
-**Final presentation**
+**[Final presentation](https://docs.google.com/presentation/d/12nii6d7gjmsxdcQkM0rKJxWqLwn_j2x2xkUA00oEU3M/edit?usp=sharing)**
 
 **Poster**
 
