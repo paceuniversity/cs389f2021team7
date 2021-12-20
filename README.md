@@ -83,7 +83,7 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 
 **Poster**
 
-<img src="https://cdn.discordapp.com/attachments/890356137008979988/922352990768209960/carbonFootprintPosterFinal.png" height="100">
+[<img src="https://cdn.discordapp.com/attachments/890356137008979988/922352990768209960/carbonFootprintPosterFinal.png" height="300">](https://cdn.discordapp.com/attachments/890356137008979988/922352990768209960/carbonFootprintPosterFinal.png)
 
 **Process description**
 
