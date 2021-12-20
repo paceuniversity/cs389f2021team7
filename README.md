@@ -17,7 +17,7 @@ Carbon Footprint
 
 **App description**
 
-Carbon Footprint is a CO2 emissions calculator and tracker. It takes the information you entered in the calculator and compares it to data from the World Bank in your location and to the app average. It also shows your results by category in charts and gives you suggestions on how to improve your results. Carbon Footprint can display your past results as a list or a line chart to show how your results have changed over time.
+Carbon Footprint is a CO2 emissions calculator, tracker, and data visualizer. It calculates based on three categories: Home Energy, Transportation, and Waste. It compares your results to data from the World Bank in your location and to the app average. It can display your results by category in charts and can give you suggestions on how to improve your results. Carbon Footprint can display your past results as a list or a line chart to show how your results have changed over time. Carbon Footprint can also visualize different CO2 emissions data from the World Bank on a world map.
 
 **[Idea Proposal](https://docs.google.com/document/d/1Fk-VKhIbE_qc_xFK_vEKdeaBNxjz769r/edit?usp=sharing&ouid=111998902265795988399&rtpof=true&sd=true)**
 
@@ -51,23 +51,23 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 **Sprint 2**
 
 * [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=1423412642)
-  * US 3- Transportation
-  * US 6- Reduce emissions for Home Energy (good score)
-  * US 7- Reduce emissions for Home Energy (average score)
-  * US 8- Reduce emissions for Home Energy (bad score)
-  * US 9- Reduce emissions for Transportation (good score)
-  * US 10- Reduce emissions for Transportation (average score)
-  *	US 11- Reduce emissions for Transportation (bad score)
-  *	US 12- Reduce emissions for Waste (good score)
-  *	US 13- Reduce emissions for Waste (average score)
-  *	US 14- Reduce emissions for Waste (bad score)
-  *	US 18- Units
-  *	US 22– Welcome Screen
-  *	US 29– Calculator Memory
-  *	US 33– Design of App
-  *	US 34– Firebase API
-  *	US 35– User Progress
-  *	US 36- Settings
+  * US3- Transportation
+  * US6- Reduce emissions for Home Energy (good score)
+  * US7- Reduce emissions for Home Energy (average score)
+  * US8- Reduce emissions for Home Energy (bad score)
+  * US9- Reduce emissions for Transportation (good score)
+  * US10- Reduce emissions for Transportation (average score)
+  *	US11- Reduce emissions for Transportation (bad score)
+  *	US12- Reduce emissions for Waste (good score)
+  *	US13- Reduce emissions for Waste (average score)
+  *	US14- Reduce emissions for Waste (bad score)
+  *	US18- Units
+  *	US22– Welcome Screen
+  *	US29– Calculator Memory
+  *	US33– Design of App
+  *	US34– Firebase API
+  *	US35– User Progress
+  *	US36- Settings
 * [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md#scrum-11152021)
 * [Sprint demo](https://docs.google.com/document/d/1VCjo0aWY1bKfPwAxe1_bShbnWE22rG-pwitEb54eptM/edit?usp=sharing) - [video](https://www.youtube.com/watch?v=Idoa_byxWj8) and [apk](https://drive.google.com/file/d/18aK7qwtdT2LaGc9R_vXVMIs-Ke4yD1xO/view?usp=sharing) (or equivalent)
 * [Sprint retrospective](https://docs.google.com/document/d/1TXbnpj54bao3i0W0lS5lRW6aVj8bHPM9CWESCElsDHM/edit?usp=sharing)
@@ -75,6 +75,20 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 **Sprint 3** 
 
 * [Sprint planning](https://docs.google.com/spreadsheets/d/14s1sifmk_y9gL9m4-IOlqNGbfyRbNgXoeC3V9itIMrA/edit#gid=922820594)
+  * US5- Reset
+  * US15- Calculator Performance
+  * US17- Score feedback
+  * US18- Units
+  * US19- Edit entered data
+  * US20- Calculator Usability
+  * US21- Warning Message
+  * US23- User experience
+  * US24- Help
+  * US25- Tips icon
+  * US26- Information page
+  * US27– Storage of app
+  * US30– Score comparison
+  * US31– Privacy
 * [Scrums](https://github.com/paceuniversity/cs389f2021team7/blob/main/Scrums.md#scrum-1262021)
 * [Sprint demo](https://docs.google.com/document/d/1ydivUV9P_fvdflnw8d_LfUwHYvOQ8MRJHZ74aD1wnpE/edit) - [video](https://youtu.be/ugtB-p_ebbw) and [apk](https://github.com/paceuniversity/cs389f2021team7/blob/main/CarbonFootprint/app/build/outputs/apk/debug/app-debug.apk) (or equivalent)
 * [Sprint retrospective](https://docs.google.com/document/d/11pAaJtUeZXNLNXPmknQrlJ-Umx7N-QWheAcHa8Hb_P8/edit?usp=sharing)
@@ -86,6 +100,8 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 [<img src="https://cdn.discordapp.com/attachments/890356137008979988/922352990768209960/carbonFootprintPosterFinal.png" height="300">](https://cdn.discordapp.com/attachments/890356137008979988/922352990768209960/carbonFootprintPosterFinal.png)
 
 **Process description**
+
+We used the Scrum framework for our process.
 
 **Communications**
 
@@ -100,4 +116,6 @@ Carbon Footprint is a CO2 emissions calculator and tracker. It takes the informa
 [<img src="https://data.worldbank.org/assets/images/logo-wb-header-en.svg" height="75" width="250">](https://data.worldbank.org "The World Bank API")
 [<img src="https://www.sqlite.org/images/sqlite370_banner.gif" height="75">](https://sqlite.org/index.html "SQLite")
 [<img src="https://camo.githubusercontent.com/9ee52cd684d0ae62106ce74c7aae5fc9cec43a123c76ef307b5b8a0c24e89eed/68747470733a2f2f7261772e6769746875622e636f6d2f5068696c4a61792f4d5043686172742f6d61737465722f64657369676e2f666561747572655f677261706869635f736d616c6c65722e706e67" height="75">](https://github.com/PhilJay/MPAndroidChart "MPAndroidChart")
+[<img src="https://www.adobe.com/content/dam/acom/one-console/icons_rebrand/ps_appicon.svg" height="75">](https://www.adobe.com/products/photoshop.html "Adobe Photoshop")
+[<img src="https://i.imgur.com/6NjhlOC.png" height="75">](https://support.microsoft.com/en-us/windows/get-microsoft-paint-a6b9578c-ed1c-5b09-0699-4ed8115f9aa9 "Microsoft Paint")
 
